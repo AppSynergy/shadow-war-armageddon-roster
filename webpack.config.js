@@ -25,6 +25,14 @@ module.exports = {
         }
       },
       {
+        test: /\.coffee$/,
+        use: [ 'coffee-loader' ]
+      },
+      {
+        test: /\.toml$/,
+        use: [ 'toml-loader' ]
+      },
+      {
         test: /\.js$/,
         loader: 'babel-loader',
         exclude: /node_modules/
