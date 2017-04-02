@@ -1,6 +1,6 @@
-# shadow-war
+# SWAR: shadow-war-armageddon-roster
 
-> A Vue.js project
+Roster builder for Shadow War: Armageddon.
 
 ## Build Setup
 
