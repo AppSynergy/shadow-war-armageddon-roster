@@ -27,3 +27,19 @@ equip = ["basic", "grenades", "misc"]
 desc = "Skitarii Rangers are the mainstay of a Skitarii Ranger kill team. They are highly modified and methodical fighters."
 wargear_desc = "Wargear: All Skitarii Rangers are equipped with a combat blade and Skitarii war plate."
 equip_desc = "In addition, a Skitarii Ranger can be armed with items chosen from the Skitarii Basic Weapons, Grenades and Miscellaneous Equipment lists."
+
+
+[weapons.basic.galvanic_rifle]
+name = "Galvanic Rifle"
+cost = 35
+desc = "The galvanic servitor-bullets inside this weapon are
+incredibly advanced. When such a bullet strikes home, it
+causes all the potential energy of the target to burn out in a
+killing blast of electric force."
+
+[weapons.basic.radium_carbine]
+name = "Radium Carbine"
+cost = 35
+desc = "The bullets fired by a radium carbine are so laced with
+radiation that even a minor wound can slay its victim within
+a matter of days."
