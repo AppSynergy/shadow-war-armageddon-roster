@@ -1,14 +1,13 @@
 <template>
   <div class="fighter-vue">
-    <div class="row">
+
+    <div class="row mb-4">
 
       <div class="col col-4">
-
         <h4>
           {{ fighter.name }} -
           <em>{{ fighter.cost }} points</em>
         </h4>
-
         <label for="chooseNewWeapon">Add weapons / equipment:</label>
         <select class="" name="chooseNewWeapon"
           v-on:change="chooseNewWeapon"
@@ -17,19 +16,6 @@
             :value="weapon"
           >{{ weapon.name }}</option>
         </select>
-
-        <ul class="list-group">
-          <li class="list-group-item justify-content-between"
-            v-for="weapon, index in fighter.weapons">
-            <span title="weapon.desc">
-              {{ weapon.name }}
-            </span>
-            <em>{{ weapon.cost }} points</em>
-            <button class="btn btn-danger p-1"
-              v-on:click="removeWeapon(index)">Remove</button>
-          </li>
-        </ul>
-
       </div>
 
       <div class="col col-6">
@@ -38,21 +24,29 @@
       </div>
 
       <div class="col col-2">
-        <button class="btn btn-danger"
+        <button class="btn btn-danger p-1"
           v-on:click="removeFighter()">Remove</button>
       </div>
 
     </div>
+
+    <fighter-wargear
+      :fighterIndex="index"
+      :wargear="fighter.wargear"
+      :weapons="fighter.weapons"
+    ></fighter-wargear>
+
   </div>
 </template>
 
 <script lang="coffee">
 
   import FighterStats from './Stats.vue'
+  import FighterWargear from './Wargear.vue'
 
   Fighter =
 
-    components: { FighterStats }
+    components: { FighterStats, FighterWargear }
 
     props: ['index', 'weaponsAvailable']
 
@@ -72,11 +66,6 @@
 
       removeFighter: () ->
         @$store.commit 'removeFighter', @index
-
-      removeWeapon: (index) ->
-        @$store.commit 'removeWeapon',
-          weaponIndex: index
-          index: @index
 
   export default Fighter
 

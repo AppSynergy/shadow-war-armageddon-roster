@@ -25,7 +25,7 @@ RosterStore =
     removeWeapon: (state, obj) ->
       fighter = state.fighters[obj.index]
       fighter.weapons.splice obj.weaponIndex, 1
-      fighter.cost -= obj.weapon.cost
+      fighter.cost -= obj.cost
 
   getters:
 
