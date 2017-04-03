@@ -1,22 +1,25 @@
 <template>
   <div class="roster-vue">
 
-    <div class="card my-4 p-2">
-      <h2>{{ factionName }}</h2>
-      <ul class="list-group">
+    <div class="card px-4 mt-4">
+      <h2 class="py-2">{{ factionName }}</h2>
+      <ul class="list-group mb-4">
         <li v-for="fighter in availableFighters"
           class="list-group-item justify-content-between">
           <span>{{ fighter.name }} -
             <em>{{ fighter.cost }} points</em>
           </span>
-          <button v-on:click="addFighter(fighter)">Add</button>
+          <button class="btn btn-primary"
+            v-on:click="addFighter(fighter)">Add</button>
         </li>
       </ul>
     </div>
 
-    <div class="card p-2">
-      <h2>Roster - <em>{{ totalPointsCost }} points</em></h2>
-      <div v-for="fighter, index in chosenFighters">
+    <div class="card px-4 mt-4">
+      <h2 class="py-2">Roster
+        - <em>{{ totalPointsCost }} points</em></h2>
+      <div class="card mb-4 p-2"
+        v-for="fighter, index in chosenFighters">
         <fighter
           :fighter="fighter"
           :index="index"
