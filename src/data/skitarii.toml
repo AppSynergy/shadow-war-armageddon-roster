@@ -29,6 +29,18 @@ wargear_desc = "Wargear: All Skitarii Rangers are equipped with a combat blade a
 equip_desc = "In addition, a Skitarii Ranger can be armed with items chosen from the Skitarii Basic Weapons, Grenades and Miscellaneous Equipment lists."
 
 
+[weapons.pistols.radium_pistol]
+name = "Radium Pistol"
+cost = 20
+
+[weapons.pistols.arc_pistol]
+name = "Arc Pistol"
+cost = 30
+
+[weapons.pistols.phosphor_blast_pistol]
+name = "Phosphor Blast Pistol"
+cost = 40
+
 [weapons.basic.galvanic_rifle]
 name = "Galvanic Rifle"
 cost = 35

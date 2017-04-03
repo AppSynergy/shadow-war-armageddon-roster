@@ -23,6 +23,7 @@
         <fighter
           :fighter="fighter"
           :index="index"
+          :weaponsAvailable="weaponsAvailable(fighter)"
           v-on:removeFighterIndex="removeFighter"
         ></fighter>
       </div>
@@ -50,10 +51,15 @@
       chosenFighters: []
 
     methods:
+
       addFighter: (fighter) ->
         @chosenFighters.push fighter
+
       removeFighter: (index) ->
         @chosenFighters.splice index, 1
+
+      weaponsAvailable: (fighter) ->
+        Faction.weapons.basic
 
   export default Roster
 
