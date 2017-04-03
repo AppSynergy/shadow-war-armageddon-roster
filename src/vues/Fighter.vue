@@ -6,12 +6,13 @@
 
         <h4>
           {{ fighter.name }} -
-          <em>{{ totalPointsCost }} points</em>
+          <em>{{ fighter.cost }} points</em>
         </h4>
 
         <label for="chooseNewWeapon">Add weapons / equipment:</label>
         <select class="" name="chooseNewWeapon"
-          v-model="chooseNewWeapon">
+          v-on:change="chooseNewWeapon"
+          v-model="newWeapon">
           <option v-for="weapon, key in weaponsAvailable"
             :value="weapon"
           >{{ weapon.name }}</option>
@@ -19,7 +20,7 @@
 
         <ul class="list-group">
           <li class="list-group-item justify-content-between"
-            v-for="weapon, index in weapons">
+            v-for="weapon, index in fighter.weapons">
             <span title="weapon.desc">
               {{ weapon.name }}
             </span>
@@ -38,7 +39,7 @@
 
       <div class="col col-2">
         <button class="btn btn-danger"
-          v-on:click="removeFighter(index)">Remove</button>
+          v-on:click="removeFighter()">Remove</button>
       </div>
 
     </div>
@@ -53,30 +54,29 @@
 
     components: { FighterStats }
 
-    props: ['fighter', 'index', 'weaponsAvailable']
+    props: ['index', 'weaponsAvailable']
 
     data: () ->
-      chooseNewWeapon: null
+      newWeapon: null
       weapons: []
 
     computed:
-      totalPointsCost: () ->
-        weaponsCost = @weapons.reduce ((xs, x) -> xs + x.cost), 0
-        totalCost = @fighter.cost + weaponsCost
-        #@$emit 'totalPointsCost', totalCost
-        return totalCost
-
-    watch:
-      chooseNewWeapon: (weapon) ->
-        @weapons.push weapon
+      fighter: () -> @$store.getters.getFighter @index
 
     methods:
 
-      removeFighter: (index) ->
-        @$emit 'removeFighterIndex', index
+      chooseNewWeapon: () ->
+        @$store.commit "addWeapon",
+         weapon: @newWeapon
+         index: @index
+
+      removeFighter: () ->
+        @$store.commit 'removeFighter', @index
 
       removeWeapon: (index) ->
-        @weapons.splice index, 1
+        @$store.commit 'removeWeapon',
+          weaponIndex: index
+          index: @index
 
   export default Fighter
 

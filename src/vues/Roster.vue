@@ -2,9 +2,9 @@
   <div class="roster-vue">
 
     <div class="card px-4 mt-4">
-      <h2 class="py-2">{{ factionName }}</h2>
+      <h2 class="py-2">{{ faction.name }}</h2>
       <ul class="list-group mb-4">
-        <li v-for="fighter in availableFighters"
+        <li v-for="fighter in faction.fighters"
           class="list-group-item justify-content-between">
           <span>{{ fighter.name }} -
             <em>{{ fighter.cost }} points</em>
@@ -21,10 +21,8 @@
       <div class="card mb-4 p-2"
         v-for="fighter, index in chosenFighters">
         <fighter
-          :fighter="fighter"
           :index="index"
           :weaponsAvailable="weaponsAvailable(fighter)"
-          v-on:removeFighterIndex="removeFighter"
         ></fighter>
       </div>
     </div>
@@ -42,22 +40,14 @@
     components: { Fighter }
 
     computed:
-      factionName: () -> Faction.name
-      availableFighters: () -> Faction.fighters
-      totalPointsCost: () ->
-        22 #todo
-
-    data: () ->
-      chosenFighters: []
+      faction: () -> Faction
+      chosenFighters: () -> @$store.getters.getFighters
+      totalPointsCost: () -> @$store.getters.getTotalPointsCost
 
     methods:
 
       addFighter: (fighter) ->
-        #@$store.dispatch 'addFighter', fighter
-        @chosenFighters.push fighter
-
-      removeFighter: (index) ->
-        @chosenFighters.splice index, 1
+        @$store.commit 'addFighter', _.clone(fighter)
 
       weaponsAvailable: (fighter) ->
         _.filter Faction.weapons, (_, group) ->
