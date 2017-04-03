@@ -7,26 +7,25 @@
       <i class="fa fa-times"></i>
     </button>
 
-    <div class="row mb-4 mx-1 no-gutters">
+    <div class="row mx-1 no-gutters">
 
-      <div class="col col-5">
+      <div class="col col-11 col-md-5 pr-4">
         <h4>
           {{ fighter.name }} -
           <em>{{ fighter.cost }} points</em>
         </h4>
-        <div class="form-inline">
-          <label for="chooseNewWeapon">Add weapons / equipment:</label>
-          <select class="form-control ml-2" name="chooseNewWeapon"
-            v-on:change="chooseNewWeapon"
-            v-model="newWeapon">
-            <option v-for="weapon, key in weaponsAvailable"
-              :value="weapon"
-            >{{ weapon.name }}</option>
-          </select>
-        </div>
+        <select class="form-control"
+          v-on:change="chooseNewWeapon"
+          v-model="newWeapon">
+          <option value="null" selected disabled>
+            Add weapons / equipment</option>
+          <option v-for="weapon, key in weaponsAvailable"
+            :value="weapon"
+          >{{ weapon.name }}</option>
+        </select>
       </div>
 
-      <div class="col col-6">
+      <div class="col col-12 col-md-5">
         <fighter-stats :statstring="fighter.stats">
         </fighter-stats>
       </div>
@@ -66,6 +65,7 @@
         @$store.commit "addWeapon",
          weapon: @newWeapon
          index: @index
+        @newWeapon = null
 
       removeFighter: () ->
         @$store.commit 'removeFighter', @index

@@ -62,5 +62,7 @@
 
 <style lang="sass">
   .roster-background
-    background-color: #ddd
+    background-color: #f5f5f5
+  .wargear-vue .card
+    background-color: #eee
 </style>

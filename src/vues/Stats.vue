@@ -32,3 +32,8 @@
   export default Stats
 
 </script>
+
+<style lang="sass">
+  td, th
+    width: 10%
+</style>
