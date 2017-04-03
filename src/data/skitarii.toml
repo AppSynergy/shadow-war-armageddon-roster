@@ -41,6 +41,36 @@ only = ['ranger_alpha']
 name = "Krak grenades"
 cost = 40
 
+[weapons.misc.clip_harness]
+name = "Clip harness"
+cost = 10
+
+[weapons.misc.photo-visor]
+name = "Photo-visor"
+cost = 15
+
+[weapons.misc.red-dot_laser_sight]
+name = "Red-dot laser sight"
+cost = 20
+only = ['galvanic_rifle', 'radium_carbine', 'transuranic_arquebus']
+
+[weapons.misc.telescopic_sight]
+name = "Telescopic Sight"
+cost = 20
+only = ['galvanic_rifle', 'transuranic_arquebus']
+
+[weapons.misc.enhanced_data-tether]
+name = "Enhanced data-tether"
+cost = 35
+
+[weapons.misc.omnispex]
+name = "Omnispex"
+cost = 40
+
+[weapons.misc.weapon_reload]
+name = "Weapon reload"
+cost = 0 # todo, half cost of weapon
+
 [weapons.hand-to-hand.combat_blade]
 name = "Combat blade (knife)"
 cost = 5
@@ -79,3 +109,15 @@ cost = 35
 [weapons.basic.radium_carbine]
 name = "Radium carbine"
 cost = 35
+
+[weapons.special.plasma_caliver]
+name = "Plasma caliver"
+cost = 75
+
+[weapons.special.arc_rifle]
+name = "Arc Rifle"
+cost = 40
+
+[weapons.special.transuranic_arquebus]
+name = "Transuranic arquebus"
+cost = 180
