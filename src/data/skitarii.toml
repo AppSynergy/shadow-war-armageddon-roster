@@ -28,30 +28,54 @@ desc = "Skitarii Rangers are the mainstay of a Skitarii Ranger kill team. They a
 wargear_desc = "Wargear: All Skitarii Rangers are equipped with a combat blade and Skitarii war plate."
 equip_desc = "In addition, a Skitarii Ranger can be armed with items chosen from the Skitarii Basic Weapons, Grenades and Miscellaneous Equipment lists."
 
+[weapons.grenades.frag_grenades]
+name = "Frag grenades"
+cost = 25
+
+[weapons.grenades.melta_bombs]
+name = "Melta bombs"
+cost = 30
+only = ['ranger_alpha']
+
+[weapons.grenades.krak_grenades]
+name = "Krak grenades"
+cost = 40
+
+[weapons.hand-to-hand.combat_blade]
+name = "Combat blade (knife)"
+cost = 5
+
+[weapons.hand-to-hand.taser-goad]
+name = "Taser goad"
+cost = 45
+
+[weapons.hand-to-hand.arc_maul]
+name = "Arc maul"
+cost = 50
+only = ['ranger_alpha']
+
+[weapons.hand-to-hand.power_sword]
+name = "Power sword"
+cost = 50
+only = ['ranger_alpha']
 
 [weapons.pistols.radium_pistol]
-name = "Radium Pistol"
+name = "Radium pistol"
 cost = 20
 
 [weapons.pistols.arc_pistol]
-name = "Arc Pistol"
+name = "Arc pistol"
 cost = 30
 
 [weapons.pistols.phosphor_blast_pistol]
-name = "Phosphor Blast Pistol"
+name = "Phosphor blast pistol"
 cost = 40
+only = ['ranger_alpha']
 
 [weapons.basic.galvanic_rifle]
-name = "Galvanic Rifle"
+name = "Galvanic rifle"
 cost = 35
-desc = "The galvanic servitor-bullets inside this weapon are
-incredibly advanced. When such a bullet strikes home, it
-causes all the potential energy of the target to burn out in a
-killing blast of electric force."
 
 [weapons.basic.radium_carbine]
-name = "Radium Carbine"
+name = "Radium carbine"
 cost = 35
-desc = "The bullets fired by a radium carbine are so laced with
-radiation that even a minor wound can slay its victim within
-a matter of days."
