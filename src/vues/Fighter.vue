@@ -9,7 +9,7 @@
           <em>{{ fighter.cost }} points</em>
         </h4>
 
-        <label for="chooseNewWeapon">Add weapons:</label>
+        <label for="chooseNewWeapon">Add weapons / equipment:</label>
         <select class="" name="chooseNewWeapon"
           v-model="chooseNewWeapon">
           <option v-for="weapon, key in weaponsAvailable"

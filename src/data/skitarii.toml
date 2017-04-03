@@ -13,9 +13,6 @@ cost = 150
 stats = "4 3 4 3 3 2 4 2 9"
 wargear = ["combat_blade", "skitarii_war_plate"]
 equip = ["hand-to-hand", "pistols", "basic", "grenades", "misc"]
-desc = "Every Skitarii Ranger team is led by an Alpha, one blessed enough that their modifications now make up more of their body than flesh does."
-wargear_desc = "Wargear: A Skitarii Ranger Alpha is equipped with a combat blade and Skitarii war plate."
-equip_desc = "In addition, a Skitarii Ranger Alpha can be armed with items chosen from the Skitarii Hand-to-Hand, Pistols, Basic Weapons, Grenades and Miscellaneous Equipment lists."
 
 [fighters.ranger]
 name = "Skitarii Ranger"
@@ -24,9 +21,23 @@ cost = 80
 stats = "4 3 4 3 3 1 3 1 8"
 wargear = ["combat_blade", "skitarii_war_plate"]
 equip = ["basic", "grenades", "misc"]
-desc = "Skitarii Rangers are the mainstay of a Skitarii Ranger kill team. They are highly modified and methodical fighters."
-wargear_desc = "Wargear: All Skitarii Rangers are equipped with a combat blade and Skitarii war plate."
-equip_desc = "In addition, a Skitarii Ranger can be armed with items chosen from the Skitarii Basic Weapons, Grenades and Miscellaneous Equipment lists."
+
+[fighters.fresh-forged]
+name = "Skitarii Fresh-forged"
+role = "New Recruit"
+cost = 65
+stats = "4 3 3 3 3 1 3 1 8"
+wargear = ["combat_blade", "skitarii_war_plate"]
+equip = ["basic", "grenades", "misc"]
+
+[fighters.specialist]
+name = "Skitarii Specialist"
+role = "Specialist"
+cost = 90
+stats = "4 3 4 3 3 1 3 1 8"
+wargear = ["combat_blade", "skitarii_war_plate"]
+equip = ["pistols", "special", "grenades", "misc"]
+
 
 [weapons.grenades.frag_grenades]
 name = "Frag grenades"
