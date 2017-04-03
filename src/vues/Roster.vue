@@ -1,7 +1,7 @@
 <template>
   <div class="roster-vue">
 
-    <div class="card px-4 mt-4">
+    <div class="card px-4 mt-4 roster-background">
       <h2 class="my-4">{{ faction.name }}</h2>
       <ul class="list-group mb-4">
         <li v-for="fighter in faction.fighters"
@@ -15,10 +15,10 @@
       </ul>
     </div>
 
-    <div class="card px-4 mt-4">
+    <div class="card px-4 mt-4 roster-background">
       <h2 class="my-4">Roster
         - <em>{{ totalPointsCost }} points</em></h2>
-      <div class="card mb-4 p-2"
+      <div class="card mb-4 px-2 py-4"
         v-for="fighter, index in chosenFighters">
         <fighter
           :index="index"
@@ -59,3 +59,8 @@
   export default Roster
 
 </script>
+
+<style lang="sass">
+  .roster-background
+    background-color: #ddd
+</style>

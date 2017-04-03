@@ -7,21 +7,23 @@
       <i class="fa fa-times"></i>
     </button>
 
-    <div class="row mb-4">
+    <div class="row mb-4 mx-1 no-gutters">
 
       <div class="col col-5">
         <h4>
           {{ fighter.name }} -
           <em>{{ fighter.cost }} points</em>
         </h4>
-        <label for="chooseNewWeapon">Add weapons / equipment:</label>
-        <select class="form-control" name="chooseNewWeapon"
-          v-on:change="chooseNewWeapon"
-          v-model="newWeapon">
-          <option v-for="weapon, key in weaponsAvailable"
-            :value="weapon"
-          >{{ weapon.name }}</option>
-        </select>
+        <div class="form-inline">
+          <label for="chooseNewWeapon">Add weapons / equipment:</label>
+          <select class="form-control ml-2" name="chooseNewWeapon"
+            v-on:change="chooseNewWeapon"
+            v-model="newWeapon">
+            <option v-for="weapon, key in weaponsAvailable"
+              :value="weapon"
+            >{{ weapon.name }}</option>
+          </select>
+        </div>
       </div>
 
       <div class="col col-6">
