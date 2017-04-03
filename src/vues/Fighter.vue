@@ -2,29 +2,33 @@
   <div class="fighter-vue">
     <div class="row">
 
-      <div class="col col-2">
-        <h4>{{ fighter.name }}</h4>
+      <div class="col col-4">
+
+        <h4>
+          {{ fighter.name }} -
+          <em>{{ fighter.cost }} points</em>
+        </h4>
 
         <label for="chooseNewWeapon">Add weapons:</label>
         <select class="" name="chooseNewWeapon"
           v-model="chooseNewWeapon">
-          <option>-- choose one --</option>
           <option v-for="weapon, key in weaponsAvailable"
             :value="weapon"
           >{{ weapon.name }}</option>
         </select>
-      </div>
 
-      <div class="col col-2">
-        <em>{{ fighter.cost }} points</em>
-        <div v-for="weapon, index in weapons">
-          <span title="weapon.desc">
-            {{ weapon.name }}
-          </span>
-          <em>{{ weapon.cost }} points</em>
-          <button class="btn btn-danger"
-            v-on:click="removeWeapon(index)">Remove</button>
-        </div>
+        <ul class="list-group">
+          <li class="list-group-item justify-content-between"
+            v-for="weapon, index in weapons">
+            <span title="weapon.desc">
+              {{ weapon.name }}
+            </span>
+            <em>{{ weapon.cost }} points</em>
+            <button class="btn btn-danger p-1"
+              v-on:click="removeWeapon(index)">Remove</button>
+          </li>
+        </ul>
+
       </div>
 
       <div class="col col-6">

@@ -59,7 +59,9 @@
         @chosenFighters.splice index, 1
 
       weaponsAvailable: (fighter) ->
-        Faction.weapons.basic
+        _.filter Faction.weapons, (_, group) ->
+          fighter.equip.includes group
+        .reduce ((xs,x) -> _.extend xs, x ), {}
 
   export default Roster
 

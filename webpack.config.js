@@ -8,6 +8,11 @@ module.exports = {
     publicPath: '/dist/',
     filename: 'build.js'
   },
+  plugins: [
+    new webpack.ProvidePlugin({
+      _: 'underscore'
+    })
+  ],
   module: {
     rules: [
       {
