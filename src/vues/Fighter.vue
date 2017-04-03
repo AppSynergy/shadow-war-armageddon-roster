@@ -6,7 +6,7 @@
 
         <h4>
           {{ fighter.name }} -
-          <em>{{ fighter.cost }} points</em>
+          <em>{{ totalPointsCost }} points</em>
         </h4>
 
         <label for="chooseNewWeapon">Add weapons / equipment:</label>
@@ -58,6 +58,13 @@
     data: () ->
       chooseNewWeapon: null
       weapons: []
+
+    computed:
+      totalPointsCost: () ->
+        weaponsCost = @weapons.reduce ((xs, x) -> xs + x.cost), 0
+        totalCost = @fighter.cost + weaponsCost
+        #@$emit 'totalPointsCost', totalCost
+        return totalCost
 
     watch:
       chooseNewWeapon: (weapon) ->
