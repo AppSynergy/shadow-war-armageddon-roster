@@ -45,7 +45,7 @@
       factionName: () -> Faction.name
       availableFighters: () -> Faction.fighters
       totalPointsCost: () ->
-        @chosenFighters.reduce ((acc,x) -> acc + x.cost), 0
+        22 #todo
 
     data: () ->
       chosenFighters: []
@@ -53,6 +53,7 @@
     methods:
 
       addFighter: (fighter) ->
+        #@$store.dispatch 'addFighter', fighter
         @chosenFighters.push fighter
 
       removeFighter: (index) ->
