@@ -38,6 +38,11 @@ stats = "4 3 4 3 3 1 3 1 8"
 wargear = ["combat_blade", "skitarii_war_plate"]
 equip = ["pistols", "special", "grenades", "misc"]
 
+[wargear.combat_blade]
+name = "Combat blade"
+
+[wargear.skitarii_war_plate]
+name = "Skitarii war plate"
 
 [weapons.grenades.frag_grenades]
 name = "Frag grenades"

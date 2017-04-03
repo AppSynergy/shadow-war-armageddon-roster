@@ -47,7 +47,9 @@
     methods:
 
       addFighter: (fighter) ->
-        @$store.commit 'addFighter', _.clone(fighter)
+        @$store.commit 'addFighter',
+          fighter: _.clone(fighter)
+          wargear: Faction.wargear
 
       weaponsAvailable: (fighter) ->
         _.filter Faction.weapons, (_, group) ->

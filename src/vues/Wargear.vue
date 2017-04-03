@@ -5,7 +5,7 @@
       <div class="col col-6 col-md-4 col-lg-3"
         v-for="item in wargear">
         <div class="card">
-          <h5>{{ item }}</h5>
+          <h5>{{ item.name }}</h5>
         </div>
       </div>
 
