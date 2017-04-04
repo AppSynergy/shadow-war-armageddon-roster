@@ -8,12 +8,21 @@
     </button>
 
     <div class="row mx-1 no-gutters">
-
       <div class="col col-11 col-md-5 pr-4">
         <h4>
           {{ fighter.name }} -
           <em>{{ fighter.cost }} points</em>
         </h4>
+        <span>{{ fighter.role }}</span>
+      </div>
+      <div class="col col-12 col-md-6">
+        <fighter-stats :statstring="fighter.stats">
+        </fighter-stats>
+      </div>
+    </div>
+
+    <div class="row mx-1 no-gutters">
+      <div class="col col-12 col-md-6">
         <select class="form-control"
           v-on:change="chooseNewWeapon"
           v-model="newWeapon">
@@ -24,12 +33,6 @@
           >{{ weapon.name }}</option>
         </select>
       </div>
-
-      <div class="col col-12 col-md-5">
-        <fighter-stats :statstring="fighter.stats">
-        </fighter-stats>
-      </div>
-
     </div>
 
     <fighter-wargear

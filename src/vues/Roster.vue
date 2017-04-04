@@ -9,7 +9,7 @@
           <span>{{ fighter.name }} -
             <em>{{ fighter.cost }} points</em>
           </span>
-          <button class="btn btn-primary"
+          <button class="btn btn-success"
             v-on:click="addFighter(fighter)">Add</button>
         </li>
       </ul>
@@ -18,7 +18,7 @@
     <div class="card px-4 mt-4 roster-background">
       <h2 class="my-4">Roster
         - <em>{{ totalPointsCost }} points</em></h2>
-      <div class="card mb-4 px-2 py-4"
+      <div class="card mb-4 px-2 py-4 fighter-background"
         v-for="fighter, index in chosenFighters">
         <fighter
           :index="index"
@@ -59,10 +59,3 @@
   export default Roster
 
 </script>
-
-<style lang="sass">
-  .roster-background
-    background-color: #f5f5f5
-  .wargear-vue .card
-    background-color: #eee
-</style>

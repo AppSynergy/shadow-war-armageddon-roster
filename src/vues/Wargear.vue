@@ -2,14 +2,14 @@
   <div class="wargear-vue">
     <div class="row my-2 no-gutters">
 
-      <div class="col col-12 col-md-6"
+      <div class="col col-12 col-md-6 col-xl-4"
         v-for="item in wargear">
         <div class="card m-1 p-1">
           <h5>{{ item.name }}</h5>
         </div>
       </div>
 
-      <div class="col col-12 col-md-6"
+      <div class="col col-12 col-md-6 col-xl-4"
         v-for="weapon, index in weapons">
         <div class="card m-1 p-1">
           <h5>
@@ -46,3 +46,10 @@
   export default Wargear
 
 </script>
+
+<style lang="sass">
+  .wargear-vue .card
+    text-align: center
+    h5
+      margin: 0.25em 0
+</style>
