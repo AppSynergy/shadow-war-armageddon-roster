@@ -22,16 +22,32 @@
 </script>
 
 <style lang="sass">
+
+
+  $color1: rgba(132, 140, 142, 1)
+  $color2: rgba(67, 80, 88, 1)
+  $color3: rgba(220, 247, 99, 1)
+  $color4: rgba(191, 183, 182, 1)
+  $color5: rgba(241, 242, 238, 1)
+  $color6: rgba(224, 82, 99, 1)
+
+  $brand-info: $color2
+  $brand-primary: $color1
+  $brand-success: $color1
+  $brand-danger: $color6
+
   @import '../node_modules/bootstrap/scss/bootstrap.scss'
   @import url('https://fonts.googleapis.com/css?family=Montserrat|Open+Sans')
   html body
     &, select
       font-family: 'Montserrat'
-    background-color: #E4F4F2
+    background-color: $color5
     h1.site-name
       font-size: 120%
     h4
       font-size: 110%
+    button
+      cursor: pointer
 
   .stats-vue
     td, th
