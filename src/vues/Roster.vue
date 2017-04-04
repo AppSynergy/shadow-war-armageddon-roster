@@ -51,11 +51,18 @@
       teamName: ""
 
     computed:
-      faction: () -> Faction
+      faction: () ->
+        Faction.fighters = @mapKeys Faction.fighters
+        Faction
       chosenFighters: () -> @$store.getters.getFighters
       totalPointsCost: () -> @$store.getters.getTotalPointsCost
 
     methods:
+
+      mapKeys: (collection) ->
+        _.map collection, (x, key) ->
+          x.key = key
+          x
 
       nameTeam: () ->
         @$store.commit 'nameTeam', @teamName
@@ -66,9 +73,34 @@
           wargear: Faction.wargear
 
       weaponsAvailable: (fighter) ->
-        _.filter Faction.weapons, (_, group) ->
-          fighter.equip.includes group
+
+        # include weapons from groups the fighter can use
+        weaponList = _.filter Faction.weapons, (weapons, group) ->
+            fighter.equip.includes group
+        # collect into one list
         .reduce ((xs,x) -> _.extend xs, x ), {}
+
+        # add keys
+        weaponList = _.map weaponList, (x, key) ->
+          x.key = key
+          x
+
+        _.reject weaponList, (weapon, key) ->
+
+          # reject stuff that can only be used by a different team member
+          only_fighter = _.every [
+            _.has weapon, 'only_fighter'
+            not _.contains weapon.only_fighter, fighter.key
+          ]
+
+          # reject stuff where you need another item first
+          only_weapon = _.every [
+            _.has weapon, 'only_weapon'
+            _.isEmpty _.intersection(weapon.only_weapon, _.pluck(fighter.weapons, 'key'))
+          ]
+
+          _.any [only_fighter, only_weapon]
+
 
   export default Roster
 

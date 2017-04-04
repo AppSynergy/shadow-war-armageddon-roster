@@ -51,7 +51,7 @@ cost = 25
 [weapons.grenades.melta_bombs]
 name = "Melta bombs"
 cost = 30
-only = ['ranger_alpha']
+only_fighter = ['ranger_alpha']
 
 [weapons.grenades.krak_grenades]
 name = "Krak grenades"
@@ -68,12 +68,12 @@ cost = 15
 [weapons.misc.red-dot_laser_sight]
 name = "Red-dot laser sight"
 cost = 20
-only = ['galvanic_rifle', 'radium_carbine', 'transuranic_arquebus']
+only_weapon = ['galvanic_rifle', 'radium_carbine', 'transuranic_arquebus']
 
 [weapons.misc.telescopic_sight]
 name = "Telescopic Sight"
 cost = 20
-only = ['galvanic_rifle', 'transuranic_arquebus']
+only_weapon = ['galvanic_rifle', 'transuranic_arquebus']
 
 [weapons.misc.enhanced_data-tether]
 name = "Enhanced data-tether"
@@ -98,12 +98,12 @@ cost = 45
 [weapons.hand-to-hand.arc_maul]
 name = "Arc maul"
 cost = 50
-only = ['ranger_alpha']
+only_fighter = ['ranger_alpha']
 
 [weapons.hand-to-hand.power_sword]
 name = "Power sword"
 cost = 50
-only = ['ranger_alpha']
+only_fighter = ['ranger_alpha']
 
 [weapons.pistols.radium_pistol]
 name = "Radium pistol"
@@ -116,7 +116,7 @@ cost = 30
 [weapons.pistols.phosphor_blast_pistol]
 name = "Phosphor blast pistol"
 cost = 40
-only = ['ranger_alpha']
+only_fighter = ['ranger_alpha']
 
 [weapons.basic.galvanic_rifle]
 name = "Galvanic rifle"
