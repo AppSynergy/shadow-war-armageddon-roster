@@ -3,11 +3,11 @@
 
     <div class="card px-4 mt-4 roster-background">
       <h2 class="my-4">{{ faction.name }}</h2>
-      <ul class="list-group mb-4">
+      <ul class="nav mb-4">
         <li v-for="fighter in faction.fighters"
-          class="list-group-item justify-content-between">
+          class="nav-item justify-content-between">
           <span>{{ fighter.name }} -
-            <em>{{ fighter.cost }} points</em>
+            <em class="badge badge-info">{{ fighter.cost }} points</em>
           </span>
           <button class="btn btn-success"
             v-on:click="addFighter(fighter)">Add</button>
@@ -16,8 +16,7 @@
     </div>
 
     <div class="card px-4 mt-4 roster-background">
-      <h2 class="my-4">Roster
-        - <em>{{ totalPointsCost }} points</em></h2>
+      <h2 class="my-4">{{ totalPointsCost }} points</h2>
       <div class="card mb-4 px-2 py-4 fighter-background"
         v-for="fighter, index in chosenFighters">
         <fighter

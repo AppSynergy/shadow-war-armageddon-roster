@@ -11,7 +11,7 @@
       <div class="col col-11 col-md-5 pr-4">
         <h4>
           {{ fighter.name }} -
-          <em>{{ fighter.cost }} points</em>
+          <em class="badge badge-info">{{ fighter.cost }} points</em>
         </h4>
         <span>{{ fighter.role }}</span>
       </div>

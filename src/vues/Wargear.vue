@@ -14,7 +14,7 @@
         <div class="card m-1 p-1">
           <h5>
             {{ weapon.name }} -
-            <em>{{ weapon.cost }} points</em>
+            <em class="badge badge-info">{{ weapon.cost }} points</em>
           </h5>
 
           <button class="btn btn-danger p-1 remove-button"
