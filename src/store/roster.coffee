@@ -6,15 +6,24 @@ Vue.use(Vuex)
 RosterStore =
 
   state:
+    teamName: ""
     fighters: []
 
   mutations:
 
+    nameTeam: (state, name) ->
+      state.teamName = name
+
     addFighter: (state, obj) ->
       fighter = obj.fighter
+      fighter.realName = ""
       fighter.weapons = []
       fighter.wargear = fighter.wargear.map (x) -> obj.wargear[x]
       state.fighters.push fighter
+
+    nameFighter: (state, obj) ->
+      fighter = state.fighters[obj.index]
+      fighter.name = obj.name
 
     removeFighter: (state, index) ->
       state.fighters.splice index, 1

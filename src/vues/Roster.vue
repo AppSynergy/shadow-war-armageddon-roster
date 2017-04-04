@@ -16,7 +16,16 @@
     </div>
 
     <div class="card px-4 mt-4 roster-background">
-      <h2 class="my-4">{{ totalPointsCost }} points</h2>
+      <div class="row">
+        <div class="col col-12 col-md-6">
+          <input class="form-control my-4" type="text" v-model="teamName"
+            v-on:change="nameTeam"
+            placeholder="Name your kill-team">
+        </div>
+        <div class="col col-12 col-md-6">
+          <h2 class="my-4">{{ totalPointsCost }} points / 0 promethium</h2>
+        </div>
+      </div>
       <div class="card mb-4 px-2 py-4 fighter-background"
         v-for="fighter, index in chosenFighters">
         <fighter
@@ -38,12 +47,18 @@
 
     components: { Fighter }
 
+    data: () ->
+      teamName: ""
+
     computed:
       faction: () -> Faction
       chosenFighters: () -> @$store.getters.getFighters
       totalPointsCost: () -> @$store.getters.getTotalPointsCost
 
     methods:
+
+      nameTeam: () ->
+        @$store.commit 'nameTeam', @teamName
 
       addFighter: (fighter) ->
         @$store.commit 'addFighter',

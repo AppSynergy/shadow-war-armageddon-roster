@@ -21,18 +21,20 @@
       </div>
     </div>
 
-    <div class="row mx-1 no-gutters">
-      <div class="col col-12 col-md-6">
-        <select class="form-control"
-          v-on:change="chooseNewWeapon"
-          v-model="newWeapon">
-          <option value="null" selected disabled>
-            Add weapons / equipment</option>
-          <option v-for="weapon, key in weaponsAvailable"
-            :value="weapon"
-          >{{ weapon.name }}</option>
-        </select>
-      </div>
+    <div class="form-inline">
+      <input class="form-control mr-2" type="text"
+        placeholder="Name me!"
+        v-on:change="nameFighter"
+        v-model="fighter.realName">
+      <select class="form-control"
+        v-on:change="chooseNewWeapon"
+        v-model="newWeapon">
+        <option value="null" selected disabled>
+          Add weapons / equipment</option>
+        <option v-for="weapon, key in weaponsAvailable"
+          :value="weapon"
+        >{{ weapon.name }}</option>
+      </select>
     </div>
 
     <fighter-wargear
@@ -69,6 +71,11 @@
          weapon: @newWeapon
          index: @index
         @newWeapon = null
+
+      nameFighter: (name) ->
+        @$store.commit "nameFighter",
+          name: @fighter.name
+          index: @index
 
       removeFighter: () ->
         @$store.commit 'removeFighter', @index
