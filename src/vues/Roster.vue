@@ -1,21 +1,20 @@
 <template>
-  <div class="roster-vue">
+  <div class="roster-vue mb-4">
 
-    <div class="card px-4 mt-4 roster-background">
-      <h2 class="my-4">{{ faction.name }}</h2>
-      <ul class="nav mb-4">
+    <div class="card px-4 mt-4 bg-faded">
+      <h2 class="my-4 text-center">{{ faction.name }}</h2>
+      <ul class="nav mb-4 justify-content-between">
         <li v-for="fighter in faction.fighters"
-          class="nav-item justify-content-between">
-          <span>{{ fighter.name }} -
-            <em class="badge badge-info">{{ fighter.cost }} points</em>
-          </span>
+          class="nav-item">
+          <h4>{{ fighter.name }}</h4>
+          <em class="badge badge-info">{{ fighter.cost }} points</em>
           <button class="btn btn-success"
             v-on:click="addFighter(fighter)">Add</button>
         </li>
       </ul>
     </div>
 
-    <div class="card px-4 mt-4 roster-background">
+    <div class="card px-4 mt-4 bg-faded">
       <div class="row">
         <div class="col col-12 col-md-6">
           <input class="form-control my-4" type="text" v-model="teamName"
@@ -23,7 +22,7 @@
             placeholder="Name your kill-team">
         </div>
         <div class="col col-12 col-md-6">
-          <h2 class="my-4">{{ totalPointsCost }} points / 0 promethium</h2>
+          <h2 class="my-4">{{ totalPointsCost }} points</h2>
         </div>
       </div>
       <div class="card mb-4 px-2 py-4 fighter-background"

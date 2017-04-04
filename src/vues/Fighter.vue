@@ -7,41 +7,40 @@
       <i class="fa fa-times"></i>
     </button>
 
-    <div class="row mx-1 no-gutters">
-      <div class="col col-11 col-md-5 pr-4">
-        <h4>
-          {{ fighter.name }} -
-          <em class="badge badge-info">{{ fighter.cost }} points</em>
-        </h4>
-        <span>{{ fighter.role }}</span>
+    <div class="row">
+      <div class="col col-12 col-md-6 col-lg-3">
+        <h4>{{ fighter.name }}</h4>
+        <div>{{ fighter.role}}</div>
+        <input class="form-control mr-2" type="text"
+          placeholder="Name me!"
+          v-on:change="nameFighter"
+          v-model="fighter.realName">
       </div>
-      <div class="col col-12 col-md-6">
+
+      <div class="col col-12 col-md-6 col-lg-4">
+        <select class="form-control"
+          v-on:change="chooseNewWeapon"
+          v-model="newWeapon">
+          <option value="null" selected disabled>
+            Add weapons / equipment</option>
+          <option v-for="weapon, key in weaponsAvailable"
+            :value="weapon"
+          >{{ weapon.name }}</option>
+        </select>
+        <fighter-wargear
+          :fighterIndex="index"
+          :wargear="fighter.wargear"
+          :weapons="fighter.weapons"
+        ></fighter-wargear>
+      </div>
+      <div class="col col-12 col-md-6 col-lg-3">
         <fighter-stats :statstring="fighter.stats">
         </fighter-stats>
       </div>
+      <div class="col col-12 col-md-6 col-lg-2">
+        <em class="badge badge-info">{{ fighter.cost }} points</em>
+      </div>
     </div>
-
-    <div class="form-inline">
-      <input class="form-control mr-2" type="text"
-        placeholder="Name me!"
-        v-on:change="nameFighter"
-        v-model="fighter.realName">
-      <select class="form-control"
-        v-on:change="chooseNewWeapon"
-        v-model="newWeapon">
-        <option value="null" selected disabled>
-          Add weapons / equipment</option>
-        <option v-for="weapon, key in weaponsAvailable"
-          :value="weapon"
-        >{{ weapon.name }}</option>
-      </select>
-    </div>
-
-    <fighter-wargear
-      :fighterIndex="index"
-      :wargear="fighter.wargear"
-      :weapons="fighter.weapons"
-    ></fighter-wargear>
 
   </div>
 </template>

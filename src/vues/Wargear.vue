@@ -1,31 +1,24 @@
 <template>
   <div class="wargear-vue">
-    <div class="row my-2 no-gutters">
 
-      <div class="col col-12 col-md-6 col-xl-4"
-        v-for="item in wargear">
-        <div class="card m-1 p-1">
-          <h5>{{ item.name }}</h5>
-        </div>
-      </div>
-
-      <div class="col col-12 col-md-6 col-xl-4"
-        v-for="weapon, index in weapons">
-        <div class="card m-1 p-1">
-          <h5>
-            {{ weapon.name }} -
-            <em class="badge badge-info">{{ weapon.cost }} points</em>
-          </h5>
-
-          <button class="btn btn-danger p-1 remove-button"
-            aria-label="Remove"
-            v-on:click="removeWeapon(weapon, index)">
-            <i class="fa fa-times"></i>
-          </button>
-        </div>
-      </div>
-
+    <div class="wargear-item"
+      v-for="item in wargear">
+      <span>{{ item.name }}</span>
     </div>
+
+    <div class="wargear-item"
+      v-for="weapon, index in weapons">
+      <span>
+        {{ weapon.name }} -
+        <em class="badge badge-info">{{ weapon.cost }} points</em>
+      </span>
+      <button class="btn btn-danger p-1 remove-button"
+        aria-label="Remove"
+        v-on:click="removeWeapon(weapon, index)">
+        <i class="fa fa-times"></i>
+      </button>
+    </div>
+
   </div>
 </template>
 
@@ -48,8 +41,6 @@
 </script>
 
 <style lang="sass">
-  .wargear-vue .card
-    text-align: center
-    h5
-      margin: 0.25em 0
+  .wargear-item
+    position: relative
 </style>
