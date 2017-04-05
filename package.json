@@ -6,7 +6,10 @@
   "private": true,
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --hot",
-    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
+    "build:webpack": "cross-env NODE_ENV=production webpack --progress --hide-modules",
+    "build:copy": "cp index.html build/ && cp -r dist/ build/",
+    "build:clean": "rm -rf build/ && mkdir build",
+    "build": "npm run build:webpack && npm run build:clean && npm run build:copy"
   },
   "dependencies": {
     "bootstrap": "^4.0.0-alpha.6",
