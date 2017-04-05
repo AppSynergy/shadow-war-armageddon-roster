@@ -86,26 +86,25 @@
           else false
 
       weaponsAvailable: (fighter) ->
-        # include weapons from groups the fighter can use
-        weaponList = _.filter Faction.weapons, (weapons, group) ->
-            fighter.equip.includes group
-        # collect into one list
-        .reduce ((xs,x) -> _.extend xs, x ), {}
-        # add keys
-        weaponList = @mapKeys weaponList
-        _.reject weaponList, (weapon, key) ->
-          # reject stuff that can only be used by a different team member
-          only_fighter = _.every [
-            _.has weapon, 'only_fighter'
-            not _.contains weapon.only_fighter, fighter.key
-          ]
-          # reject stuff where you need another item first
-          only_weapon = _.every [
-            _.has weapon, 'only_weapon'
-            _.isEmpty _.intersection(weapon.only_weapon, _.pluck(fighter.weapons, 'key'))
-          ]
-          _.any [only_fighter, only_weapon]
-
+        _.chain Faction.weapons
+          # include weapons from groups the fighter can use
+          .filter  (weapons, group) -> fighter.equip.includes group
+          # collect into one list
+          .reduce ((xs, x) -> _.extend xs, x ), {}
+          .tap @mapKeys
+          .reject (weapon, key) ->
+            # reject stuff that can only be used by a different team member
+            only_fighter = _.every [
+              _.has weapon, 'only_fighter'
+              not _.contains weapon.only_fighter, fighter.key
+            ]
+            # reject stuff where you need another item first
+            only_weapon = _.every [
+              _.has weapon, 'only_weapon'
+              _.isEmpty _.intersection(weapon.only_weapon, _.pluck(fighter.weapons, 'key'))
+            ]
+            _.any [only_fighter, only_weapon]
+          .value()
 
   export default Roster
 
