@@ -4,7 +4,10 @@
       <h1 class="site-name text-center text-uppercase mt-4 mb-0">
         Shadow War: Argameddon Rosters
       </h1>
-      <roster></roster>
+      <router-link to="/build/chaos">Chaos</router-link>
+      <router-link to="/build/skitarii">Skitarii</router-link>
+
+      <router-view></router-view>
     </div>
   </div>
 </template>
@@ -16,6 +19,10 @@
   App =
     name: 'app'
     components: { Roster }
+    created: () ->
+      @$router.addRoutes [
+        { path: '/build/:factionId', component: Roster, props: true }
+      ]
 
   export default App
 

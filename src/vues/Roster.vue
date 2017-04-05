@@ -46,17 +46,20 @@
 <script lang="coffee">
 
   import Fighter from './Fighter.vue'
-  import Faction from '../data/skitarii.toml'
 
   Roster =
+
+    props: ['factionId']
 
     components: { Fighter }
 
     data: () ->
+      chosenFaction: null
       teamName: ""
 
     computed:
       faction: () ->
+        Faction = require '../data/' + @factionId + '.toml'
         Faction.fighters = @mapKeys Faction.fighters
         Faction
       chosenFighters: () -> @$store.getters.getFighters
@@ -76,7 +79,7 @@
       addFighter: (fighter) ->
         @$store.commit 'addFighter',
           fighter: _.clone(fighter)
-          wargear: Faction.wargear
+          wargear: @faction.wargear
 
       cannotAddFighter: (fighter) ->
         roleCount = @$store.getters.getNumberFightersByRole(fighter.role)
@@ -86,7 +89,7 @@
           else false
 
       weaponsAvailable: (fighter) ->
-        _.chain Faction.weapons
+        _.chain @faction.weapons
           # include weapons from groups the fighter can use
           .filter  (weapons, group) -> fighter.equip.includes group
           # collect into one list

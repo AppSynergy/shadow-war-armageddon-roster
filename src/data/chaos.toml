@@ -1,0 +1,22 @@
+key = "chaos"
+name = "Chaos Space Marine Kill Team"
+
+[size]
+min = 3
+max = 12
+leader_max = 1
+specialist_max = 3
+
+[fighters.aspiring_champion]
+name = "Aspiring Champon"
+role = "Kill Team Leader"
+cost = 225
+stats = "4 4 4 4 4 1 4 2 9"
+wargear = ['combat_blade', 'power_armour']
+equip = ['hand-to-hand', 'pistols', 'basic', 'ammunition', 'grenades', 'misc']
+
+[wargear.combat_blade]
+name = "Combat blade"
+
+[wargear.power_armour]
+name = "Power armour"
