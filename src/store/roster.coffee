@@ -49,6 +49,11 @@ RosterStore =
     getTotalPointsCost: (state) ->
       state.fighters.reduce ((xs, x) -> xs + x.cost), 0
 
+    getTotalNumberFighters: (state) ->
+      state.fighters.length
+
+    getNumberFightersByRole: (state) -> (role) ->
+      state.fighters.filter((x) -> x.role == role).length
 
 store = new Vuex.Store RosterStore
 

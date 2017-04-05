@@ -4,6 +4,7 @@ name = "Skitarii Ranger Kill Team"
 [size]
 min = 3
 max = 10
+leader_max = 1
 specialist_max = 3
 
 [fighters.ranger_alpha]
