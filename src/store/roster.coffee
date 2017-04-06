@@ -11,6 +11,10 @@ RosterStore =
 
   mutations:
 
+    discardRoster: (state) ->
+      state.teamName = ""
+      state.fighters = []
+
     nameTeam: (state, name) ->
       state.teamName = name
 

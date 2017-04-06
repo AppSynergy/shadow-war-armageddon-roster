@@ -10,7 +10,11 @@ module.exports = {
   },
   plugins: [
     new webpack.ProvidePlugin({
-      _: 'underscore'
+      '_': 'underscore',
+      '$': 'jquery',
+      'jQuery': 'jquery',
+      'Tether': 'tether',
+      'window.Tether': 'tether'
     })
   ],
   module: {

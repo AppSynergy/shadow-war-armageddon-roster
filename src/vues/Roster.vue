@@ -40,22 +40,36 @@
       </div>
     </div>
 
+    <modal
+      :title="'Unsaved Roster'"
+      :body="'You have an unsaved roster, would you like to save it?'"
+      :id="modalId"
+      :options="modalOptions"
+      v-on:selectedOption="processModalOption"
+    ></modal>
   </div>
 </template>
 
 <script lang="coffee">
 
   import Fighter from './Fighter.vue'
+  import Modal from './Modal.vue'
 
   Roster =
 
     props: ['factionId']
 
-    components: { Fighter }
+    components: { Fighter, Modal }
 
     data: () ->
+      modalId: "unsavedRosterModal"
+      modalOptions: [
+        {name: 'discard', text: 'No thanks'}
+        {name: 'save', text: 'Yes please'}
+      ]
       chosenFaction: null
       teamName: ""
+      discardAction: () -> null
 
     computed:
       faction: () ->
@@ -70,7 +84,25 @@
       totalPointsCost: () -> @$store.getters.getTotalPointsCost
       totalNumberFighters: () -> @$store.getters.getTotalNumberFighters
 
+    beforeRouteLeave: (to, from, next) ->
+      if @totalNumberFighters == 0
+        next()
+      else
+        @discardAction = next
+        jQuery('#' + @modalId).modal('show')
+
     methods:
+
+      processModalOption: (option) ->
+        switch option.name
+          when 'save' then @saveRoster()
+          when 'discard'
+            jQuery('#' + @modalId).modal('hide')
+            @$store.commit 'discardRoster'
+            @discardAction()
+
+      saveRoster: () ->
+        console.log "do saving here"
 
       mapKeys: (collection) ->
         _.map collection, (x, key) ->

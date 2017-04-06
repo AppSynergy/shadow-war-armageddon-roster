@@ -2,8 +2,11 @@
   <div id="app">
     <div class="container">
       <h1 class="site-name text-center text-uppercase mt-4 mb-0">
-        <router-link to="/">Shadow War: Argameddon Rosters</router-link>
+        Shadow War: Argameddon Rosters
       </h1>
+      <span class="float-right">
+        <router-link to="/">Home</router-link>
+      </span>
       <router-view></router-view>
     </div>
   </div>
@@ -19,7 +22,7 @@
     components: { Roster }
     created: () ->
       @$router.addRoutes [
-        { path: '/', component: Home }
+        { path: '/', component: Home, name: 'home' }
         { path: '/build/:factionId', component: Roster, props: true }
       ]
 
