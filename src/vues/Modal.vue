@@ -29,7 +29,6 @@
 
     methods:
       selectOption: (option) ->
-        console.log option
         @$emit 'selectedOption', option
 
   export default Modal

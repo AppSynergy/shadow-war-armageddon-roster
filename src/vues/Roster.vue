@@ -89,20 +89,26 @@
         next()
       else
         @discardAction = next
-        jQuery('#' + @modalId).modal('show')
+        jQuery('#' + @modalId).modal 'show'
+
+    localStorage:
+      rosters:
+        type: Array
+        default: []
 
     methods:
 
       processModalOption: (option) ->
-        switch option.name
-          when 'save' then @saveRoster()
-          when 'discard'
-            jQuery('#' + @modalId).modal('hide')
-            @$store.commit 'discardRoster'
-            @discardAction()
+        if option.name == 'save' then @saveRoster()
+        jQuery('#' + @modalId).modal 'hide'
+        @$store.commit 'discardRoster'
+        @discardAction()
 
       saveRoster: () ->
-        console.log "do saving here"
+        rosters = @$localStorage.get 'rosters'
+        rosters.push
+          fighters: @chosenFighters
+        @$localStorage.set 'rosters', rosters
 
       mapKeys: (collection) ->
         _.map collection, (x, key) ->
