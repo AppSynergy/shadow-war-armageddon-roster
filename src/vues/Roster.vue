@@ -4,7 +4,7 @@
     <div class="card px-4 mt-4 bg-faded">
       <h2 class="my-4 text-center">{{ faction.name }}</h2>
       <ul class="nav mb-4 justify-content-between">
-        <li v-for="fighter in faction.fighters"
+        <li v-for="fighter in faction.fighters" v-if="faction"
           class="nav-item">
           <h4>{{ fighter.name }}</h4>
           <em class="badge badge-info">{{ fighter.cost }} points</em>
@@ -23,7 +23,7 @@
             placeholder="Name your kill-team">
         </div>
         <div class="col col-12 col-md-6">
-          <h2 class="my-4">
+          <h2 class="my-4" v-if="faction">
             {{ totalPointsCost }} points
             <span class="float-right">
               {{ totalNumberFighters }} / {{ faction.size.max }} models
@@ -59,9 +59,13 @@
 
     computed:
       faction: () ->
-        Faction = require '../data/' + @factionId + '.toml'
-        Faction.fighters = @mapKeys Faction.fighters
-        Faction
+        try
+          Faction = require '../data/' + @factionId + '.toml'
+          Faction.fighters = @mapKeys Faction.fighters
+          Faction
+        catch error
+          false
+
       chosenFighters: () -> @$store.getters.getFighters
       totalPointsCost: () -> @$store.getters.getTotalPointsCost
       totalNumberFighters: () -> @$store.getters.getTotalNumberFighters

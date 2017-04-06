@@ -2,11 +2,8 @@
   <div id="app">
     <div class="container">
       <h1 class="site-name text-center text-uppercase mt-4 mb-0">
-        Shadow War: Argameddon Rosters
+        <router-link to="/">Shadow War: Argameddon Rosters</router-link>
       </h1>
-      <router-link to="/build/chaos">Chaos</router-link>
-      <router-link to="/build/skitarii">Skitarii</router-link>
-
       <router-view></router-view>
     </div>
   </div>
@@ -14,6 +11,7 @@
 
 <script lang="coffee">
 
+  import Home from './vues/Home.vue'
   import Roster from './vues/Roster.vue'
 
   App =
@@ -21,6 +19,7 @@
     components: { Roster }
     created: () ->
       @$router.addRoutes [
+        { path: '/', component: Home }
         { path: '/build/:factionId', component: Roster, props: true }
       ]
 
