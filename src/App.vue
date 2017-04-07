@@ -60,4 +60,8 @@
       width: 10%
       background-color: white
 
+  .faction-card
+    height: 6em
+    border: 4px solid #702222
+
 </style>

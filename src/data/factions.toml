@@ -4,5 +4,26 @@ name = "Skitarii"
 [chaos]
 name = "Chaos"
 
-[eldar]
-name = "Eldar (todo)"
+[dark_eldar]
+name = "Dark Eldar"
+
+[craftworlds]
+name = "Craftworlds"
+
+[harlequins]
+name = "Harlequins"
+
+[grey_knights]
+name = "Grey Knights"
+
+[necrons]
+name = "Necrons"
+
+[tau_empire]
+name = "Tau Empire"
+
+[tyranids]
+name = "Tyranids"
+
+[genestealer_cults]
+name = "Genestealer Cults"
