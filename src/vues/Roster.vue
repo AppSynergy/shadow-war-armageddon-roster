@@ -2,6 +2,14 @@
   <div class="roster-vue mb-4">
 
     <div class="card px-4 mt-4 bg-faded">
+
+      <div class="card-header">
+        <span class="float-right">
+          <router-link to="/">Home</router-link>
+          <button class="btn" v-on:click="saveRoster()">Save</button>
+        </span>
+      </div>
+
       <h2 class="my-4 text-center">{{ faction.name }}</h2>
       <ul class="nav mb-4 justify-content-between">
         <li v-for="fighter in faction.fighters" v-if="faction"
@@ -62,16 +70,17 @@
     components: { Fighter, Modal }
 
     data: () ->
+      teamName: ""
       modalId: "unsavedRosterModal"
       modalOptions: [
         {name: 'discard', text: 'No thanks'}
         {name: 'save', text: 'Yes please'}
       ]
       chosenFaction: null
-      teamName: ""
       discardAction: () -> null
 
     computed:
+
       faction: () ->
         try
           Faction = require '../data/' + @factionId + '.toml'
@@ -83,6 +92,9 @@
       chosenFighters: () -> @$store.getters.getFighters
       totalPointsCost: () -> @$store.getters.getTotalPointsCost
       totalNumberFighters: () -> @$store.getters.getTotalNumberFighters
+
+    mounted: () ->
+      @teamName = @$store.getters.getTeamName
 
     beforeRouteLeave: (to, from, next) ->
       if @totalNumberFighters == 0
@@ -106,8 +118,15 @@
 
       saveRoster: () ->
         rosters = @$localStorage.get 'rosters'
-        rosters.push
+        updateIndex = _.findIndex rosters, (x) => x.teamName == @teamName
+        rosterData =
           fighters: @chosenFighters
+          factionId: @factionId
+          teamName: @teamName
+        if updateIndex >= 0
+          rosters[updateIndex] = rosterData
+        else
+          rosters.push rosterData
         @$localStorage.set 'rosters', rosters
 
       mapKeys: (collection) ->

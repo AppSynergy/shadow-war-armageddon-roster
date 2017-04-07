@@ -1,12 +1,30 @@
 <template>
   <div class="home-vue">
-    <h2 class="my-4 text-center">Choose a faction:</h2>
-    <ul class="nav nav-fill">
-      <li class="nav-item" v-for="faction, factionId in factions">
-        <router-link class="nav-link" :to="'/build/'+factionId"
-        ><h3>{{ faction.name }}</h3></router-link>
-      </li>
-    </ul>
+
+    <h2 class="my-4 text-center">Create a New Roster</h2>
+
+    <div class="roster-new">
+      <p class="text-center">Choose your faction!</p>
+      <ul class="nav nav-fill">
+        <li class="nav-item" v-for="faction, factionId in factions">
+          <router-link class="nav-link" :to="'/build/'+factionId"
+          ><h3>{{ faction.name }}</h3></router-link>
+        </li>
+      </ul>
+    </div>
+
+    <div class="roster-load" v-if="hasSavedRosters">
+      <h2 class="my-4 text-center">or Load a Saved Roster</h2>
+      <ul class="nav nav-fill">
+        <li class="nav-item" v-for="roster in savedRosters">
+          <button class="btn btn-primary"
+            v-on:click="loadRoster(roster)">Load</button>
+          {{ roster.teamName }} {{ roster.factionId }}
+          <div v-for="fighter in roster.fighters">{{ fighter.name }}</div>
+        </li>
+      </ul>
+    </div>
+
   </div>
 </template>
 
@@ -15,8 +33,21 @@
   import Factions from '../data/factions.toml'
 
   Home =
+
     computed:
       factions: () -> Factions
+      savedRosters: () -> @$localStorage.get 'rosters'
+      hasSavedRosters: () -> @savedRosters.length > 0
+
+    localStorage:
+      rosters:
+        type: Array
+        default: []
+
+    methods:
+      loadRoster: (roster) ->
+        @$router.push('/build/' + roster.factionId)
+        @$store.commit 'loadRoster', roster
 
   export default Home
 

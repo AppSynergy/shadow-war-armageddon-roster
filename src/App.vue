@@ -4,9 +4,6 @@
       <h1 class="site-name text-center text-uppercase mt-4 mb-0">
         Shadow War: Argameddon Rosters
       </h1>
-      <span class="float-right">
-        <router-link to="/">Home</router-link>
-      </span>
       <router-view></router-view>
     </div>
   </div>

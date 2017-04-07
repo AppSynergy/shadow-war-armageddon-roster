@@ -15,6 +15,10 @@ RosterStore =
       state.teamName = ""
       state.fighters = []
 
+    loadRoster: (state, obj) ->
+      state.teamName = obj.teamName
+      state.fighters = obj.fighters
+
     nameTeam: (state, name) ->
       state.teamName = name
 
@@ -43,6 +47,9 @@ RosterStore =
       fighter.cost -= obj.cost
 
   getters:
+
+    getTeamName: (state) ->
+      state.teamName
 
     getFighters: (state) ->
       state.fighters
