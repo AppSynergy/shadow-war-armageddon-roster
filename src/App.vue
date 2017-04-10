@@ -45,6 +45,7 @@
   @import '../node_modules/bootstrap/scss/bootstrap.scss'
   @import url('https://fonts.googleapis.com/css?family=Montserrat|Open+Sans')
   html body
+    margin-bottom: 10em
     &, select
       font-family: 'Montserrat'
     background-color: $color5
@@ -62,6 +63,8 @@
 
   .faction-card
     height: 6em
-    border: 4px solid #702222
+
+  .saved-roster-card, .faction-card
+    border: 2px solid $color2
 
 </style>

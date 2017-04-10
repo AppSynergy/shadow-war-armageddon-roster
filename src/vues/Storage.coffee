@@ -18,6 +18,7 @@ Storage =
 
     saveRosterLocal: (data) ->
       rosters = @get()
+      data.totalPointsCost = @$store.getters.getTotalPointsCost
       updateIndex = @findIndexByTeamName rosters, data.teamName
       if updateIndex >= 0
         rosters[updateIndex] = data

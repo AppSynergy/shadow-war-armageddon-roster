@@ -22,13 +22,14 @@
       <div class="row">
         <div class="col col-12 col-md-6 col-lg-4"
           v-for="roster in savedRosters">
-          <div class="card mb-3">
+          <div class="card mb-3 saved-roster-card">
             <div class="card-header">
               <h4 class="m-0">{{ roster.teamName }}</h4>
             </div>
             <div class="card-block">
               <p>{{ factions[roster.factionId].name }},
-                {{ roster.fighters.length }} fighters</p>
+                {{ roster.fighters.length }} fighters,
+                {{ roster.totalPointsCost }} points</p>
               <div class="btn-group">
                 <button class="btn btn-primary"
                   v-on:click="loadRoster(roster)">Load</button>
