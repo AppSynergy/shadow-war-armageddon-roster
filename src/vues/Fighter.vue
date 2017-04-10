@@ -4,7 +4,7 @@
     <button class="btn btn-danger p-1 remove-button"
       aria-label="Remove"
       v-on:click="removeFighter()">
-      <i class="fa fa-times"></i>
+      <i class="fa fa-times">&times;</i>
     </button>
 
     <div class="row">

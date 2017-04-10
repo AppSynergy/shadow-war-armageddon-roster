@@ -8,7 +8,6 @@ import Bootstrap from 'bootstrap'
 
 Vue.use(VueLocalStorage)
 Vue.use(VueRouter)
-require("font-awesome-sass-loader");
 
 const router = new VueRouter([]);
 

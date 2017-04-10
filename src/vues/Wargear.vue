@@ -15,7 +15,7 @@
       <button class="btn btn-danger p-1 remove-button"
         aria-label="Remove"
         v-on:click="removeWeapon(weapon, index)">
-        <i class="fa fa-times"></i>
+        <i class="fa fa-times">&times;</i>
       </button>
     </div>
 
