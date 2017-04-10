@@ -23,11 +23,21 @@
         <li class="nav-item" v-for="roster in savedRosters">
           <button class="btn btn-primary"
             v-on:click="loadRoster(roster)">Load</button>
+          <button class="btn btn-danger"
+            v-on:click="deleteRoster(roster)">Delete</button>
           {{ roster.teamName }} {{ roster.factionId }}
           <div v-for="fighter in roster.fighters">{{ fighter.name }}</div>
         </li>
       </ul>
     </div>
+
+    <modal
+      :title="'Delete Roster'"
+      :body="'Are you sure you want to delete this roster?'"
+      :id="modalId"
+      :options="modalOptions"
+      v-on:selectedOption="processModalOption"
+    ></modal>
 
   </div>
 </template>
@@ -35,13 +45,27 @@
 <script lang="coffee">
 
   import Factions from '../data/factions.toml'
+  import Modal from './Modal.vue'
 
   Home =
 
+    components: { Modal }
+
+    data: () ->
+      modalId: 'deleteRosterModal'
+      modalOptions: [
+        {name: 'no', text: 'No thanks'}
+        {name: 'yes', text: 'Yes please'}
+      ]
+      rosterToDelete: null
+      savedRosters: []
+
     computed:
       factions: () -> Factions
-      savedRosters: () -> @$localStorage.get 'rosters'
       hasSavedRosters: () -> @savedRosters.length > 0
+
+    created: () ->
+      @savedRosters = @$localStorage.get 'rosters'
 
     localStorage:
       rosters:
@@ -49,9 +73,27 @@
         default: []
 
     methods:
+
       loadRoster: (roster) ->
         @$router.push('/build/' + roster.factionId)
         @$store.commit 'loadRoster', roster
+
+      deleteRoster: (roster) ->
+        @rosterToDelete = roster
+        jQuery('#' + @modalId).modal 'show'
+
+      processModalOption: (option) ->
+        if option.name is 'yes' then @reallyDeleteRoster()
+        @rosterToDelete = null
+        jQuery('#' + @modalId).modal 'hide'
+
+      reallyDeleteRoster: () ->
+        rosters = @$localStorage.get 'rosters'
+        f = (x) => x.teamName == @rosterToDelete.teamName
+        updateIndex = _.findIndex rosters, f
+        rosters.splice updateIndex, 1
+        @savedRosters = rosters
+        @$localStorage.set 'rosters', rosters
 
   export default Home
 

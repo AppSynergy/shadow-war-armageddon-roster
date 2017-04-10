@@ -56,6 +56,7 @@
       :options="modalOptions"
       v-on:selectedOption="processModalOption"
     ></modal>
+
   </div>
 </template>
 
