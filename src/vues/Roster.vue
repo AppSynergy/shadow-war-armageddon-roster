@@ -6,7 +6,8 @@
       <div class="card-header">
         <span class="float-right">
           <router-link to="/">Home</router-link>
-          <button class="btn" v-on:click="saveRoster()">Save</button>
+          <button class="btn" :disabled="!dirty"
+            v-on:click="saveRoster()">Save</button>
         </span>
       </div>
 
@@ -89,6 +90,7 @@
         catch error
           false
 
+      dirty: () -> @$store.getters.getDirty
       chosenFighters: () -> @$store.getters.getFighters
       totalPointsCost: () -> @$store.getters.getTotalPointsCost
       totalNumberFighters: () -> @$store.getters.getTotalNumberFighters
@@ -97,7 +99,7 @@
       @teamName = @$store.getters.getTeamName
 
     beforeRouteLeave: (to, from, next) ->
-      if @totalNumberFighters == 0
+      if @totalNumberFighters == 0 || @dirty is false
         next()
       else
         @discardAction = next
@@ -117,6 +119,7 @@
         @discardAction()
 
       saveRoster: () ->
+        @$store.commit 'cleanState'
         rosters = @$localStorage.get 'rosters'
         updateIndex = _.findIndex rosters, (x) => x.teamName == @teamName
         rosterData =
