@@ -64,12 +64,15 @@
 
   import Fighter from './Fighter.vue'
   import Modal from './Modal.vue'
+  import Storage from './Storage.coffee'
 
   Roster =
 
     props: ['factionId']
 
     components: { Fighter, Modal }
+
+    mixins: [ Storage ]
 
     data: () ->
       teamName: ""
@@ -106,11 +109,6 @@
         @discardAction = next
         jQuery('#' + @modalId).modal 'show'
 
-    localStorage:
-      rosters:
-        type: Array
-        default: []
-
     methods:
 
       processModalOption: (option) ->
@@ -121,17 +119,10 @@
 
       saveRoster: () ->
         @$store.commit 'cleanState'
-        rosters = @$localStorage.get 'rosters'
-        updateIndex = _.findIndex rosters, (x) => x.teamName == @teamName
-        rosterData =
+        @saveRosterLocal
           fighters: @chosenFighters
           factionId: @factionId
           teamName: @teamName
-        if updateIndex >= 0
-          rosters[updateIndex] = rosterData
-        else
-          rosters.push rosterData
-        @$localStorage.set 'rosters', rosters
 
       mapKeys: (collection) ->
         _.map collection, (x, key) ->

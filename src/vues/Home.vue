@@ -56,10 +56,13 @@
 
   import Factions from '../data/factions.toml'
   import Modal from './Modal.vue'
+  import Storage from './Storage.coffee'
 
   Home =
 
     components: { Modal }
+
+    mixins: [ Storage ]
 
     data: () ->
       modalId: 'deleteRosterModal'
@@ -77,11 +80,6 @@
     created: () ->
       @savedRosters = @$localStorage.get 'rosters'
 
-    localStorage:
-      rosters:
-        type: Array
-        default: []
-
     methods:
 
       loadRoster: (roster) ->
@@ -98,12 +96,7 @@
         jQuery('#' + @modalId).modal 'hide'
 
       reallyDeleteRoster: () ->
-        rosters = @$localStorage.get 'rosters'
-        f = (x) => x.teamName == @rosterToDelete.teamName
-        updateIndex = _.findIndex rosters, f
-        rosters.splice updateIndex, 1
-        @savedRosters = rosters
-        @$localStorage.set 'rosters', rosters
+        @savedRosters = @deleteRosterLocal @rosterToDelete
 
   export default Home
 
