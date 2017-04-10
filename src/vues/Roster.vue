@@ -104,6 +104,7 @@
 
     beforeRouteLeave: (to, from, next) ->
       if @totalNumberFighters == 0 || @dirty is false
+        @$store.commit 'discardRoster'
         next()
       else
         @discardAction = next
