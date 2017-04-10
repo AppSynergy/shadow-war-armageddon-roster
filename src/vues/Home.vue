@@ -19,16 +19,26 @@
 
     <div class="roster-load" v-if="hasSavedRosters">
       <h2 class="my-4 py-4 text-center">or Load a Saved Roster</h2>
-      <ul class="nav nav-fill">
-        <li class="nav-item" v-for="roster in savedRosters">
-          <button class="btn btn-primary"
-            v-on:click="loadRoster(roster)">Load</button>
-          <button class="btn btn-danger"
-            v-on:click="deleteRoster(roster)">Delete</button>
-          {{ roster.teamName }} {{ roster.factionId }}
-          <div v-for="fighter in roster.fighters">{{ fighter.name }}</div>
-        </li>
-      </ul>
+      <div class="row">
+        <div class="col col-12 col-md-6 col-lg-4"
+          v-for="roster in savedRosters">
+          <div class="card mb-3">
+            <div class="card-header">
+              <h4 class="m-0">{{ roster.teamName }}</h4>
+            </div>
+            <div class="card-block">
+              <p>{{ factions[roster.factionId].name }},
+                {{ roster.fighters.length }} fighters</p>
+              <div class="btn-group">
+                <button class="btn btn-primary"
+                  v-on:click="loadRoster(roster)">Load</button>
+                <button class="btn btn-danger"
+                  v-on:click="deleteRoster(roster)">Delete</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <modal
