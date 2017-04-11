@@ -150,17 +150,18 @@
           .reduce ((xs, x) -> _.extend xs, x ), {}
           .tap @mapKeys
           .reject (weapon, key) ->
+
             # reject stuff that can only be used by a different team member
-            only_fighter = _.every [
-              _.has weapon, 'only_fighter'
+            only_fighter = if _.has weapon, 'only_fighter'
               not _.contains weapon.only_fighter, fighter.key
-            ]
+            else false
+
             # reject stuff where you need another item first
-            only_weapon = _.every [
-              _.has weapon, 'only_weapon'
-              _.isEmpty _.intersection(weapon.only_weapon, _.pluck(fighter.weapons, 'key'))
-            ]
-            console.log "hhh", fighter.weapons
+            only_weapon = if _.has weapon, 'only_weapon'
+              _.isEmpty _.intersection(weapon.only_weapon.values,
+                _.pluck(fighter.weapons, weapon.only_weapon.matches))
+            else false
+
             _.any [only_fighter, only_weapon]
           .value()
 

@@ -58,7 +58,6 @@
 
     data: () ->
       newWeapon: null
-      weapons: []
 
     computed:
       fighter: () -> @$store.getters.getFighter @index
@@ -66,6 +65,7 @@
     methods:
 
       chooseNewWeapon: () ->
+        if @newWeapon.key is 'weapon_reload' then @dealWithWeaponReload()
         @$store.commit "addWeapon",
          weapon: @newWeapon
          index: @index
@@ -78,6 +78,10 @@
 
       removeFighter: () ->
         @$store.commit 'removeFighter', @index
+
+      dealWithWeaponReload: () ->
+        weaponCost = _.max @fighter.weapons, (x) -> x.cost
+        @newWeapon.cost = Math.round(weaponCost.cost / 2)
 
   export default Fighter
 
