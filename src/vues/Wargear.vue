@@ -12,7 +12,7 @@
         {{ weapon.name }} -
         <em class="badge badge-info">{{ weapon.cost }} points</em>
       </span>
-      <button class="btn btn-danger p-1 remove-button"
+      <button class="btn btn-danger px-1 py-0"
         aria-label="Remove"
         v-on:click="removeWeapon(weapon, index)">
         <i class="fa fa-times">&times;</i>

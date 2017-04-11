@@ -1,30 +1,35 @@
 <template>
   <div class="roster-vue mb-4">
 
-    <div class="card px-4 mt-4 bg-faded">
-
-      <div class="card-header">
+    <div class="card px-4 mt-4 team-background">
+      <div class="card-header team-background">
         <span class="float-right">
-          <router-link to="/">Home</router-link>
+          <router-link class="btn btn-primary" to="/" role="button">Home</router-link>
           <button class="btn" :disabled="!dirty"
             v-on:click="saveRoster()">Save</button>
         </span>
       </div>
 
       <h2 class="my-4 text-center">{{ faction.name }}</h2>
-      <ul class="nav mb-4 justify-content-between">
-        <li v-for="fighter in faction.fighters" v-if="faction"
-          class="nav-item">
-          <h4>{{ fighter.name }}</h4>
-          <em class="badge badge-info">{{ fighter.cost }} points</em>
-          <button class="btn btn-success"
-          :disabled="cannotAddFighter(fighter)"
-            v-on:click="addFighter(fighter)">Add</button>
-        </li>
-      </ul>
+      <div class="row mb-4">
+        <div class="col col-6 col-md-3"
+          v-for="fighter in faction.fighters" v-if="faction">
+          <div class="card">
+            <div class="card-block text-center py-2">
+              <h4 class="my-0">{{ fighter.name }}</h4>
+              <div class="mt-1 mb-2">
+                <em class="badge badge-info">{{ fighter.cost }} points</em>
+              </div>
+              <button class="btn btn-success"
+              :disabled="cannotAddFighter(fighter)"
+                v-on:click="addFighter(fighter)">Add</button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <div class="card px-4 mt-4 bg-faded">
+    <div class="card px-4 mt-4 team-background">
       <div class="row">
         <div class="col col-12 col-md-6">
           <input class="form-control my-4" type="text" v-model="teamName"

@@ -1,45 +1,46 @@
 <template>
   <div class="fighter-vue">
 
-    <button class="btn btn-danger p-1 remove-button"
+    <button class="btn btn-danger px-1 py-0 remove-button"
       aria-label="Remove"
       v-on:click="removeFighter()">
       <i class="fa fa-times">&times;</i>
     </button>
 
     <div class="row">
-      <div class="col col-12 col-md-6 col-lg-3">
-        <h4>{{ fighter.name }}</h4>
-        <div>{{ fighter.role}}</div>
+
+      <div class="col col-12 col-md-6 col-lg-3 col-first">
         <input class="form-control mr-2" type="text"
           placeholder="Name me!"
           v-on:change="nameFighter"
           v-model="fighter.realName">
+        <h4 class="mt-2 pl-2">{{ fighter.name }}</h4>
+        <div class="mt-2 pl-2">{{ fighter.role}}</div>
+        <em class="mt-2 ml-2 badge badge-info">{{ fighter.cost }} points</em>
       </div>
 
       <div class="col col-12 col-md-6 col-lg-4">
-        <select class="form-control"
+        <fighter-stats :statstring="fighter.stats">
+        </fighter-stats>
+      </div>
+
+      <div class="col col-12 col-md-6 col-lg-5">
+        <fighter-wargear
+          :fighterIndex="index"
+          :wargear="fighter.wargear"
+          :weapons="fighter.weapons"
+        ></fighter-wargear>
+        <select class="form-control w-75 mt-2"
           v-on:change="chooseNewWeapon"
           v-model="newWeapon">
           <option value="null" selected disabled>
             Add weapons / equipment</option>
           <option v-for="weapon, key in weaponsAvailable"
             :value="weapon"
-          >{{ weapon.name }}</option>
+          >{{ weapon.name }} ({{ weapon.cost }})</option>
         </select>
-        <fighter-wargear
-          :fighterIndex="index"
-          :wargear="fighter.wargear"
-          :weapons="fighter.weapons"
-        ></fighter-wargear>
       </div>
-      <div class="col col-12 col-md-6 col-lg-3">
-        <fighter-stats :statstring="fighter.stats">
-        </fighter-stats>
-      </div>
-      <div class="col col-12 col-md-6 col-lg-2">
-        <em class="badge badge-info">{{ fighter.cost }} points</em>
-      </div>
+
     </div>
 
   </div>
@@ -80,14 +81,18 @@
         @$store.commit 'removeFighter', @index
 
       dealWithWeaponReload: () ->
+        old = _.clone @newWeapon
         weaponCost = _.max @fighter.weapons, (x) -> x.cost
-        @newWeapon.cost = Math.round(weaponCost.cost / 2)
+        old.cost = Math.round(weaponCost.cost / 2)
+        @newWeapon = old
 
   export default Fighter
 
 </script>
 
 <style lang="sass">
+  .col-first .badge-info
+    font-size: 140%
   .remove-button
     position: absolute
     right: 0.25em
