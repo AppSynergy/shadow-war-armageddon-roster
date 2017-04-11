@@ -139,3 +139,8 @@ cost = 40
 [weapons.special.transuranic_arquebus]
 name = "Transuranic arquebus"
 cost = 180
+
+[skills]
+trooper = ['combat', 'guerilla', 'shooting']
+specialist = ['combat', 'guerilla', 'muscle', 'shooting']
+leader = ['combat', 'ferocity', 'guerilla', 'muscle', 'shooting', 'stealth']

@@ -94,7 +94,7 @@
 
       faction: () ->
         try
-          Faction = require '../data/' + @factionId + '.toml'
+          Faction = require '../data/factions/' + @factionId + '.toml'
           Faction.fighters = @mapKeys Faction.fighters
           Faction
         catch error
@@ -167,7 +167,12 @@
                 _.pluck(fighter.weapons, weapon.only_weapon.matches))
             else false
 
-            _.any [only_fighter, only_weapon]
+            # reject stuff where another item prohibits it
+            not_weapon = if _.has weapon, 'not_weapon'
+              not _.isEmpty _.intersection(weapon.not_weapon, _.pluck(fighter.weapons, 'key'))
+            else false
+
+            _.any [only_fighter, only_weapon, not_weapon]
           .value()
 
   export default Roster
