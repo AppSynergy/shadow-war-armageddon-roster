@@ -57,7 +57,7 @@
 
   import Factions from '../data/factions.toml'
   import Modal from './Modal.vue'
-  import Storage from './Storage.coffee'
+  import Storage from './mixin/Storage.coffee'
 
   Home =
 

@@ -62,9 +62,10 @@
 
 <script lang="coffee">
 
+  import Collections from './mixin/Collections.coffee'
   import Fighter from './Fighter.vue'
   import Modal from './Modal.vue'
-  import Storage from './Storage.coffee'
+  import Storage from './mixin/Storage.coffee'
 
   Roster =
 
@@ -72,7 +73,7 @@
 
     components: { Fighter, Modal }
 
-    mixins: [ Storage ]
+    mixins: [ Storage, Collections ]
 
     data: () ->
       teamName: ""
@@ -125,11 +126,6 @@
           factionId: @factionId
           teamName: @teamName
 
-      mapKeys: (collection) ->
-        _.map collection, (x, key) ->
-          x.key = key
-          x
-
       nameTeam: () ->
         @$store.commit 'nameTeam', @teamName
 
@@ -147,6 +143,7 @@
 
       weaponsAvailable: (fighter) ->
         _.chain @faction.weapons
+          .tap @mapRoles
           # include weapons from groups the fighter can use
           .filter  (weapons, group) -> fighter.equip.includes group
           # collect into one list
@@ -163,6 +160,7 @@
               _.has weapon, 'only_weapon'
               _.isEmpty _.intersection(weapon.only_weapon, _.pluck(fighter.weapons, 'key'))
             ]
+            console.log "hhh", fighter.weapons
             _.any [only_fighter, only_weapon]
           .value()
 
