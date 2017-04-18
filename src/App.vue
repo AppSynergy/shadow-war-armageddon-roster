@@ -19,7 +19,6 @@
 
   App =
     name: 'app'
-    components: { Roster }
     created: () ->
       @$router.addRoutes [
         { path: '/', component: Home, name: 'home' }

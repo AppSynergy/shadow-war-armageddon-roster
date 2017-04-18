@@ -11,7 +11,8 @@
     "build:clean": "rm -rf build/ && mkdir build",
     "build": "npm run build:webpack && npm run build:clean && npm run build:copy",
     "publish:github": "node ghpublish.js",
-    "publish": "npm run build && npm run publish:github"
+    "publish": "npm run build && npm run publish:github",
+    "test": "karma start karma.conf.js || true"
   },
   "dependencies": {
     "bootstrap": "^4.0.0-alpha.6",
@@ -31,7 +32,13 @@
     "css-loader": "^0.25.0",
     "file-loader": "^0.9.0",
     "gh-pages": "^0.12.0",
+    "jasmine-core": "^2.5.2",
+    "karma": "^1.6.0",
+    "karma-jasmine": "^1.1.0",
+    "karma-phantomjs-launcher": "^1.0.4",
+    "karma-webpack": "^2.0.3",
     "node-sass": "^4.5.0",
+    "phantomjs": "^2.1.7",
     "sass-loader": "^5.0.1",
     "toml": "^2.3.2",
     "toml-loader": "^1.0.0",
