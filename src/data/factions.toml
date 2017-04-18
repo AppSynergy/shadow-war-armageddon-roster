@@ -1,29 +1,39 @@
 [skitarii]
 name = "Skitarii"
+color = "#D51A34"
 
 [chaos]
 name = "Chaos"
+color = "#B41E34"
 
 [dark_eldar]
 name = "Dark Eldar"
+color = "#801593"
 
 [craftworlds]
 name = "Craftworlds"
+color = "#166F8C"
 
 [harlequins]
 name = "Harlequins"
+color = "#E0801B"
 
 [grey_knights]
 name = "Grey Knights"
+color = "#666"
 
 [necrons]
 name = "Necrons"
+color = "#3FBE17"
 
 [tau_empire]
 name = "Tau Empire"
+color = "#99A637"
 
 [tyranids]
 name = "Tyranids"
+color = "#C11B5E"
 
 [genestealer_cults]
 name = "Genestealer Cults"
+color = "#3C3176"

@@ -69,10 +69,10 @@
       width: 10%
       background-color: white
 
-  .faction-card
+  //.faction-card
     height: 6em
 
-  .saved-roster-card, .faction-card
+  //.saved-roster-card, .faction-card
     border: 2px solid $color2
 
 </style>
