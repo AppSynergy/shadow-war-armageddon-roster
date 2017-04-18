@@ -1,0 +1,128 @@
+key = "grey_knights"
+name = "Grek Knights Kill Team"
+
+[size]
+min = 3
+max = 5
+leader_max = 1
+specialist_max = 2
+
+[fighters.justicar]
+name = "Justicar"#
+role = "Kill Team Leader"
+cost = 250
+stats = "4 4 4 4 4 1 4 2 9"
+wargear = ["storm_bolter", "power_armour"]
+equip = ["hand-to-hand", "ammunition", "grenades", "misc"]
+skills = ["combat", "ferocity", "guerilla", "agility", "muscle", "shooting"]
+
+[fighters.grey_knight]
+name = "Grey Knight"
+role = "Trooper"
+cost = 175
+stats = "4 4 4 4 4 1 4 1 8"
+wargear = ["storm_bolter", "power_armour"]
+equip = ["hand-to-hand", "ammunition", "grenades", "misc"]
+skills = ["combat", "muscle", "shooting"]
+
+[fighters.grey_knight_gunner]
+name = "Grey Knight Gunner"
+role = "Specialist"
+cost = 200
+stats = "4 4 4 4 4 1 4 1 8"
+wargear = ["storm_bolter", "power_armour"]
+equip = ["hand-to-hand", "special", "ammunition", "grenades", "misc"]
+skills = ["combat", "guerilla", "muscle", "shooting"]
+
+[wargear.power_armour]
+name = "Power armour"
+
+[wargear.storm_bolter]
+name = "Storm bolter"
+
+[weapons.ammunition.psybolts]
+name = "Psybolts"
+cost = 30
+only_weapon = { matches = "key", values = [ "storm_bolter" ] }
+
+[weapons.grenades.frag_grenades]
+name = "Frag grenades"
+cost = 25
+
+[weapons.grenades.melta_bombs]
+name = "Melta bombs"
+cost = 30
+only_fighter = ["justicar"]
+
+[weapons.grenades.krak_grenades]
+name = "Krak grenades"
+cost = 40
+
+[weapons.misc.clip_harness]
+name = "Clip harness"
+cost = 10
+
+[weapons.misc.photo-visor]
+name = "Photo-visor"
+cost = 15
+
+[weapons.misc.red-dot_laser_sight]
+name = "Red-dot laser sight"
+cost = 20
+
+[weapons.misc.telescopic_sight]
+name = "Telescopic Sight"
+cost = 20
+
+[weapons.misc.weapon_reload_storm_bolter]
+name = "Weapon reload (storm bolter)"
+cost = 25
+only_weapon = { matches = "key", values = ["storm_bolter"] }
+
+[weapons.misc.weapon_reload]
+name = "Weapon reload"
+cost = "*"
+only_weapon = { matches = "role", values = ["special"] }
+
+[weapons.hand-to-hand.pair_of_nemesis_falchions]
+name = "Pair of Nemesis falchions"
+cost = 30
+not_weapon = ["pair_of_nemesis_falchions", "nemesis_force_sword", "nemesis_force_halberd", "nemesis_daemon_hammer", "nemesis_warding_staff", "incinerator", "psilencer", "psycannon"]
+
+[weapons.hand-to-hand.nemesis_force_sword]
+name = "Nemesis force sword"
+cost = 60
+not_weapon = ["pair_of_nemesis_falchions", "nemesis_force_sword", "nemesis_force_halberd", "nemesis_daemon_hammer", "nemesis_warding_staff", "incinerator", "psilencer", "psycannon"]
+
+[weapons.hand-to-hand.nemesis_force_halberd]
+name = "Nemesis force halberd"
+cost = 80
+not_weapon = ["pair_of_nemesis_falchions", "nemesis_force_sword", "nemesis_force_halberd", "nemesis_daemon_hammer", "nemesis_warding_staff", "incinerator", "psilencer", "psycannon"]
+
+[weapons.hand-to-hand.nemesis_daemon_hammer]
+name = "Nemesis daemon hammer"
+cost = 100
+not_weapon = ["pair_of_nemesis_falchions", "nemesis_force_sword", "nemesis_force_halberd", "nemesis_daemon_hammer", "nemesis_warding_staff", "incinerator", "psilencer", "psycannon"]
+
+[weapons.hand-to-hand.nemesis_warding_staff]
+name = "Nemesis warding staff"
+cost = 25
+not_weapon = ["pair_of_nemesis_falchions", "nemesis_force_sword", "nemesis_force_halberd", "nemesis_daemon_hammer", "nemesis_warding_staff", "incinerator", "psilencer", "psycannon"]
+
+[weapons.special.incinerator]
+name = "Incinerator"
+cost = 75
+replaces = ["storm_bolter"]
+not_weapon = ["pair_of_nemesis_falchions", "nemesis_force_sword", "nemesis_force_halberd", "nemesis_daemon_hammer", "nemesis_warding_staff", "incinerator", "psilencer", "psycannon"]
+
+[weapons.special.psilencer]
+name = "Psilencer"
+cost = 150
+replaces = ["storm_bolter"]
+not_weapon = ["pair_of_nemesis_falchions", "nemesis_force_sword", "nemesis_force_halberd", "nemesis_daemon_hammer", "nemesis_warding_staff", "incinerator", "psilencer", "psycannon"]
+
+[weapons.special.psycannon]
+name = "Psycannon"
+cost = 175
+replaces = ["storm_bolter"]
+not_weapon = ["pair_of_nemesis_falchions", "nemesis_force_sword", "nemesis_force_halberd", "nemesis_daemon_hammer", "nemesis_warding_staff", "incinerator", "psilencer", "psycannon"]
