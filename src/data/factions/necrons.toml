@@ -1,0 +1,91 @@
+key = "necrons"
+name = "Necron Kill Team"
+
+[size]
+min = 3
+max = 10
+leader_max = 1
+specialist_max = 2
+
+[fighters.appointed_immortal]
+name = "Appointed Immortal"
+role = "Kill Team Leader"
+cost = 200
+stats = "4 4 4 4 4 1 2 1 10"
+wargear = ["combat_blade", "immortal_exoskeleton"]
+equip = ["basic", "misc"]
+
+[fighters.immortal]
+name = "Immortal"
+role = "Trooper"
+cost = 110
+stats = "4 4 4 4 4 1 2 1 10"
+wargear = ["combat_blade", "immortal_exoskeleton"]
+equip = ["basic", "misc"]
+
+[fighters.warrior]
+name = "Warrior"
+role = "New Recruit"
+cost = 80
+stats = "4 4 4 4 4 1 2 1 10"
+wargear = ["combat_blade", "warrior_exoskeleton"]
+equip = ["basic", "misc"]
+
+[fighters.deathmark]
+name = "Deathmark"
+role = "Specialist"
+cost = 120
+stats = "4 4 4 4 4 1 2 1 10"
+wargear = ["combat_blade", "immortal_exoskeleton"]
+equip = ["special", "misc"]
+
+[wargear.combat_blade]
+name = "Combat blade"
+
+[wargear.immortal_exoskeleton]
+name = "Immortal exoskeleton"
+
+[wargear.warrior_exoskeleton]
+name = "Warrior exoskeleton"
+
+[weapons.basic.gauss_flayer]
+name = "Gauss flayer"
+cost = 50
+only_fighter = ["warrior"]
+
+[weapons.basic.gauss_blaster]
+name = "Gauss blaster"
+cost = 60
+only_fighter = ["appointed_immortal", "immortal"]
+
+[weapons.basic.tesla_carbine]
+name = "Tesla carbine"
+cost = 65
+only_fighter = ["appointed_immortal", "immortal"]
+
+[weapons.special.synaptic_disintegrator]
+name = "Synaptic disintegrator"
+cost = 40
+
+[weapons.misc.phase-shifter]
+name = "Phase-shifter"
+cost = 15
+
+[weapons.misc.photo-visor]
+name = "Photo-visor"
+cost = 15
+
+[weapons.misc.mindshackle_scarabs]
+name = "Mindshackle scarabs"
+cost = 25
+
+[weapons.misc.weapon_reload]
+name = "Weapon reload"
+cost = "*"
+only_weapon = { matches = "role", values = ["basic", "pistols", "special"] }
+
+[skills]
+trooper_warrior = ["shooting"]
+trooper_immortal = ["ferocity", "shooting"]
+specialist = ["guerilla", "muscle", "shooting", "stealth"]
+leader = ["combat", "ferocity", "guerilla", "muscle", "shooting", "stealth"]

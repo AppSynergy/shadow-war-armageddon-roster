@@ -12,32 +12,32 @@ name = "Aspiring Champion"
 role = "Kill Team Leader"
 cost = 225
 stats = "4 4 4 4 4 1 4 2 9"
-wargear = ['combat_blade', 'power_armour']
-equip = ['mark_of_chaos', 'hand-to-hand', 'pistols', 'basic', 'ammunition', 'grenades', 'misc']
+wargear = ["combat_blade", "power_armour"]
+equip = ["mark_of_chaos", "hand-to-hand", "pistols", "basic", "ammunition", "grenades", "misc"]
 
 [fighters.chaos_space_marine]
 name = "Chaos Space Marine"
 role = "Trooper"
 cost = 120
 stats = "4 4 4 4 4 1 4 1 8"
-wargear = ['combat_blade', 'power_armour']
-equip = ['mark_of_chaos', 'hand-to-hand', 'pistols', 'basic', 'ammunition', 'grenades', 'misc']
+wargear = ["combat_blade", "power_armour"]
+equip = ["mark_of_chaos", "hand-to-hand", "pistols", "basic", "ammunition", "grenades", "misc"]
 
 [fighters.chaos_cultist]
 name = "Chaos Cultist"
 role = "New Recruit"
 cost = 40
 stats = "4 3 3 3 3 1 3 1 7"
-wargear = ['combat_blade', 'improvised_armour']
-equip = ['cult_hand-to-hand', 'cult_pistols', 'cult_basic', 'cult_misc']
+wargear = ["combat_blade", "improvised_armour"]
+equip = ["cult_hand-to-hand", "cult_pistols", "cult_basic", "cult_misc"]
 
 [fighters.chaos_gunner]
 name = "Chaos Gunner"
 role = "Specialist"
 cost = 130
 stats = "4 4 4 4 4 1 4 1 8"
-wargear = ['combat_blade', 'power_armour']
-equip = ['mark_of_chaos', 'hand-to-hand', 'pistols', 'heavy', 'special', 'ammunition', 'grenades', 'misc']
+wargear = ["combat_blade", "power_armour"]
+equip = ["mark_of_chaos", "hand-to-hand", "pistols", "heavy", "special", "ammunition", "grenades", "misc"]
 
 [wargear.combat_blade]
 name = "Combat blade"
@@ -51,26 +51,26 @@ name = "Improvised armour"
 [weapons.mark_of_chaos.mark_of_khorne]
 name = "Mark of Khorne"
 cost = 0
-not_weapon = ['mark_of_khorne', 'mark_of_nurgle', 'mark_of_slaanesh', 'mark_of_tzeentch']
+not_weapon = ["mark_of_khorne", "mark_of_nurgle", "mark_of_slaanesh", "mark_of_tzeentch"]
 
 [weapons.mark_of_chaos.mark_of_nurgle]
 name = "Mark of Nurgle"
 cost = 0
-not_weapon = ['mark_of_khorne', 'mark_of_nurgle', 'mark_of_slaanesh', 'mark_of_tzeentch']
+not_weapon = ["mark_of_khorne", "mark_of_nurgle", "mark_of_slaanesh", "mark_of_tzeentch"]
 
 [weapons.mark_of_chaos.mark_of_slaanesh]
 name = "Mark of Slaanesh"
 cost = 0
-not_weapon = ['mark_of_khorne', 'mark_of_nurgle', 'mark_of_slaanesh', 'mark_of_tzeentch']
+not_weapon = ["mark_of_khorne", "mark_of_nurgle", "mark_of_slaanesh", "mark_of_tzeentch"]
 
 [weapons.mark_of_chaos.mark_of_tzeentch]
 name = "Mark of Tzeentch"
 cost = 0
-not_weapon = ['mark_of_khorne', 'mark_of_nurgle', 'mark_of_slaanesh', 'mark_of_tzeentch']
+not_weapon = ["mark_of_khorne", "mark_of_nurgle", "mark_of_slaanesh", "mark_of_tzeentch"]
 
 [weapons.cult_misc.weapon_reload]
 name = "Weapon reload"
-cost = '*'
+cost = "*"
 only_weapon = { matches = "role", values = ["cult_basic", "cult_pistols"] }
 
 [weapons.cult_hand-to-hand.combat_blade]
@@ -108,7 +108,7 @@ cost = 20
 [weapons.ammunition.inferno_bolts]
 name = "Inferno bolts"
 cost = 25
-only_weapon = { matches = "key", values = [ 'mark_of_tzeentch' ] }
+only_weapon = { matches = "key", values = [ "mark_of_tzeentch" ] }
 
 [weapons.grenades.frag_grenades]
 name = "Frag grenades"
@@ -122,7 +122,7 @@ only_fighter = ["aspiring_champion"]
 [weapons.grenades.blight_grenades]
 name = "Blight grenades"
 cost = 35
-only_weapon = { matches = "key", values= [ 'mark_of_nurgle'] }
+only_weapon = { matches = "key", values= [ "mark_of_nurgle"] }
 
 [weapons.grenades.krak_grenades]
 name = "Krak grenades"
@@ -150,7 +150,7 @@ cost = 20
 
 [weapons.misc.weapon_reload]
 name = "Weapon reload"
-cost = '*'
+cost = "*"
 only_weapon = { matches = "role", values = ["basic", "pistols", "special", "heavy"] }
 
 [weapons.hand-to-hand.combat_blade]
@@ -168,12 +168,12 @@ cost = 25
 [weapons.hand-to-hand.power_sword]
 name = "Power sword"
 cost = 50
-only_fighter = ['aspiring_champion']
+only_fighter = ["aspiring_champion"]
 
 [weapons.hand-to-hand.power_fist]
 name = "Power fist"
 cost = 85
-only_fighter = ['aspiring_champion']
+only_fighter = ["aspiring_champion"]
 
 [weapons.pistols.bolt_pistol]
 name = "Bolt pistol"
@@ -182,7 +182,7 @@ cost = 25
 [weapons.pistols.plasma_pistol]
 name = "Plasma pistol"
 cost = 50
-only_fighter = ['aspiring_champion']
+only_fighter = ["aspiring_champion"]
 
 [weapons.basic.boltgun]
 name = "Boltgun"
@@ -231,6 +231,6 @@ name = "Meltagun"
 cost = 95
 
 [skills]
-trooper = ['combat', 'muscle', 'shooting']
-specialist = ['combat', 'guerilla', 'muscle', 'shooting']
-leader = ['combat', 'ferocity', 'guerilla', 'muscle', 'shooting', 'stealth']
+trooper = ["combat", "muscle", "shooting"]
+specialist = ["combat", "guerilla", "muscle", "shooting"]
+leader = ["combat", "ferocity", "guerilla", "muscle", "shooting", "stealth"]
