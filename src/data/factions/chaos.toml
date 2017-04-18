@@ -14,6 +14,7 @@ cost = 225
 stats = "4 4 4 4 4 1 4 2 9"
 wargear = ["combat_blade", "power_armour"]
 equip = ["mark_of_chaos", "hand-to-hand", "pistols", "basic", "ammunition", "grenades", "misc"]
+skills = ["combat", "ferocity", "guerilla", "muscle", "shooting", "stealth"]
 
 [fighters.chaos_space_marine]
 name = "Chaos Space Marine"
@@ -22,6 +23,7 @@ cost = 120
 stats = "4 4 4 4 4 1 4 1 8"
 wargear = ["combat_blade", "power_armour"]
 equip = ["mark_of_chaos", "hand-to-hand", "pistols", "basic", "ammunition", "grenades", "misc"]
+skills = ["combat", "muscle", "shooting"]
 
 [fighters.chaos_cultist]
 name = "Chaos Cultist"
@@ -38,6 +40,7 @@ cost = 130
 stats = "4 4 4 4 4 1 4 1 8"
 wargear = ["combat_blade", "power_armour"]
 equip = ["mark_of_chaos", "hand-to-hand", "pistols", "heavy", "special", "ammunition", "grenades", "misc"]
+skills = ["combat", "guerilla", "muscle", "shooting"]
 
 [wargear.combat_blade]
 name = "Combat blade"
@@ -229,8 +232,3 @@ cost = 80
 [weapons.special.meltagun]
 name = "Meltagun"
 cost = 95
-
-[skills]
-trooper = ["combat", "muscle", "shooting"]
-specialist = ["combat", "guerilla", "muscle", "shooting"]
-leader = ["combat", "ferocity", "guerilla", "muscle", "shooting", "stealth"]

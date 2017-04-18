@@ -14,6 +14,7 @@ cost = 200
 stats = "4 4 4 4 4 1 2 1 10"
 wargear = ["combat_blade", "immortal_exoskeleton"]
 equip = ["basic", "misc"]
+skills = ["combat", "ferocity", "guerilla", "muscle", "shooting", "stealth"]
 
 [fighters.immortal]
 name = "Immortal"
@@ -22,6 +23,7 @@ cost = 110
 stats = "4 4 4 4 4 1 2 1 10"
 wargear = ["combat_blade", "immortal_exoskeleton"]
 equip = ["basic", "misc"]
+skills = ["ferocity", "shooting"]
 
 [fighters.warrior]
 name = "Warrior"
@@ -30,6 +32,7 @@ cost = 80
 stats = "4 4 4 4 4 1 2 1 10"
 wargear = ["combat_blade", "warrior_exoskeleton"]
 equip = ["basic", "misc"]
+skills = ["shooting"]
 
 [fighters.deathmark]
 name = "Deathmark"
@@ -38,6 +41,7 @@ cost = 120
 stats = "4 4 4 4 4 1 2 1 10"
 wargear = ["combat_blade", "immortal_exoskeleton"]
 equip = ["special", "misc"]
+skills = ["guerilla", "muscle", "shooting", "stealth"]
 
 [wargear.combat_blade]
 name = "Combat blade"
@@ -83,9 +87,3 @@ cost = 25
 name = "Weapon reload"
 cost = "*"
 only_weapon = { matches = "role", values = ["basic", "pistols", "special"] }
-
-[skills]
-trooper_warrior = ["shooting"]
-trooper_immortal = ["ferocity", "shooting"]
-specialist = ["guerilla", "muscle", "shooting", "stealth"]
-leader = ["combat", "ferocity", "guerilla", "muscle", "shooting", "stealth"]

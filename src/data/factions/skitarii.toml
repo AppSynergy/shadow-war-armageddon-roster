@@ -14,6 +14,7 @@ cost = 150
 stats = "4 3 4 3 3 2 4 2 9"
 wargear = ["combat_blade", "skitarii_war_plate"]
 equip = ["hand-to-hand", "pistols", "basic", "grenades", "misc"]
+skills = ['combat', 'ferocity', 'guerilla', 'muscle', 'shooting', 'stealth']
 
 [fighters.ranger]
 name = "Skitarii Ranger"
@@ -22,6 +23,7 @@ cost = 80
 stats = "4 3 4 3 3 1 3 1 8"
 wargear = ["combat_blade", "skitarii_war_plate"]
 equip = ["basic", "grenades", "misc"]
+skills = ['combat', 'guerilla', 'shooting']
 
 [fighters.fresh-forged]
 name = "Skitarii Fresh-forged"
@@ -38,6 +40,7 @@ cost = 90
 stats = "4 3 4 3 3 1 3 1 8"
 wargear = ["combat_blade", "skitarii_war_plate"]
 equip = ["pistols", "special", "grenades", "misc"]
+skills = ['combat', 'guerilla', 'muscle', 'shooting']
 
 [wargear.combat_blade]
 name = "Combat blade"
@@ -139,8 +142,3 @@ cost = 40
 [weapons.special.transuranic_arquebus]
 name = "Transuranic arquebus"
 cost = 180
-
-[skills]
-trooper = ['combat', 'guerilla', 'shooting']
-specialist = ['combat', 'guerilla', 'muscle', 'shooting']
-leader = ['combat', 'ferocity', 'guerilla', 'muscle', 'shooting', 'stealth']
