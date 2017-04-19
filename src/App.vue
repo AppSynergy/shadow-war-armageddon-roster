@@ -14,8 +14,8 @@
 
 <script lang="coffee">
 
-  import Home from './vues/Home.vue'
-  import Roster from './vues/Roster.vue'
+  import Home from './components/Home.vue'
+  import Roster from './components/Roster.vue'
 
   App =
     name: 'app'
