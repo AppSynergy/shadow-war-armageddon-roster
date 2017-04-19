@@ -10,22 +10,36 @@ Vue.use(VueRouter)
 
 router = new VueRouter([])
 
-describe 'App.vue', () ->
 
+
+describe 'sanity test', () ->
   it 'can do math', () ->
     expect(2+2).toBe 4
 
-  it 'should render correct message', () ->
 
-    vm = new Vue({
+describe 'App.vue', () ->
+
+  words = (vm, selector) ->
+    vm.$el.querySelector(selector).textContent
+
+  beforeEach () ->
+    @vm = new Vue({
       template: '<div><test></test></div>'
       components: { 'test': App }
       router
       store
-    }).$mount();
+    }).$mount()
 
-    expect(vm.$el.querySelector('h2').textContent).toBe 'Create a New Roster'
-    factions = vm.$el.querySelectorAll '.faction-card'
+  it 'loads the right route', () ->
+    expect(words(@vm, 'h2')).toBe 'Create a New Roster'
 
+  it 'loads factions', () ->
+    factions = @vm.$el.querySelectorAll '.faction-card'
     expect(factions.length).toBe 10
     expect(factions[0].textContent).toBe 'Skitarii'
+
+  it 'links to a faction roster', (done) ->
+    @vm.$router.push 'build/skitarii'
+    Vue.nextTick () =>
+      expect(words(@vm, 'h2')).toBe 'Skitarii Ranger Kill Team'
+      done()

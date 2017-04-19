@@ -27,6 +27,6 @@ module.exports = function (config) {
     client: {
       captureConsole: true,
     },
-    //logLevel: config.LOG_INFO
+    logLevel: config.LOG_WARN
   })
 }
