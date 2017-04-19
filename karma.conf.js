@@ -4,7 +4,6 @@
 var webpackConfig = require('./webpack.config.js')
 delete webpackConfig.entry
 
-// karma.conf.js
 module.exports = function (config) {
   config.set({
     browsers: ['PhantomJS'],
