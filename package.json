@@ -12,7 +12,8 @@
     "build": "npm run build:webpack && npm run build:clean && npm run build:copy",
     "publish:github": "node ghpublish.js",
     "publish": "npm run build && npm run publish:github",
-    "test": "karma start karma.conf.js || true"
+    "test": "karma start karma.conf.js || true",
+    "test:watch": "onchange test/*.coffee -- npm run test"
   },
   "dependencies": {
     "bootstrap": "^4.0.0-alpha.6",

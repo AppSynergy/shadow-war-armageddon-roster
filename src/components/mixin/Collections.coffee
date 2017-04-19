@@ -3,7 +3,7 @@ Collections =
   methods:
 
     mapKeys: (collection) ->
-      _.map collection, (x, key) ->
+      _.mapObject collection, (x, key) ->
         x.key = key
         x
 

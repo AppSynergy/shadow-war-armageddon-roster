@@ -3,15 +3,13 @@
 
     <div class="wargear-item d-inline-block mr-4 mt-1"
       v-for="item in wargear">
-      <span>{{ item.name }}</span>
+      <span class="wargear-name">{{ item.name }}</span>
     </div>
 
     <div class="wargear-item d-inline-block mr-4 mt-1"
       v-for="weapon, index in weapons">
-      <span>
-        {{ weapon.name }} -
-        <em class="badge badge-info">{{ weapon.cost }} points</em>
-      </span>
+      <span class="wargear-name">{{ weapon.name }}</span> -
+      <em class="badge badge-info">{{ weapon.cost }} points</em>
       <button class="btn btn-danger px-1 py-0"
         aria-label="Remove"
         v-on:click="removeWeapon(weapon, index)">

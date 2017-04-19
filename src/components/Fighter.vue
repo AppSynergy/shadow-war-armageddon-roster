@@ -25,12 +25,12 @@
       </div>
 
       <div class="col col-12 col-md-6 col-lg-5">
-        <fighter-wargear
+        <fighter-wargear class="fighter-wargear"
           :fighterIndex="index"
           :wargear="fighter.wargear"
           :weapons="fighter.weapons"
         ></fighter-wargear>
-        <select class="form-control w-75 mt-2"
+        <select class="form-control w-75 mt-2 add-wargear"
           v-on:change="chooseNewWeapon"
           v-model="newWeapon">
           <option value="null" selected disabled>
