@@ -11,10 +11,10 @@
       </div>
 
       <h2 class="my-4 text-center">{{ faction.name }}</h2>
-      <div class="row mb-4">
+      <div class="fighter-row row mb-4">
         <div class="col col-6 col-md-3"
           v-for="fighter in faction.fighters" v-if="faction">
-          <div class="card">
+          <div class="card available-fighter-card">
             <div class="card-block text-center py-2">
               <h4 class="my-0">{{ fighter.name }}</h4>
               <div class="mt-1 mb-2">
@@ -45,7 +45,7 @@
           </h2>
         </div>
       </div>
-      <div class="card mb-4 px-2 py-4 fighter-background"
+      <div class="chosen-fighter-card card mb-4 px-2 py-4 fighter-background"
         v-for="fighter, index in chosenFighters">
         <fighter
           :index="index"
