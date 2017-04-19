@@ -9,18 +9,25 @@ module.exports = function (config) {
   config.set({
     browsers: ['PhantomJS'],
     frameworks: ['jasmine'],
-    // this is the entry file for all our tests.
     files: ['test/index.js'],
-    // we will pass the entry file to webpack for bundling.
+    //reporters: ['spec'],
     preprocessors: {
       'test/index.js': ['webpack']
     },
-    // use the webpack config
+    singleRun: true,
     webpack: webpackConfig,
-    // avoid walls of useless text
     webpackMiddleware: {
       noInfo: true
     },
-    singleRun: true
+    entry: {
+      app: [
+        'babel-polyfill',
+        './src/main.js'
+      ]
+    },
+    client: {
+      captureConsole: true,
+    },
+    //logLevel: config.LOG_INFO
   })
 }

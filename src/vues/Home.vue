@@ -11,9 +11,7 @@
           <router-link :to="'/build/'+factionId" class="text-white">
             <div class="card faction-card mb-3 p-3 text-center"
               :style="{backgroundColor: faction.color}">
-              <h5 class="text-faction-color m-0 text-white">
-                {{ faction.name }}
-              </h5>
+              <h5 class="text-faction-color m-0 text-white">{{ faction.name }}</h5>
             </div>
           </router-link>
         </div>
