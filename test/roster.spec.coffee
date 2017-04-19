@@ -48,15 +48,8 @@ describe 'App.vue', () ->
       header = @words 'h2'
       expect(header).toBe 'Skitarii Ranger Kill Team'
       expect(@all('.available-fighter-card').length).toBe 4
-
-      expect(@all('.chosen-fighter-card')).toBe 0
-
-      addLeader = @get '.available-fighter-card button'
-      e = document.createEvent('HTMLEvents')
-      e.initEvent 'click', true, true
-      #addLeader.dispatchEvent e
-
+      expect(@all('.chosen-fighter-card').length).toBe 0
+      @get('.available-fighter-card button').click()
       Vue.nextTick () =>
-        console.warn @all('.chosen-fighter-card')
         expect(@all('.chosen-fighter-card').length).toBe 1
         done()

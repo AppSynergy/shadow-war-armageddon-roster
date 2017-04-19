@@ -150,7 +150,7 @@
         _.chain @faction.weapons
           .tap @mapRoles
           # include weapons from groups the fighter can use
-          .filter  (weapons, group) -> fighter.equip.includes group
+          .filter  (weapons, group) -> _.includes fighter.equip, group
           # collect into one list
           .reduce ((xs, x) -> _.extend xs, x ), {}
           .tap @mapKeys
