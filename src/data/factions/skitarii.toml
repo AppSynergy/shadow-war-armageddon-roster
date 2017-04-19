@@ -75,7 +75,7 @@ cost = 20
 only_weapon = { matches = "key", values = ["galvanic_rifle", "radium_carbine", "transuranic_arquebus"] }
 
 [weapons.misc.telescopic_sight]
-name = "Telescopic Sight"
+name = "Telescopic sight"
 cost = 20
 only_weapon = { matches = "key", values = ["galvanic_rifle", "transuranic_arquebus"] }
 
