@@ -5,6 +5,7 @@ import store from '../src/store/roster.coffee'
 import VueRouter from 'vue-router'
 import VueLocalStorage from 'vue-localstorage'
 import jQuery from 'jquery'
+import Bootstrap from 'bootstrap'
 import 'underscore'
 
 Vue.use(VueLocalStorage)
@@ -18,9 +19,9 @@ describe 'sanity test', () ->
     expect(2+2).toBe 4
 
 
-describe 'App.vue', () ->
+describe 'basic roster operations', () ->
 
-  beforeEach () ->
+  beforeAll () ->
     @vm = new Vue({
       template: '<div><test></test></div>'
       components: { 'test': App }
@@ -111,3 +112,27 @@ describe 'App.vue', () ->
     Vue.nextTick () =>
       expect(@option(trooperWargear, 'Telescopic sight')).toBeGreaterThan -1
       done()
+
+  it 'removes the telescopic sight from select if you remove the rifle', (done) ->
+    expect(@all('.wargear-item button').length).toBe 2
+    @all('.wargear-item button')[1].click()
+    Vue.nextTick () =>
+      expect(@option(@all('select.add-wargear')[1], 'Telescopic sight')).toBeUndefined()
+      done()
+
+  it 'can remove the trooper', (done) ->
+    expect(@all('.chosen-fighter-card').length).toBe 2
+    @all('.chosen-fighter-card .remove-button')[1].click()
+    Vue.nextTick () =>
+      expect(@all('.chosen-fighter-card').length).toBe 1
+      done()
+
+  it 'can click home and save the roster', (done) ->
+    expect(@all('.saved-roster-card').length).toBe 0
+    @get('a.router-link-active').click()
+    Vue.nextTick () =>
+      @all('.modal-footer button')[1].click()
+      Vue.nextTick () =>
+        expect(@all('.saved-roster-card').length).toBe 1
+        expect(@get('.saved-roster-card').textContent).toMatch /Skitarii,\s*1 fighters/
+        done()
