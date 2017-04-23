@@ -8,12 +8,17 @@
       <div class="row">
         <div class="col col-12 col-md-4 col-lg-3"
           v-for="faction, factionId in factions">
-          <router-link :to="'/build/'+factionId" class="text-white">
+          <router-link v-if="faction.implemented"
+            :to="'/build/'+factionId" class="text-white">
             <div class="card faction-card mb-3 p-3 text-center"
               :style="{backgroundColor: faction.color}">
               <h5 class="text-faction-color m-0 text-white">{{ faction.name }}</h5>
             </div>
           </router-link>
+          <div v-else class="card mb-3 p-3 text-center">
+            <h5 class="text-faction-color m-0">{{ faction.name }}</h5>
+            <span>coming soon</span>
+          </div>
         </div>
       </div>
     </div>

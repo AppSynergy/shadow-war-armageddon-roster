@@ -1,55 +1,16 @@
-import 'es6-promise/auto'
 import Vue from 'vue'
-import App from '../src/App.vue'
-import store from '../src/store/roster.coffee'
-import VueRouter from 'vue-router'
-import VueLocalStorage from 'vue-localstorage'
-import jQuery from 'jquery'
-import Bootstrap from 'bootstrap'
-import 'underscore'
-
-Vue.use(VueLocalStorage)
-Vue.use(VueRouter)
-
-router = new VueRouter([])
-
-
-describe 'sanity test', () ->
-  it 'can do math', () ->
-    expect(2+2).toBe 4
-
 
 describe 'basic roster operations', () ->
 
-  beforeAll () ->
-    @vm = new Vue({
-      template: '<div><test></test></div>'
-      components: { 'test': App }
-      router
-      store
-    }).$mount()
-    @dom = @vm.$el
-    @all = (selector) => @dom.querySelectorAll selector
-    @get = (selector) => @dom.querySelector selector
-    @words = (selector) => @dom.querySelector(selector).textContent
-    @option = (ele, text) ->
-      for i in [0..(ele.length-1)]
-        re = new RegExp text
-        se = ele[i].textContent.search re
-        return i if se >= 0
-      return undefined
-    @change = (ele, index) ->
-      ele.selectedIndex = index
-      ele.dispatchEvent(new Event('change'))
-
-
-  it 'loads the right route', () ->
-    header = @words 'h2'
-    expect(header).toBe 'Create a New Roster'
+  it 'loads the right route', (done) ->
+    @vm.$router.push '/'
+    Vue.nextTick () =>
+      expect(@words('h2')).toBe 'Create a New Roster'
+      done()
 
   it 'loads factions', () ->
-    factions = @all '.faction-card'
-    expect(factions.length).toBe 10
+    factions = @all '.roster-new .card'
+    expect(factions.length).toBe 15
     expect(factions[0].textContent).toBe 'Skitarii'
     expect(factions[9].textContent).toBe 'Genestealer Cults'
 

@@ -1,0 +1,110 @@
+key = "harlequins"
+name = "Harlequin Troupe Kill Team"
+
+[size]
+min = 3
+max = 6
+leader_max = 1
+specialist_max = 2
+
+[fighters.troupe_master]
+name = "Troupe Master"
+cost = 300
+role = "Kill Team Leader"
+stats = "6 6 5 3 3 2 7 3 10"
+wargear = ["concealed_blade", "harlequin_mask", "flip_belt", "holo-suit"]
+equip = ["hand-to-hand", "pistols", "grenades", "misc"]
+
+[fighters.player]
+name = "Player"
+cost = 150
+role = "Trooper"
+stats = "6 5 4 3 3 1 6 2 9"
+wargear = ["concealed_blade", "harlequin_mask", "flip_belt", "holo-suit"]
+equip = ["hand-to-hand", "pistols", "grenades", "misc"]
+
+[fighters.mime]
+name = "Mime"
+cost = 125
+role = "New Recruit"
+stats = "6 4 4 3 3 1 6 2 9"
+wargear = ["concealed_blade", "harlequin_mask", "flip_belt", "holo-suit"]
+equip = ["hand-to-hand", "pistols", "grenades", "misc"]
+
+[fighters.virtuoso]
+name = "Virtuoso"
+cost = 175
+role = "Specialist"
+stats = "6 5 5 3 3 1 6 2 9"
+wargear = ["concealed_blade", "harlequin_mask", "flip_belt", "holo-suit"]
+equip = ["hand-to-hand", "pistols", "grenades", "misc"]
+
+[wargear.concealed_blade]
+name = "Concealed blade"
+
+[wargear.harlequin_mask]
+name = "Harlequin mask"
+
+[wargear.flip_belt]
+name = "Flip belt"
+
+[wargear.holo-suit]
+name = "Holo-suit"
+
+[weapons.grenades.prismatic_grenades]
+name = "Prismatic grenades"
+cost = 40
+
+[weapons.misc.photo-visor]
+name = "Photo-visor"
+cost = 15
+
+[weapons.misc.weapon_reload]
+name = "Weapon reload"
+cost = "*"
+only_weapon = { matches = "role", values = ["pistols"] }
+
+[weapons.hand-to-hand.concealed_blade]
+name = "Concealed blade (knife)"
+cost = 5
+
+[weapons.hand-to-hand.harlequins_blade]
+name = "Harlequin's blade (sword)"
+cost = 15
+
+[weapons.hand-to-hand.harlequins_caress]
+name = "Harlequin's caress"
+cost = 20
+only_fighter = ["troupe_master", "virtuoso"]
+
+[weapons.hand-to-hand.harlequins_kiss]
+name = "Harlequin's Kiss"
+cost = 25
+
+[weapons.hand-to-hand.monomolecular_blade]
+name = "Monomolecular blade"
+cost = 30
+
+[weapons.hand-to-hand.harlequins_embrace]
+name = "Harlequin's Embrace"
+cost = 40
+only_fighter = ["troupe_master", "virtuoso"]
+
+[weapons.hand-to-hand.power_sword]
+name = "Power sword"
+cost = 50
+only_fighter = ["troupe_master"]
+
+[weapons.pistols.shuriken_pistol]
+name = "Shuriken pistol"
+cost = 35
+
+[weapons.pistols.neuro_disruptor]
+name = "Neuro disrupter"
+cost = 85
+only_fighter = ["troupe_master", "virtuoso"]
+
+[weapons.pistols.fusion_pistol]
+name = "Fusion pistol"
+cost = 100
+only_fighter = ["troupe_master", "virtuoso"]

@@ -1,10 +1,12 @@
 [skitarii]
 name = "Skitarii"
 color = "#D51A34"
+implemented = true
 
 [chaos]
 name = "Chaos"
 color = "#B41E34"
+implemented = true
 
 [dark_eldar]
 name = "Dark Eldar"
@@ -17,14 +19,17 @@ color = "#166F8C"
 [harlequins]
 name = "Harlequins"
 color = "#E0801B"
+implemented = true
 
 [grey_knights]
 name = "Grey Knights"
 color = "#666"
+implemented = true
 
 [necrons]
 name = "Necrons"
 color = "#3FBE17"
+implemented = true
 
 [tau_empire]
 name = "Tau Empire"
@@ -37,3 +42,24 @@ color = "#C11B5E"
 [genestealer_cults]
 name = "Genestealer Cults"
 color = "#3C3176"
+implemented = true
+
+[inquisition]
+name = "Inquisition"
+color = "#666666"
+
+[adepta_sororitas]
+name = "Adepta Sororitas"
+color = "#666666"
+
+[adeptus_astartes]
+name = "Adeptus Astartes"
+color = "#666666"
+
+[astra_militarum]
+name = "Astra Militarum"
+color = "#666666"
+
+[orks]
+name = "Orks"
+color = "#666666"
