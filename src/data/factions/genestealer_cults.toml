@@ -1,0 +1,152 @@
+key = "genestealer_cults"
+name = "Genestealer Cult Hybrid Kill Teams"
+
+[size]
+min = 3
+max = 15
+leader_max = 1
+specialist_max = 1
+
+[fighters.neophyte_leader]
+name = "Neophyte Leader"
+role = "Kill Team Leader"
+cost = 120
+stats = "4 3 3 3 3 1 4 2 9"
+wargear = ["combat blade", "mining suit"]
+equip = ["hand-to-hand", "pistols", "basic", "ammunition", "grenades", "misc"]
+skills = ["combat", "ferocity", "guerilla", "muscle", "shooting", "stealth"]
+
+[fighters.neophyte_hybrid]
+name = "Neophyte Hybrid"
+role = "Trooper"
+cost = 60
+stats = "4 3 3 3 3 1 4 1 8"
+wargear = ["combat_blade", "mining_suit"]
+equip = ["hand-to-hand", "pistols", "basic", "ammunition", "grenades", "misc"]
+skills = ["ferocity", "guerilla", "stealth"]
+
+[fighters.neophyte_initiate]
+name = "Neophyte Initiate"
+role = "New Recruit"
+cost = 50
+stats = "4 3 3 3 3 1 4 1 7"
+wargear = ["combat_blade", "mining_suit"]
+equip = ["hand-to-hand", "pistols", "basic", "ammunition", "grenades", "misc"]
+
+[fighters.neophyte_heavy]
+name = "Neophyte Heavy"
+role = "Specialist"
+cost = 70
+stats = "4 3 3 3 3 1 4 1 8"
+wargear = ["combat_blade", "mining_suit"]
+equip = ["hand-to-hand", "pistols", "special", "heavy", "ammunition", "grenades", "misc"]
+skills = ["guerilla", "muscle", "shooting", "stealth"]
+
+[wargear.combat_blade]
+name = "Combat blade"
+
+[wargear.mining_suit]
+name = "Mining suit"
+
+[weapons.ammunition.hot-shot_laser_power_pack]
+name = "Hot-shot laser power pack"
+cost = 15
+
+[weapons.grenades.blasting_charges]
+name = "Blasting charges"
+cost = 40
+
+[weapons.misc.clip_harness]
+name = "Clip harness"
+cost = 10
+
+[weapons.misc.photo-visor]
+name = "Photo-visor"
+cost = 15
+
+[weapons.misc.weapon_reload]
+name = "Weapon reload"
+cost = "*"
+only_weapon = { matches = "role", values = ["basic", "pistols", "special", "heavy"] }
+
+[weapons.hand-to-hand.combat_blade]
+name = "Combat blade (knife)"
+cost = 5
+
+[weapons.hand-to-hand.chainsword]
+name = "Chainsword"
+cost = 25
+
+[weapons.hand-to-hand.power_maul]
+name = "Power maul"
+cost = 50
+only_fighter = ["neophyte_leader"]
+
+[weapons.hand-to-hand.power_pick]
+name = "Power pick"
+cost = 50
+only_fighter = ["neophyte_leader"]
+
+[weapons.pistols.autopistol]
+name = "Autopistol"
+cost = 15
+
+[weapons.pistols.laspistol]
+name = "Laspistol"
+cost = 15
+
+[weapons.pistols.bolt_pistol]
+name = "Bolt pistol"
+cost = 25
+
+[weapons.pistols.web_pistol]
+name = "Web pistol"
+cost = 75
+only_fighter = ["neophyte_leader"]
+
+[weapons.basic.autogun]
+name = "Autogun"
+cost = 20
+
+[weapons.basic.shotgun]
+name = "Shotgun"
+cost = 20
+
+[weapons.basic.lasgun]
+name = "Lasgun"
+cost = 35
+
+[weapons.special.flamer]
+name = "Flamer"
+cost = 40
+
+[weapons.special.webber]
+name = "Webber"
+cost = 100
+
+[weapons.special.grenade_launcher_frag]
+name = "Grenade launcher (frag)"
+cost = 85
+
+[weapons.special.grenade_launcher_krak]
+name = "Grenade launcher (krak)"
+cost = 100
+
+[weapons.special.grenade_launcher_both]
+name = "Grenade launcher (frag & krak)"
+cost = 125
+
+[weapons.heavy.heavy_stubber]
+name = "Heavy stubber"
+cost = 120
+not_weapon = ["heavy_stubber", "mining_laser", "seismic_cannon"]
+
+[weapons.heavy.mining_laser]
+name = "Mining laser"
+cost = 200
+not_weapon = ["heavy_stubber", "mining_laser", "seismic_cannon"]
+
+[weapons.heavy.seismic_cannon]
+name = "Seismic cannon"
+cost = 250
+not_weapon = ["heavy_stubber", "mining_laser", "seismic_cannon"]
