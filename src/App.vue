@@ -47,7 +47,6 @@
   @import '../node_modules/bootstrap/scss/bootstrap.scss'
   @import url('https://fonts.googleapis.com/css?family=Montserrat|Open+Sans')
   html body
-    margin-bottom: 10em
     &, select
       font-family: 'Montserrat'
     background-color: $color5
