@@ -1,0 +1,106 @@
+key = "dark_eldar"
+name = "Dark Eldar Wych Cult Kill Team"
+
+[size]
+min = 5
+max = 10
+leader_max = 1
+specialist_max = 1
+
+[fighters.syren]
+name = "Syren"
+cost = 150
+role = "Kill Team Leader"
+stats = "6 4 4 3 3 1 6 3 9"
+wargear = ["wych_knife", "wychsuit"]
+equip = ["hand-to-hand", "gladiatorial", "pistols", "ammunition", "grenades", "misc"]
+
+[fighters.wych]
+name = "Wych"
+cost = 80
+role = "Trooper"
+stats = "6 4 4 3 3 1 6 1 8"
+wargear = ["wych_knife", "wychsuit"]
+equip = ["hand-to-hand", "pistols", "ammunition", "grenades", "misc"]
+
+[fighters.debutante]
+name = "Debutante"
+cost = 70
+role = "New Recruit"
+stats = "6 3 3 3 3 1 6 1 8"
+wargear = ["wych_knife", "wychsuit"]
+equip = ["hand-to-hand", "pistols", "grenades", "misc"]
+
+[fighters.bloodbride]
+name = "Bloodbride"
+cost = 100
+role = "Specialist"
+stats = "6 4 4 3 3 1 6 2 9"
+wargear = ["wych_knife", "wychsuit"]
+equip = ["gladiatorial", "grenades", "misc"]
+
+[wargear.wych_knife]
+name = "Wych knife"
+
+[wargear.wychsuit]
+name = "Wychsuit"
+
+[weapons.ammunition.soul-seeker_rounds]
+name = "Soul-seeker rounds"
+cost = 15
+only_weapon = { matches = "key", values = [ "spliter_pistol" ] }
+
+[weapons.grenades.plasma_grenades]
+name = "Plasma grenades"
+cost = 25
+
+[weapons.misc.blade_venom]
+name = "Blade venom"
+cost = 10
+
+[weapons.misc.mirrorhelm]
+name = "Mirrorhelm"
+cost = 20
+
+[weapons.misc.weapon_reload]
+name = "Weapon reload"
+cost = "*"
+only_weapon = { matches = "role", values = ["pistols"] }
+
+[weapons.hand-to-hand.wych_knife]
+name = "Wych knife (knife)"
+cost = 5
+
+[weapons.hand-to-hand.chainhook]
+name = "Chainhook"
+cost = 10
+
+[weapons.hand-to-hand.agoniser]
+name = "Agoniser"
+cost = 45
+
+[weapons.hand-to-hand.power_sword]
+name = "Power sword"
+cost = 50
+only_fighter = ["syren"]
+
+[weapons.pistols.spliter_pistol]
+name = "Splinter pistol"
+cost = 20
+
+[weapons.pistols.blast_pistol]
+name = "Blast pistol"
+cost = 50
+only_fighter = ["syren"]
+
+[weapons.gladiatorial.hydra_gauntlets]
+name = "Hydra gauntlets"
+cost = 30
+
+[weapons.gladiatorial.razorflails]
+name = "Razor flails"
+cost = 30
+
+[weapons.gladiatorial.shardnet_and_impaler]
+name = "Shardnet and impaler"
+cost = 35

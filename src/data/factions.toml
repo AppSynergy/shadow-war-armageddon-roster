@@ -11,6 +11,7 @@ implemented = true
 [dark_eldar]
 name = "Dark Eldar"
 color = "#801593"
+implemented = true
 
 [craftworlds]
 name = "Craftworlds"
