@@ -82,6 +82,7 @@
 
 <script lang="coffee">
 
+  import Analytics from './mixin/Analytics.coffee'
   import Collections from './mixin/Collections.coffee'
   import Fighter from './Fighter.vue'
   import Modal from './Modal.vue'
@@ -93,7 +94,7 @@
 
     components: { Fighter, Modal }
 
-    mixins: [ Storage, Collections ]
+    mixins: [ Analytics, Collections, Storage ]
 
     data: () ->
       teamName: ""
@@ -134,6 +135,7 @@
       totalNumberFighters: () -> @$store.getters.getTotalNumberFighters
 
     mounted: () ->
+      @track 'build/' + @factionId
       @teamName = @$store.getters.getTeamName
 
     beforeRouteLeave: (to, from, next) ->
