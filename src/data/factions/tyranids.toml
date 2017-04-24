@@ -1,0 +1,98 @@
+key = "tyranids"
+name = "Tyranid Warrior Kill Team"
+
+[size]
+min = 3
+max = 5
+leader_max = 1
+specialist_max = 2
+
+[fighters.tyranid_alpha]
+name = "Tyranid Alpha"
+cost = 250
+role = "Kill Team Leader"
+stats = "5 5 4 4 4 3 4 3 10"
+wargear = ["pair_of_scything_talons", "chitin_carapace"]
+equip = ["hand-to-hand", "basic", "biomorphs"]
+
+[fighters.tyranid_warrior]
+name = "Tyranid Warrior"
+cost = 200
+role = "Trooper"
+stats = "5 5 3 4 4 3 4 3 10"
+wargear = ["pair_of_scything_talons", "chitin_carapace"]
+equip = ["hand-to-hand", "basic", "biomorphs"]
+
+[fighters.tyranid_new-spawn]
+name = "Tyranid New-spawn"
+cost = 175
+role = "New Recruit"
+stats = "5 4 3 4 4 3 4 3 10"
+wargear = ["pair_of_scything_talons", "chitin_carapace"]
+equip = ["hand-to-hand", "basic", "biomorphs"]
+
+[fighters.tyranid_gun-beast]
+name = "Tyranid Gun-beast"
+cost = 225
+role = "Specialist"
+stats = "5 4 4 4 4 3 4 3 10"
+wargear = ["pair_of_scything_talons", "chitin_carapace"]
+equip = ["hand-to-hand", "basic", "bio-cannons" "biomorphs"]
+
+[wargear.pair_of_scything_talons]
+name = "Pair of scything talons"
+
+[wargear.chitin_carapace]
+name = "Chitin carapace"
+
+[weapons.biomorphs.adrenal_glands]
+name = "Adrenal glands"
+cost = 10
+
+[weapons.biomorphs.toxin_sacs]
+name = "Toxin sacs"
+cost =  10
+
+[weapons.biomorphs.extended_chitin_carapace]
+name = "Extended chitin carapace"
+cost = 15
+
+[weapons.biomorphs.flesh_hooks]
+name = "Flesh hooks"
+cost = 15
+
+[weapons.biomorphs.acid_blood]
+name = "Acid blood"
+cost = 20
+
+[weapons.hand-to-hand.pair_of_scything_talons]
+name = "Pair of scything talons"
+cost = 10
+
+[weapons.hand-to-hand.pair_of_rending_claws]
+name = "Pair of rending claws"
+cost = 25
+
+[weapons.hand-to-hand.lash_whip_and_bonesword]
+name = "Lash whip and bonesword"
+cost = 100
+
+[weapons.hand-to-hand.pair_of_boneswords]
+name = "Pair of boneswords"
+cost = 125
+
+[weapons.basic.pair_of_spinefists]
+name = "Pair of spinefists"
+cost = 25
+
+[weapons.basic.deathspitter]
+name = "Deathspitter"
+cost = 45
+
+[weapons.bio-cannons.barbed_strangler]
+name = "Barbed strangler"
+cost = 150
+
+[weapons.bio-cannons.venom_cannon]
+name = "Venom cannon"
+cost = 165
