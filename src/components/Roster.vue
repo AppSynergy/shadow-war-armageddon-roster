@@ -7,6 +7,8 @@
           <router-link class="btn btn-primary" to="/" role="button">Home</router-link>
           <button class="btn" :disabled="!dirty"
             v-on:click="saveRoster()">Save</button>
+          <router-link class="btn btn-primary" :disabled="!empty" role="button"
+            :to="'/roster-view/'+factionId">Roster View</router-link>
         </span>
       </div>
 
@@ -133,18 +135,22 @@
       chosenFighters: () -> @$store.getters.getFighters
       totalPointsCost: () -> @$store.getters.getTotalPointsCost
       totalNumberFighters: () -> @$store.getters.getTotalNumberFighters
+      empty: () -> @totalNumberFighters == 0
 
     mounted: () ->
       @track 'build/' + @factionId
       @teamName = @$store.getters.getTeamName
 
     beforeRouteLeave: (to, from, next) ->
-      if @totalNumberFighters == 0 || @dirty is false
-        @$store.commit 'discardRoster'
+      if to.path.match /\/roster-view\/[a-z_]+$/
         next()
       else
-        @discardAction = next
-        jQuery('#' + @modalId).modal 'show'
+        if @totalNumberFighters == 0 || @dirty is false
+          @$store.commit 'discardRoster'
+          next()
+        else
+          @discardAction = next
+          jQuery('#' + @modalId).modal 'show'
 
     methods:
 

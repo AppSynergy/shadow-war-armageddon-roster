@@ -16,6 +16,7 @@
 
   import Home from './components/Home.vue'
   import Roster from './components/Roster.vue'
+  import RosterView from './components/RosterView.vue'
 
   App =
     name: 'app'
@@ -23,6 +24,7 @@
       @$router.addRoutes [
         { path: '/', component: Home, name: 'home' }
         { path: '/build/:factionId', component: Roster, props: true }
+        { path: '/roster-view/:factionId', component: RosterView, props: true }
       ]
 
   export default App
