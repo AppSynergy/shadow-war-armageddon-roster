@@ -1,0 +1,119 @@
+key = "tau_empire"
+name = "Tau Pathfinder Kill Team"
+
+[size]
+min = 3
+max = 5
+leader_max = 1
+specialist_max = 2
+
+[fighters.pathfinder_shas_ui]
+name = "Pathfinder Shas'ui"
+cost = 140
+role = "Kill Team Leader"
+stats = "4 2 3 3 3 1 2 1 8"
+wargear = ["combat_blade", "recon_armour"]
+equip = ["pistols", "basic", "grenades", "misc"]
+
+[fighters.pathfinder]
+name = "Pathfinder"
+cost = 60
+role = "Trooper"
+stats = "4 2 3 3 3 1 2 1 7"
+wargear = ["combat_blade", "recon_armour"]
+equip = ["pistols", "basic", "grenades", "misc"]
+
+[fighters.pathfinder_cadet]
+name = "Pathfinder Cadet"
+cost = 50
+role = "New Recruit"
+stats = "4 2 3 3 3 1 2 1 7"
+wargear = ["combat_blade", "recon_armour"]
+equip = ["basic", "grenades", "misc"]
+
+[fighters.pathfinder_specialist]
+name = "Pathfinder Specialist"
+cost = 60
+role = "Specialist"
+stats = "4 2 3 3 3 1 2 1 7"
+wargear = ["combat_blade", "recon_armour"]
+equip = ["pistols", "special", "grenades", "misc"]
+
+[fighters.mb3_recon_drone]
+name = "MB3 Recon Drone"
+cost = 110
+role = "Drone"
+stats = "6 2 2 3 4 1 2 1 8"
+wargear = ["burst_cannon", "scanning_array", "combat_blade", "drone_carapace"]
+
+[fighters.mv33_grav-inhibitor_drone]
+name = "MV33 Grav-Inhibitor Drone"
+cost = 50
+role = "Drone"
+stats = "6 2 2 3 4 1 2 1 8"
+wargear = ["gravity_wave_projector", "combat_blade", "drone_carapace"]
+
+[fighters.mv31_pulse_accelerator_drone]
+name = "MV31 Pulse Accelerator Drone"
+cost = 50
+role = "Drone"
+stats = "6 2 2 3 4 1 2 1 8"
+wargear = ["pulse_accelerator", "combat_blade", "drone_carapace"]
+
+[wargear.combat_blade]
+name = "Combat blade"
+
+[wargear.recon_armour]
+name = "Recon armour"
+
+[wargear.burst_cannon]
+name = "Burst cannon"
+
+[wargear.scanning_array]
+name = "Scanning array"
+
+[wargear.gravity_wave_projector]
+name = "Gravity wave projector"
+
+[wargear.pulse_accelerator]
+name = "Pulse accelerator"
+
+[wargear.drone_carapace]
+name = "Drone carapace"
+
+[weapons.grenades.photon_grenades]
+name = "Photon grenades"
+cost = 10
+
+[weapons.misc.clip_harness]
+name = "Clip harness"
+cost = 10
+
+[weapons.misc.photo-visor]
+name = "Photo-visor"
+cost = 15
+
+[weapons.misc.markerlight]
+name = "Markerlight"
+cost = 15
+
+[weapons.misc.weapon_reload]
+name = "Weapon reload"
+cost = '*'
+only_weapon = { matches = "role", values = ["basic", "pistols", "special"] }
+
+[weapons.pistols.pulse_pistol]
+name = "Pulse pistol"
+cost = 30
+
+[weapons.basic.pulse_carbine]
+name = "Pulse carbine"
+cost = 30
+
+[weapons.special.ion_rifle]
+name = "Ion rifle"
+cost = 100
+
+[weapons.special.rail_rifle]
+name = "Rail rifle"
+cost = 120

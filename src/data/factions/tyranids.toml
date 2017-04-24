@@ -37,7 +37,7 @@ cost = 225
 role = "Specialist"
 stats = "5 4 4 4 4 3 4 3 10"
 wargear = ["pair_of_scything_talons", "chitin_carapace"]
-equip = ["hand-to-hand", "basic", "bio-cannons" "biomorphs"]
+equip = ["hand-to-hand", "basic", "bio-cannons", "biomorphs"]
 
 [wargear.pair_of_scything_talons]
 name = "Pair of scything talons"

@@ -36,6 +36,7 @@ implemented = true
 [tau_empire]
 name = "Tau Empire"
 color = "#99A637"
+implemented = true
 
 [tyranids]
 name = "Tyranids"
