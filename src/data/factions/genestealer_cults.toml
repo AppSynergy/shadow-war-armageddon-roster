@@ -5,14 +5,14 @@ name = "Genestealer Cult Hybrid Kill Teams"
 min = 3
 max = 15
 leader_max = 1
-specialist_max = 1
+specialist_max = 3
 
 [fighters.neophyte_leader]
 name = "Neophyte Leader"
 role = "Kill Team Leader"
 cost = 120
 stats = "4 3 3 3 3 1 4 2 9"
-wargear = ["combat blade", "mining suit"]
+wargear = ["combat_blade", "mining_suit"]
 equip = ["hand-to-hand", "pistols", "basic", "ammunition", "grenades", "misc"]
 skills = ["combat", "ferocity", "guerilla", "muscle", "shooting", "stealth"]
 
