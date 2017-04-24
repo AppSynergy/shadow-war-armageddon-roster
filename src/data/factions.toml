@@ -54,7 +54,8 @@ color = "#666666"
 
 [adepta_sororitas]
 name = "Adepta Sororitas"
-color = "#666666"
+color = "#444444"
+implemented = true
 
 [adeptus_astartes]
 name = "Adeptus Astartes"
