@@ -1,11 +1,11 @@
 [skitarii]
 name = "Skitarii"
-color = "#D51A34"
+color = "#B41E34"
 implemented = true
 
 [chaos]
 name = "Chaos"
-color = "#B41E34"
+color = "#884444"
 implemented = true
 
 [dark_eldar]
@@ -20,7 +20,7 @@ implemented = true
 
 [harlequins]
 name = "Harlequins"
-color = "#E0801B"
+color = "#888844"
 implemented = true
 
 [grey_knights]
@@ -30,12 +30,12 @@ implemented = true
 
 [necrons]
 name = "Necrons"
-color = "#3FBE17"
+color = "#446644"
 implemented = true
 
 [tau_empire]
 name = "Tau Empire"
-color = "#99A637"
+color = "#666644"
 implemented = true
 
 [tyranids]
@@ -50,7 +50,8 @@ implemented = true
 
 [inquisition]
 name = "Inquisition"
-color = "#666666"
+color = "#664466"
+implemented = true
 
 [adepta_sororitas]
 name = "Adepta Sororitas"
