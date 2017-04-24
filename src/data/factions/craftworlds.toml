@@ -61,7 +61,7 @@ name = "Photo-visor"
 cost = 15
 
 [weapons.misc.shimmershield]
-name = "Shimmersheild"
+name = "Shimmershield"
 cost = 30
 only_fighter = ["dire_avenger_exarch"]
 

@@ -30,7 +30,8 @@
           v-for="roster in savedRosters">
           <div class="card mb-3 saved-roster-card">
             <div class="card-header">
-              <h4 class="m-0">{{ roster.teamName }}</h4>
+              <h4 v-if="roster.teamName != ''" class="m-0">{{ roster.teamName }}</h4>
+              <h4 v-else class="m-0">Unnamed {{ factions[roster.factionId].name }} Team</h4>
             </div>
             <div class="card-block">
               <p>{{ factions[roster.factionId].name }},

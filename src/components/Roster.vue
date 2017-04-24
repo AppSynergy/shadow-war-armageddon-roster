@@ -29,6 +29,15 @@
       </div>
     </div>
 
+    <div class="notifications mt-4">
+      <transition-group name="fade">
+        <div v-for="note in notifications" v-bind:key="note.id"
+          class="alert alert-success">
+          {{ note.desc }}
+        </div>
+      </transition-group>
+    </div>
+
     <div class="errors mt-4">
       <div v-for="error in errors" class="alert alert-danger">
         {{ error.desc }}
@@ -95,6 +104,7 @@
       ]
       chosenFaction: null
       discardAction: () -> null
+      notifications: []
 
     computed:
 
@@ -148,6 +158,11 @@
           fighters: @chosenFighters
           factionId: @factionId
           teamName: @teamName
+        @notifications.push { id: 'save', desc: 'Roster saved.' }
+        window.setTimeout (() => @clearNotification()), 2000
+
+      clearNotification: () ->
+        @notifications = _.reject @notifications, (x) -> x.id == 'save'
 
       nameTeam: () ->
         @$store.commit 'nameTeam', @teamName

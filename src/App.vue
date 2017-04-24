@@ -77,4 +77,10 @@
   //.saved-roster-card, .faction-card
     border: 2px solid $color2
 
+  .fade-enter-active, .fade-leave-active
+    transition: opacity 0.6s
+  .fade-enter, .fade-leave-to
+    opacity: 0
+
+
 </style>
