@@ -29,20 +29,26 @@
       </div>
     </div>
 
+    <div class="errors mt-4">
+      <div v-for="error in errors" class="alert alert-danger">
+        {{ error.desc }}
+      </div>
+    </div>
+
     <div class="card px-4 mt-4 team-background">
       <div class="row">
-        <div class="col col-12 col-md-6">
+        <div class="col col-12 col-lg-6">
           <input class="form-control my-4" type="text" v-model="teamName"
             v-on:change="nameTeam"
             placeholder="Name your kill-team">
         </div>
-        <div class="col col-12 col-md-6">
-          <h2 class="my-4" v-if="faction">
+        <div class="col col-12 col-lg-6">
+          <h3 class="pt-1 my-4" v-if="faction">
             {{ totalPointsCost }} points
             <span class="float-right">
-              {{ totalNumberFighters }} / {{ faction.size.max }} models
+              {{ totalNumberFighters }} / {{ faction.size.min}} - {{ faction.size.max }} models
             </span>
-          </h2>
+          </h3>
         </div>
       </div>
       <div class="chosen-fighter-card card mb-4 px-2 py-4 fighter-background"
@@ -99,6 +105,18 @@
           Faction
         catch error
           false
+
+      errors: () ->
+        errors = []
+        if @totalNumberFighters < @faction.size.min
+          errors.push { desc: 'You need at least ' + @faction.size.min + ' fighters in this kill team.' }
+        if @totalNumberFighters > @faction.size.max
+          errors.push { desc: 'You can\'t have more than ' + @faction.size.min + ' fighters in this kill team.' }
+        if @teamName == ''
+          errors.push { desc: 'Your kill team needs a name.'}
+        if @$store.getters.getNumberFightersByRole('Kill Team Leader') != 1
+          errors.push { desc: 'Your kill team needs a leader.'}
+        errors
 
       dirty: () -> @$store.getters.getDirty
       chosenFighters: () -> @$store.getters.getFighters
