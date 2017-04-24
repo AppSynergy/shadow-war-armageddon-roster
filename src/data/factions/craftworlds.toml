@@ -1,0 +1,124 @@
+key = "craftworlds"
+name = "Craftworld Eldar Kill Team"
+
+[size]
+min = 5
+max = 10
+leader_max = 1
+specialist_max = 1
+
+[fighters.dire_avenger_exarch]
+name = "Dire Avenger Exarch"
+cost = 240
+role = "Kill Team Leader"
+stats = "5 5 5 3 3 2 6 2 9"
+wargear = ["combat_blade", "aspect_armour"]
+equip = ["hand-to-hand", "pistols", "basic", "grenades", "misc"]
+skills = ["combat", "ferocity", "guerilla", "agility", "shooting", "stealth"]
+
+[fighters.dire_avenger]
+name = "Dire Avenger"
+cost = 100
+role = "Trooper"
+stats = "5 4 4 3 3 1 5 1 9"
+wargear = ["combat_blade", "aspect_armour"]
+equip = ["basic", "grenades", "misc"]
+skills = ["agility", "shooting", "stealth"]
+
+[fighters.guardian_defender]
+name = "Guardian Defender"
+cost = 80
+role = "New Recruit"
+stats = "5 4 4 3 3 1 5 1 8"
+wargear = ["combat_blade", "mesh_armour"]
+equip = ["basic", "grenades", "misc"]
+skills = []
+
+[fighters.guardian_defender_gunner]
+name = "Guardian Defender Gunner"
+cost = 90
+role = "Specialist"
+stats = "5 4 4 3 3 1 5 1 8"
+wargear = ["combat_blade", "mesh_armour"]
+equip = ["basic", "grenades", "misc", "heavy"]
+skills = ["guerilla", "agility", "shooting", "stealth"]
+
+[wargear.combat_blade]
+name = "Combat blade"
+
+[wargear.aspect_armour]
+name = "Aspect armour"
+
+[wargear.mesh_armour]
+name = "Mesh armour"
+
+[weapons.grenades.plasma_grenades]
+name = "Plasma grenades"
+cost = 25
+
+[weapons.misc.photo-visor]
+name = "Photo-visor"
+cost = 15
+
+[weapons.misc.shimmershield]
+name = "Shimmersheild"
+cost = 30
+only_fighter = ["dire_avenger_exarch"]
+
+[weapons.misc.weapon_reload]
+name = "Weapon reload"
+cost = "*"
+only_weapon = { matches = "role", values = ["pistols", "basic", "heavy"] }
+
+[weapons.hand-to-hand.combat_blade]
+name = "Combat blade (knife)"
+cost = 5
+
+[weapons.hand-to-hand.diresword]
+name = "Diresword"
+cost = 60
+only_fighter = ["dire_avenger_exarch"]
+
+[weapons.hand-to-hand.powerglaive]
+name = "Powerglaive"
+cost = 50
+only_fighter = ["dire_avenger_exarch"]
+
+[weapons.pistols.shuriken_pistol]
+name = "Shuriken pistol"
+cost = 35
+
+[weapons.basic.avenger_shuriken_catapult]
+name = "Avenger shuriken catapult"
+cost = 45
+only_fighter = ["dire_avenger_exarch", "dire_avenger"]
+
+[weapons.basic.shuriken_catapult]
+name = "Shuriken catapult"
+cost = 40
+only_fighter = ["guardian_defender", "guardian_defender_gunner"]
+
+[weapons.basic.twin_avenger_shuriken_catapult]
+name = "Twin Avenger shuriken catapult"
+cost = 70
+only_fighter = ["dire_avenger_exarch"]
+
+[weapons.heavy.heavy_weapon_platform_bright_lance]
+name = "Heavy Weapons Platform with bright lance"
+cost = 250
+
+[weapons.heavy.heavy_weapon_platform_missile_launcher]
+name = "Heavy Weapons Platform with Eldar missile launcher with plasma missiles and starshot missiles"
+cost = 200
+
+[weapons.heavy.heavy_weapon_platform_scatter_laser]
+name = "Heavy Weapons Platform with scatter laser"
+cost = 160
+
+[weapons.heavy.heavy_weapon_platform_shuriken_cannon]
+name = "Heavy Weapons Platform with shuriken cannon"
+cost = 180
+
+[weapons.heavy.heavy_weapon_platform_starcannon]
+name = "Heavy Weapons Platform with starcannon"
+cost = 200

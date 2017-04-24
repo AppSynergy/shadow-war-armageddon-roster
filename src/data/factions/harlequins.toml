@@ -14,6 +14,7 @@ role = "Kill Team Leader"
 stats = "6 6 5 3 3 2 7 3 10"
 wargear = ["concealed_blade", "harlequin_mask", "flip_belt", "holo-suit"]
 equip = ["hand-to-hand", "pistols", "grenades", "misc"]
+skills = ["combat", "ferocity", "guerilla", "agility", "shooting", "stealth"]
 
 [fighters.player]
 name = "Player"
@@ -22,6 +23,7 @@ role = "Trooper"
 stats = "6 5 4 3 3 1 6 2 9"
 wargear = ["concealed_blade", "harlequin_mask", "flip_belt", "holo-suit"]
 equip = ["hand-to-hand", "pistols", "grenades", "misc"]
+skills = ["combat", "agility", "stealth"]
 
 [fighters.mime]
 name = "Mime"
@@ -30,6 +32,7 @@ role = "New Recruit"
 stats = "6 4 4 3 3 1 6 2 9"
 wargear = ["concealed_blade", "harlequin_mask", "flip_belt", "holo-suit"]
 equip = ["hand-to-hand", "pistols", "grenades", "misc"]
+skills = []
 
 [fighters.virtuoso]
 name = "Virtuoso"
@@ -38,6 +41,7 @@ role = "Specialist"
 stats = "6 5 5 3 3 1 6 2 9"
 wargear = ["concealed_blade", "harlequin_mask", "flip_belt", "holo-suit"]
 equip = ["hand-to-hand", "pistols", "grenades", "misc"]
+skills = ["combat", "agility", "shooting", "stealth"]
 
 [wargear.concealed_blade]
 name = "Concealed blade"

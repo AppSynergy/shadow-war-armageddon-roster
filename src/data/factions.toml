@@ -15,6 +15,7 @@ color = "#801593"
 [craftworlds]
 name = "Craftworlds"
 color = "#166F8C"
+implemented = true
 
 [harlequins]
 name = "Harlequins"
