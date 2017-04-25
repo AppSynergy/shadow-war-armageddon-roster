@@ -16,15 +16,18 @@
       <div class="fighter-row row mb-4">
         <div class="col col-12 col-sm-6"
           v-for="fighter in faction.fighters" v-if="faction">
-          <div class="card available-fighter-card mb-2">
+          <div class="card available-fighter-card mb-2 bg-inverse text-white">
 
-            <h4 class="my-0">
-              <button class="btn btn-success"
+            <div class="my-0">
+              <button class="btn btn-success align-top ml-1 mt-1"
               :disabled="cannotAddFighter(fighter)"
                 v-on:click="addFighter(fighter)">Add</button>
-              <span class="pl-2 pr-4">{{ fighter.name }}</span>
-              <em class="badge badge-info">{{ fighter.cost }} points</em>
-            </h4>
+              <span class="d-inline-block mt-1">
+                <div class="pl-2">{{ fighter.name }}</div>
+                <div class="pl-2 up-a-bit"><small>{{ fighter.role }}</small></div>
+              </span>
+              <span class="float-right mt-1 mr-4">{{ fighter.cost }} points</span>
+            </div>
 
           </div>
         </div>
@@ -46,7 +49,7 @@
       </div>
     </div>
 
-    <div class="card px-4 mt-4 team-background">
+    <div class="card px-4 mt-4 team-background" v-if="totalNumberFighters > 0">
       <div class="row">
         <div class="col col-12 col-lg-6">
           <input class="form-control my-4" type="text" v-model="teamName"
@@ -124,7 +127,7 @@
         if @totalNumberFighters < @faction.size.min
           errors.push { desc: 'You need at least ' + @faction.size.min + ' fighters in this kill team.' }
         if @totalNumberFighters > @faction.size.max
-          errors.push { desc: 'You can\'t have more than ' + @faction.size.min + ' fighters in this kill team.' }
+          errors.push { desc: 'You can\'t have more than ' + @faction.size.max + ' fighters in this kill team.' }
         if @teamName == ''
           errors.push { desc: 'Your kill team needs a name.'}
         if @$store.getters.getNumberFightersByRole('Kill Team Leader') != 1

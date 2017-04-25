@@ -106,5 +106,8 @@
   .fade-enter, .fade-leave-to
     opacity: 0
 
+  .up-a-bit
+    line-height: 60%
+
 
 </style>

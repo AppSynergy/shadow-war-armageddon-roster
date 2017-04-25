@@ -3,9 +3,10 @@ name = "Tau Pathfinder Kill Team"
 
 [size]
 min = 3
-max = 5
+max = 10
 leader_max = 1
 specialist_max = 2
+drone_max = 3
 
 [fighters.pathfinder_shas_ui]
 name = "Pathfinder Shas'ui"
