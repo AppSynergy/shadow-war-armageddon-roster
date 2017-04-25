@@ -62,13 +62,13 @@
           </h3>
         </div>
       </div>
-      <div class="chosen-fighter-card card mb-4 px-2 py-4 fighter-background"
-        v-for="fighter, index in chosenFighters">
-        <fighter
-          :index="index"
-          :weaponsAvailable="weaponsAvailable(fighter)"
-        ></fighter>
-      </div>
+
+      <fighter v-for="fighter, index in chosenFighters"
+        :index="index"
+        :key="'fighter' + index"
+        :weaponsAvailable="weaponsAvailable(fighter)"
+      ></fighter>
+
     </div>
 
     <modal

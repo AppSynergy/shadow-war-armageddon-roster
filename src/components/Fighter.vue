@@ -1,48 +1,55 @@
 <template>
   <div class="fighter-vue">
+    <div class="chosen-fighter-card card mb-4 fighter-background">
 
-    <button class="btn btn-danger px-1 py-0 remove-button"
-      aria-label="Remove"
-      v-on:click="removeFighter()">
-      <i class="fa fa-times">&times;</i>
-    </button>
-
-    <div class="row">
-
-      <div class="col col-12 col-md-6 col-lg-3 col-first">
-        <input class="form-control mr-2" type="text"
-          placeholder="Name me!"
-          v-on:change="nameFighter"
-          v-model="fighter.realName">
-        <h4 class="mt-2 pl-2">{{ fighter.name }}</h4>
-        <div class="mt-2 pl-2">{{ fighter.role}}</div>
-        <em class="mt-2 ml-2 badge badge-info">{{ fighter.cost }} points</em>
+      <div class="card-header bg-inverse text-white">
+        <h4 class="m-0">
+          <span class="pr-4"><strong>{{ fighter.name }}</strong></span>
+          <span class="pr-4">{{ fighter.role}}</span>
+          <span class="float-right">
+            <em class="badge badge-info mr-4">{{ fighter.cost }} points</em>
+            <button class="btn btn-danger px-1 py-0 remove-button"
+              aria-label="Remove"
+              v-on:click="removeFighter()">
+              <i class="fa fa-times">&times;</i>
+            </button>
+          </span>
+        </h4>
       </div>
 
-      <div class="col col-12 col-md-6 col-lg-4">
-        <fighter-stats :statstring="fighter.stats">
-        </fighter-stats>
-      </div>
+      <div class="card-block">
+        <div class="row">
 
-      <div class="col col-12 col-md-6 col-lg-5">
-        <fighter-wargear class="fighter-wargear"
-          :fighterIndex="index"
-          :wargear="fighter.wargear"
-          :weapons="fighter.weapons"
-        ></fighter-wargear>
-        <select class="form-control w-75 mt-2 add-wargear"
-          v-on:change="chooseNewWeapon"
-          v-model="newWeapon">
-          <option value="null" selected disabled>
-            Add weapons / equipment</option>
-          <option v-for="weapon, key in weaponsAvailable"
-            :value="weapon"
-          >{{ weapon.name }} ({{ weapon.cost }})</option>
-        </select>
+          <div class="col col-12 col-md-4">
+            <input class="form-control mb-3" type="text"
+              placeholder="Name me!"
+              v-on:change="nameFighter"
+              v-model="fighter.realName">
+            <fighter-stats :statstring="fighter.stats">
+            </fighter-stats>
+          </div>
+
+          <div class="col col-12 col-md-8">
+            <select class="form-control add-wargear mb-3"
+              v-on:change="chooseNewWeapon"
+              v-model="newWeapon">
+              <option value="null" selected disabled>
+                Add weapons / equipment</option>
+              <option v-for="weapon, key in weaponsAvailable"
+                :value="weapon"
+              >{{ weapon.name }} ({{ weapon.cost }})</option>
+            </select>
+            <fighter-wargear class="fighter-wargear"
+              :fighterIndex="index"
+              :wargear="fighter.wargear"
+              :weapons="fighter.weapons"
+            ></fighter-wargear>
+          </div>
+
+        </div>
       </div>
 
     </div>
-
   </div>
 </template>
 
@@ -89,12 +96,3 @@
   export default Fighter
 
 </script>
-
-<style lang="sass">
-  .col-first .badge-info
-    font-size: 140%
-  .remove-button
-    position: absolute
-    right: 0.25em
-    top: 0.25em
-</style>
