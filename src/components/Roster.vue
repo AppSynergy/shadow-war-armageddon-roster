@@ -2,7 +2,7 @@
   <div class="roster-vue mb-4 container">
 
     <div class="card px-4 mt-4 team-background">
-      <div class="card-header team-background">
+      <div class="card-header px-0 team-background">
         <span class="float-right">
           <router-link class="btn btn-primary" to="/" role="button">Home</router-link>
           <button class="btn" :disabled="!dirty"
@@ -14,18 +14,18 @@
 
       <h2 class="my-4 text-center">{{ faction.name }}</h2>
       <div class="fighter-row row mb-4">
-        <div class="col col-6 col-md-3"
+        <div class="col col-12 col-sm-6"
           v-for="fighter in faction.fighters" v-if="faction">
-          <div class="card available-fighter-card">
-            <div class="card-block text-center py-2">
-              <h4 class="my-0">{{ fighter.name }}</h4>
-              <div class="mt-1 mb-2">
-                <em class="badge badge-info">{{ fighter.cost }} points</em>
-              </div>
+          <div class="card available-fighter-card mb-2">
+
+            <h4 class="my-0">
               <button class="btn btn-success"
               :disabled="cannotAddFighter(fighter)"
                 v-on:click="addFighter(fighter)">Add</button>
-            </div>
+              <span class="pl-2 pr-4">{{ fighter.name }}</span>
+              <em class="badge badge-info">{{ fighter.cost }} points</em>
+            </h4>
+
           </div>
         </div>
       </div>

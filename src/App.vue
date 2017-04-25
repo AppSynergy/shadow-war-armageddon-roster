@@ -93,15 +93,10 @@
     button
       cursor: pointer
 
-  .fighter-background
-    background-color: $color5
-
   .team-background
     background-color: lighten($color5, 3)
 
   .stats-vue
-    table
-      border: 2px solid $color2
     td, th
       width: 10%
       background-color: white

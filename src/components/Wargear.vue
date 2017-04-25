@@ -1,12 +1,12 @@
 <template>
   <div class="wargear-vue">
 
-    <div class="wargear-item d-inline-block mr-4 mt-1"
+    <div class="wargear-item d-inline-block mr-4 mb-1"
       v-for="item in wargear">
       <span class="wargear-name">{{ item.name }}</span>
     </div>
 
-    <div class="wargear-item d-inline-block mr-4 mt-1"
+    <div class="wargear-item d-inline-block mr-4 mb-1"
       v-for="weapon, index in weapons">
       <span class="wargear-name">{{ weapon.name }}</span> -
       <em class="badge badge-info">{{ weapon.cost }} points</em>

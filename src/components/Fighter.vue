@@ -20,7 +20,7 @@
       <div class="card-block">
         <div class="row">
 
-          <div class="col col-12 col-md-4">
+          <div class="col col-12 col-md-5 col-lg-4">
             <input class="form-control mb-3" type="text"
               placeholder="Name me!"
               v-on:change="nameFighter"
@@ -29,7 +29,7 @@
             </fighter-stats>
           </div>
 
-          <div class="col col-12 col-md-8">
+          <div class="col col-12 col-md-7 col-lg-8">
             <select class="form-control add-wargear mb-3"
               v-on:change="chooseNewWeapon"
               v-model="newWeapon">
