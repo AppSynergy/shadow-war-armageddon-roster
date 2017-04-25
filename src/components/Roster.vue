@@ -188,6 +188,7 @@
         switch fighter.role
           when "Kill Team Leader" then roleCount >= @faction.size.leader_max
           when "Specialist" then roleCount >= @faction.size.specialist_max
+          when "Drone" then roleCount >= @faction.size.drone_max
           else false
 
       weaponsAvailable: (fighter) ->
