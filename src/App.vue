@@ -1,11 +1,11 @@
 <template>
   <div id="app">
-    <div class="container no-print-container">
-      <h1 class="site-name text-center text-uppercase mt-4 mb-0 hidden-print">
+    <div class="container hidden-print">
+      <h1 class="site-name text-center text-uppercase mt-4 mb-0">
         Shadow War: Argameddon Rosters
       </h1>
-      <router-view></router-view>
     </div>
+    <router-view></router-view>
     <div v-if="$route.name == 'home'" class="container mt-5">
       <div id="disqus_thread"></div>
     </div>
@@ -64,10 +64,9 @@
       position: absolute
       left: 0
       top: 0
-      border: 5px solid black
     @page
       margin: 0
-      size: landscape
+      //size: landscape
 
   $color1: rgba(132, 140, 142, 1)
   $color2: rgba(67, 80, 88, 1)

@@ -1,7 +1,7 @@
 <template>
-  <div class="roster-view-vue">
+  <div class="roster-view-vue m-2">
 
-    <div class="my-5 hidden-print">
+    <div class="my-5 hidden-print text-center">
       <router-link :to="'/build/'+factionId"
         class="btn btn-primary" role="button">
         Return to list builder
@@ -75,6 +75,7 @@
 
 <style lang="sass">
   .roster-view
+    font-size: 90%
     font-family: "Courier New", serif
     border: 2px solid #444
     background-color: white

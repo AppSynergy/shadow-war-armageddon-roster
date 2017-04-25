@@ -1,5 +1,5 @@
 <template>
-  <div class="roster-vue mb-4">
+  <div class="roster-vue mb-4 container">
 
     <div class="card px-4 mt-4 team-background">
       <div class="card-header team-background">

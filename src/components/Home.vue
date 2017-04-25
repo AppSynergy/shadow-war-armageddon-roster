@@ -1,5 +1,5 @@
 <template>
-  <div class="home-vue">
+  <div class="home-vue container">
 
     <h2 class="my-4 py-4 text-center">Create a New Roster</h2>
 
