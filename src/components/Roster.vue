@@ -195,8 +195,7 @@
           # collect into one list
           .reduce ((xs, x) -> _.extend xs, x ), {}
           .tap @mapKeys
-          .reject (weapon, key) ->
-
+          .reject (weapon, key) =>
             # reject stuff that can only be used by a different team member
             only_fighter = if _.has weapon, 'only_fighter'
               not _.contains weapon.only_fighter, fighter.key
@@ -213,7 +212,14 @@
               not _.isEmpty _.intersection(weapon.not_weapon, _.pluck(fighter.weapons, 'key'))
             else false
 
-            _.any [only_fighter, only_weapon, not_weapon]
+            # reject stuff where you can only have one, period
+            not_weapon_global = if _.has weapon, 'not_weapon_global'
+              allWeapons = _.map @chosenFighters, (x) -> x.weapons
+              allWeaponKeys = _.map _.flatten(allWeapons), (x) -> x.key
+              not _.isEmpty _.intersection(weapon.not_weapon_global, allWeaponKeys)
+            else false
+
+            _.any [only_fighter, only_weapon, not_weapon, not_weapon_global]
           .value()
 
   export default Roster

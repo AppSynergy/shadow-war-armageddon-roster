@@ -13,7 +13,7 @@
     "publish:github": "node ghpublish.js",
     "publish": "npm run build && npm run publish:github",
     "test": "karma start karma.conf.js || true",
-    "test:watch": "npm run test && onchange test/*.coffee -- npm run test"
+    "test:watch": "npm run test && onchange test/spec/*.coffee -- npm run test"
   },
   "dependencies": {
     "bootstrap": "^4.0.0-alpha.6",

@@ -5,7 +5,7 @@ name = "Craftworld Eldar Kill Team"
 min = 5
 max = 10
 leader_max = 1
-specialist_max = 1
+specialist_max = 2
 
 [fighters.dire_avenger_exarch]
 name = "Dire Avenger Exarch"
@@ -106,19 +106,24 @@ only_fighter = ["dire_avenger_exarch"]
 [weapons.heavy.heavy_weapon_platform_bright_lance]
 name = "Heavy Weapons Platform with bright lance"
 cost = 250
+not_weapon_global = ["heavy_weapon_platform_bright_lance", "heavy_weapon_platform_missile_launcher", "heavy_weapon_platform_scatter_laser", "heavy_weapon_platform_shuriken_cannon", "heavy_weapon_platform_starcannon"]
 
 [weapons.heavy.heavy_weapon_platform_missile_launcher]
 name = "Heavy Weapons Platform with Eldar missile launcher with plasma missiles and starshot missiles"
 cost = 200
+not_weapon_global = ["heavy_weapon_platform_bright_lance", "heavy_weapon_platform_missile_launcher", "heavy_weapon_platform_scatter_laser", "heavy_weapon_platform_shuriken_cannon", "heavy_weapon_platform_starcannon"]
 
 [weapons.heavy.heavy_weapon_platform_scatter_laser]
 name = "Heavy Weapons Platform with scatter laser"
 cost = 160
+not_weapon_global = ["heavy_weapon_platform_bright_lance", "heavy_weapon_platform_missile_launcher", "heavy_weapon_platform_scatter_laser", "heavy_weapon_platform_shuriken_cannon", "heavy_weapon_platform_starcannon"]
 
 [weapons.heavy.heavy_weapon_platform_shuriken_cannon]
 name = "Heavy Weapons Platform with shuriken cannon"
 cost = 180
+not_weapon_global = ["heavy_weapon_platform_bright_lance", "heavy_weapon_platform_missile_launcher", "heavy_weapon_platform_scatter_laser", "heavy_weapon_platform_shuriken_cannon", "heavy_weapon_platform_starcannon"]
 
 [weapons.heavy.heavy_weapon_platform_starcannon]
 name = "Heavy Weapons Platform with starcannon"
 cost = 200
+not_weapon_global = ["heavy_weapon_platform_bright_lance", "heavy_weapon_platform_missile_launcher", "heavy_weapon_platform_scatter_laser", "heavy_weapon_platform_shuriken_cannon", "heavy_weapon_platform_starcannon"]
