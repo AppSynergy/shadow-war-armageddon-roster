@@ -1,26 +1,51 @@
 <template>
   <div id="app">
-    <div class="container">
-      <h1 class="site-name text-center text-uppercase mt-4 mb-0">
+    <div class="container no-print-container">
+      <h1 class="site-name text-center text-uppercase mt-4 mb-0 hidden-print">
         Shadow War: Argameddon Rosters
       </h1>
       <router-view></router-view>
     </div>
-    <a href="https://github.com/AppSynergy/shadow-war-armageddon-roster">
-      <img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/121cd7cbdc3e4855075ea8b558508b91ac463ac2/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f677265656e5f3030373230302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_green_007200.png">
+    <div v-if="$route.name == 'home'" class="container mt-5">
+      <div id="disqus_thread"></div>
+    </div>
+    <a class="hidden-print"
+      href="https://github.com/AppSynergy/shadow-war-armageddon-roster">
+      <img style="position: absolute; top: 0; left: 0; border: 0;"
+        :src="bannerSrc" :data-canonical-src="bannerSrcCanonical"
+        alt="Fork me on GitHub">
     </a>
   </div>
 </template>
 
+<script lang="js">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-97948113-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
 <script lang="coffee">
 
+  import Disqus from './components/mixin/Disqus.coffee'
   import Home from './components/Home.vue'
   import Roster from './components/Roster.vue'
   import RosterView from './components/RosterView.vue'
 
   App =
+
     name: 'app'
+
+    mixins: [ Disqus ]
+
+    data: () ->
+      bannerSrc: 'https://camo.githubusercontent.com/121cd7cbdc3e4855075ea8b558508b91ac463ac2/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f677265656e5f3030373230302e706e67'
+      bannerSrcCanonical: 'https://s3.amazonaws.com/github/ribbons/forkme_left_green_007200.png'
+
     created: () ->
+      @disqusSetup()
       @$router.addRoutes [
         { path: '/', component: Home, name: 'home' }
         { path: '/build/:factionId', component: Roster, props: true }
@@ -33,6 +58,16 @@
 
 <style lang="sass">
 
+  @media print
+    .no-print-container
+      width: 100%
+      position: absolute
+      left: 0
+      top: 0
+      border: 5px solid black
+    @page
+      margin: 0
+      size: landscape
 
   $color1: rgba(132, 140, 142, 1)
   $color2: rgba(67, 80, 88, 1)
@@ -71,12 +106,6 @@
     td, th
       width: 10%
       background-color: white
-
-  //.faction-card
-    height: 6em
-
-  //.saved-roster-card, .faction-card
-    border: 2px solid $color2
 
   .fade-enter-active, .fade-leave-active
     transition: opacity 0.6s
