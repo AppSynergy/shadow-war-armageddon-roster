@@ -35,11 +35,6 @@ RosterStore =
       fighter.wargear = fighter.wargear.map (x) -> obj.wargear[x]
       state.fighters.push fighter
 
-    nameFighter: (state, obj) ->
-      state.dirty = true
-      fighter = state.fighters[obj.index]
-      fighter.name = obj.name
-
     removeFighter: (state, index) ->
       state.dirty = true
       state.fighters.splice index, 1

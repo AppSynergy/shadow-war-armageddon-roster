@@ -55,12 +55,15 @@
 
 <script lang="coffee">
 
+  import Analytics from './mixin/Analytics.coffee'
   import FighterStats from './Stats.vue'
   import FighterWargear from './Wargear.vue'
 
   Fighter =
 
     components: { FighterStats, FighterWargear }
+
+    mixins: [ Analytics ]
 
     props: ['index', 'weaponsAvailable']
 
@@ -73,6 +76,7 @@
     methods:
 
       chooseNewWeapon: () ->
+        @event 'add_weapon', @newWeapon.name
         if @newWeapon.key is 'weapon_reload' then @dealWithWeaponReload()
         @$store.commit "addWeapon",
          weapon: @newWeapon
@@ -80,11 +84,10 @@
         @newWeapon = null
 
       nameFighter: (name) ->
-        @$store.commit "nameFighter",
-          name: @fighter.name
-          index: @index
+        @event 'name_fighter', @fighter.realName
 
       removeFighter: () ->
+        @event 'remove_fighter', @fighter.name
         @$store.commit 'removeFighter', @index
 
       dealWithWeaponReload: () ->

@@ -141,20 +141,24 @@
       empty: () -> @totalNumberFighters == 0
 
     mounted: () ->
+      @event 'open_roster', @factionId
       @track 'build/' + @factionId
       @teamName = @$store.getters.getTeamName
 
     beforeRouteLeave: (to, from, next) ->
-      if to.path.match /\/roster-view\/[a-z_]+$/
+      nextEvent = () =>
+        @event 'exit_roster', to.path
         next()
+      if to.path.match /\/roster-view\/[a-z_]+$/
+        nextEvent()
       else
         if @totalNumberFighters == 0 || @dirty is false
           @$store.commit 'discardRoster'
-          next()
+          nextEvent()
         else
-          @discardAction = next
+          @discardAction = nextEvent
           jQuery('#' + @modalId).modal 'show'
-
+          @event 'exit_roster_warn', to.path
     methods:
 
       processModalOption: (option) ->
@@ -164,6 +168,7 @@
         @discardAction()
 
       saveRoster: () ->
+        @event 'save_roster', @factionId
         @$store.commit 'cleanState'
         @saveRosterLocal
           fighters: @chosenFighters
@@ -176,9 +181,11 @@
         @notifications = _.reject @notifications, (x) -> x.id == 'save'
 
       nameTeam: () ->
+        @event 'name_team', @teamName
         @$store.commit 'nameTeam', @teamName
 
       addFighter: (fighter) ->
+        @event 'add_fighter', fighter.name
         @$store.commit 'addFighter',
           fighter: _.clone(fighter)
           wargear: @faction.wargear

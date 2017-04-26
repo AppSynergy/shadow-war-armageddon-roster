@@ -62,6 +62,7 @@
 
 <script lang="coffee">
 
+  import Analytics from './mixin/Analytics.coffee'
   import Disqus from './mixin/Disqus.coffee'
   import Factions from '../data/factions.toml'
   import Modal from './Modal.vue'
@@ -71,7 +72,7 @@
 
     components: { Modal }
 
-    mixins: [ Disqus, Storage ]
+    mixins: [ Analytics, Disqus, Storage ]
 
     data: () ->
       modalId: 'deleteRosterModal'
@@ -108,6 +109,7 @@
         jQuery('#' + @modalId).modal 'hide'
 
       reallyDeleteRoster: () ->
+        @event 'delete_roster', @rosterToDelete.teamName
         @savedRosters = @deleteRosterLocal @rosterToDelete
 
   export default Home

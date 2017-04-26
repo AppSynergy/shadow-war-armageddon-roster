@@ -22,13 +22,18 @@
 
 <script lang="coffee">
 
+  import Analytics from './mixin/Analytics.coffee'
+
   Wargear =
+
+    mixins: [ Analytics ]
 
     props: ['wargear', 'weapons', 'fighterIndex']
 
     methods:
 
       removeWeapon: (weapon, index) ->
+        @event 'remove_weapon', weapon.name
         @$store.commit 'removeWeapon',
           weaponIndex: index
           index: @fighterIndex
