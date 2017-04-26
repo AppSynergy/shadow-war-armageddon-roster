@@ -91,11 +91,14 @@
       @savedRosters = @$localStorage.get 'rosters'
 
     beforeRouteEnter: (to, from, next) ->
-      next((vm) => vm.disqusReset())
+      next (vm) =>
+        vm.track '/'
+        vm.disqusReset()
 
     methods:
 
       loadRoster: (roster) ->
+        @event 'load_roster', roster.factionId
         @$router.push('/build/' + roster.factionId)
         @$store.commit 'loadRoster', roster
 
