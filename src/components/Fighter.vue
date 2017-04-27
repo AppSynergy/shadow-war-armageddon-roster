@@ -1,5 +1,5 @@
 <template>
-  <div class="fighter-vue">
+  <div class="fighter-vue" v-sortable="">
     <div class="chosen-fighter-card card mb-4 fighter-background">
 
       <div class="card-header bg-inverse text-white">

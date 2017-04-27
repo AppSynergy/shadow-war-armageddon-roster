@@ -88,6 +88,7 @@
       hasSavedRosters: () -> @savedRosters.length > 0
 
     created: () ->
+      @disqusSetup()
       @savedRosters = @$localStorage.get 'rosters'
 
     beforeRouteEnter: (to, from, next) ->
