@@ -17,6 +17,9 @@
         <span class="mr-5">
           Kill Team Name: <span class="text-uppercase">{{ teamName }}</span>
         </span>
+        <span class="text-uppercase">
+          {{ totalPointsCost }} points
+        </span>
       </h3>
 
       <table class="table">
@@ -108,6 +111,7 @@
       statLabels: () -> StatData.labels
       chosenFighters: () -> @$store.getters.getFighters
       teamName: () -> @$store.getters.getTeamName
+      totalPointsCost: () -> @$store.getters.getTotalPointsCost
 
     methods:
       getStats: (fighter) -> fighter.stats.split ' '
