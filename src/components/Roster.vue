@@ -66,11 +66,13 @@
         </div>
       </div>
 
-      <fighter v-for="fighter, index in chosenFighters"
-        :index="index"
-        :key="'fighter' + index"
-        :weaponsAvailable="weaponsAvailable(fighter)"
-      ></fighter>
+      <draggable v-model="chosenFighters">
+        <fighter v-for="fighter, index in chosenFighters"
+          :index="index"
+          :key="'fighter' + index"
+          :weaponsAvailable="weaponsAvailable(fighter)"
+        ></fighter>
+      </draggable>
 
     </div>
 
@@ -89,6 +91,7 @@
 
   import Analytics from './mixin/Analytics.coffee'
   import Collections from './mixin/Collections.coffee'
+  import Draggable from 'vuedraggable'
   import Fighter from './Fighter.vue'
   import Modal from './Modal.vue'
   import Storage from './mixin/Storage.coffee'
@@ -97,7 +100,7 @@
 
     props: ['factionId']
 
-    components: { Fighter, Modal }
+    components: { Draggable, Fighter, Modal }
 
     mixins: [ Analytics, Collections, Storage ]
 
@@ -134,8 +137,11 @@
           errors.push { desc: 'Your kill team needs a leader.'}
         errors
 
+      chosenFighters:
+        get: () -> @$store.getters.getFighters
+        set: (value) -> @$store.commit 'updateFighters', value
+
       dirty: () -> @$store.getters.getDirty
-      chosenFighters: () -> @$store.getters.getFighters
       totalPointsCost: () -> @$store.getters.getTotalPointsCost
       totalNumberFighters: () -> @$store.getters.getTotalNumberFighters
       empty: () -> @totalNumberFighters == 0
