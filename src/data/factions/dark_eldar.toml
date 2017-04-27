@@ -2,7 +2,7 @@ key = "dark_eldar"
 name = "Dark Eldar Wych Cult Kill Team"
 
 [size]
-min = 5
+min = 3
 max = 10
 leader_max = 1
 specialist_max = 1

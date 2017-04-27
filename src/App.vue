@@ -2,7 +2,7 @@
   <div id="app">
     <div class="container hidden-print">
       <h1 class="site-name text-center text-uppercase mt-4 mb-0">
-        Shadow War: Argameddon Rosters
+        Shadow War: Argameddon Kill Teams &middot; killteams.com
       </h1>
     </div>
     <router-view></router-view>

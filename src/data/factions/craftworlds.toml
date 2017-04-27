@@ -2,7 +2,7 @@ key = "craftworlds"
 name = "Craftworld Eldar Kill Team"
 
 [size]
-min = 5
+min = 3
 max = 10
 leader_max = 1
 specialist_max = 2
