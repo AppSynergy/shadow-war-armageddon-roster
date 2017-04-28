@@ -26,7 +26,7 @@
       ga('create', 'UA-97948113-1', 'auto');
     </script>
 
-    <script>
+    <!--<script>
       fetch("dist/webpack-assets.json", {method: 'get'})
       .then(function(response) { return response.json() })
       .then(function(json) {
@@ -34,7 +34,9 @@
         s.setAttribute('src', json.main.js)
         document.body.appendChild(s)
       })
-    </script>
+    </script>-->
+
+    <script src="dist/bundle.js"></script>
 
   </body>
 </html>

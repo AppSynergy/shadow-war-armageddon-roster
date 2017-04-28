@@ -8,7 +8,7 @@ module.exports = {
   output: {
     path: BUILD_DROP_PATH,
     publicPath: '/dist/',
-    filename: 'build.[hash].js'
+    filename: 'bundle.js' //'build.[hash].js'
   },
   plugins: [
     new webpack.ProvidePlugin({
