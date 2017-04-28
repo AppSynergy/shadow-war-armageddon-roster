@@ -25,13 +25,15 @@
 
     computed:
       stats: () ->
-        @statstring.split ' '
+        stats = @statstring.split ' '
+        if @statchanges.length > 0
+          _.map @statchanges, (x) =>
+            index = _.indexOf @statLabels, x.stat
+            stats[index] = parseInt(stats[index], 10) + parseInt(x.change, 10)
+        stats
+
       statLabels: () ->
         StatData.labels
-
-    created: () ->
-      # TODO: implement stat changes by wargear
-      #console.warn "change", @statchanges
 
   export default Stats
 

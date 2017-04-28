@@ -4,7 +4,7 @@
 
       <div class="card-header bg-inverse text-white">
         <h4 class="m-0">
-          <span class="pr-4"><strong>{{ fighter.name }}</strong></span>
+          <span class="pr-4 fighter-name"><strong>{{ fighter.name }}</strong></span>
           <span class="pr-4">{{ fighter.role}}</span>
           <span class="float-right">
             <em class="badge badge-info mr-4">{{ fighter.cost }} points</em>
