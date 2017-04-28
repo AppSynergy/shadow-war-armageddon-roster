@@ -1,12 +1,14 @@
 var path = require('path')
 var webpack = require('webpack')
+var AssetsPlugin = require('assets-webpack-plugin')
+const BUILD_DROP_PATH = path.resolve(__dirname, './dist')
 
 module.exports = {
   entry: './src/main.js',
   output: {
-    path: path.resolve(__dirname, './dist'),
+    path: BUILD_DROP_PATH,
     publicPath: '/dist/',
-    filename: 'build.js'
+    filename: 'build.[hash].js'
   },
   plugins: [
     new webpack.ProvidePlugin({
@@ -15,6 +17,9 @@ module.exports = {
       'jQuery': 'jquery',
       'Tether': 'tether',
       'window.Tether': 'tether'
+    }),
+    new AssetsPlugin({
+      path: BUILD_DROP_PATH
     })
   ],
   module: {
