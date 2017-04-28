@@ -21,13 +21,17 @@
 
   Stats =
 
-    props: ['statstring']
+    props: ['statstring', 'statchanges']
 
     computed:
       stats: () ->
         @statstring.split ' '
       statLabels: () ->
         StatData.labels
+
+    created: () ->
+      # TODO: implement stat changes by wargear
+      #console.warn "change", @statchanges
 
   export default Stats
 

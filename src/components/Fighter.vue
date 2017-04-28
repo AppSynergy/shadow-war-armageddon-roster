@@ -25,7 +25,8 @@
               placeholder="Name me!"
               v-on:change="nameFighter"
               v-model="fighter.realName">
-            <fighter-stats :statstring="fighter.stats">
+            <fighter-stats :statstring="fighter.stats"
+              :statchanges="statChanges(fighter)">
             </fighter-stats>
           </div>
 
@@ -95,6 +96,10 @@
         weaponCost = _.max @fighter.weapons, (x) -> x.cost
         old.cost = Math.round(weaponCost.cost / 2)
         @newWeapon = old
+
+      statChanges: (fighter) ->
+        _.filter fighter.weapons, (x) -> _.has x, 'stat_change'
+          .map (x) -> x.stat_change
 
   export default Fighter
 
