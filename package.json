@@ -16,6 +16,7 @@
     "test:watch": "npm run test && onchange test/spec/*.coffee -- npm run test"
   },
   "dependencies": {
+    "babel-polyfill": "^6.23.0",
     "bootstrap": "^4.0.0-alpha.6",
     "underscore": "^1.8.3",
     "vue": "^2.2.1",

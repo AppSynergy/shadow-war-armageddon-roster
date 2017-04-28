@@ -4,9 +4,11 @@ import App from '../../src/App.vue'
 import store from '../../src/store/roster.coffee'
 import VueRouter from 'vue-router'
 import VueLocalStorage from 'vue-localstorage'
+import Draggable from 'vuedraggable'
 import jQuery from 'jquery'
 import Bootstrap from 'bootstrap'
 import 'underscore'
+import 'babel-polyfill'
 
 Vue.use(VueLocalStorage)
 Vue.use(VueRouter)
