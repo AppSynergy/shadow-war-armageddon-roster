@@ -23,6 +23,7 @@
   import Home from './components/Home.vue'
   import Roster from './components/Roster.vue'
   import RosterView from './components/RosterView.vue'
+  import SimpleView from './components/SimpleView.vue'
 
   App =
 
@@ -37,6 +38,7 @@
         { path: '/', component: Home, name: 'home' }
         { path: '/build/:factionId', component: Roster, props: true }
         { path: '/roster-view/:factionId', component: RosterView, props: true }
+        { path: '/simple-view/:factionId', component: SimpleView, props: true }
       ]
 
   export default App

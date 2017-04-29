@@ -9,6 +9,8 @@
             v-on:click="saveRoster()">Save</button>
           <router-link class="btn btn-primary" :disabled="!empty" role="button"
             :to="'/roster-view/'+factionId">Roster View</router-link>
+            <router-link class="btn btn-primary" :disabled="!empty" role="button"
+              :to="'/simple-view/'+factionId">Simple View</router-link>
         </span>
       </div>
 
