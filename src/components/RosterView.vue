@@ -10,17 +10,17 @@
 
     <div class="roster-view">
 
-      <h3 class="my-3 roster-view-header">
-        <span class="mr-5">
-          Faction: <span class="text-uppercase">{{ factionName }}</span>
-        </span>
-        <span class="mr-5">
-          Kill Team Name: <span class="text-uppercase">{{ teamName }}</span>
-        </span>
-        <span class="text-uppercase">
-          {{ totalPointsCost }} points
-        </span>
-      </h3>
+      <div class="my-3 px-3 roster-view-header row">
+        <div class="col col-12 col-md-5">
+          <h4>Faction: {{ factionName }}</h4>
+        </div>
+        <div class="col col-12 col-md-5">
+          <h4> Kill Team Name: {{ teamName }}</h4>
+        </div>
+        <div class="col col-12 col-md-2">
+          <h4>{{ totalPointsCost }} points</h4>
+        </div>
+      </div>
 
       <table class="table">
         <thead class="thead-inverse">
@@ -82,8 +82,8 @@
     font-family: "Courier New", serif
     border: 2px solid #444
     background-color: white
-  .roster-view-header
-    padding: 0 2em
+  .roster-view-header h4
+    font-weight: 700
   .item
     margin-right: 1em
     display: block
@@ -97,6 +97,7 @@
 
 <script lang="coffee">
 
+  import FactionData from '../data/factions.toml'
   import StatData from '../data/stats.toml'
 
   RosterView =
@@ -107,7 +108,7 @@
       labels: ['Name', 'Role', 'Characteristics', 'Equipment, Skills and Notes', 'Mission Completed', 'Miss Next Mission']
 
     computed:
-      factionName: () -> @factionId.replace '_', ' '
+      factionName: () -> FactionData[@factionId].name
       statLabels: () -> StatData.labels
       chosenFighters: () -> @$store.getters.getFighters
       teamName: () -> @$store.getters.getTeamName
