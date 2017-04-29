@@ -7,9 +7,11 @@
           <router-link class="btn btn-primary" to="/" role="button">Home</router-link>
           <button class="btn" :disabled="!dirty"
             v-on:click="saveRoster()">Save</button>
-          <router-link class="btn btn-primary" :disabled="!empty" role="button"
+          <router-link class="btn btn-primary"
+            :disabled="empty" role="button" tag="button"
             :to="'/roster-view/'+factionId">Roster View</router-link>
-            <router-link class="btn btn-primary" :disabled="!empty" role="button"
+            <router-link class="btn btn-primary"
+              :disabled="empty" role="button" tag="button"
               :to="'/simple-view/'+factionId">Simple View</router-link>
         </span>
       </div>
@@ -157,7 +159,7 @@
       nextEvent = () =>
         @event 'exit_roster', to.path
         next()
-      if to.path.match /\/roster-view\/[a-z_]+$/
+      if to.path.match /\/[a-z]+-view\/[a-z_]+$/
         nextEvent()
       else
         if @totalNumberFighters == 0 || @dirty is false
