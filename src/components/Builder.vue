@@ -139,6 +139,8 @@
           errors.push { desc: 'Your kill team needs a name.'}
         if @$store.getters.getNumberFightersByRole('Kill Team Leader') != 1
           errors.push { desc: 'Your kill team needs a leader.'}
+        if @$store.getters.getNumberFightersByRole('New Recruit') > @totalNumberFighters/2
+          errors.push { desc: 'Your kill team has too many new recruits.' }
         errors
 
       chosenFighters:
