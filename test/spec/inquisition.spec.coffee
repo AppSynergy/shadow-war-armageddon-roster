@@ -1,6 +1,6 @@
 import Vue from 'vue'
 
-describe 'the craftworlds roster', () ->
+describe 'the inquisition roster', () ->
 
   it 'links to a faction roster', (done) ->
     @vm.$router.push 'build/inquisition'
@@ -9,22 +9,25 @@ describe 'the craftworlds roster', () ->
       expect(@words('h2')).toBe 'Inquisition Kill Team'
       done()
 
-  it 'can add a trooper', (done) ->
+  it 'can add a trooper with +1 WS', (done) ->
     @all('.available-fighter-card button')[1].click()
     Vue.nextTick () =>
       expect(@all('.chosen-fighter-card').length).toBe 1
-      expect(@get('.chosen-fighter-card .fighter-name').textContent).toBe 'Inquisitorial Acolyte'
+      expect(@get('.chosen-fighter-card .fighter-name').textContent).toBe 'Inquisitorial Acolyte (+1 WS)'
+      expect(@all('.stats-vue td')[0].textContent).toBe '4'
+      expect(@all('.stats-vue td')[1].textContent).toBe '4'
+      expect(@all('.stats-vue td')[2].textContent).toBe '3'
+      expect(@all('.stats-vue td')[3].textContent).toBe '3'
+      expect(@all('.stats-vue td')[4].textContent).toBe '3'
       done()
 
-  it 'can add extra weapon skill or ballistic skill', (done) ->
-    wargear =  @get('select.add-wargear')
-    expect(wargear.textContent).toContain '+1 Weapon Skill'
-    expect(wargear.textContent).toContain '+1 Ballistic Skill'
-    @change wargear, @option(wargear, 'Weapon Skill')
+  it 'can add a trooper with +1 BS', (done) ->
+    @all('.available-fighter-card button')[2].click()
     Vue.nextTick () =>
-      expect(wargear.textContent).not.toContain '+1 Weapon Skill'
-      expect(wargear.textContent).not.toContain '+1 Ballistic Skill'
-      expect(@get('.stats-vue td:nth-child(1)').textContent).toBe '4'
+      expect(@all('.chosen-fighter-card').length).toBe 2
+      expect(@all('.chosen-fighter-card .fighter-name')[1].textContent).toBe 'Inquisitorial Acolyte (+1 BS)'
+      expect(@all('.stats-vue td')[10].textContent).toBe '3'
+      expect(@all('.stats-vue td')[11].textContent).toBe '4'
       done()
 
   it 'can exit cleanly and return to home', (done) ->

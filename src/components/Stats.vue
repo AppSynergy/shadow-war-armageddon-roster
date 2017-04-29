@@ -21,16 +21,11 @@
 
   Stats =
 
-    props: ['statstring', 'statchanges']
+    props: ['statstring']
 
     computed:
       stats: () ->
-        stats = @statstring.split ' '
-        if @statchanges.length > 0
-          _.map @statchanges, (x) =>
-            index = _.indexOf @statLabels, x.stat
-            stats[index] = parseInt(stats[index], 10) + parseInt(x.change, 10)
-        stats
+        @statstring.split ' '
 
       statLabels: () ->
         StatData.labels

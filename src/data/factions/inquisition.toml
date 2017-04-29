@@ -16,13 +16,22 @@ wargear = ["combat_blade", "carapace_armour"]
 equip = ["hand-to-hand", "pistols", "basic", "special", "ammunition", "grenades", "misc"]
 skills = ["combat", "ferocity", "guerilla", "muscle", "shooting", "stealth"]
 
-[fighters.inquisitorial_acolyte]
-name = "Inquisitorial Acolyte"
+[fighters.inquisitorial_acolyte_ws]
+name = "Inquisitorial Acolyte (+1 WS)"
 cost = 65
 role = "Trooper"
-stats = "4 3 3 3 3 1 3 1 8"
+stats = "4 4 3 3 3 1 3 1 8"
 wargear = ["combat_blade", "flak_armour"]
-equip = ["stat_upgrade", "hand-to-hand", "pistols", "basic", "special", "ammunition", "grenades", "misc"]
+equip = ["hand-to-hand", "pistols", "basic", "special", "ammunition", "grenades", "misc"]
+skills = ["combat", "ferocity", "guerilla"]
+
+[fighters.inquisitorial_acolyte_bs]
+name = "Inquisitorial Acolyte (+1 BS)"
+cost = 65
+role = "Trooper"
+stats = "4 3 4 3 3 1 3 1 8"
+wargear = ["combat_blade", "flak_armour"]
+equip = ["hand-to-hand", "pistols", "basic", "special", "ammunition", "grenades", "misc"]
 skills = ["combat", "ferocity", "guerilla"]
 
 [fighters.inquisitorial_initiate]
@@ -51,18 +60,6 @@ name = "Carapace armour"
 
 [wargear.flak_armour]
 name = "Flak armour"
-
-[weapons.stat_upgrade.weapon_skill]
-name = "+1 Weapon Skill"
-cost = 0
-not_weapon = ['weapon_skill', 'ballistic_skill']
-stat_change = { stat = "WS", change = 1 }
-
-[weapons.stat_upgrade.ballistic_skill]
-name = "+1 Ballistic Skill"
-cost = 0
-not_weapon = ['weapon_skill', 'ballistic_skill']
-stat_change = { stat = "BS", change = 1 }
 
 [weapons.ammunition.hot-shot_laser_power_pack]
 name = "Hot-shot laser power pack"
