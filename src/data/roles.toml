@@ -1,0 +1,38 @@
+[misc]
+name = "Miscellaneous"
+
+[grenades]
+name = "Grenades"
+
+[ammunition]
+name = "Ammunition"
+
+[pistols]
+name = "Pistols"
+
+[basic]
+name = "Basic Weapons"
+
+[special]
+name = "Special Weapons"
+
+[heavy]
+name = "Heavy Weapons"
+
+[hand-to-hand]
+name = "Hand-to-Hand Weapons"
+
+[cult_hand-to-hand]
+name = "Hand-to-Hand Weapons"
+
+[cult_pistols]
+name = "Pistols"
+
+[cult_basic]
+name = "Basic Weapons"
+
+[cult_misc]
+name = "Miscellaneous"
+
+[mark_of_chaos]
+name = "Marks of Chaos"

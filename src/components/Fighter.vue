@@ -40,9 +40,11 @@
               v-model="newWeapon">
               <option value="null" selected disabled>
                 Add weapons / equipment</option>
-              <option v-for="weapon, key in weaponsAvailable"
-                :value="weapon"
-              >{{ weapon.name }} ({{ weapon.cost }})</option>
+              <optgroup v-for="items, role in weaponsByRole"
+                :label="roles[role].name">
+                <option v-for="weapon, key in items" :value="weapon"
+                  >{{ weapon.name }} ({{ weapon.cost }})</option>
+              </optgroup>
             </select>
             <fighter-wargear class="fighter-wargear"
               :fighterIndex="index"
@@ -63,6 +65,7 @@
   import Analytics from './mixin/Analytics.coffee'
   import FighterStats from './Stats.vue'
   import FighterWargear from './Wargear.vue'
+  import RoleData from '../data/roles.toml'
 
   Fighter =
 
@@ -76,7 +79,9 @@
       newWeapon: null
 
     computed:
+      roles: () -> RoleData
       fighter: () -> @$store.getters.getFighter @index
+      weaponsByRole: () -> _.groupBy @weaponsAvailable, (x) -> x.role
 
     methods:
 
