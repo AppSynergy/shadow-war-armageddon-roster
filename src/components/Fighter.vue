@@ -8,6 +8,11 @@
           <span class="pr-4">{{ fighter.role}}</span>
           <span class="float-right">
             <em class="badge badge-info mr-4">{{ fighter.cost }} points</em>
+            <button class="btn btn-info px-1 py-0 duplicate-button"
+              aria-label="Duplicate"
+              v-on:click="duplicateFighter()">
+              duplicate
+            </button>
             <button class="btn btn-danger px-1 py-0 remove-button"
               aria-label="Remove"
               v-on:click="removeFighter()">
@@ -85,6 +90,10 @@
 
       nameFighter: (name) ->
         @event 'name_fighter', @fighter.realName
+
+      duplicateFighter: () ->
+        @event 'duplicate_fighter', @fighter.name
+        @$store.commit 'duplicateFighter', @fighter
 
       removeFighter: () ->
         @event 'remove_fighter', @fighter.name
