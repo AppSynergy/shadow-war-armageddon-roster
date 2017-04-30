@@ -36,3 +36,12 @@ name = "Miscellaneous"
 
 [mark_of_chaos]
 name = "Marks of Chaos"
+
+[gladiatorial]
+name = "Gladiatorial Weapons"
+
+[biomorphs]
+name = "Biomorphs"
+
+[bio-cannons]
+name = "Bio-cannons"
