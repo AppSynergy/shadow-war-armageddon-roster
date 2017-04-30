@@ -4,15 +4,23 @@
     <div class="card px-4 mt-4 team-background">
       <div class="card-header px-0 team-background">
         <span class="float-right">
-          <router-link class="btn btn-primary" to="/" role="button">Home</router-link>
-          <button class="btn" :disabled="!dirty"
-            v-on:click="saveRoster()">Save</button>
-          <router-link class="btn btn-primary"
+          <router-link class="btn btn-primary action-btn" to="/" role="button">
+            <i class="material-icons align-middle pb-1">home</i> <span>Home</span>
+          </router-link>
+          <button class="btn btn-primary action-btn" :disabled="!dirty"
+            v-on:click="saveRoster()">
+            <i class="material-icons align-middle pb-1">file_download</i> <span>Save</span>
+          </button>
+          <router-link class="btn btn-primary action-btn"
             :disabled="empty" role="button" tag="button"
-            :to="'/roster-view/'+factionId">Roster View</router-link>
-            <router-link class="btn btn-primary"
+            :to="'/roster-view/'+factionId">
+            <i class="material-icons align-middle pb-1">print</i> <span>Roster View</span>
+          </router-link>
+            <router-link class="btn btn-primary action-btn"
               :disabled="empty" role="button" tag="button"
-              :to="'/simple-view/'+factionId">Simple View</router-link>
+              :to="'/simple-view/'+factionId">
+              <i class="material-icons align-middle pb-1">assignment</i> <span>Simple View</span>
+            </router-link>
         </span>
       </div>
 

@@ -3,23 +3,25 @@
     <div class="chosen-fighter-card card mb-4 fighter-background">
 
       <div class="card-header bg-inverse text-white">
-        <h4 class="m-0">
-          <span class="pr-4 fighter-name"><strong>{{ fighter.name }}</strong></span>
-          <span class="pr-4">{{ fighter.role}}</span>
+
+          <span class="pr-4 mt-2 d-inline-block align-middle fighter-name"><strong>{{ fighter.name }}</strong></span>
+          <span class="pr-4 mt-2 d-inline-block align-middle">{{ fighter.role}}</span>
           <span class="float-right">
-            <em class="badge badge-info mr-4">{{ fighter.cost }} points</em>
+            <em class="mr-4">{{ fighter.cost }} points</em>
             <button class="btn btn-info px-1 py-0 duplicate-button"
               aria-label="Duplicate"
+              title="Duplicate"
               v-on:click="duplicateFighter()">
-              duplicate
+              <i class="material-icons p-1">content_copy</i>
             </button>
             <button class="btn btn-danger px-1 py-0 remove-button"
-              aria-label="Remove"
+              aria-label="Delete Fighter"
+              title="Delete Fighter"
               v-on:click="removeFighter()">
-              <i class="fa fa-times">&times;</i>
+              <i class="material-icons p-1">delete_forever</i>
             </button>
           </span>
-        </h4>
+
       </div>
 
       <div class="card-block">
