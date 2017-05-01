@@ -3,18 +3,25 @@
     <div class="chosen-fighter-card card mb-4 fighter-background">
 
       <div class="card-header bg-inverse text-white">
-        <h4 class="m-0">
-          <span class="pr-4 fighter-name"><strong>{{ fighter.name }}</strong></span>
-          <span class="pr-4">{{ fighter.role}}</span>
+
+          <span class="pr-4 mt-2 d-inline-block align-middle fighter-name"><strong>{{ fighter.name }}</strong></span>
+          <span class="pr-4 mt-2 d-inline-block align-middle">{{ fighter.role}}</span>
           <span class="float-right">
-            <em class="badge badge-info mr-4">{{ fighter.cost }} points</em>
+            <em class="mr-4">{{ fighter.cost }} points</em>
+            <button class="btn btn-info px-1 py-0 duplicate-button"
+              aria-label="Duplicate"
+              title="Duplicate"
+              v-on:click="duplicateFighter()">
+              <i class="material-icons p-1">content_copy</i>
+            </button>
             <button class="btn btn-danger px-1 py-0 remove-button"
-              aria-label="Remove"
+              aria-label="Delete Fighter"
+              title="Delete Fighter"
               v-on:click="removeFighter()">
-              <i class="fa fa-times">&times;</i>
+              <i class="material-icons p-1">delete_forever</i>
             </button>
           </span>
-        </h4>
+
       </div>
 
       <div class="card-block">
@@ -35,9 +42,11 @@
               v-model="newWeapon">
               <option value="null" selected disabled>
                 Add weapons / equipment</option>
-              <option v-for="weapon, key in weaponsAvailable"
-                :value="weapon"
-              >{{ weapon.name }} ({{ weapon.cost }})</option>
+              <optgroup v-for="items, role in weaponsByRole"
+                :label="roles[role].name">
+                <option v-for="weapon, key in items" :value="weapon"
+                  >{{ weapon.name }} ({{ weapon.cost }})</option>
+              </optgroup>
             </select>
             <fighter-wargear class="fighter-wargear"
               :fighterIndex="index"
@@ -58,6 +67,7 @@
   import Analytics from './mixin/Analytics.coffee'
   import FighterStats from './Stats.vue'
   import FighterWargear from './Wargear.vue'
+  import RoleData from '../data/roles.toml'
 
   Fighter =
 
@@ -71,7 +81,9 @@
       newWeapon: null
 
     computed:
+      roles: () -> RoleData
       fighter: () -> @$store.getters.getFighter @index
+      weaponsByRole: () -> _.groupBy @weaponsAvailable, (x) -> x.role
 
     methods:
 
@@ -85,6 +97,10 @@
 
       nameFighter: (name) ->
         @event 'name_fighter', @fighter.realName
+
+      duplicateFighter: () ->
+        @event 'duplicate_fighter', @fighter.name
+        @$store.commit 'duplicateFighter', @fighter
 
       removeFighter: () ->
         @event 'remove_fighter', @fighter.name

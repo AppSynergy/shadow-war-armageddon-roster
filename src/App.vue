@@ -70,7 +70,8 @@
   $brand-danger: $color6
 
   @import '../node_modules/bootstrap/scss/bootstrap.scss'
-  @import url('https://fonts.googleapis.com/css?family=Montserrat|Open+Sans')
+  @import url('https://fonts.googleapis.com/css?family=Montserrat|Open+Sans|Material+Icons')
+
   html body
     &, select
       font-family: 'Montserrat'
@@ -97,6 +98,11 @@
 
   .up-a-bit
     line-height: 60%
+
+  .action-btn
+    i
+      line-height: 16px
+
 
 
 </style>

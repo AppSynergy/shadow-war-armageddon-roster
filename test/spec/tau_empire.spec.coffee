@@ -38,6 +38,14 @@ describe 'the tau roster', () ->
         expect(@all('.wargear-item')[3].textContent).toMatch /Weapon reload -\s*50 points/
         done()
 
+  it 'can duplicate an existing fighter', (done) ->
+    @get('.duplicate-button').click()
+    Vue.nextTick () =>
+      expect(@all('.chosen-fighter-card').length).toBe 2
+      expect(@all('.wargear-item').length).toBe 8
+      expect(@all('.wargear-item')[6].textContent).toMatch /Ion rifle -\s*100 points/
+      done()
+
   it 'can exit cleanly and return to home', (done) ->
     @get('a.router-link-active').click()
     Vue.nextTick () =>

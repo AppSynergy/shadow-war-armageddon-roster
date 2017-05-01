@@ -35,6 +35,10 @@ RosterStore =
       fighter.wargear = fighter.wargear.map (x) -> obj.wargear[x]
       state.fighters.push fighter
 
+    duplicateFighter: (state, fighter) ->
+      state.dirty = true
+      state.fighters.push _.clone(fighter)
+
     updateFighters: (state, fighters) ->
       state.dirty = true
       state.fighters = fighters
