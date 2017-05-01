@@ -13,41 +13,41 @@ cost = 200
 role = "Kill Team Leader"
 stats = "5 4 4 4 4 1 4 2 9"
 wargear = ["combat_blade", "scout_armour"]
-equip = ["hand-to-hand", "pistols", "basic", "special", "grenades", "misc"]
-skills = ["combat", "ferocity", "guerilla", "agility", "shooting", "stealth"]
-
-[fighters.battle_sister]
-name = "Battle Sister"
-cost = 90
-role = "Trooper"
-stats = "4 3 4 3 3 1 3 1 8"
-wargear = ["combat_blade", "power_armour"]
 equip = ["hand-to-hand", "pistols", "basic", "grenades", "misc"]
-skills = ["combat", "ferocity", "shooting"]
+skills = ["combat", "ferocity", "guerilla", "agility", "shooting", "stealth", "muscle"]
 
-[fighters.novitiate]
-name = "Novitiate"
-cost = 80
+[fighters.scout]
+name = "Scout"
+cost = 100
+role = "Trooper"
+stats = "5 4 4 4 4 1 4 1 8"
+wargear = ["combat_blade", "scout_armour"]
+equip = ["hand-to-hand", "pistols", "basic", "grenades", "misc"]
+skills = ["combat", "ferocity", "shooting", "stealth"]
+
+[fighters.novitive_scount]
+name = "Novitive Scout"
+cost = 75
 role = "New Recruit"
-stats = "4 3 3 3 3 1 3 1 8"
-wargear = ["combat_blade", "power_armour"]
+stats = "5 3 3 4 4 1 4 1 8"
+wargear = ["combat_blade", "scout_armour"]
 equip = ["hand-to-hand", "pistols", "basic", "grenades", "misc"]
 skills = []
 
-[fighters.gunner]
-name = "Gunner"
-cost = 100
+[fighters.scout_gunner]
+name = "Scout Gunner"
+cost = 110
 role = "Specialist"
-stats = "4 3 4 3 3 1 3 1 8"
-wargear = ["combat_blade", "power_armour"]
+stats = "5 4 4 4 4 1 4 1 8"
+wargear = ["combat_blade", "scout_armour"]
 equip = ["hand-to-hand", "pistols", "special", "heavy", "grenades", "misc"]
-skills = ["combat", "ferocity", "guerilla", "shooting"]
+skills = ["combat", "ferocity", "guerilla", "shooting", "stealth"]
 
 [wargear.combat_blade]
 name = "Combat blade"
 
-[wargear.power_armour]
-name = "Power armour"
+[wargear.scout_armour]
+name = "Scout armour"
 
 [weapons.grenades.frag_grenades]
 name = "Frag grenades"
@@ -56,11 +56,23 @@ cost = 25
 [weapons.grenades.melta_bombs]
 name = "Melta bombs"
 cost = 30
-only_fighter = ["ranger_alpha"]
+only_fighter = ["scout_sergeant"]
 
 [weapons.grenades.krak_grenades]
 name = "Krak grenades"
 cost = 40
+
+[weapons.misc.camo_gear]
+name = "Camo Gear"
+cost = 5
+
+[weapons.misc.clip_harness]
+name = "Clip Harness"
+cost = 10
+
+[weapons.misc.photo_visor]
+name = "Photo Visor"
+cost = 15
 
 [weapons.misc.red-dot_laser_sight]
 name = "Red-dot laser sight"
@@ -71,11 +83,6 @@ name = "Telescopic sight"
 cost = 20
 only_weapon = { matches = "key", values = ["bolt_pistol", "plasma_pistol", "boltgun", "storm_bolter", "combi-flamer", "condemnor_boltgun", "combi-melta", "heavy_bolter", "multi-melta"] }
 
-[weapons.misc.simulacrum_imperialis]
-name = "Simulacrum Imperialis"
-cost = 50
-only_fighter = ["battle_sister"]
-
 [weapons.misc.weapon_reload]
 name = "Weapon reload"
 cost = '*'
@@ -85,19 +92,18 @@ only_weapon = { matches = "role", values = ["basic", "pistols", "special", "heav
 name = "Combat blade"
 cost = 5
 
+[weapons.hand-to-hand.assault_blade]
+name = "Assault Blade"
+cost = 15
+
 [weapons.hand-to-hand.chainsword]
 name = "Chainsword"
 cost = 25
 
-[weapons.hand-to-hand.power_maul]
-name = "Power maul"
-cost = 50
-only_fighter = ["sister_superior"]
-
 [weapons.hand-to-hand.power_sword]
 name = "Power sword"
 cost = 50
-only_fighter = ["sister_superior"]
+only_fighter = ["scout_sergeant"]
 
 [weapons.pistols.bolt_pistol]
 name = "Bolt pistol"
@@ -106,51 +112,33 @@ cost = 25
 [weapons.pistols.plasma_pistol]
 name = "Plasma pistol"
 cost = 50
+only_fighter = ["scout_sergeant"]
+
+[weapons.basic.shot_gun]
+name = "Shotgun"
+cost = 25
 
 [weapons.basic.boltgun]
 name = "Boltgun"
 cost = 35
+
+[weapons.basic.sniper]
+name = "Sniper"
+cost = 40
 
 [weapons.special.flamer]
 name = "Flamer"
 cost = 40
 only_fighter = ["gunner"]
 
-[weapons.special.storm_bolter]
-name = "Storm bolter"
-cost = 55
-
-[weapons.special.combi-flamer]
-name = "Combi-flamer"
-cost = 55
-only_fighter = ["sister_superior"]
-
-[weapons.special.condemnor_boltgun]
-name = "Condemnor boltgun"
-cost = 55
-only_fighter = ["sister_superior"]
-
-[weapons.special.combi-melta]
-name = "Combi-melta"
-cost = 65
-only_fighter = ["sister_superior"]
+[weapons.special.plasma]
+name = "Plasma"
+cost = 80
+only_fighter = ["gunner"]
 
 [weapons.special.meltagun]
 name = "Meltagun"
 cost = 95
 only_fighter = ["gunner"]
 
-[weapons.special.heavy_flamer]
-name = "Heavy flamer"
-cost = 100
-only_fighter = ["gunner"]
 
-[weapons.heavy.heavy_bolter]
-name = "Heavy bolter"
-cost = 180
-not_weapon = ["heavy_bolter", "multi-melta"]
-
-[weapons.heavy.multi-melta]
-name = "Multi-melta"
-cost = 190
-not_weapon = ["heavy_bolter", "multi-melta"]
