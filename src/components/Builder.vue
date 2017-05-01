@@ -16,11 +16,11 @@
             :to="'/roster-view/'+factionId">
             <i class="material-icons align-middle pb-1">print</i> <span>Roster View</span>
           </router-link>
-            <router-link class="btn btn-primary action-btn"
-              :disabled="empty" role="button" tag="button"
-              :to="'/simple-view/'+factionId">
-              <i class="material-icons align-middle pb-1">assignment</i> <span>Simple View</span>
-            </router-link>
+          <router-link class="btn btn-primary action-btn"
+            :disabled="empty" role="button" tag="button"
+            :to="'/simple-view/'+factionId">
+            <i class="material-icons align-middle pb-1">assignment</i> <span>Simple View</span>
+          </router-link>
         </span>
       </div>
 

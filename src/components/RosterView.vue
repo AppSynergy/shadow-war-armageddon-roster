@@ -6,6 +6,7 @@
         class="btn btn-primary" role="button">
         Return to list builder
       </router-link>
+      <button v-on:click="makePDF()">PDF</button>
     </div>
 
     <div class="roster-view">
@@ -98,11 +99,14 @@
 <script lang="coffee">
 
   import FactionData from '../data/factions.toml'
+  import PDF from './mixin/PDF.coffee'
   import StatData from '../data/stats.toml'
 
   RosterView =
 
     props: ['factionId']
+
+    mixins: [PDF]
 
     data: () ->
       labels: ['Name', 'Role', 'Characteristics', 'Equipment, Skills and Notes', 'Mission Completed', 'Miss Next Mission']
