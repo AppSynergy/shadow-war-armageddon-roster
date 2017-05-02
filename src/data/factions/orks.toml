@@ -79,16 +79,16 @@ name = "Choppa"
 cost = 10
 
 [weapons.hand-to-hand.buzz_choppa]
-name = "Buzz Choppa"
+name = "Buzz choppa"
 cost = 15
 
 [weapons.hand-to-hand.big_choppa]
-name = "Big Choppa"
+name = "Big choppa"
 cost = 15
 only_fighter = ["boss_nob"]
 
 [weapons.hand-to-hand.power_klaw]
-name = "Power Klaw"
+name = "Power klaw"
 cost = 85
 only_fighter = ["boss_nob"]
 
