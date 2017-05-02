@@ -1,5 +1,5 @@
-key = "adeptus_astartes"
-name = "Adeptus Astartes Kill Team"
+key = "adepta_sororitas"
+name = "Adepta Sororitas Kill Team"
 
 [size]
 min = 3
@@ -7,12 +7,12 @@ max = 10
 leader_max = 1
 specialist_max = 2
 
-[fighters.scout_sergeant]
-name = "Scout Sergeant"
-cost = 200
+[fighters.sister_superior]
+name = "Sister Superior"
+cost = 175
 role = "Kill Team Leader"
-stats = "5 4 4 4 4 1 4 2 9"
-wargear = ["combat_blade", "scout_armour"]
+stats = "4 4 4 3 3 1 4 2 9"
+wargear = ["combat_blade", "power_armour"]
 equip = ["hand-to-hand", "pistols", "basic", "special", "grenades", "misc"]
 skills = ["combat", "ferocity", "guerilla", "agility", "shooting", "stealth"]
 
