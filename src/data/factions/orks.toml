@@ -1,0 +1,119 @@
+key = "orks"
+name = "Ork Boyz Kill Team"
+
+[size]
+min = 3
+max = 10
+leader_max = 1
+specialist_max = 2
+
+[fighters.boss_nob]
+name = "Boss Nob"
+cost = 160
+role = "Kill Team Leader"
+stats = "4 4 2 4 4 2 3 3 7"
+wargear = ["shank", "squig-hide_armor"]
+equip = ["hand-to-hand", "pistols", "basic", "special", "grenades", "misc"]
+skills = ["combat", "ferocity", "guerilla", "agility", "shooting", "stealth"]
+
+[fighters.boy]
+name = "Boy"
+cost = 60
+role = "Trooper"
+stats = "4 4 2 3 4 1 2 2 7"
+wargear = ["shank", "squig-hide_armor"]
+equip = ["hand-to-hand", "pistols", "basic", "grenades", "misc"]
+skills = ["combat", "ferocity", "shooting"]
+
+[fighters.yoof]
+name = "Yoof"
+cost = 30
+role = "New Recruit"
+stats = "4 3 2 3 4 1 2 1 7"
+wargear = ["shank", "squig-hide_armor"]
+equip = ["hand-to-hand", "pistols", "basic", "grenades", "misc"]
+skills = []
+
+[fighters.spanner_boy]
+name = "Spanner Boy"
+cost = 70
+role = "Specialist"
+stats = "4 4 2 3 4 1 2 2 7"
+wargear = ["shank", "squig-hide_armor"]
+equip = ["hand-to-hand", "pistols", "special", "grenades", "misc"]
+skills = ["combat", "ferocity", "guerilla", "shooting"]
+
+[wargear.shank]
+name = "Shank"
+
+[wargear.squig-hide_armor]
+name = "Squig-hide armor"
+
+[weapons.grenades.stikkbombs]
+name = "Stikkbombs"
+cost = 25
+
+[weapons.misc.clip_harness]
+name = "Clip harness"
+cost = 10
+
+[weapons.misc.red-dot_laser_sight]
+name = "Red-dot laser sight"
+cost = 20
+
+[weapons.misc.eavy_armor]
+name = "'Eavy armor"
+cost = 25
+
+[weapons.misc.weapon_reload]
+name = "Weapon reload"
+cost = '*'
+only_weapon = { matches = "role", values = ["basic", "pistols", "special", "heavy"] }
+
+[weapons.hand-to-hand.shank]
+name = "Shank"
+cost = 5
+
+[weapons.hand-to-hand.choppa]
+name = "Choppa"
+cost = 10
+
+[weapons.hand-to-hand.buzz_choppa]
+name = "Buzz choppa"
+cost = 15
+
+[weapons.hand-to-hand.big_choppa]
+name = "Big choppa"
+cost = 15
+only_fighter = ["boss_nob"]
+
+[weapons.hand-to-hand.power_klaw]
+name = "Power klaw"
+cost = 85
+only_fighter = ["boss_nob"]
+
+[weapons.pistols.slugga]
+name = "Slugga"
+cost = 10
+
+[weapons.basic.shoota]
+name = "Shoota"
+cost = 25
+
+[weapons.special.kombi-shoota]
+name = "Kombi-shoota"
+cost = 40
+only_fighter = ["boss_nob"]
+
+[weapons.special.kombi-weapon]
+name = "Kombi-weapon"
+cost = 50
+only_fighter = ["boss_nob"]
+
+[weapons.special.rokkit_launcha]
+name = "Rokkit launcha"
+cost = 130
+
+[weapons.special.big_shoota]
+name = "Big shoota"
+cost = 150
