@@ -61,6 +61,7 @@ implemented = true
 [adeptus_astartes]
 name = "Adeptus Astartes"
 color = "#666666"
+implemented = true
 
 [astra_militarum]
 name = "Astra Militarum"
