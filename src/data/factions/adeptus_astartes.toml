@@ -13,7 +13,7 @@ cost = 200
 role = "Kill Team Leader"
 stats = "5 4 4 4 4 1 4 2 9"
 wargear = ["combat_blade", "scout_armour"]
-equip = ["hand-to-hand", "pistols", "basic", "grenades", "misc"]
+equip = ["hand-to-hand", "pistols", "basic", "ammunition", "grenades", "misc"]
 skills = ["combat", "ferocity", "guerilla", "agility", "shooting", "stealth", "muscle"]
 
 [fighters.scout]
@@ -22,7 +22,7 @@ cost = 100
 role = "Trooper"
 stats = "5 4 4 4 4 1 4 1 8"
 wargear = ["combat_blade", "scout_armour"]
-equip = ["hand-to-hand", "pistols", "basic", "grenades", "misc"]
+equip = ["hand-to-hand", "pistols", "basic", "ammunition", "grenades", "misc"]
 skills = ["combat", "ferocity", "shooting", "stealth"]
 
 [fighters.novitive_scount]
@@ -31,7 +31,7 @@ cost = 75
 role = "New Recruit"
 stats = "5 3 3 4 4 1 4 1 8"
 wargear = ["combat_blade", "scout_armour"]
-equip = ["hand-to-hand", "pistols", "basic", "grenades", "misc"]
+equip = ["hand-to-hand", "pistols", "basic", "ammunition", "grenades", "misc"]
 skills = []
 
 [fighters.scout_gunner]
@@ -40,7 +40,7 @@ cost = 110
 role = "Specialist"
 stats = "5 4 4 4 4 1 4 1 8"
 wargear = ["combat_blade", "scout_armour"]
-equip = ["hand-to-hand", "pistols", "special", "heavy", "grenades", "misc"]
+equip = ["pistols", "heavy", "ammunition", "grenades", "misc"]
 skills = ["combat", "ferocity", "guerilla", "shooting", "stealth"]
 
 [wargear.combat_blade]
@@ -48,6 +48,16 @@ name = "Combat blade"
 
 [wargear.scout_armour]
 name = "Scout armour"
+
+[weapons.ammunition.hellfire_bolts]
+name = "Hellfire bolts"
+cost = 20
+only_weapon = { matches = "key", values = [ "bolt_pistols", "boltgun" ] }
+
+[weapons.ammunition.toxic_rounds]
+name = "Toxic rounds"
+cost = 20
+only_weapon = { matches = "key", values = [ "sniper" ] }
 
 [weapons.grenades.frag_grenades]
 name = "Frag grenades"
@@ -81,7 +91,7 @@ cost = 20
 [weapons.misc.telescopic_sight]
 name = "Telescopic sight"
 cost = 20
-only_weapon = { matches = "key", values = ["bolt_pistol", "plasma_pistol", "boltgun", "storm_bolter", "combi-flamer", "condemnor_boltgun", "combi-melta", "heavy_bolter", "multi-melta"] }
+only_weapon = { matches = "key", values = ["bolt_pistol", "plasma_pistol", "boltgun", "sniper", "heavy_bolter", "missile_launcher_with_frag", "missile_launcher_with_krak]", "missile_launcher_with_both]", "flamer", "plasma_gun", "meltagun"] }
 
 [weapons.misc.weapon_reload]
 name = "Weapon reload"
@@ -125,6 +135,26 @@ cost = 35
 [weapons.basic.sniper]
 name = "Sniper"
 cost = 40
+
+[weapons.heavy.heavy_bolter]
+name = "Heavy bolter"
+cost = 180
+
+[weapons.heavy.missile_launcher_frag]
+name = "Missile launcher (frag)"
+cost = 175
+not_weapon = ["autocannon", "heavy_bolter", "missile_launcher_frag", "missile_launcher_krak", "missile_launcher_both", "lascannon"]
+
+[weapons.heavy.missile_launcher_krak]
+name = "Missile launcher (krak)"
+cost = 190
+not_weapon = ["autocannon", "heavy_bolter", "missile_launcher_frag", "missile_launcher_krak", "missile_launcher_both", "lascannon"]
+
+[weapons.heavy.missile_launcher_both]
+name = "Missile launcher (frag & krak)"
+cost = 225
+not_weapon = ["autocannon", "heavy_bolter", "missile_launcher_frag", "missile_launcher_krak", "missile_launcher_both", "lascannon"]
+
 
 [weapons.special.flamer]
 name = "Flamer"
