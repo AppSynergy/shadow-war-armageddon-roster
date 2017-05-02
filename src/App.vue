@@ -96,6 +96,9 @@
   .fade-enter, .fade-leave-to
     opacity: 0
 
+  .chosen-fighter-card
+    cursor: move
+
   .up-a-bit
     line-height: 60%
 
