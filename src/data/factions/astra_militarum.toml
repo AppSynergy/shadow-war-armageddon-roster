@@ -5,7 +5,7 @@ name = "Astra Militarum Kill Team"
 min = 3
 max = 10
 leader_max = 1
-specialist_max = 2
+specialist_max = 3
 
 [fighters.veteran_sergeant]
 name = "Veteran Sergeant"
@@ -35,7 +35,7 @@ equip = ["hand-to-hand", "pistols", "basic", "ammunition", "grenades", "misc"]
 skills = []
 
 [fighters.special_weapons_operative]
-name = "Gunner"
+name = "Special Weapons Operative"
 cost = 70
 role = "Specialist"
 stats = "4 34 3 3 1 3 1 7"
@@ -47,16 +47,16 @@ skills = ["combat", "ferocity", "guerilla", "shooting"]
 name = "Combat blade"
 
 [wargear.flak_armour]
-name = "Flak Armour"
+name = "Flak armour"
 
 [weapons.ammunition.hotshot_laser_power_pack]
-name = "Hotshot Laser Power Pack"
+name = "Hotshot laser power pack"
 cost = 15
 
 [weapons.ammunition.toxic_rounds]
-name = "Toxic Rounds"
+name = "Toxic rounds"
 cost = 20
-only_weapon = { matches = "key", values = [ "sniper" ] }
+only_weapon = { matches = "key", values = [ "sniper_rifle" ] }
 
 [weapons.grenades.frag_grenades]
 name = "Frag grenades"
@@ -71,27 +71,27 @@ name = "Krak grenades"
 cost = 40
 
 [weapons.misc.camo_gear]
-name = "Camo Gear"
+name = "Camo gear"
 cost = 5
 
 [weapons.misc.clip_harness]
-name = "Clip Harness"
+name = "Clip harness"
 cost = 10
 
 [weapons.misc.carapace_armour]
-name = "Carapace Armour"
+name = "Carapace armour"
 cost = 20
 
 [weapons.misc.red-dot_laser_sight]
 name = "Red-dot laser sight"
 cost = 20
-only_weapon = { matches = "key", values = ["laspistol", "bolt_pistol", "plasma_pistol", "shotgun", "lasgun", "boltgun", "sniper", "plasma_gun", "meltagun"] }
+only_weapon = { matches = "key", values = ["laspistol", "bolt_pistol", "plasma_pistol", "shotgun", "lasgun", "boltgun", "sniper_rifle", "plasma_gun", "meltagun"] }
 
 
 [weapons.misc.telescopic_sight]
 name = "Telescopic sight"
 cost = 20
-only_weapon = { matches = "key", values = ["laspistol", "bolt_pistol", "plasma_pistol", "lasgun", "boltgun", "sniper", "plasma_gun"] }
+only_weapon = { matches = "key", values = ["laspistol", "bolt_pistol", "plasma_pistol", "lasgun", "boltgun", "sniper_rifle", "plasma_gun"] }
 
 [weapons.misc.weapon_reload]
 name = "Weapon reload"
@@ -103,7 +103,7 @@ name = "Combat blade"
 cost = 5
 
 [weapons.hand-to-hand.assault_blade]
-name = "Assault Blade"
+name = "Assault blade"
 cost = 15
 
 [weapons.hand-to-hand.chainsword]
@@ -141,50 +141,38 @@ name = "Boltgun"
 cost = 35
 only_fighter = ["veteran_sergeant"]
 
-[weapons.special.sniper]
-name = "Sniper"
+[weapons.special.sniper_rifle]
+name = "Sniper rifle"
 cost = 40
-only_fighter = ["gunner"]
 
 [weapons.special.flamer]
 name = "Flamer"
 cost = 40
-only_fighter = ["gunner"]
 
 [weapons.special.demolition_charge]
-name = "Demolition Charge"
+name = "Demolition charge"
 cost = 50
-only_fighter = ["gunner"]
 
 [weapons.special.plasma_gun]
 name = "Plasma gun"
 cost = 80
-only_fighter = ["gunner"]
 
 [weapons.special.meltagun]
 name = "Meltagun"
 cost = 95
-only_fighter = ["gunner"]
 
 [weapons.special.heavy_flamer]
 name = "Heavy flamer"
 cost = 100
-only_fighter = ["gunner"]
 
 [weapons.special.grenade_launcher_frag]
-name = "Missile launcher (frag)"
+name = "Grenade launcher (frag)"
 cost = 85
-not_weapon = ["autocannon", "heavy_bolter", "missile_launcher_frag", "missile_launcher_krak", "missile_launcher_both", "lascannon"]
-only_fighter = ["gunner"]
 
 [weapons.special.grenade_launcher_krak]
-name = "Missile launcher (krak)"
+name = "Grenade launcher (krak)"
 cost = 100
-not_weapon = ["autocannon", "heavy_bolter", "missile_launcher_frag", "missile_launcher_krak", "missile_launcher_both", "lascannon"]
-only_fighter = ["gunner"]
 
 [weapons.special.grenade_launcher_both]
-name = "Missile launcher (frag & krak)"
+name = "Grenade launcher (frag & krak)"
 cost = 125
-not_weapon = ["autocannon", "heavy_bolter", "missile_launcher_frag", "missile_launcher_krak", "missile_launcher_both", "lascannon"]
-only_fighter = ["gunner"]
