@@ -57,7 +57,7 @@ only_weapon = { matches = "key", values = [ "bolt_pistols", "boltgun" ] }
 [weapons.ammunition.toxic_rounds]
 name = "Toxic rounds"
 cost = 20
-only_weapon = { matches = "key", values = [ "sniper" ] }
+only_weapon = { matches = "key", values = [ "sniper_rifle" ] }
 
 [weapons.grenades.frag_grenades]
 name = "Frag grenades"
@@ -73,15 +73,15 @@ name = "Krak grenades"
 cost = 40
 
 [weapons.misc.camo_gear]
-name = "Camo Gear"
+name = "Camo gear"
 cost = 5
 
 [weapons.misc.clip_harness]
-name = "Clip Harness"
+name = "Clip harness"
 cost = 10
 
 [weapons.misc.photo_visor]
-name = "Photo Visor"
+name = "Photo visor"
 cost = 15
 
 [weapons.misc.red-dot_laser_sight]
@@ -91,7 +91,7 @@ cost = 20
 [weapons.misc.telescopic_sight]
 name = "Telescopic sight"
 cost = 20
-only_weapon = { matches = "key", values = ["bolt_pistol", "plasma_pistol", "boltgun", "sniper", "heavy_bolter", "missile_launcher_with_frag", "missile_launcher_with_krak]", "missile_launcher_with_both]", "flamer", "plasma_gun", "meltagun"] }
+only_weapon = { matches = "key", values = ["bolt_pistol", "plasma_pistol", "boltgun", "sniper", "heavy_bolter", "missile_launcher_with_frag", "missile_launcher_with_krak", "missile_launcher_with_both", "flamer", "plasma_gun", "meltagun"] }
 
 [weapons.misc.weapon_reload]
 name = "Weapon reload"
@@ -103,7 +103,7 @@ name = "Combat blade"
 cost = 5
 
 [weapons.hand-to-hand.assault_blade]
-name = "Assault Blade"
+name = "Assault blade"
 cost = 15
 
 [weapons.hand-to-hand.chainsword]
@@ -124,7 +124,7 @@ name = "Plasma pistol"
 cost = 50
 only_fighter = ["scout_sergeant"]
 
-[weapons.basic.shot_gun]
+[weapons.basic.shotgun]
 name = "Shotgun"
 cost = 25
 
@@ -132,8 +132,8 @@ cost = 25
 name = "Boltgun"
 cost = 35
 
-[weapons.basic.sniper]
-name = "Sniper"
+[weapons.basic.sniper_rifle]
+name = "Sniper rifle"
 cost = 40
 
 [weapons.heavy.heavy_bolter]
@@ -155,7 +155,6 @@ name = "Missile launcher (frag & krak)"
 cost = 225
 not_weapon = ["autocannon", "heavy_bolter", "missile_launcher_frag", "missile_launcher_krak", "missile_launcher_both", "lascannon"]
 
-
 [weapons.special.flamer]
 name = "Flamer"
 cost = 40
@@ -170,5 +169,3 @@ only_fighter = ["gunner"]
 name = "Meltagun"
 cost = 95
 only_fighter = ["gunner"]
-
-
