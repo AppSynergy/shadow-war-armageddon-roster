@@ -13,7 +13,7 @@ cost = 160
 role = "Kill Team Leader"
 stats = "4 4 2 4 4 2 3 3 7"
 wargear = ["shank", "squig-hide_armor"]
-equip = ["hand-to-hand", "pistols", "basic", "grenades", "misc"]
+equip = ["hand-to-hand", "pistols", "basic", "special", "grenades", "misc"]
 skills = ["combat", "ferocity", "guerilla", "agility", "shooting", "stealth"]
 
 [fighters.boy]
@@ -47,10 +47,10 @@ skills = ["combat", "ferocity", "guerilla", "shooting"]
 name = "Shank"
 
 [wargear.squig-hide_armor]
-name = "Squig-hide Armor"
+name = "Squig-hide armor"
 
-[weapons.grenades.stikkboms]
-name = "Stikkboms"
+[weapons.grenades.stikkbombs]
+name = "Stikkbombs"
 cost = 25
 
 [weapons.misc.clip_harness]
@@ -62,7 +62,7 @@ name = "Red-dot laser sight"
 cost = 20
 
 [weapons.misc.eavy_armor]
-name = "'Eavy Armor"
+name = "'Eavy armor"
 cost = 25
 
 [weapons.misc.weapon_reload]
@@ -97,16 +97,8 @@ name = "Slugga"
 cost = 10
 
 [weapons.basic.shoota]
-name = "Boltgun"
-cost = 35
-
-[weapons.special.flamer]
 name = "Shoota"
 cost = 25
-
-[weapons.special.storm_bolter]
-name = "Storm bolter"
-cost = 55
 
 [weapons.special.kombi-shoota]
 name = "Kombi-shoota"
@@ -123,6 +115,5 @@ name = "Rokkit launcha"
 cost = 130
 
 [weapons.special.big_shoota]
-name = "Big Shoota"
+name = "Big shoota"
 cost = 150
-
