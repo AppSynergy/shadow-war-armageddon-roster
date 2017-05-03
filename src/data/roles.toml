@@ -16,6 +16,9 @@ name = "Basic Weapons"
 [special]
 name = "Special Weapons"
 
+[space_wolves_special]
+name = "Space Wolves Special Weapons"
+
 [heavy]
 name = "Heavy Weapons"
 

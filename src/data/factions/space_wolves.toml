@@ -31,7 +31,7 @@ cost = 110
 role = "Specialist"
 stats = "5 4 4 4 4 1 4 1 8"
 wargear = ["combat_blade", "scout_armour"]
-equip = ["pistols", "special", "heavy", "ammunition", "grenades", "misc"]
+equip = ["pistols", "space_wolves_special", "heavy", "ammunition", "grenades", "misc"]
 skills = ["combat", "ferocity", "guerilla", "shooting", "stealth"]
 
 [wargear.combat_blade]
@@ -146,14 +146,14 @@ name = "Missile launcher (frag & krak)"
 cost = 225
 not_weapon = ["autocannon", "heavy_bolter", "missile_launcher_frag", "missile_launcher_krak", "missile_launcher_both", "lascannon"]
 
-[weapons.special.flamer]
+[weapons.space_wolves_special.flamer]
 name = "Flamer"
 cost = 40
 
-[weapons.special.plasma]
+[weapons.space_wolves_special.plasma]
 name = "Plasma"
 cost = 80
 
-[weapons.special.meltagun]
+[weapons.space_wolves_special.meltagun]
 name = "Meltagun"
 cost = 95
