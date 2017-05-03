@@ -5,7 +5,7 @@ name = "Dark Eldar Wych Cult Kill Team"
 min = 3
 max = 10
 leader_max = 1
-specialist_max = 1
+specialist_max = 2
 
 [fighters.syren]
 name = "Syren"
