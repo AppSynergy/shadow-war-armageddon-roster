@@ -55,22 +55,28 @@ name = "Improvised armour"
 [weapons.mark_of_chaos.mark_of_khorne]
 name = "Mark of Khorne"
 cost = 0
-not_weapon = ["mark_of_khorne", "mark_of_nurgle", "mark_of_slaanesh", "mark_of_tzeentch"]
+not_weapon = ["mark_of_khorne", "mark_of_nurgle", "mark_of_slaanesh", "mark_of_tzeentch", "mark_of_chaos_undivided"]
 
 [weapons.mark_of_chaos.mark_of_nurgle]
 name = "Mark of Nurgle"
 cost = 0
-not_weapon = ["mark_of_khorne", "mark_of_nurgle", "mark_of_slaanesh", "mark_of_tzeentch"]
+not_weapon = ["mark_of_khorne", "mark_of_nurgle", "mark_of_slaanesh", "mark_of_tzeentch", "mark_of_chaos_undivided"]
 
 [weapons.mark_of_chaos.mark_of_slaanesh]
 name = "Mark of Slaanesh"
 cost = 0
-not_weapon = ["mark_of_khorne", "mark_of_nurgle", "mark_of_slaanesh", "mark_of_tzeentch"]
+not_weapon = ["mark_of_khorne", "mark_of_nurgle", "mark_of_slaanesh", "mark_of_tzeentch", "mark_of_chaos_undivided"]
 
 [weapons.mark_of_chaos.mark_of_tzeentch]
 name = "Mark of Tzeentch"
 cost = 0
-not_weapon = ["mark_of_khorne", "mark_of_nurgle", "mark_of_slaanesh", "mark_of_tzeentch"]
+not_weapon = ["mark_of_khorne", "mark_of_nurgle", "mark_of_slaanesh", "mark_of_tzeentch", "mark_of_chaos_undivided"]
+
+[weapons.mark_of_chaos.mark_of_chaos_undivided]
+name = "Mark of Chaos Undivided"
+cost = 0
+not_weapon = ["mark_of_khorne", "mark_of_nurgle", "mark_of_slaanesh", "mark_of_tzeentch", "mark_of_chaos_undivided"]
+
 
 [weapons.cult_misc.weapon_reload]
 name = "Weapon reload"
