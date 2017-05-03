@@ -32,7 +32,10 @@ RosterStore =
       fighter = obj.fighter
       fighter.realName = ""
       fighter.weapons = []
-      fighter.wargear = fighter.wargear.map (x) -> obj.wargear[x]
+      fighter.wargear = fighter.wargear.map (x) ->
+        gear = obj.wargear[x]
+        gear.key = x
+        gear
       state.fighters.push fighter
 
     duplicateFighter: (state, fighter) ->

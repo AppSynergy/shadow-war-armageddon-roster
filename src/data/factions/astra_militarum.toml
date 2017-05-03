@@ -81,6 +81,7 @@ cost = 10
 [weapons.misc.carapace_armour]
 name = "Carapace armour"
 cost = 20
+masks = ['flak_armour']
 
 [weapons.misc.red-dot_laser_sight]
 name = "Red-dot laser sight"

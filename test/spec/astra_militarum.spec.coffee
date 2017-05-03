@@ -19,6 +19,14 @@ describe 'the imperial guard roster', () ->
       expect(@all('.chosen-fighter-card .fighter-name')[1].textContent).toBe 'Special Weapons Operative'
       done()
 
+  it 'can equip carapace armour replacing flak armour', (done) ->
+    wargear = @get('select.add-wargear')
+    @change wargear, @option(wargear, 'Carapace armour')
+    Vue.nextTick () =>
+      expect(@all('.wargear-item').length).toBe 6
+      expect(@all('.wargear-item')[1].textContent).toMatch /Carapace armour -\s*20 points/
+      done()
+
   it 'can equip special weapons', (done) ->
     wargear = @get('select.add-wargear')
     expect(wargear.textContent).not.toContain 'Red-dot laser sight'
