@@ -63,7 +63,6 @@
 <script lang="coffee">
 
   import Analytics from './mixin/Analytics.coffee'
-  import Disqus from './mixin/Disqus.coffee'
   import Factions from '../data/factions.toml'
   import Modal from './Modal.vue'
   import Storage from './mixin/Storage.coffee'
@@ -72,7 +71,7 @@
 
     components: { Modal }
 
-    mixins: [ Analytics, Disqus, Storage ]
+    mixins: [ Analytics, Storage ]
 
     data: () ->
       modalId: 'deleteRosterModal'
@@ -88,13 +87,11 @@
       hasSavedRosters: () -> @savedRosters.length > 0
 
     created: () ->
-      @disqusSetup()
       @savedRosters = @$localStorage.get 'rosters'
 
     beforeRouteEnter: (to, from, next) ->
       next (vm) =>
         vm.track '/'
-        vm.disqusReset()
 
     methods:
 
