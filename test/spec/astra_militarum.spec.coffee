@@ -36,6 +36,24 @@ describe 'the imperial guard roster', () ->
       expect(@get('select.add-wargear').textContent).toContain 'Red-dot laser sight'
       done()
 
+  it 'cannot cheat by duplicating a fourth specialist', (done) ->
+    @get('.available-fighter-card button').click()
+    Vue.nextTick () =>
+      expect(@all('.chosen-fighter-card').length).toBe 4
+      @get('.duplicate-button').click()
+      Vue.nextTick () =>
+        expect(@all('.chosen-fighter-card').length).toBe 4
+        done()
+
+  it 'can duplicate normal troopers etc.', (done) ->
+    @all('.available-fighter-card button')[1].click()
+    Vue.nextTick () =>
+      @all('.duplicate-button')[4].click()
+      @all('.duplicate-button')[4].click()
+      Vue.nextTick () =>
+        expect(@all('.chosen-fighter-card').length).toBe 7
+        done()
+
   it 'can exit cleanly and return to home', (done) ->
     @get('a.router-link-active').click()
     Vue.nextTick () =>

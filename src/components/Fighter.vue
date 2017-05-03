@@ -99,8 +99,7 @@
         @event 'name_fighter', @fighter.realName
 
       duplicateFighter: () ->
-        @event 'duplicate_fighter', @fighter.name
-        @$store.commit 'duplicateFighter', @fighter
+        @$emit 'duplicateFighter', @fighter
 
       removeFighter: () ->
         @event 'remove_fighter', @fighter.name
