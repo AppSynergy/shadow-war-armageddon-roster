@@ -72,3 +72,8 @@ implemented = true
 name = "Orks"
 color = "#448844"
 implemented = true
+
+[space_wolves]
+name = "Space Wolves"
+color = "#666688"
+implemented = true

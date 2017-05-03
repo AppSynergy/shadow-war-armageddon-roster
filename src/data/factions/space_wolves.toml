@@ -1,5 +1,5 @@
-key = "adeptus_astartes"
-name = "Adeptus Astartes Kill Team"
+key = "space_wolves"
+name = "Wolf Scout Kill Team"
 
 [size]
 min = 3
@@ -25,22 +25,13 @@ wargear = ["combat_blade", "scout_armour"]
 equip = ["hand-to-hand", "pistols", "basic", "ammunition", "grenades", "misc"]
 skills = ["combat", "ferocity", "shooting", "stealth"]
 
-[fighters.novitive_scount]
-name = "Novitive Scout"
-cost = 75
-role = "New Recruit"
-stats = "5 3 3 4 4 1 4 1 8"
-wargear = ["combat_blade", "scout_armour"]
-equip = ["hand-to-hand", "pistols", "basic", "ammunition", "grenades", "misc"]
-skills = []
-
 [fighters.scout_gunner]
 name = "Scout Gunner"
 cost = 110
 role = "Specialist"
 stats = "5 4 4 4 4 1 4 1 8"
 wargear = ["combat_blade", "scout_armour"]
-equip = ["pistols", "heavy", "ammunition", "grenades", "misc"]
+equip = ["pistols", "special", "heavy", "ammunition", "grenades", "misc"]
 skills = ["combat", "ferocity", "guerilla", "shooting", "stealth"]
 
 [wargear.combat_blade]
@@ -91,7 +82,7 @@ cost = 20
 [weapons.misc.telescopic_sight]
 name = "Telescopic sight"
 cost = 20
-only_weapon = { matches = "key", values = ["bolt_pistol", "plasma_pistol", "boltgun", "sniper", "heavy_bolter", "missile_launcher_with_frag", "missile_launcher_with_krak", "missile_launcher_with_both"] }
+only_weapon = { matches = "key", values = ["bolt_pistol", "plasma_pistol", "boltgun", "sniper", "heavy_bolter", "missile_launcher_with_frag", "missile_launcher_with_krak", "missile_launcher_with_both", "flamer", "plasma_gun", "meltagun"] }
 
 [weapons.misc.weapon_reload]
 name = "Weapon reload"
@@ -154,3 +145,15 @@ not_weapon = ["autocannon", "heavy_bolter", "missile_launcher_frag", "missile_la
 name = "Missile launcher (frag & krak)"
 cost = 225
 not_weapon = ["autocannon", "heavy_bolter", "missile_launcher_frag", "missile_launcher_krak", "missile_launcher_both", "lascannon"]
+
+[weapons.special.flamer]
+name = "Flamer"
+cost = 40
+
+[weapons.special.plasma]
+name = "Plasma"
+cost = 80
+
+[weapons.special.meltagun]
+name = "Meltagun"
+cost = 95

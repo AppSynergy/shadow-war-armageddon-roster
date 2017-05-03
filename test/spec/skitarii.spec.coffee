@@ -10,7 +10,7 @@ describe 'basic roster operations', () ->
 
   it 'loads factions', () ->
     factions = @all '.roster-new .card'
-    expect(factions.length).toBe 15
+    expect(factions.length).toBe 16
     expect(factions[0].textContent).toBe 'Skitarii'
     expect(factions[9].textContent).toBe 'Genestealer Cults'
 
