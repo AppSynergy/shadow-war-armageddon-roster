@@ -94,6 +94,8 @@
     td, th
       width: 10%
       background-color: white
+    span.changed
+      color: $brand-danger
 
   .fade-enter-active, .fade-leave-active
     transition: opacity 0.6s

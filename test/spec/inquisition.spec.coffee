@@ -12,22 +12,28 @@ describe 'the inquisition roster', () ->
     @all('.available-fighter-card button')[1].click()
     Vue.nextTick () =>
       expect(@all('.chosen-fighter-card').length).toBe 1
-      expect(@get('.chosen-fighter-card .fighter-name').textContent).toBe 'Inquisitorial Acolyte (+1 WS)'
-      expect(@all('.stats-vue td')[0].textContent).toBe '4'
-      expect(@all('.stats-vue td')[1].textContent).toBe '4'
-      expect(@all('.stats-vue td')[2].textContent).toBe '3'
-      expect(@all('.stats-vue td')[3].textContent).toBe '3'
-      expect(@all('.stats-vue td')[4].textContent).toBe '3'
-      done()
+      expect(@get('.chosen-fighter-card .fighter-name').textContent).toBe 'Inquisitorial Acolyte'
+      wargear = @get 'select.add-wargear'
+      @change wargear, @option(wargear, 'Weapon Skill')
+      Vue.nextTick () =>
+        expect(@all('.stats-vue td')[0].textContent).toBe '4'
+        expect(@all('.stats-vue td')[1].textContent).toBe '4'
+        expect(@all('.stats-vue td')[2].textContent).toBe '3'
+        expect(@all('.stats-vue td')[3].textContent).toBe '3'
+        done()
 
   it 'can add a trooper with +1 BS', (done) ->
-    @all('.available-fighter-card button')[2].click()
+    @all('.available-fighter-card button')[1].click()
     Vue.nextTick () =>
-      expect(@all('.chosen-fighter-card').length).toBe 2
-      expect(@all('.chosen-fighter-card .fighter-name')[1].textContent).toBe 'Inquisitorial Acolyte (+1 BS)'
-      expect(@all('.stats-vue td')[10].textContent).toBe '3'
-      expect(@all('.stats-vue td')[11].textContent).toBe '4'
-      done()
+      wargear = @all('select.add-wargear')[1]
+      @change wargear, @option(wargear, 'Ballistic Skill')
+      Vue.nextTick () =>
+        expect(@all('.chosen-fighter-card').length).toBe 2
+        expect(@all('.stats-vue td')[9].textContent).toBe '4'
+        expect(@all('.stats-vue td')[10].textContent).toBe '3'
+        expect(@all('.stats-vue td')[11].textContent).toBe '4'
+        expect(@all('.stats-vue td')[12].textContent).toBe '3'
+        done()
 
   it 'can exit cleanly and return to home', (done) ->
     @get('a.router-link-active').click()
