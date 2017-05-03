@@ -13,7 +13,7 @@ cost = 160
 role = "Kill Team Leader"
 stats = "4 4 2 4 4 2 3 3 7"
 wargear = ["shank", "squig-hide_armor"]
-equip = ["hand-to-hand", "pistols", "basic", "special", "grenades", "misc"]
+equip = ["hand-to-hand", "pistols", "basic", "grenades", "misc"]
 skills = ["combat", "ferocity", "guerilla", "agility", "shooting", "stealth"]
 
 [fighters.boy]
@@ -100,12 +100,12 @@ cost = 10
 name = "Shoota"
 cost = 25
 
-[weapons.special.kombi-shoota]
+[weapons.basic.kombi-shoota]
 name = "Kombi-shoota"
 cost = 40
 only_fighter = ["boss_nob"]
 
-[weapons.special.kombi-weapon]
+[weapons.basic.kombi-weapon]
 name = "Kombi-weapon"
 cost = 50
 only_fighter = ["boss_nob"]
