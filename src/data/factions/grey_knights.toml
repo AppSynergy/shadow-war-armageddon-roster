@@ -43,7 +43,6 @@ name = "Storm bolter"
 [weapons.ammunition.psybolts]
 name = "Psybolts"
 cost = 30
-only_weapon = { matches = "key", values = [ "storm_bolter" ] }
 
 [weapons.grenades.frag_grenades]
 name = "Frag grenades"
