@@ -44,6 +44,7 @@
     "karma-phantomjs-launcher": "^1.0.4",
     "karma-webpack": "^2.0.3",
     "node-sass": "^4.5.0",
+    "onchange": "^3.2.1",
     "phantomjs": "^2.1.7",
     "sass-loader": "^5.0.1",
     "toml": "^2.3.2",
