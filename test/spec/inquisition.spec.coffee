@@ -5,7 +5,6 @@ describe 'the inquisition roster', () ->
   it 'links to a faction roster', (done) ->
     @vm.$router.push 'build/inquisition'
     Vue.nextTick () =>
-      expect(2).toBe(2)
       expect(@words('h2')).toBe 'Inquisition Kill Team'
       done()
 
