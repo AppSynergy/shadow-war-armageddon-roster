@@ -12,6 +12,9 @@ RosterStore =
 
   mutations:
 
+    dirtyState: (state) ->
+      state.dirty = true
+
     cleanState: (state) ->
       state.dirty = false
 

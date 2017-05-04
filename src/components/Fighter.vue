@@ -98,6 +98,7 @@
 
       nameFighter: (name) ->
         @event 'name_fighter', @fighter.realName
+        @$store.commit 'dirtyState'
 
       duplicateFighter: () ->
         @$emit 'duplicateFighter', @fighter
