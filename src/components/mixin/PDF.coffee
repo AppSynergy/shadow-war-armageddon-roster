@@ -1,11 +1,13 @@
+import html2canvas from 'html2canvas'
 import jsPDF from 'jspdf'
+
+window.html2canvas = html2canvas
 
 PDF =
   methods:
     makePDF: () ->
       pdf = new jsPDF 'landscape', 'mm', 'a4'
-      html = document.querySelector 'div.roster-view'
-      f = (dispose) -> pdf.save 'Test.pdf'
-      pdf.fromHTML html, 0, 0, {}, f
+      ele = document.querySelector '.roster-view'
+      pdf.addHTML ele, () -> pdf.save 'roster.pdf'
 
 export default PDF
