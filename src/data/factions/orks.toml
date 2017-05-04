@@ -59,7 +59,7 @@ cost = 10
 
 [weapons.misc.red-dot_laser_sight]
 name = "Red-dot laser sight"
-cost = 20
+cost = 15
 
 [weapons.misc.eavy_armor]
 name = "'Eavy armor"
