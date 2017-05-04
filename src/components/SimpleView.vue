@@ -4,11 +4,15 @@
     <div class="my-5 hidden-print text-center">
       <router-link :to="'/build/'+factionId"
         class="btn btn-primary" role="button">
-        Return to list builder
+        Return to team builder
       </router-link>
+      <button data-clipboard-target="#clipboard-target"
+        class="btn btn-primary" id="clipboard-button">
+        Copy to clipboard
+      </button>
     </div>
 
-    <div class="card p-5 my-4">
+    <div class="card p-5 my-4" id="clipboard-target">
       <h3 class="my-4">{{ teamName }} &mdash; {{ factionName }} &mdash; {{ totalPointsCost}} points</h3>
       <span v-for="fighter in chosenFighters">
         <strong>{{ fighter.name }}</strong> &mdash; {{ toTextList(fighter.weapons) }}
@@ -20,7 +24,10 @@
 
 <script lang="coffee">
 
+  import Clipboard from 'clipboard'
   import FactionData from '../data/factions.toml'
+
+  new Clipboard '#clipboard-button'
 
   SimpleView =
 

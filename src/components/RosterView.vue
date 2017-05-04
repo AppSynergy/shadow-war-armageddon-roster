@@ -4,9 +4,10 @@
     <div class="my-5 hidden-print text-center">
       <router-link :to="'/build/'+factionId"
         class="btn btn-primary" role="button">
-        Return to list builder
+        Return to team builder
       </router-link>
-      <button v-on:click="makePDF()">PDF</button>
+      <button v-on:click="makePDF(fileName)"
+        class="btn btn-primary">Download PDF</button>
     </div>
 
     <div class="roster-view">
@@ -117,6 +118,10 @@
       chosenFighters: () -> @$store.getters.getFighters
       teamName: () -> @$store.getters.getTeamName
       totalPointsCost: () -> @$store.getters.getTotalPointsCost
+
+      fileName: () ->
+        if @teamName.length > 1 then @teamName + '.pdf'
+        else @factionName + 'KillTeam.pdf'
 
     methods:
       getStats: (fighter) -> fighter.stats.split ' '

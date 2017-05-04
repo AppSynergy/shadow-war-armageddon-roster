@@ -5,9 +5,9 @@ window.html2canvas = html2canvas
 
 PDF =
   methods:
-    makePDF: () ->
+    makePDF: (fileName) ->
       pdf = new jsPDF 'landscape', 'mm', 'a4'
       ele = document.querySelector '.roster-view'
-      pdf.addHTML ele, () -> pdf.save 'roster.pdf'
+      pdf.addHTML ele, () -> pdf.save fileName
 
 export default PDF
