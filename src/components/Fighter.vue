@@ -32,7 +32,8 @@
               placeholder="Name me!"
               v-on:change="nameFighter"
               v-model="fighter.realName">
-            <fighter-stats :statstring="fighter.stats">
+            <fighter-stats :statstring="fighter.stats"
+              :statmasks="statMasks(fighter)">
             </fighter-stats>
           </div>
 
@@ -99,8 +100,7 @@
         @event 'name_fighter', @fighter.realName
 
       duplicateFighter: () ->
-        @event 'duplicate_fighter', @fighter.name
-        @$store.commit 'duplicateFighter', @fighter
+        @$emit 'duplicateFighter', @fighter
 
       removeFighter: () ->
         @event 'remove_fighter', @fighter.name
@@ -111,6 +111,11 @@
         weaponCost = _.max @fighter.weapons, (x) -> x.cost
         old.cost = Math.round(weaponCost.cost / 2)
         @newWeapon = old
+
+      statMasks: (fighter) ->
+        _.filter fighter.weapons, (x) -> _.has x, 'stat_mask'
+        .map (x) -> x.stat_mask
+
 
   export default Fighter
 

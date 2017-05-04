@@ -2,7 +2,7 @@
   <div class="wargear-vue">
 
     <div class="wargear-item d-inline-block mr-4 mb-1"
-      v-for="item in wargear">
+      v-for="item in maskedWargear">
       <span class="wargear-name">{{ item.name }}</span>
     </div>
 
@@ -30,8 +30,14 @@
 
     props: ['wargear', 'weapons', 'fighterIndex']
 
-    methods:
+    computed:
+      maskedWargear: () ->
+        maskers = _.filter @weapons, (x) -> _.has x, 'masks'
+          .map (x) -> x.masks
+        _.reject @wargear, (x) ->
+          _.contains _.flatten(maskers), x.key
 
+    methods:
       removeWeapon: (weapon, index) ->
         @event 'remove_weapon', weapon.name
         @$store.commit 'removeWeapon',

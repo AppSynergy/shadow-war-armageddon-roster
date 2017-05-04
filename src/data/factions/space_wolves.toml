@@ -1,0 +1,159 @@
+key = "space_wolves"
+name = "Wolf Scout Kill Team"
+
+[size]
+min = 3
+max = 10
+leader_max = 1
+specialist_max = 2
+
+[fighters.scout_sergeant]
+name = "Scout Sergeant"
+cost = 200
+role = "Kill Team Leader"
+stats = "5 4 4 4 4 1 4 2 9"
+wargear = ["combat_blade", "scout_armour"]
+equip = ["hand-to-hand", "pistols", "basic", "ammunition", "grenades", "misc"]
+skills = ["combat", "ferocity", "guerilla", "agility", "shooting", "stealth", "muscle"]
+
+[fighters.scout]
+name = "Scout"
+cost = 100
+role = "Trooper"
+stats = "5 4 4 4 4 1 4 1 8"
+wargear = ["combat_blade", "scout_armour"]
+equip = ["hand-to-hand", "pistols", "basic", "ammunition", "grenades", "misc"]
+skills = ["combat", "ferocity", "shooting", "stealth"]
+
+[fighters.scout_gunner]
+name = "Scout Gunner"
+cost = 110
+role = "Specialist"
+stats = "5 4 4 4 4 1 4 1 8"
+wargear = ["combat_blade", "scout_armour"]
+equip = ["pistols", "space_wolves_special", "heavy", "ammunition", "grenades", "misc"]
+skills = ["combat", "ferocity", "guerilla", "shooting", "stealth"]
+
+[wargear.combat_blade]
+name = "Combat blade"
+
+[wargear.scout_armour]
+name = "Scout armour"
+
+[weapons.ammunition.hellfire_bolts]
+name = "Hellfire bolts"
+cost = 20
+only_weapon = { matches = "key", values = [ "bolt_pistols", "boltgun" ] }
+
+[weapons.ammunition.toxic_rounds]
+name = "Toxic rounds"
+cost = 20
+only_weapon = { matches = "key", values = [ "sniper_rifle" ] }
+
+[weapons.grenades.frag_grenades]
+name = "Frag grenades"
+cost = 25
+
+[weapons.grenades.melta_bombs]
+name = "Melta bombs"
+cost = 30
+only_fighter = ["scout_sergeant"]
+
+[weapons.grenades.krak_grenades]
+name = "Krak grenades"
+cost = 40
+
+[weapons.misc.camo_gear]
+name = "Camo gear"
+cost = 5
+
+[weapons.misc.clip_harness]
+name = "Clip harness"
+cost = 10
+
+[weapons.misc.photo_visor]
+name = "Photo visor"
+cost = 15
+
+[weapons.misc.red-dot_laser_sight]
+name = "Red-dot laser sight"
+cost = 20
+
+[weapons.misc.telescopic_sight]
+name = "Telescopic sight"
+cost = 20
+only_weapon = { matches = "key", values = ["bolt_pistol", "plasma_pistol", "boltgun", "sniper", "heavy_bolter", "missile_launcher_with_frag", "missile_launcher_with_krak", "missile_launcher_with_both", "flamer", "plasma_gun", "meltagun"] }
+
+[weapons.misc.weapon_reload]
+name = "Weapon reload"
+cost = '*'
+only_weapon = { matches = "role", values = ["basic", "pistols", "special", "heavy"] }
+
+[weapons.hand-to-hand.combat_blade]
+name = "Combat blade"
+cost = 5
+
+[weapons.hand-to-hand.assault_blade]
+name = "Assault blade"
+cost = 15
+
+[weapons.hand-to-hand.chainsword]
+name = "Chainsword"
+cost = 25
+
+[weapons.hand-to-hand.power_sword]
+name = "Power sword"
+cost = 50
+only_fighter = ["scout_sergeant"]
+
+[weapons.pistols.bolt_pistol]
+name = "Bolt pistol"
+cost = 25
+
+[weapons.pistols.plasma_pistol]
+name = "Plasma pistol"
+cost = 50
+only_fighter = ["scout_sergeant"]
+
+[weapons.basic.shotgun]
+name = "Shotgun"
+cost = 25
+
+[weapons.basic.boltgun]
+name = "Boltgun"
+cost = 35
+
+[weapons.basic.sniper_rifle]
+name = "Sniper rifle"
+cost = 40
+
+[weapons.heavy.heavy_bolter]
+name = "Heavy bolter"
+cost = 180
+
+[weapons.heavy.missile_launcher_frag]
+name = "Missile launcher (frag)"
+cost = 175
+not_weapon = ["autocannon", "heavy_bolter", "missile_launcher_frag", "missile_launcher_krak", "missile_launcher_both", "lascannon"]
+
+[weapons.heavy.missile_launcher_krak]
+name = "Missile launcher (krak)"
+cost = 190
+not_weapon = ["autocannon", "heavy_bolter", "missile_launcher_frag", "missile_launcher_krak", "missile_launcher_both", "lascannon"]
+
+[weapons.heavy.missile_launcher_both]
+name = "Missile launcher (frag & krak)"
+cost = 225
+not_weapon = ["autocannon", "heavy_bolter", "missile_launcher_frag", "missile_launcher_krak", "missile_launcher_both", "lascannon"]
+
+[weapons.space_wolves_special.flamer]
+name = "Flamer"
+cost = 40
+
+[weapons.space_wolves_special.plasma]
+name = "Plasma"
+cost = 80
+
+[weapons.space_wolves_special.meltagun]
+name = "Meltagun"
+cost = 95

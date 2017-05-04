@@ -7,7 +7,8 @@
     </div>
     <router-view></router-view>
     <div v-if="$route.name == 'home'" class="container mt-5">
-      <div id="disqus_thread"></div>
+       <disqus shortname="killteams-com" identifier="/"
+        url="https://killteams.com/"></disqus>
     </div>
     <a class="hidden-print"
       href="https://github.com/AppSynergy/shadow-war-armageddon-roster">
@@ -22,12 +23,15 @@
 
   import Home from './components/Home.vue'
   import Builder from './components/Builder.vue'
+  import Disqus from 'vue-disqus/VueDisqus.vue'
   import RosterView from './components/RosterView.vue'
   import SimpleView from './components/SimpleView.vue'
 
   App =
 
     name: 'app'
+
+    components: { Disqus }
 
     data: () ->
       bannerSrc: 'https://camo.githubusercontent.com/121cd7cbdc3e4855075ea8b558508b91ac463ac2/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f677265656e5f3030373230302e706e67'
@@ -90,11 +94,16 @@
     td, th
       width: 10%
       background-color: white
+    span.changed
+      color: $brand-danger
 
   .fade-enter-active, .fade-leave-active
     transition: opacity 0.6s
   .fade-enter, .fade-leave-to
     opacity: 0
+
+  .chosen-fighter-card
+    cursor: move
 
   .up-a-bit
     line-height: 60%

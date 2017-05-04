@@ -83,6 +83,7 @@
           :index="index"
           :key="'fighter' + index"
           :weaponsAvailable="weaponsAvailable(fighter)"
+          v-on:duplicateFighter="duplicateFighter"
         ></fighter>
       </draggable>
 
@@ -209,6 +210,11 @@
         @$store.commit 'addFighter',
           fighter: _.clone(fighter)
           wargear: @faction.wargear
+
+      duplicateFighter: (fighter) ->
+        unless @cannotAddFighter fighter
+          @event 'duplicate_fighter', fighter.name
+          @$store.commit 'duplicateFighter', fighter
 
       cannotAddFighter: (fighter) ->
         roleCount = @$store.getters.getNumberFightersByRole(fighter.role)

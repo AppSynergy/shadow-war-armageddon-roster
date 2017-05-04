@@ -88,6 +88,7 @@ cost = 5
 [weapons.hand-to-hand.chainsword]
 name = "Chainsword"
 cost = 25
+only_fighter = ["sister_superior"]
 
 [weapons.hand-to-hand.power_maul]
 name = "Power maul"

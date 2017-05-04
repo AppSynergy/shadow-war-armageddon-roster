@@ -8,8 +8,10 @@
       </tr>
       <tr>
         <td class="p-1 text-center"
-          v-for="stat in stats"
-          >{{ stat }}</td>
+          v-for="stat, index in stats">
+          <span class="changed" v-if="statChanged(stat, index)">{{ stat }}</span>
+          <span v-else>{{ stat }}</span>
+        </td>
       </tr>
     </table>
   </div>
@@ -21,14 +23,31 @@
 
   Stats =
 
-    props: ['statstring']
+    props: ['statstring', 'statmasks']
 
     computed:
-      stats: () ->
-        @statstring.split ' '
+      originalStats: () -> @statstring.split ' '
+      statLabels: () -> StatData.labels
 
-      statLabels: () ->
-        StatData.labels
+      stats: () ->
+        if @statmasks.length < 1
+          @originalStats
+        else
+          _.reduce @statmasks, @mergeStats, @originalStats
+
+    methods:
+
+      statChanged: (stat, index) ->
+        stat != @originalStats[index]
+
+      mergeStats: (stats, mask) ->
+        _.chain stats
+          .zip mask.split ' '
+          .map (x) ->
+            if (x[1] || 0) > 0
+              parseInt(x[0], 10) + parseInt(x[1], 10)
+            else x[0]
+          .value()
 
   export default Stats
 

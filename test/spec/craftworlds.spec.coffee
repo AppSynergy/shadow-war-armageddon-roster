@@ -5,7 +5,6 @@ describe 'the craftworlds roster', () ->
   it 'links to a faction roster', (done) ->
     @vm.$router.push 'build/craftworlds'
     Vue.nextTick () =>
-      expect(2).toBe(2)
       expect(@words('h2')).toBe 'Craftworld Eldar Kill Team'
       done()
 
@@ -52,9 +51,6 @@ describe 'the craftworlds roster', () ->
     Vue.nextTick () =>
       expect(@all('.chosen-fighter-card').length).toBe 4
       secondSpecialistWargearText =  @all('select.add-wargear')[3].textContent
-      trooperWargear = @all('select.add-wargear')[1]
-      expect(@option(trooperWargear, 'Telescopic sight')).toBeUndefined()
-      @change trooperWargear, @option(trooperWargear, 'Galvanic rifle')
       expect(secondSpecialistWargearText).not.toContain 'Heavy Weapons Platform with bright lance'
       done()
 
