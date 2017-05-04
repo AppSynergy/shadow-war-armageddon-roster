@@ -4,10 +4,14 @@
     <div class="my-5 hidden-print text-center">
       <router-link :to="'/build/'+factionId"
         class="btn btn-primary" role="button">
-        Return to team builder
+        <i class="material-icons align-middle pb-1">skip_previous</i>
+        <span>Return to Team Builder</span>
       </router-link>
       <button v-on:click="makePDF(fileName)"
-        class="btn btn-primary">Download PDF</button>
+        class="btn btn-primary">
+        <i class="material-icons align-middle pb-1">file_download</i>
+        <span>Download PDF</span>
+      </button>
     </div>
 
     <div class="roster-view">

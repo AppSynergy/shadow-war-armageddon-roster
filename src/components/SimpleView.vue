@@ -4,11 +4,13 @@
     <div class="my-5 hidden-print text-center">
       <router-link :to="'/build/'+factionId"
         class="btn btn-primary" role="button">
-        Return to team builder
+        <i class="material-icons align-middle pb-1">skip_previous</i>
+        <span>Return to Team Builder</span>
       </router-link>
       <button data-clipboard-target="#clipboard-target"
         class="btn btn-primary" id="clipboard-button">
-        Copy to clipboard
+        <i class="material-icons align-middle pb-1">content_copy</i>
+        <span>Copy to clipboard</span>
       </button>
     </div>
 

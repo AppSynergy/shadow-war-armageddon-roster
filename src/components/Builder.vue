@@ -9,7 +9,7 @@
           </router-link>
           <button class="btn btn-primary action-btn" :disabled="!dirty"
             v-on:click="saveRoster()">
-            <i class="material-icons align-middle pb-1">file_download</i> <span>Save</span>
+            <i class="material-icons align-middle pb-1">save</i> <span>Save</span>
           </button>
           <router-link class="btn btn-primary action-btn"
             :disabled="empty" role="button" tag="button"
