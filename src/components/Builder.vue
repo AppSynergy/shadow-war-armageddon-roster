@@ -3,9 +3,10 @@
 
     <div class="card mt-4 team-background">
       <div class="card-header px-0 team-background">
-        <navigation v-on:saveRoster="saveRoster"
+        <navigation
           :factionId="factionId"
-          :dirty="dirty" :empty="empty">
+          :dirty="dirty" :empty="empty"
+          v-on:saveRoster="saveRoster">
         </navigation>
       </div>
 

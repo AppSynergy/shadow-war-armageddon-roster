@@ -9,7 +9,7 @@
         </router-link>
       </li>
       <li class="nav-item">
-        <button class="nav-link action-btn mx-auto"
+        <button :class="buttonClass(!dirty)"
           :disabled="!dirty"
           v-on:click="saveRoster()">
           <i class="material-icons align-middle pb-1">save</i>
@@ -17,7 +17,7 @@
         </button>
       </li>
       <li class="nav-item">
-        <router-link class="nav-link action-btn mx-auto"
+        <router-link :class="buttonClass(empty)"
           :disabled="empty" tag="button"
           :to="'/roster-view/'+factionId">
           <i class="material-icons align-middle pb-1">print</i>
@@ -25,7 +25,7 @@
         </router-link>
       </li>
       <li class="nav-item">
-        <router-link class="nav-link action-btn mx-auto"
+        <router-link :class="buttonClass(empty)"
           :disabled="empty" tag="button"
           :to="'/simple-view/'+factionId">
           <i class="material-icons align-middle pb-1">assignment</i>
@@ -40,18 +40,16 @@
 
   Navigation =
 
-    props: ['factionId']
-
-    data: () ->
-      dirty: false
-      empty: true
-
-    mounted: () ->
-      console.warn "mount", @dirty
+    props: ['factionId', 'empty', 'dirty']
 
     methods:
+
+      buttonClass: (disabled) ->
+        'nav-link action-btn mx-auto': true
+        'disabled': disabled
+
       saveRoster: () -> @$emit 'saveRoster'
 
   export default Navigation
 
-</script
+</script>
