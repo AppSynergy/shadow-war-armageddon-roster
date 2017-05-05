@@ -13,7 +13,7 @@
       <div class="card-block">
         <h2 class="my-4 text-center">{{ faction.name }}</h2>
         <div class="fighter-row row mb-4">
-          <div class="col col-12 col-sm-6"
+          <div class="col col-12 col-lg-6"
             v-for="fighter in faction.fighters" v-if="faction">
             <div class="card available-fighter-card mb-2 bg-inverse text-white">
 
