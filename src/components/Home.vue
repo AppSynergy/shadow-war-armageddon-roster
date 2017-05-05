@@ -6,7 +6,7 @@
     <div class="roster-new">
       <p class="text-center">Choose your faction!</p>
       <div class="row">
-        <div class="col col-12 col-md-4 col-lg-3"
+        <div class="col col-12 col-sm-6 col-md-4 col-lg-3"
           v-for="faction, factionId in factions">
           <router-link v-if="faction.implemented"
             :to="'/build/'+factionId" class="text-white">
