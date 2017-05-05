@@ -11,7 +11,9 @@
       </div>
 
       <div class="card-block">
-        <h2 class="my-4 text-center">{{ faction.name }}</h2>
+
+        <h2 class="faction-name my-4 text-center">{{ faction.name }}</h2>
+
         <div class="fighter-row row mb-4">
           <div class="col col-12 col-lg-6"
             v-for="fighter in faction.fighters" v-if="faction">
@@ -23,9 +25,12 @@
                   v-on:click="addFighter(fighter)">Add</button>
                 <span class="d-inline-block mt-1">
                   <div class="pl-2">{{ fighter.name }}</div>
-                  <div class="pl-2 up-a-bit"><small>{{ fighter.role }}</small></div>
+                  <div class="pl-2 up-a-bit"><small>
+                    <span>{{ fighter.role }}</span>
+                    <span class="hidden-md-up">( {{ fighter.cost }} points )</span>
+                  </small></div>
                 </span>
-                <span class="float-right mt-1 mr-4">{{ fighter.cost }} points</span>
+                <span class="hidden-sm-down float-right mt-1 mr-4">{{ fighter.cost }} points</span>
               </div>
 
             </div>
@@ -44,8 +49,8 @@
       </transition-group>
     </div>
 
-    <div class="errors mt-4">
-      <div v-for="error in errors" class="alert alert-danger">
+    <div class="errors">
+      <div v-for="error in errors" class="alert alert-danger my-2">
         {{ error.desc }}
       </div>
     </div>
@@ -59,7 +64,7 @@
         </div>
         <div class="col col-12 col-lg-3">
           <h4 class="roster-meta align-middle text-center">
-            <strong>{{ totalPointsCost }}</strong> points
+            Total: <strong> {{ totalPointsCost }}</strong> points
           </h4>
         </div>
         <div class="col col-12 col-lg-3">

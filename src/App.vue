@@ -82,10 +82,16 @@
     background-color: $color5
     h1.site-name
       font-size: 120%
+    h2
+      font-size: 135%
     h4
       font-size: 110%
     button
       cursor: pointer
+
+  h2.faction-name
+    @include media-breakpoint-down(sm)
+      font-size: 120%
 
   .team-background
     background-color: lighten($color5, 3)
@@ -108,6 +114,11 @@
     margin: 0
     @include media-breakpoint-up(md)
       text-align: left
+
+  .errors .alert
+    @include media-breakpoint-down(sm)
+      font-size: 80%
+      margin: 0.5em 0 0.5em
 
   .chosen-fighter-card
     cursor: move
