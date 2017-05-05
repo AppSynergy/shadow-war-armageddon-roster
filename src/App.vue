@@ -102,6 +102,13 @@
   .fade-enter, .fade-leave-to
     opacity: 0
 
+  .roster-meta
+    height: 38px
+    line-height: 38px
+    margin: 0
+    @include media-breakpoint-up(md)
+      text-align: left
+
   .chosen-fighter-card
     cursor: move
 

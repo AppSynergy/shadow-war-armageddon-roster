@@ -51,19 +51,22 @@
     </div>
 
     <div class="card px-4 mt-4 team-background" v-if="totalNumberFighters > 0">
-      <div class="row">
+      <div class="row my-4">
         <div class="col col-12 col-lg-6">
-          <input class="form-control my-4" type="text" v-model="teamName"
+          <input class="form-control roster-meta" type="text" v-model="teamName"
             v-on:change="nameTeam"
             placeholder="Name your kill-team">
         </div>
-        <div class="col col-12 col-lg-6">
-          <h3 class="pt-1 my-4" v-if="faction">
-            {{ totalPointsCost }} points
-            <span class="float-right">
-              {{ totalNumberFighters }} / {{ faction.size.min}} - {{ faction.size.max }} models
-            </span>
-          </h3>
+        <div class="col col-12 col-lg-3">
+          <h4 class="roster-meta align-middle text-center">
+            <strong>{{ totalPointsCost }}</strong> points
+          </h4>
+        </div>
+        <div class="col col-12 col-lg-3">
+          <h4 class="roster-meta align-middle text-center">
+            <strong>{{ totalNumberFighters }}</strong>
+            / {{ faction.size.min}} - {{ faction.size.max }} models
+          </h4>
         </div>
       </div>
 
