@@ -1,49 +1,37 @@
 <template>
   <div class="roster-vue mb-4 container">
 
-    <div class="card px-4 mt-4 team-background">
+    <div class="card mt-4 team-background">
       <div class="card-header px-0 team-background">
-        <span class="float-right">
-          <router-link class="btn btn-primary action-btn" to="/" role="button">
-            <i class="material-icons align-middle pb-1">home</i> <span>Home</span>
-          </router-link>
-          <button class="btn btn-primary action-btn" :disabled="!dirty"
-            v-on:click="saveRoster()">
-            <i class="material-icons align-middle pb-1">save</i> <span>Save</span>
-          </button>
-          <router-link class="btn btn-primary action-btn"
-            :disabled="empty" role="button" tag="button"
-            :to="'/roster-view/'+factionId">
-            <i class="material-icons align-middle pb-1">print</i> <span>Roster View</span>
-          </router-link>
-          <router-link class="btn btn-primary action-btn"
-            :disabled="empty" role="button" tag="button"
-            :to="'/simple-view/'+factionId">
-            <i class="material-icons align-middle pb-1">assignment</i> <span>Simple View</span>
-          </router-link>
-        </span>
+        <navigation v-on:saveRoster="saveRoster"
+          :factionId="factionId"
+          :dirty="dirty" :empty="empty">
+        </navigation>
       </div>
 
-      <h2 class="my-4 text-center">{{ faction.name }}</h2>
-      <div class="fighter-row row mb-4">
-        <div class="col col-12 col-sm-6"
-          v-for="fighter in faction.fighters" v-if="faction">
-          <div class="card available-fighter-card mb-2 bg-inverse text-white">
+      <div class="card-block">
+        <h2 class="my-4 text-center">{{ faction.name }}</h2>
+        <div class="fighter-row row mb-4">
+          <div class="col col-12 col-sm-6"
+            v-for="fighter in faction.fighters" v-if="faction">
+            <div class="card available-fighter-card mb-2 bg-inverse text-white">
 
-            <div class="my-0">
-              <button class="btn btn-success align-top ml-1 mt-1"
-              :disabled="cannotAddFighter(fighter)"
-                v-on:click="addFighter(fighter)">Add</button>
-              <span class="d-inline-block mt-1">
-                <div class="pl-2">{{ fighter.name }}</div>
-                <div class="pl-2 up-a-bit"><small>{{ fighter.role }}</small></div>
-              </span>
-              <span class="float-right mt-1 mr-4">{{ fighter.cost }} points</span>
+              <div class="my-0">
+                <button class="btn btn-success align-top ml-1 mt-1"
+                :disabled="cannotAddFighter(fighter)"
+                  v-on:click="addFighter(fighter)">Add</button>
+                <span class="d-inline-block mt-1">
+                  <div class="pl-2">{{ fighter.name }}</div>
+                  <div class="pl-2 up-a-bit"><small>{{ fighter.role }}</small></div>
+                </span>
+                <span class="float-right mt-1 mr-4">{{ fighter.cost }} points</span>
+              </div>
+
             </div>
-
           </div>
         </div>
       </div>
+
     </div>
 
     <div class="notifications mt-4">
@@ -107,13 +95,14 @@
   import Draggable from 'vuedraggable'
   import Fighter from './Fighter.vue'
   import Modal from './Modal.vue'
+  import Navigation from './Navigation.vue'
   import Storage from './mixin/Storage.coffee'
 
   Roster =
 
     props: ['factionId']
 
-    components: { Draggable, Fighter, Modal }
+    components: { Draggable, Fighter, Modal, Navigation }
 
     mixins: [ Analytics, Collections, Storage ]
 
@@ -156,7 +145,11 @@
         get: () -> @$store.getters.getFighters
         set: (value) -> @$store.commit 'updateFighters', value
 
-      dirty: () -> @$store.getters.getDirty
+      dirty: () ->
+        if @totalNumberFighters > 0
+          @$store.getters.getDirty
+        else false
+
       totalPointsCost: () -> @$store.getters.getTotalPointsCost
       totalNumberFighters: () -> @$store.getters.getTotalNumberFighters
       empty: () -> @totalNumberFighters == 0
@@ -180,6 +173,7 @@
           @discardAction = nextEvent
           jQuery('#' + @modalId).modal 'show'
           @event 'exit_roster_warn', to.path
+
     methods:
 
       processModalOption: (option) ->

@@ -90,7 +90,7 @@ describe 'basic roster operations', () ->
 
   it 'can click home and save the roster', (done) ->
     expect(@all('.saved-roster-card').length).toBe 0
-    @get('a.router-link-active').click()
+    @get('.action-btn').click()
     Vue.nextTick () =>
       @all('.modal-footer button')[1].click()
       Vue.nextTick () =>

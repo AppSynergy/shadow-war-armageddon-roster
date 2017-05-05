@@ -109,6 +109,10 @@
     line-height: 60%
 
   .action-btn
+    border: none
+    background-color: transparent
+    &.disabled
+      cursor: disabled
     i
       line-height: 16px
 

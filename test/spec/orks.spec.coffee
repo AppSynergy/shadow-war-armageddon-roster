@@ -19,7 +19,7 @@ describe 'the orks roster', () ->
         done()
 
   it 'can exit cleanly and return to home', (done) ->
-    @get('a.router-link-active').click()
+    @get('.action-btn').click()
     Vue.nextTick () =>
       @all('.modal-footer button')[0].click()
       Vue.nextTick () =>
