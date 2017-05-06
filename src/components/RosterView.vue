@@ -92,7 +92,6 @@
     font-weight: 700
   .item
     margin-right: 1em
-    display: block
     white-space: nowrap
   .a_rectangle
     width: 1.5em
