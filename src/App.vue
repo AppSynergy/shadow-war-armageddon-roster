@@ -122,6 +122,9 @@
 
   .chosen-fighter-card
     cursor: move
+    .card-header
+      @include media-breakpoint-down(sm)
+        padding: 0.5em
 
   .up-a-bit
     line-height: 60%
