@@ -154,7 +154,7 @@ cost = 50
 
 [weapons.hand-to-hand.power_maul]
 name = "Power maul"
-cost = 85
+cost = 50
 
 [weapons.pistols.autopistol]
 name = "Autopistol"
