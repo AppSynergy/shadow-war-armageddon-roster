@@ -7,7 +7,7 @@
           <span class="pr-4 mt-2 d-inline-block align-middle fighter-name"><strong>{{ fighter.name }}</strong></span>
           <span class="pr-4 mt-2 d-inline-block align-middle hidden-sm-down">{{ fighter.role}}</span>
           <span class="float-right">
-            <em class="fighter-cost mr-4">{{ fighter.cost }} points</em>
+            <em class="fighter-cost mr-4">{{ fighterCost }} points</em>
             <button class="btn btn-info px-1 py-0 duplicate-button"
               aria-label="Duplicate"
               title="Duplicate"
@@ -84,6 +84,7 @@
     computed:
       roles: () -> RoleData
       fighter: () -> @$store.getters.getFighter @index
+      fighterCost: () -> @$store.getters.getFighterCost @index
       weaponsByRole: () -> _.groupBy @weaponsAvailable, (x) -> x.role
 
     methods:

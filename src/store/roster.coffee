@@ -59,13 +59,11 @@ RosterStore =
       state.dirty = true
       fighter = state.fighters[obj.index]
       fighter.weapons.push obj.weapon
-      fighter.cost += obj.weapon.cost
 
     removeWeapon: (state, obj) ->
       state.dirty = true
       fighter = state.fighters[obj.index]
       fighter.weapons.splice obj.weaponIndex, 1
-      fighter.cost -= obj.cost
 
   getters:
 
@@ -80,6 +78,11 @@ RosterStore =
 
     getFighter: (state) -> (index) ->
       state.fighters[index]
+
+    getFighterCost: (state) -> (index) ->
+      fighter = state.fighters[index]
+      weaponCost = _.reduce fighter.weapons, ((xs, x) -> xs + x.cost), 0
+      fighter.cost + weaponCost
 
     getTotalPointsCost: (state) ->
       state.fighters.reduce ((xs, x) -> xs + x.cost), 0
