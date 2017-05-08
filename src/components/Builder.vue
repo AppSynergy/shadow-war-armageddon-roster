@@ -243,13 +243,11 @@
 
             # reject stuff where you need another item first
             only_weapon = if _.has weapon, 'only_weapon'
-              _.isEmpty _.intersection(weapon.only_weapon.values,
-                _.pluck(fighter.weapons, weapon.only_weapon.matches))
+              @matchValuesIsEmpty fighter.weapons, weapon.only_weapon
             else false
 
             only_attaches = if _.has weapon, 'only_attaches'
-              _.isEmpty _.intersection(weapon.only_attaches.values,
-                _.pluck(fighter.weapons, weapon.only_attaches.matches))
+              @matchValuesIsEmpty fighter.weapons, weapon.only_attaches
             else false
 
             # reject stuff where another item prohibits it

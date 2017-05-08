@@ -15,6 +15,9 @@
         v-on:click="removeWeapon(weapon, index)">
         <i class="fa fa-times">&times;</i>
       </button>
+      <select v-if="weaponAttaches(weapon)">
+        <option value="foo">This attaches!</option>
+      </select>
     </div>
 
   </div>
@@ -23,10 +26,11 @@
 <script lang="coffee">
 
   import Analytics from './mixin/Analytics.coffee'
+  import Collections from './mixin/Collections.coffee'
 
   Wargear =
 
-    mixins: [ Analytics ]
+    mixins: [ Analytics, Collections ]
 
     props: ['wargear', 'weapons', 'fighterIndex']
 
@@ -38,6 +42,15 @@
           _.contains _.flatten(maskers), x.key
 
     methods:
+
+      weaponAttaches: (weapon) ->
+        if _.has weapon, 'only_attaches'
+          couldAttachTo = _.filter @weapons, (x) ->
+            _.contains weapon.only_attaches.values, x.role
+          console.warn "Could attach to: ", _.map(couldAttachTo, (x) -> x.name)
+          true
+        else false
+
       removeWeapon: (weapon, index) ->
         @event 'remove_weapon', weapon.name
         @$store.commit 'removeWeapon',

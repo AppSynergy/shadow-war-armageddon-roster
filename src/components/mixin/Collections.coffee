@@ -14,4 +14,10 @@ Collections =
           y
         x
 
+    matchValues: (collection, property ) ->
+      _.intersection(property.values, _.pluck(collection, property.matches))
+
+    matchValuesIsEmpty: (collection, property) ->
+      _.isEmpty @matchValues(collection, property)
+
 export default Collections
