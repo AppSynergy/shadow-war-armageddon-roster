@@ -3,7 +3,7 @@ name = "Ork Boyz Kill Team"
 
 [size]
 min = 3
-max = 10
+max = 15
 leader_max = 1
 specialist_max = 2
 
