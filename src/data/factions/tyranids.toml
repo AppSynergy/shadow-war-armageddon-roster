@@ -89,6 +89,10 @@ cost = 25
 name = "Deathspitter"
 cost = 45
 
+[weapons.basic.devourer]
+name = "Devourer"
+cost = 40
+
 [weapons.bio-cannons.barbed_strangler]
 name = "Barbed strangler"
 cost = 150

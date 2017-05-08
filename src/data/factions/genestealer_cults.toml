@@ -114,7 +114,7 @@ cost = 20
 
 [weapons.basic.lasgun]
 name = "Lasgun"
-cost = 35
+cost = 25
 
 [weapons.special.flamer]
 name = "Flamer"
