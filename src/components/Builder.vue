@@ -247,6 +247,11 @@
                 _.pluck(fighter.weapons, weapon.only_weapon.matches))
             else false
 
+            only_attaches = if _.has weapon, 'only_attaches'
+              _.isEmpty _.intersection(weapon.only_attaches.values,
+                _.pluck(fighter.weapons, weapon.only_attaches.matches))
+            else false
+
             # reject stuff where another item prohibits it
             not_weapon = if _.has weapon, 'not_weapon'
               not _.isEmpty _.intersection(weapon.not_weapon, _.pluck(fighter.weapons, 'key'))
@@ -259,7 +264,7 @@
               not _.isEmpty _.intersection(weapon.not_weapon_global, allWeaponKeys)
             else false
 
-            _.any [only_fighter, only_weapon, not_weapon, not_weapon_global]
+            _.any [only_fighter, only_weapon, only_attaches, not_weapon, not_weapon_global]
           .value()
 
   export default Roster
