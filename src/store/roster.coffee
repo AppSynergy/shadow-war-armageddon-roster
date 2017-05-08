@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 
+deepClone = (x) -> JSON.parse JSON.stringify(x)
+
 Vue.use(Vuex)
 
 RosterStore =
@@ -32,7 +34,7 @@ RosterStore =
 
     addFighter: (state, obj) ->
       state.dirty = true
-      fighter = obj.fighter
+      fighter = deepClone obj.fighter
       fighter.realName = ""
       fighter.weapons = []
       fighter.wargear = fighter.wargear.map (x) ->
@@ -43,7 +45,7 @@ RosterStore =
 
     duplicateFighter: (state, fighter) ->
       state.dirty = true
-      state.fighters.push _.clone(fighter)
+      state.fighters.push deepClone(fighter)
 
     updateFighters: (state, fighters) ->
       state.dirty = true

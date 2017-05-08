@@ -211,7 +211,7 @@
       addFighter: (fighter) ->
         @event 'add_fighter', fighter.name
         @$store.commit 'addFighter',
-          fighter: _.clone(fighter)
+          fighter: fighter
           wargear: @faction.wargear
 
       duplicateFighter: (fighter) ->
