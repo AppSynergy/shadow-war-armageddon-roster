@@ -80,6 +80,7 @@
           :index="index"
           :key="'fighter' + index"
           :weaponsAvailable="weaponsAvailable(fighter)"
+          :trueCost="trueCost(fighter)"
           v-on:duplicateFighter="duplicateFighter"
         ></fighter>
       </draggable>
@@ -226,6 +227,10 @@
           when "Specialist" then roleCount >= @faction.size.specialist_max
           when "Drone" then roleCount >= @faction.size.drone_max
           else false
+
+      trueCost: (fighter) ->
+        f = _.find @faction.fighters, (x) -> x.name == fighter.name
+        f.cost
 
       weaponsAvailable: (fighter) ->
         _.chain @faction.weapons
