@@ -1,7 +1,7 @@
 {
   "name": "shadow-war-armageddon-roster",
   "description": "Roster builder for Shadow War: Armageddon.",
-  "version": "1.4.3",
+  "version": "1.4.4",
   "author": "Adam Marshall <adam@appsynergy.net>",
   "private": true,
   "scripts": {
