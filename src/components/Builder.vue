@@ -107,6 +107,7 @@
   import Modal from './Modal.vue'
   import Navigation from './Navigation.vue'
   import Storage from './mixin/Storage.coffee'
+  import TrueCost from './mixin/TrueCost.coffee'
 
   Roster =
 
@@ -114,7 +115,7 @@
 
     components: { Draggable, Fighter, Modal, Navigation }
 
-    mixins: [ Analytics, Collections, Storage ]
+    mixins: [ Analytics, Collections, Storage, TrueCost ]
 
     data: () ->
       teamName: ""
@@ -160,7 +161,11 @@
           @$store.getters.getDirty
         else false
 
-      totalPointsCost: () -> @$store.getters.getTotalPointsCost
+      totalPointsCost: () ->
+        fighterCosts = _.map @chosenFighters, (x,i) =>
+          @$store.getters.getFighterCost(i, @trueCost(x))
+        _.reduce fighterCosts, ((xs, x) -> xs + x), 0
+
       totalNumberFighters: () -> @$store.getters.getTotalNumberFighters
       empty: () -> @totalNumberFighters == 0
 

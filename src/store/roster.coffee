@@ -85,8 +85,8 @@ RosterStore =
       weaponCost = _.reduce fighter.weapons, ((xs, x) -> xs + x.cost), 0
       cost + weaponCost
 
-    getTotalPointsCost: (state) ->
-      state.fighters.reduce ((xs, x) -> xs + x.cost), 0
+    #getTotalPointsCost: (state) ->
+    #  state.fighters.reduce ((xs, x) -> xs + x.cost), 0
 
     getTotalNumberFighters: (state) ->
       state.fighters.length
