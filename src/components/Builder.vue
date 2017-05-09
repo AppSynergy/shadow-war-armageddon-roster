@@ -169,6 +169,13 @@
       @track 'build/' + @factionId
       @teamName = @$store.getters.getTeamName
 
+      # Fix old rosters without the baseCost
+      if !_.has _.first(@chosenFighters), 'baseCost'
+        @chosenFighters = _.map @chosenFighters, (x) =>
+          f = _.find @faction.fighters, (y) -> x.name == y.name
+          x.baseCost = f.cost
+          return x
+
     beforeRouteLeave: (to, from, next) ->
       nextEvent = () =>
         @event 'exit_roster', to.path

@@ -36,6 +36,7 @@ RosterStore =
       state.dirty = true
       fighter = deepClone obj.fighter
       fighter.realName = ""
+      fighter.baseCost = fighter.cost
       fighter.weapons = []
       fighter.wargear = fighter.wargear.map (x) ->
         gear = obj.wargear[x]
@@ -82,12 +83,12 @@ RosterStore =
     getFighterCost: (state) -> (index) ->
       fighter = state.fighters[index]
       weaponCost = _.reduce fighter.weapons, ((xs, x) -> xs + x.cost), 0
-      fighter.cost + weaponCost
+      fighter.baseCost + weaponCost
 
     getTotalPointsCost: (state) ->
       state.fighters.reduce ((xs, x) ->
         weaponCost = _.reduce x.weapons, ((ys, y) -> ys + y.cost), 0
-        xs + x.cost + weaponCost
+        xs + x.baseCost + weaponCost
       ), 0
 
     getTotalNumberFighters: (state) ->
