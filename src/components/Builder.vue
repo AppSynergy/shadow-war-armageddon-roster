@@ -64,7 +64,7 @@
         </div>
         <div class="col col-12 col-lg-3">
           <h4 class="roster-meta align-middle text-center">
-            Total: <strong>{{ totalPointsCost }}</strong> points
+            Total: <strong class="total-points-cost">{{ totalPointsCost }}</strong> points
           </h4>
         </div>
         <div class="col col-12 col-lg-3">

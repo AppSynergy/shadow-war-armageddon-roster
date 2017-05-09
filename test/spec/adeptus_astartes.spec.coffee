@@ -34,6 +34,7 @@ describe 'the space marine scouts roster', () ->
         expect(@all('.wargear-item')[3].textContent).toMatch /Weapon reload -\s*10 points/
         expect(@get('.fighter-cost').textContent).toBe '130 points'
         expect(@all('.wargear-item').length).toBe 4
+        expect(@get('.total-points-cost').textContent).toBe '130'
         done()
 
   it 'should move the reload to the sniper rifle when replaced', (done) ->
