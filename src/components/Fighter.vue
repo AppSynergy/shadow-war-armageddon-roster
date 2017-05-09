@@ -89,7 +89,7 @@
     methods:
 
       fighterCost: (fighter) ->
-        @$store.getters.getFighterCost @index, @trueCost
+        @$store.getters.getFighterCost @index
 
       chooseNewWeapon: () ->
         @event 'add_weapon', @newWeapon.name

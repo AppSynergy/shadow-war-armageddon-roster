@@ -79,14 +79,16 @@ RosterStore =
     getFighter: (state) -> (index) ->
       state.fighters[index]
 
-    getFighterCost: (state) -> (index, cost) ->
-      # note that fighter.cost may be polluted with bad data.
+    getFighterCost: (state) -> (index) ->
       fighter = state.fighters[index]
       weaponCost = _.reduce fighter.weapons, ((xs, x) -> xs + x.cost), 0
-      cost + weaponCost
+      fighter.cost + weaponCost
 
     getTotalPointsCost: (state) ->
-      state.fighters.reduce ((xs, x) -> xs + x.cost), 0
+      state.fighters.reduce ((xs, x) ->
+        weaponCost = _.reduce x.weapons, ((ys, y) -> ys + y.cost), 0
+        xs + x.cost + weaponCost
+      ), 0
 
     getTotalNumberFighters: (state) ->
       state.fighters.length
