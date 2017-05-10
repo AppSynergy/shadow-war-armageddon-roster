@@ -88,7 +88,6 @@ name = "Red-dot laser sight"
 cost = 20
 only_weapon = { matches = "key", values = ["laspistol", "bolt_pistol", "plasma_pistol", "shotgun", "lasgun", "boltgun", "sniper_rifle", "plasma_gun", "meltagun"] }
 
-
 [weapons.misc.telescopic_sight]
 name = "Telescopic sight"
 cost = 20
@@ -123,6 +122,7 @@ cost = 15
 [weapons.pistols.bolt_pistol]
 name = "Bolt pistol"
 cost = 25
+only_fighter = ["veteran_sergeant"]
 
 [weapons.pistols.plasma_pistol]
 name = "Plasma pistol"

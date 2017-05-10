@@ -20,6 +20,17 @@ describe 'the grey knights roster', () ->
         expect(@all('.wargear-item')[1].textContent).toMatch /Psilencer -\s*150 points/
         done()
 
+  it 'shows the correct items on roster view', (done) ->
+    @all('.navigation-vue button')[2].click()
+    Vue.nextTick () =>
+      expect(@get('.roster-view-header h4').textContent).toBe 'Faction: Grey Knights'
+      expect(@all('.items span.item').length).toBe 2
+      expect(@all('.items span.item')[0].textContent).toContain 'Power armour'
+      expect(@all('.items span.item')[1].textContent).toContain 'Psilencer'
+      @get('.exit-roster-view-button').click()
+      Vue.nextTick () =>
+        done()
+
   it 'can exit cleanly and return to home', (done) ->
     @get('.action-btn').click()
     Vue.nextTick () =>

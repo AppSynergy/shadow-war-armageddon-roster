@@ -43,7 +43,7 @@
     <div class="notifications mt-4">
       <transition-group name="fade">
         <div v-for="note in notifications" v-bind:key="note.id"
-          class="alert alert-success">
+          :class="'alert alert-'+note.type">
           {{ note.desc }}
         </div>
       </transition-group>
@@ -64,7 +64,7 @@
         </div>
         <div class="col col-12 col-lg-3">
           <h4 class="roster-meta align-middle text-center">
-            Total: <strong>{{ totalPointsCost }}</strong> points
+            Total: <strong class="total-points-cost">{{ totalPointsCost }}</strong> points
           </h4>
         </div>
         <div class="col col-12 col-lg-3">
@@ -80,6 +80,7 @@
           :index="index"
           :key="'fighter' + index"
           :weaponsAvailable="weaponsAvailable(fighter)"
+          :trueCost="trueCost(fighter)"
           v-on:duplicateFighter="duplicateFighter"
         ></fighter>
       </draggable>
@@ -168,6 +169,13 @@
       @track 'build/' + @factionId
       @teamName = @$store.getters.getTeamName
 
+      # Fix old rosters without the baseCost
+      if !_.has _.first(@chosenFighters), 'baseCost'
+        @chosenFighters = _.map @chosenFighters, (x) =>
+          f = _.find @faction.fighters, (y) -> x.name == y.name
+          x.baseCost = f.cost
+          return x
+
     beforeRouteLeave: (to, from, next) ->
       nextEvent = () =>
         @event 'exit_roster', to.path
@@ -186,23 +194,32 @@
     methods:
 
       processModalOption: (option) ->
-        if option.name == 'save' then @saveRoster()
+        success = if option.name == 'save' then @saveRoster() else true
         jQuery('#' + @modalId).modal 'hide'
-        @$store.commit 'discardRoster'
-        @discardAction()
+        if success
+          @$store.commit 'discardRoster'
+          @discardAction()
 
       saveRoster: () ->
-        @event 'save_roster', @factionId
-        @$store.commit 'cleanState'
-        @saveRosterLocal
-          fighters: @chosenFighters
-          factionId: @factionId
-          teamName: @teamName
-        @notifications.push { id: 'save', desc: 'Roster saved.' }
-        window.setTimeout (() => @clearNotification()), 2000
+        if @teamName.length > 0
+          @event 'save_roster', @factionId
+          @$store.commit 'cleanState'
+          @saveRosterLocal
+            fighters: @chosenFighters
+            factionId: @factionId
+            teamName: @teamName
+          @cycleNotification { id: 'save', desc: 'Roster saved.', type: 'success' }
+          return true
+        else
+          @cycleNotification { id: 'name', desc: 'You must give your team a name before it can be saved.', type: 'warning' }
+          return false
 
-      clearNotification: () ->
-        @notifications = _.reject @notifications, (x) -> x.id == 'save'
+      cycleNotification: (obj) ->
+        @notifications.push obj
+        window.setTimeout (() => @clearNotification(obj.id)), 2000
+
+      clearNotification: (id) ->
+        @notifications = _.reject @notifications, (x) -> x.id == id
 
       nameTeam: () ->
         @event 'name_team', @teamName
@@ -226,6 +243,10 @@
           when "Specialist" then roleCount >= @faction.size.specialist_max
           when "Drone" then roleCount >= @faction.size.drone_max
           else false
+
+      trueCost: (fighter) ->
+        f = _.find @faction.fighters, (x) -> x.name == fighter.name
+        f.cost
 
       weaponsAvailable: (fighter) ->
         _.chain @faction.weapons

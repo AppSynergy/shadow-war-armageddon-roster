@@ -24,6 +24,7 @@ describe 'the craftworlds roster', () ->
     @all('.available-fighter-card button')[3].click()
     Vue.nextTick () =>
       expect(@all('.chosen-fighter-card').length).toBe 3
+      expect(@get('.total-points-cost').textContent).toBe '430'
       done()
 
   it 'leader has a wide variety of weapons', () ->
@@ -44,6 +45,7 @@ describe 'the craftworlds roster', () ->
     @change specialistWargear, @option(specialistWargear, 'Heavy Weapons Platform with bright lance')
     Vue.nextTick () =>
       expect(@all('.wargear-item .wargear-name')[6].textContent).toBe 'Heavy Weapons Platform with bright lance'
+      expect(@get('.total-points-cost').textContent).toBe '680'
       done()
 
   it 'a second specialist can\'t have a second heavy weapon', (done) ->
