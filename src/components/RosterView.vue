@@ -3,7 +3,7 @@
 
     <div class="my-5 hidden-print text-center">
       <router-link :to="'/build/'+factionId"
-        class="btn btn-primary" role="button">
+        class="btn btn-primary exit-roster-view-button" role="button">
         <i class="material-icons align-middle pb-1">skip_previous</i>
         <span>Return to Team Builder</span>
       </router-link>
@@ -61,8 +61,10 @@
             </table></td>
             <td>
               <div class="items">
-                <span class="item" v-for="item in fighter.wargear">{{ item.name }} </span>
-                <span class="item" v-for="item in fighter.weapons">{{ item.name }} </span>
+                <span class="item" v-for="item in maskedWargear(fighter)">
+                  {{ item.name }} </span>
+                <span class="item" v-for="item in fighter.weapons">
+                  {{ item.name }} </span>
               </div>
             </td>
             <td>
@@ -103,6 +105,7 @@
 <script lang="coffee">
 
   import FactionData from '../data/factions.toml'
+  import MaskWargear from './mixin/MaskWargear.coffee'
   import PDF from './mixin/PDF.coffee'
   import StatData from '../data/stats.toml'
 
@@ -110,7 +113,7 @@
 
     props: ['factionId']
 
-    mixins: [PDF]
+    mixins: [ PDF, MaskWargear ]
 
     data: () ->
       labels: ['Name', 'Role', 'Characteristics', 'Equipment, Skills and Notes', 'Mission Completed', 'Miss Next Mission']
@@ -127,6 +130,10 @@
         else @factionName + 'KillTeam.pdf'
 
     methods:
+
+      maskedWargear: (fighter) ->
+        @maskWargearItems fighter.weapons, fighter.wargear
+
       getStats: (fighter) -> fighter.stats.split ' '
 
   export default RosterView

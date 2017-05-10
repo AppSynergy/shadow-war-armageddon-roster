@@ -123,5 +123,5 @@ not_weapon = ["pair_of_nemesis_falchions", "nemesis_force_sword", "nemesis_force
 [weapons.special.psycannon]
 name = "Psycannon"
 cost = 175
-replaces = ["storm_bolter"]
+masks = ["storm_bolter"]
 not_weapon = ["pair_of_nemesis_falchions", "nemesis_force_sword", "nemesis_force_halberd", "nemesis_daemon_hammer", "nemesis_warding_staff", "incinerator", "psilencer", "psycannon"]

@@ -23,19 +23,17 @@
 <script lang="coffee">
 
   import Analytics from './mixin/Analytics.coffee'
+  import MaskWargear from './mixin/MaskWargear.coffee'
 
   Wargear =
 
-    mixins: [ Analytics ]
+    mixins: [ Analytics, MaskWargear ]
 
     props: ['wargear', 'weapons', 'fighterIndex']
 
     computed:
       maskedWargear: () ->
-        maskers = _.filter @weapons, (x) -> _.has x, 'masks'
-          .map (x) -> x.masks
-        _.reject @wargear, (x) ->
-          _.contains _.flatten(maskers), x.key
+        @maskWargearItems @weapons, @wargear
 
     methods:
       removeWeapon: (weapon, index) ->
