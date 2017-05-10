@@ -66,6 +66,7 @@
 <script lang="coffee">
 
   import Analytics from './mixin/Analytics.coffee'
+  import AttachToWeapon from './mixin/AttachToWeapon.coffee'
   import FighterStats from './Stats.vue'
   import FighterWargear from './Wargear.vue'
   import RoleData from '../data/roles.toml'
@@ -74,7 +75,7 @@
 
     components: { FighterStats, FighterWargear }
 
-    mixins: [ Analytics ]
+    mixins: [ AttachToWeapon, Analytics ]
 
     props: ['index', 'weaponsAvailable', 'trueCost']
 
@@ -85,6 +86,7 @@
       roles: () -> RoleData
       fighter: () -> @$store.getters.getFighter @index
       weaponsByRole: () -> _.groupBy @weaponsAvailable, (x) -> x.role
+      weapons: () -> @fighter.weapons
 
     methods:
 
@@ -92,10 +94,15 @@
         @$store.getters.getFighterCost @index
 
       chooseNewWeapon: () ->
-        @event 'add_weapon', @newWeapon.name
-        if @newWeapon.key is 'weapon_reload' then @dealWithWeaponReload()
+        weapon = _.clone @newWeapon
+        @event 'add_weapon', weapon.name
+        if @weaponAttaches weapon
+          attachee = @couldAttachTo(weapon)[0]
+          weapon.attached_to = attachee
+          if weapon.key is 'weapon_reload'
+            weapon.cost = Math.round(attachee.cost / 2)
         @$store.commit "addWeapon",
-         weapon: @newWeapon
+         weapon: weapon
          index: @index
         @newWeapon = null
 
@@ -109,12 +116,6 @@
       removeFighter: () ->
         @event 'remove_fighter', @fighter.name
         @$store.commit 'removeFighter', @index
-
-      dealWithWeaponReload: () ->
-        old = _.clone @newWeapon
-        weaponCost = _.max @fighter.weapons, (x) -> x.cost
-        old.cost = Math.round(weaponCost.cost / 2)
-        @newWeapon = old
 
       statMasks: (fighter) ->
         _.filter fighter.weapons, (x) -> _.has x, 'stat_mask'

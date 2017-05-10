@@ -35,7 +35,7 @@ describe 'the tau roster', () ->
       Vue.nextTick () =>
         expect(@all('.wargear-item').length).toBe 4
         expect(@all('.wargear-item')[2].textContent).toMatch /Ion rifle\s*-\s*100 points/
-        expect(@all('.wargear-item')[3].textContent).toMatch /Weapon reload\s*-\s*50 points/
+        expect(@all('.wargear-item')[3].textContent).toMatch /Weapon reload for Ion rifle\s*-\s*50 points/
         done()
 
   it 'can duplicate an existing fighter', (done) ->

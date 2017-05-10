@@ -62,9 +62,14 @@
             <td>
               <div class="items">
                 <span class="item" v-for="item in maskedWargear(fighter)">
-                  {{ item.name }} </span>
+                  {{ item.name }}
+                </span>
                 <span class="item" v-for="item in fighter.weapons">
-                  {{ item.name }} </span>
+                  {{ item.name }}
+                  <span v-if="weaponAttaches(item)">
+                    ({{ item.attached_to.name }})
+                  </span>
+                </span>
               </div>
             </td>
             <td>
@@ -104,6 +109,7 @@
 
 <script lang="coffee">
 
+  import AttachToWeapon from './mixin/AttachToWeapon.coffee'
   import FactionData from '../data/factions.toml'
   import MaskWargear from './mixin/MaskWargear.coffee'
   import PDF from './mixin/PDF.coffee'
@@ -113,7 +119,7 @@
 
     props: ['factionId']
 
-    mixins: [ PDF, MaskWargear ]
+    mixins: [ AttachToWeapon, PDF, MaskWargear ]
 
     data: () ->
       labels: ['Name', 'Role', 'Characteristics', 'Equipment, Skills and Notes', 'Mission Completed', 'Miss Next Mission']
