@@ -88,12 +88,10 @@ describe 'basic roster operations', () ->
       expect(@all('.chosen-fighter-card').length).toBe 1
       done()
 
-  it 'can click home and save the roster', (done) ->
-    expect(@all('.saved-roster-card').length).toBe 0
+  it 'can exit cleanly and return to home', (done) ->
     @get('.action-btn').click()
     Vue.nextTick () =>
-      @all('.modal-footer button')[1].click()
+      @all('.modal-footer button')[0].click()
       Vue.nextTick () =>
-        expect(@all('.saved-roster-card').length).toBe 1
-        expect(@get('.saved-roster-card').textContent).toMatch /Skitarii,\s*1 fighters/
+        expect(@words('h2')).toBe 'Create a New Roster'
         done()
