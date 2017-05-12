@@ -83,6 +83,10 @@ cost = 15
 name = "Mindshackle scarabs"
 cost = 25
 
+[weapons.misc.shadowloom]
+name = "Shadowloom"
+cost = 30
+
 [weapons.misc.weapon_reload]
 name = "Weapon reload"
 cost = "*"
