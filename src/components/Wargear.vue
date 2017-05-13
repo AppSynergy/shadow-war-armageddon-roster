@@ -49,18 +49,29 @@
     methods:
 
       updateAttachee: (weapon, index) ->
-        if weapon.name = "Weapon reload"
+        if weapon.name = "Weapon reload" && weapon.attached_to
           weapon.cost = Math.round(weapon.attached_to.cost / 2)
-          @$store.commit 'updateWeapon',
-            weaponIndex: index
-            index: @fighterIndex
-            weapon: weapon
+        @$store.commit 'updateWeapon',
+          weaponIndex: index
+          index: @fighterIndex
+          weapon: weapon
 
       removeWeapon: (weapon, index) ->
         @event 'remove_weapon', weapon.name
         @$store.commit 'removeWeapon',
           weaponIndex: index
           index: @fighterIndex
+        @removeAttachments weapon
+
+      removeAttachments: (weapon) ->
+        wasAttached = _.filter @weapons, (x) -> _.has(x, 'attached_to') && x.attached_to.name == weapon.name
+        if wasAttached.length > 0
+          _.each wasAttached, (attachment) =>
+            index = _.findIndex @weapon, (x) -> x.name == attachment.name
+            couldAttach = @couldAttachTo attachment
+            if couldAttach.length > 0
+              attachment.attached_to = couldAttach[0]
+              @updateAttachee attachment, index
 
   export default Wargear
 

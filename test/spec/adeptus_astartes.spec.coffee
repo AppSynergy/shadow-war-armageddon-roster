@@ -38,10 +38,10 @@ describe 'the space marine scouts roster', () ->
         done()
 
   it 'should move the reload to the sniper rifle when replaced', (done) ->
-    @all('.wargear-item button')[0].click()
+    wargear = @get('select.add-wargear')
+    @change wargear, @option(wargear, 'Sniper rifle')
     Vue.nextTick () =>
-      wargear = @get('select.add-wargear')
-      @change wargear, @option(wargear, 'Sniper rifle')
+      @all('.wargear-item button')[0].click()
       Vue.nextTick () =>
         expect(@all('.wargear-item')[2].textContent).toMatch /Weapon reload for Sniper rifle\s*-\s*20 points/
         expect(@all('.wargear-item')[3].textContent).toMatch /Sniper rifle\s*-\s*40 points/
