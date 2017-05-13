@@ -12,7 +12,7 @@
       <template v-if="weaponAttaches(weapon)">
         <span>for</span>
         <select class="form-control form-control-sm"
-          v-model="weapon.attached_to" v-on:change="updateAttachee(weapon)">
+          v-model="weapon.attached_to" v-on:change="updateAttachee(weapon, index)">
           <option v-for="parent in couldAttachTo(weapon)"
             :value="parent">{{ parent.name }}
           </option>
@@ -48,16 +48,19 @@
 
     methods:
 
-      updateAttachee: (weapon) ->
+      updateAttachee: (weapon, index) ->
         if weapon.name = "Weapon reload"
           weapon.cost = Math.round(weapon.attached_to.cost / 2)
+          @$store.commit 'updateWeapon',
+            weaponIndex: index
+            index: @fighterIndex
+            weapon: weapon
 
       removeWeapon: (weapon, index) ->
         @event 'remove_weapon', weapon.name
         @$store.commit 'removeWeapon',
           weaponIndex: index
           index: @fighterIndex
-          cost: weapon.cost
 
   export default Wargear
 
