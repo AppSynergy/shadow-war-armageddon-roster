@@ -40,7 +40,7 @@ cost = 70
 role = "Specialist"
 stats = "4 4 2 3 4 1 2 2 7"
 wargear = ["shank", "squig-hide_armor"]
-equip = ["hand-to-hand", "pistols", "special", "grenades", "misc"]
+equip = ["pistols", "special", "grenades", "misc"]
 skills = ["combat", "ferocity", "guerilla", "shooting"]
 
 [wargear.shank]
