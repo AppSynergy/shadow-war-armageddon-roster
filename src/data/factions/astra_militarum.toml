@@ -96,7 +96,7 @@ only_weapon = { matches = "key", values = ["laspistol", "bolt_pistol", "plasma_p
 [weapons.misc.weapon_reload]
 name = "Weapon reload"
 cost = '*'
-only_weapon = { matches = "role", values = ["basic", "pistols", "special", "heavy"] }
+only_attaches = { matches = "role", values = ["basic", "pistols", "special", "heavy"] }
 
 [weapons.hand-to-hand.combat_blade]
 name = "Combat blade"

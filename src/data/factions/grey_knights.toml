@@ -81,7 +81,7 @@ only_weapon = { matches = "key", values = ["storm_bolter"] }
 [weapons.misc.weapon_reload]
 name = "Weapon reload"
 cost = "*"
-only_weapon = { matches = "role", values = ["special"] }
+only_attaches = { matches = "role", values = ["special"] }
 
 [weapons.hand-to-hand.pair_of_nemesis_falchions]
 name = "Pair of Nemesis falchions"

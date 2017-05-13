@@ -133,7 +133,7 @@ only_fighter = ["ordo_xenos_inquisitor", "crusader"]
 [weapons.misc.weapon_reload]
 name = "Weapon reload"
 cost = '*'
-only_weapon = { matches = "role", values = ["basic", "pistols", "special"] }
+only_attaches = { matches = "role", values = ["basic", "pistols", "special"] }
 
 [weapons.hand-to-hand.combat_blade]
 name = "Combat blade"

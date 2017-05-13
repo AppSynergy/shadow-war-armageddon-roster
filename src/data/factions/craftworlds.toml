@@ -68,7 +68,7 @@ only_fighter = ["dire_avenger_exarch"]
 [weapons.misc.weapon_reload]
 name = "Weapon reload"
 cost = "*"
-only_weapon = { matches = "role", values = ["pistols", "basic", "heavy"] }
+only_attaches = { matches = "role", values = ["pistols", "basic", "heavy"] }
 
 [weapons.hand-to-hand.combat_blade]
 name = "Combat blade (knife)"

@@ -67,7 +67,7 @@ cost = 15
 [weapons.misc.weapon_reload]
 name = "Weapon reload"
 cost = "*"
-only_weapon = { matches = "role", values = ["basic", "pistols", "special", "heavy"] }
+only_attaches = { matches = "role", values = ["basic", "pistols", "special", "heavy"] }
 
 [weapons.hand-to-hand.combat_blade]
 name = "Combat blade (knife)"
