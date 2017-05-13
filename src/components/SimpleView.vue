@@ -20,7 +20,7 @@
       <h3 class="my-4">{{ teamName }} &mdash; {{ factionName }} &mdash; {{ totalPointsCost}} points</h3>
       <span v-for="fighter in chosenFighters">
         <strong>{{ fighter.name }}</strong> &mdash; {{ toTextList(fighter.weapons) }}
-      </span>
+      </span><br>
     </div>
 
   </div>
