@@ -1,16 +1,11 @@
 <template>
   <div id="app">
-    <div class="container hidden-print">
-      <h1 class="site-name text-center text-uppercase mt-4 mb-0">
-        Shadow War: Armageddon Kill Teams &middot; killteams.com
-      </h1>
-    </div>
     <router-view></router-view>
     <div v-if="$route.name == 'home'" class="container mt-5">
        <disqus shortname="killteams-com" identifier="/"
         url="https://killteams.com/"></disqus>
     </div>
-    <a class="hidden-print hidden-md-down"
+    <a class="hidden-print hidden-xl-down"
       href="https://github.com/AppSynergy/shadow-war-armageddon-roster">
       <img style="position: absolute; top: 0; left: 0; border: 0;"
         :src="bannerSrc" :data-canonical-src="bannerSrcCanonical"

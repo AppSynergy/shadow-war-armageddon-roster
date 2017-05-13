@@ -1,6 +1,12 @@
 <template>
   <div class="home-vue container">
 
+    <div class="container hidden-print">
+      <h1 class="site-name text-center text-uppercase mt-4 mb-0">
+        Shadow War: Armageddon Kill Teams &middot; killteams.com
+      </h1>
+    </div>
+
     <h2 class="my-4 py-4 text-center">Create a New Roster</h2>
 
     <div class="roster-new">

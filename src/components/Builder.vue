@@ -1,15 +1,15 @@
 <template>
   <div class="roster-vue mb-4 container">
 
-    <div class="card mt-4 team-background">
-      <div class="card-header px-0 team-background">
-        <navigation
-          :factionId="factionId"
-          :dirty="dirty" :empty="empty"
-          v-on:saveRoster="saveRoster">
-        </navigation>
-      </div>
+    <static-nav
+      :factionId="factionId"
+      :numberFighters="totalNumberFighters"
+      :pointsCost="totalPointsCost"
+      :dirty="dirty" :empty="empty"
+      v-on:saveRoster="saveRoster">
+    </static-nav>
 
+    <div class="card mt-4 team-background">
       <div class="card-block">
 
         <h2 class="faction-name my-4 text-center">{{ faction.name }}</h2>
@@ -106,13 +106,14 @@
   import Fighter from './Fighter.vue'
   import Modal from './Modal.vue'
   import Navigation from './Navigation.vue'
+  import StaticNav from './StaticNav.vue'
   import Storage from './mixin/Storage.coffee'
 
   Roster =
 
     props: ['factionId']
 
-    components: { Draggable, Fighter, Modal, Navigation }
+    components: { Draggable, Fighter, Modal, Navigation, StaticNav }
 
     mixins: [ Analytics, Collections, Storage ]
 
@@ -289,3 +290,8 @@
   export default Roster
 
 </script>
+
+<style lang="sass">
+  body
+    padding-top: 3rem
+</style>
