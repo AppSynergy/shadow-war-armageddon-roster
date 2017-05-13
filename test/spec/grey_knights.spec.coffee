@@ -21,13 +21,14 @@ describe 'the grey knights roster', () ->
         done()
 
   it 'shows the correct items on roster view', (done) ->
-    @all('.navigation-vue .navbar-nav button')[2].click()
+    nav = @all('.navigation-vue .nav-item button')
+    nav[3].click()
     Vue.nextTick () =>
       expect(@get('.roster-view-header h4').textContent).toBe 'Faction: Grey Knights'
       expect(@all('.items span.item').length).toBe 2
       expect(@all('.items span.item')[0].textContent).toContain 'Power armour'
       expect(@all('.items span.item')[1].textContent).toContain 'Psilencer'
-      @get('.exit-roster-view-button').click()
+      nav[2].click()
       Vue.nextTick () =>
         done()
 

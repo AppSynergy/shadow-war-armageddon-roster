@@ -80,7 +80,6 @@
           :index="index"
           :key="'fighter' + index"
           :weaponsAvailable="weaponsAvailable(fighter)"
-          :trueCost="trueCost(fighter)"
           v-on:duplicateFighter="duplicateFighter"
         ></fighter>
       </draggable>
@@ -108,6 +107,7 @@
   import Navigation from './Navigation.vue'
   import StaticNav from './StaticNav.vue'
   import Storage from './mixin/Storage.coffee'
+  import TeamSummary from './mixin/TeamSummary.coffee'
 
   Roster =
 
@@ -115,7 +115,7 @@
 
     components: { Draggable, Fighter, Modal, Navigation, StaticNav }
 
-    mixins: [ Analytics, Collections, Storage ]
+    mixins: [ Analytics, Collections, Storage, TeamSummary ]
 
     data: () ->
       teamName: ""
@@ -155,15 +155,6 @@
       chosenFighters:
         get: () -> @$store.getters.getFighters
         set: (value) -> @$store.commit 'updateFighters', value
-
-      dirty: () ->
-        if @totalNumberFighters > 0
-          @$store.getters.getDirty
-        else false
-
-      totalPointsCost: () -> @$store.getters.getTotalPointsCost
-      totalNumberFighters: () -> @$store.getters.getTotalNumberFighters
-      empty: () -> @totalNumberFighters == 0
 
     mounted: () ->
       @event 'open_roster', @factionId
@@ -245,10 +236,6 @@
           when "Drone" then roleCount >= @faction.size.drone_max
           else false
 
-      trueCost: (fighter) ->
-        f = _.find @faction.fighters, (x) -> x.name == fighter.name
-        f.cost
-
       weaponsAvailable: (fighter) ->
         _.chain @faction.weapons
           .tap @mapRoles
@@ -290,8 +277,3 @@
   export default Roster
 
 </script>
-
-<style lang="sass">
-  body
-    padding-top: 3rem
-</style>

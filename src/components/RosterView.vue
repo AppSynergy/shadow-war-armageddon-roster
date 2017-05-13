@@ -1,12 +1,14 @@
 <template>
   <div class="roster-view-vue m-2">
 
+    <static-nav
+      :factionId="factionId"
+      :numberFighters="totalNumberFighters"
+      :pointsCost="totalPointsCost"
+      :dirty="dirty" :empty="empty">
+    </static-nav>
+
     <div class="my-5 hidden-print text-center">
-      <router-link :to="'/build/'+factionId"
-        class="btn btn-primary exit-roster-view-button" role="button">
-        <i class="material-icons align-middle pb-1">skip_previous</i>
-        <span>Return to Team Builder</span>
-      </router-link>
       <button v-on:click="makePDF(fileName)"
         class="btn btn-primary">
         <i class="material-icons align-middle pb-1">file_download</i>
@@ -114,12 +116,16 @@
   import MaskWargear from './mixin/MaskWargear.coffee'
   import PDF from './mixin/PDF.coffee'
   import StatData from '../data/stats.toml'
+  import StaticNav from './StaticNav.vue'
+  import TeamSummary from './mixin/TeamSummary.coffee'
 
   RosterView =
 
     props: ['factionId']
 
-    mixins: [ AttachToWeapon, PDF, MaskWargear ]
+    components: { StaticNav }
+
+    mixins: [ AttachToWeapon, PDF, MaskWargear, TeamSummary ]
 
     data: () ->
       labels: ['Name', 'Role', 'Characteristics', 'Equipment, Skills and Notes', 'Mission Completed', 'Miss Next Mission']
@@ -130,6 +136,7 @@
       chosenFighters: () -> @$store.getters.getFighters
       teamName: () -> @$store.getters.getTeamName
       totalPointsCost: () -> @$store.getters.getTotalPointsCost
+      totalNumberFighters: () -> @$store.getters.totalNumberFighters
 
       fileName: () ->
         if @teamName.length > 1 then @teamName + '.pdf'

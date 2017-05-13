@@ -1,12 +1,14 @@
 <template>
   <div class="simple-view-vue container">
 
+    <static-nav
+      :factionId="factionId"
+      :numberFighters="totalNumberFighters"
+      :pointsCost="totalPointsCost"
+      :dirty="dirty" :empty="empty">
+    </static-nav>
+
     <div class="my-5 hidden-print text-center">
-      <router-link :to="'/build/'+factionId"
-        class="btn btn-primary" role="button">
-        <i class="material-icons align-middle pb-1">skip_previous</i>
-        <span>Return to Team Builder</span>
-      </router-link>
       <button data-clipboard-target="#clipboard-target"
         class="btn btn-primary" id="clipboard-button">
         <i class="material-icons align-middle pb-1">content_copy</i>
@@ -28,6 +30,8 @@
 
   import Clipboard from 'clipboard'
   import FactionData from '../data/factions.toml'
+  import StaticNav from './StaticNav.vue'
+  import TeamSummary from './mixin/TeamSummary.coffee'
 
   new Clipboard '#clipboard-button'
 
@@ -35,11 +39,14 @@
 
     props: ['factionId']
 
+    components: { StaticNav }
+
+    mixins: [ TeamSummary ]
+
     computed:
       teamName: () -> @$store.getters.getTeamName
       factionName: () -> FactionData[@factionId].name
       chosenFighters: () -> @$store.getters.getFighters
-      totalPointsCost: () -> @$store.getters.getTotalPointsCost
 
     methods:
 

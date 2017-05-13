@@ -1,11 +1,12 @@
 <template>
   <div class="home-vue container">
 
-    <div class="container hidden-print">
-      <h1 class="site-name text-center text-uppercase mt-4 mb-0">
-        Shadow War: Armageddon Kill Teams &middot; killteams.com
-      </h1>
-    </div>
+    <nav class="navigation-vue navbar navbar-toggleable-sm navbar-inverse fixed-top bg-inverse">
+      <a href="#" class="navbar-brand">killteams.com</a>
+      <span class="navbar-text text-white ml-4 pt-2">
+        Shadow War: Armageddon Kill Teams
+      </span>
+    </nav>
 
     <h2 class="my-4 py-4 text-center">Create a New Roster</h2>
 

@@ -77,7 +77,7 @@
 
     mixins: [ AttachToWeapon, Analytics ]
 
-    props: ['index', 'weaponsAvailable', 'trueCost']
+    props: ['index', 'weaponsAvailable']
 
     data: () ->
       newWeapon: null
