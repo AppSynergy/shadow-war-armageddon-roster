@@ -34,8 +34,8 @@ describe 'the tau roster', () ->
       @change wargear, @option(wargear, 'Weapon reload')
       Vue.nextTick () =>
         expect(@all('.wargear-item').length).toBe 4
-        expect(@all('.wargear-item')[2].textContent).toMatch /Ion rifle -\s*100 points/
-        expect(@all('.wargear-item')[3].textContent).toMatch /Weapon reload -\s*50 points/
+        expect(@all('.wargear-item')[2].textContent).toMatch /Ion rifle\s*-\s*100 points/
+        expect(@all('.wargear-item')[3].textContent).toMatch /Weapon reload for Ion rifle\s*-\s*50 points/
         done()
 
   it 'can duplicate an existing fighter', (done) ->
@@ -43,7 +43,7 @@ describe 'the tau roster', () ->
     Vue.nextTick () =>
       expect(@all('.chosen-fighter-card').length).toBe 2
       expect(@all('.wargear-item').length).toBe 8
-      expect(@all('.wargear-item')[6].textContent).toMatch /Ion rifle -\s*100 points/
+      expect(@all('.wargear-item')[6].textContent).toMatch /Ion rifle\s*-\s*100 points/
       done()
 
   it 'can exit cleanly and return to home', (done) ->

@@ -30,21 +30,21 @@ describe 'the space marine scouts roster', () ->
       expect(wargear.textContent).toContain 'Weapon reload'
       @change wargear, @option(wargear, 'Weapon reload')
       Vue.nextTick () =>
-        expect(@all('.wargear-item')[2].textContent).toMatch /Shotgun -\s*20 points/
-        expect(@all('.wargear-item')[3].textContent).toMatch /Weapon reload -\s*10 points/
+        expect(@all('.wargear-item')[2].textContent).toMatch /Shotgun\s*-\s*20 points/
+        expect(@all('.wargear-item')[3].textContent).toMatch /Weapon reload for Shotgun\s*-\s*10 points/
         expect(@get('.fighter-cost').textContent).toBe '130 points'
         expect(@all('.wargear-item').length).toBe 4
         expect(@get('.total-points-cost').textContent).toBe '130'
         done()
 
   it 'should move the reload to the sniper rifle when replaced', (done) ->
-    @all('.wargear-item button')[0].click()
+    wargear = @get('select.add-wargear')
+    @change wargear, @option(wargear, 'Sniper rifle')
     Vue.nextTick () =>
-      wargear = @get('select.add-wargear')
-      @change wargear, @option(wargear, 'Sniper rifle')
+      @all('.wargear-item button')[0].click()
       Vue.nextTick () =>
-        expect(@all('.wargear-item')[2].textContent).toMatch /Weapon reload -\s*20 points/
-        expect(@all('.wargear-item')[3].textContent).toMatch /Sniper rifle -\s*40 points/
+        expect(@all('.wargear-item')[2].textContent).toMatch /Weapon reload for Sniper rifle\s*-\s*20 points/
+        expect(@all('.wargear-item')[3].textContent).toMatch /Sniper rifle\s*-\s*40 points/
         expect(@get('.fighter-cost').textContent).toBe '160 points'
         done()
 

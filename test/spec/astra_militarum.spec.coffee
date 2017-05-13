@@ -24,7 +24,7 @@ describe 'the imperial guard roster', () ->
     @change wargear, @option(wargear, 'Carapace armour')
     Vue.nextTick () =>
       expect(@all('.wargear-item').length).toBe 6
-      expect(@all('.wargear-item')[1].textContent).toMatch /Carapace armour -\s*20 points/
+      expect(@all('.wargear-item')[1].textContent).toMatch /Carapace armour\s*-\s*20 points/
       done()
 
   it 'can equip special weapons', (done) ->
@@ -32,7 +32,7 @@ describe 'the imperial guard roster', () ->
     expect(wargear.textContent).not.toContain 'Red-dot laser sight'
     @change wargear, @option(wargear, 'Sniper rifle')
     Vue.nextTick () =>
-      expect(@all('.wargear-item')[2].textContent).toMatch /Sniper rifle -\s*40 points/
+      expect(@all('.wargear-item')[2].textContent).toMatch /Sniper rifle\s*-\s*40 points/
       expect(@get('select.add-wargear').textContent).toContain 'Red-dot laser sight'
       done()
 

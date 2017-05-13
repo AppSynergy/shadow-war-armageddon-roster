@@ -17,7 +17,7 @@ describe 'the grey knights roster', () ->
       Vue.nextTick () =>
         expect(@all('.wargear-item').length).toBe 2
         expect(@all('.wargear-item')[0].textContent).toContain 'Power armour'
-        expect(@all('.wargear-item')[1].textContent).toMatch /Psilencer -\s*150 points/
+        expect(@all('.wargear-item')[1].textContent).toMatch /Psilencer\s*-\s*150 points/
         done()
 
   it 'shows the correct items on roster view', (done) ->

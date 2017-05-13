@@ -61,6 +61,11 @@ RosterStore =
       fighter = state.fighters[obj.index]
       fighter.weapons.push obj.weapon
 
+    updateWeapon: (state, obj) ->
+      state.dirty = true
+      fighter = state.fighters[obj.index]
+      fighter.weapons[obj.weaponIndex] = obj.weapon
+
     removeWeapon: (state, obj) ->
       state.dirty = true
       fighter = state.fighters[obj.index]

@@ -101,7 +101,7 @@ cost = 15
 [weapons.misc.weapon_reload]
 name = "Weapon reload"
 cost = '*'
-only_weapon = { matches = "role", values = ["basic", "pistols", "special"] }
+only_attaches = { matches = "role", values = ["basic", "pistols", "special"] }
 
 [weapons.pistols.pulse_pistol]
 name = "Pulse pistol"

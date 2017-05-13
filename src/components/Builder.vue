@@ -264,8 +264,11 @@
 
             # reject stuff where you need another item first
             only_weapon = if _.has weapon, 'only_weapon'
-              _.isEmpty _.intersection(weapon.only_weapon.values,
-                _.pluck(fighter.weapons, weapon.only_weapon.matches))
+              @matchValuesIsEmpty fighter.weapons, weapon.only_weapon
+            else false
+
+            only_attaches = if _.has weapon, 'only_attaches'
+              @matchValuesIsEmpty fighter.weapons, weapon.only_attaches
             else false
 
             # reject stuff where another item prohibits it
@@ -280,7 +283,7 @@
               not _.isEmpty _.intersection(weapon.not_weapon_global, allWeaponKeys)
             else false
 
-            _.any [only_fighter, only_weapon, not_weapon, not_weapon_global]
+            _.any [only_fighter, only_weapon, only_attaches, not_weapon, not_weapon_global]
           .value()
 
   export default Roster
