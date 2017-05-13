@@ -49,7 +49,7 @@
     methods:
 
       updateAttachee: (weapon, index) ->
-        if weapon.name = "Weapon reload" && weapon.attached_to
+        if weapon.name == "Weapon reload" && weapon.attached_to
           weapon.cost = Math.round(weapon.attached_to.cost / 2)
         @$store.commit 'updateWeapon',
           weaponIndex: index
@@ -64,7 +64,7 @@
         @removeAttachments weapon
 
       removeAttachments: (weapon) ->
-        wasAttached = _.filter @weapons, (x) -> _.has(x, 'attached_to') && x.attached_to.name == weapon.name
+        wasAttached = _.filter @weapons, (x) -> (_.has(x, 'attached_to') && (x.attached_to.key == weapon.key))
         if wasAttached.length > 0
           _.each wasAttached, (attachment) =>
             index = _.findIndex @weapon, (x) -> x.name == attachment.name
