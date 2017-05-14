@@ -104,7 +104,6 @@
   import Draggable from 'vuedraggable'
   import Fighter from './Fighter.vue'
   import Modal from './Modal.vue'
-  import Navigation from './Navigation.vue'
   import StaticNav from './StaticNav.vue'
   import Storage from './mixin/Storage.coffee'
   import TeamSummary from './mixin/TeamSummary.coffee'
@@ -113,7 +112,7 @@
 
     props: ['factionId']
 
-    components: { Draggable, Fighter, Modal, Navigation, StaticNav }
+    components: { Draggable, Fighter, Modal, StaticNav }
 
     mixins: [ Analytics, Collections, Storage, TeamSummary ]
 

@@ -1,5 +1,5 @@
 <template>
-  <nav class="navigation-vue navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
+  <nav class="navigation-vue navbar navbar-toggleable-sm navbar-inverse fixed-top bg-inverse">
 
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -7,12 +7,8 @@
 
     <a href="#" class="navbar-brand">killteams.com</a>
 
-    <span class="navbar-text text-white ml-4 pt-2">
-      <strong class="total-points-cost">{{ pointsCost }}</strong>&nbsp;points
-    </span>
-
-    <span class="navbar-text text-white ml-4 pt-2">
-      <strong>{{ numberFighters }}</strong>&nbsp;models
+    <span class="navbar-text pt-2">
+      <span class="text-white mr-4"><strong class="total-points-cost">{{ pointsCost }}</strong>&nbsp;points</span><span class="text-white"><strong>{{ numberFighters }}</strong>&nbsp;models</span>
     </span>
 
     <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -80,10 +76,3 @@
   export default StaticNav
 
 </script>
-
-  <style lang="sass">
-    body
-      padding-top: 3rem
-    .navbar
-      flex-direction: row
-  </style>

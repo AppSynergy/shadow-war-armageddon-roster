@@ -128,9 +128,15 @@
     border: none
     background-color: transparent
     &.disabled
+      color: #999 !important
       cursor: disabled
     i
       line-height: 16px
+
+  body
+    padding-top: 3rem
+    @include media-breakpoint-down(md)
+      padding-top: 5rem
 
 
 
