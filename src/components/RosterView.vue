@@ -45,22 +45,10 @@
               <br>{{ fighter.name }}
             </td>
             <td>{{ fighter.role }}</td>
-            <td><table class="table table-sm table-bordered">
-              <thead class="thead-inverse">
-                <tr>
-                  <th class="p-1 text-center stat-header"
-                    v-for="label in statLabels"
-                    >{{ label }}</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td class="p-1 text-center"
-                    v-for="stat in getStats(fighter)"
-                    >{{ stat }}</td>
-                </tr>
-              </tbody>
-            </table></td>
+            <td><stats
+              :statstring="fighter.stats"
+              :statmasks="statMasks(fighter)"
+            ></stats></td>
             <td>
               <div class="items">
                 <span class="item" v-for="item in maskedWargear(fighter)">
@@ -116,6 +104,7 @@
   import MaskWargear from './mixin/MaskWargear.coffee'
   import PDF from './mixin/PDF.coffee'
   import StatData from '../data/stats.toml'
+  import Stats from './Stats.vue'
   import StaticNav from './StaticNav.vue'
   import TeamSummary from './mixin/TeamSummary.coffee'
 
@@ -123,7 +112,7 @@
 
     props: ['factionId']
 
-    components: { StaticNav }
+    components: { StaticNav, Stats }
 
     mixins: [ AttachToWeapon, PDF, MaskWargear, TeamSummary ]
 
@@ -147,7 +136,9 @@
       maskedWargear: (fighter) ->
         @maskWargearItems fighter.weapons, fighter.wargear
 
-      getStats: (fighter) -> fighter.stats.split ' '
+      statMasks: (fighter) ->
+        _.filter fighter.weapons, (x) -> _.has x, 'stat_mask'
+        .map (x) -> x.stat_mask
 
   export default RosterView
 
