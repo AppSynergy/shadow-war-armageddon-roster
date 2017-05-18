@@ -74,7 +74,7 @@ name = "Telescopic Sight"
 cost = 20
 
 [weapons.misc.weapon_reload_storm_bolter]
-name = "Weapon reload (storm bolter)"
+name = "Weapon reload for storm bolter"
 cost = 25
 not_weapon = ["incinerator", "psilencer", "psycannon"]
 
