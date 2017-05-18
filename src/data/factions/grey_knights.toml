@@ -76,7 +76,7 @@ cost = 20
 [weapons.misc.weapon_reload_storm_bolter]
 name = "Weapon reload (storm bolter)"
 cost = 25
-only_weapon = { matches = "key", values = ["storm_bolter"] }
+not_weapon = ["incinerator", "psilencer", "psycannon"]
 
 [weapons.misc.weapon_reload]
 name = "Weapon reload"
