@@ -117,7 +117,7 @@ only_fighter = ["scout_sergeant"]
 
 [weapons.basic.shotgun]
 name = "Shotgun"
-cost = 25
+cost = 20
 
 [weapons.basic.boltgun]
 name = "Boltgun"
