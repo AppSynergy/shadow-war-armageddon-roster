@@ -6,6 +6,9 @@
       <span class="navbar-text text-white ml-4 pt-2">
         Shadow War: Armageddon Kill Teams
       </span>
+      <span class="ml-auto text-white">
+        <a target="_blank" :href="ghUrl">killteams.com on GitHub</a>
+      </span>
     </nav>
 
     <h2 class="my-4 py-4 text-center">Create a New Roster</h2>
@@ -88,6 +91,7 @@
       ]
       rosterToDelete: null
       savedRosters: []
+      ghUrl: 'https://github.com/AppSynergy/shadow-war-armageddon-roster'
 
     computed:
       factions: () -> Factions

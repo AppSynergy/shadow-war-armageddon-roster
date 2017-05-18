@@ -5,12 +5,6 @@
        <disqus shortname="killteams-com" identifier="/"
         url="https://killteams.com/"></disqus>
     </div>
-    <a class="hidden-print hidden-xl-down"
-      href="https://github.com/AppSynergy/shadow-war-armageddon-roster">
-      <img style="position: absolute; top: 0; left: 0; border: 0;"
-        :src="bannerSrc" :data-canonical-src="bannerSrcCanonical"
-        alt="Fork me on GitHub">
-    </a>
   </div>
 </template>
 
