@@ -13,6 +13,7 @@
   import Home from './components/Home.vue'
   import Builder from './components/Builder.vue'
   import Disqus from 'vue-disqus/VueDisqus.vue'
+  import FirebaseAPI from './api/Firebase.coffee'
   import RosterView from './components/RosterView.vue'
   import SimpleView from './components/SimpleView.vue'
 
@@ -21,10 +22,6 @@
     name: 'app'
 
     components: { Disqus }
-
-    data: () ->
-      bannerSrc: 'https://camo.githubusercontent.com/121cd7cbdc3e4855075ea8b558508b91ac463ac2/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f677265656e5f3030373230302e706e67'
-      bannerSrcCanonical: 'https://s3.amazonaws.com/github/ribbons/forkme_left_green_007200.png'
 
     created: () ->
       @$router.addRoutes [

@@ -56,12 +56,18 @@
       </ul>
     </div>
 
+    <auth></auth>
+
   </nav>
 </template>
 
 <script lang="coffee">
 
+  import Auth from './Auth.vue'
+
   StaticNav =
+
+    components: { Auth }
 
     props: ['factionId', 'empty', 'dirty', 'numberFighters', 'pointsCost']
 
