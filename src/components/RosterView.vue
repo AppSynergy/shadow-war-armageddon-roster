@@ -38,7 +38,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr v-for="fighter in chosenFighters">
+          <tr v-for="fighter in chosenFighters" class="fighterCells">
             <td>
               <strong v-if="fighter.realName">{{ fighter.realName }}</strong>
               <strong v-else>An unnamed soldier</strong>
@@ -80,6 +80,14 @@
 </template>
 
 <style lang="sass">
+
+  table
+    $widths: 15% 10% 25% 30% 10% 10%
+    @for $i from 1 through length($widths)
+      $width: nth($widths, $i)
+      tr.fighterCells > td:nth-child(#{$i})
+        width: $width
+
   .roster-view
     font-size: 90%
     font-family: "Courier New", serif
