@@ -132,8 +132,6 @@
       statLabels: () -> StatData.labels
       chosenFighters: () -> @$store.getters.getFighters
       teamName: () -> @$store.getters.getTeamName
-      totalPointsCost: () -> @$store.getters.getTotalPointsCost
-      totalNumberFighters: () -> @$store.getters.totalNumberFighters
 
       fileName: () ->
         if @teamName.length > 1 then @teamName + '.pdf'

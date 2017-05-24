@@ -8,7 +8,7 @@
     <a href="#" class="navbar-brand">killteams.com</a>
 
     <span class="navbar-text pt-2">
-      <span class="text-white mr-4"><strong class="total-points-cost">{{ pointsCost }}</strong>&nbsp;points</span><span class="text-white"><strong>{{ numberFighters }}</strong>&nbsp;models</span>
+      <span class="text-white mr-4"><strong class="total-points-cost">{{ pointsCost }}</strong>&nbsp;{{ pluralize('point', pointsCost) }}</span><span class="text-white"><strong>{{ numberFighters }}</strong>&nbsp;{{ pluralize('model', numberFighters) }}</span>
     </span>
 
     <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -66,6 +66,9 @@
     props: ['factionId', 'empty', 'dirty', 'numberFighters', 'pointsCost']
 
     methods:
+
+      pluralize: (str, i) ->
+        if i == 1 then str else str + 's'
 
       buttonClass: (disabled) ->
         'nav-link action-btn mx-auto text-white': true
