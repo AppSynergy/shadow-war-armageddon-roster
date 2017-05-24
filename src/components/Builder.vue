@@ -62,12 +62,12 @@
             v-on:change="nameTeam"
             placeholder="Name your kill-team">
         </div>
-        <div class="col col-12 col-lg-3">
+        <div class="col col-12 col-lg-3 hidden-md-down">
           <h4 class="roster-meta align-middle text-center">
             Total: <strong class="total-points-cost">{{ totalPointsCost }}</strong> points
           </h4>
         </div>
-        <div class="col col-12 col-lg-3">
+        <div class="col col-12 col-lg-3 hidden-md-down">
           <h4 class="roster-meta align-middle text-center">
             <strong>{{ totalNumberFighters }}</strong>
             / {{ faction.size.min}} - {{ faction.size.max }} models
