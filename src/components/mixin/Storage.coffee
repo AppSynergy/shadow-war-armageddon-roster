@@ -2,8 +2,8 @@ Storage =
 
   localStorage:
     rosters:
-      type: Array
-      default: []
+      type: Object
+      default: {}
 
   methods:
 
@@ -18,12 +18,8 @@ Storage =
 
     saveRosterLocal: (data) ->
       rosters = @get()
-      data.totalPointsCost = @$store.getters.getTotalPointsCost
-      updateIndex = @findIndexByTeamName rosters, data.teamName
-      if updateIndex >= 0
-        rosters[updateIndex] = data
-      else
-        rosters.push data
+      rosters[data.localKey] = data
+      console.warn data.localKey, rosters
       @set rosters
 
     deleteRosterLocal: (data) ->

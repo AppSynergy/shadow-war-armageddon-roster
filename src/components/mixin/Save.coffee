@@ -1,9 +1,12 @@
-
+import FirebaseAPI from '../../api/Firebase.coffee'
 import Storage from './Storage.coffee'
 
 Save =
 
   mixins: [Storage]
+
+  computed:
+    firebaseRosters: () -> FirebaseAPI.database.ref('rosters')
 
   data: () ->
     modalId: "unsavedRosterModal"
@@ -26,10 +29,15 @@ Save =
       if @teamName.length > 0
         @event 'save_roster', @factionId
         @$store.commit 'cleanState'
-        @saveRosterLocal
+        payload =
           fighters: @chosenFighters
           factionId: @factionId
           teamName: @teamName
+          totalPointsCost: @$store.getters.getTotalPointsCost
+        newRosterRef = @firebaseRosters.push payload
+        payload.localKey = newRosterRef.key
+        @saveRosterLocal payload
+
         @cycleNotification { id: 'save', desc: 'Roster saved.', type: 'success' }
         return true
       else
