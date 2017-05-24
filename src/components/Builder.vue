@@ -104,8 +104,8 @@
   import Draggable from 'vuedraggable'
   import Fighter from './Fighter.vue'
   import Modal from './Modal.vue'
+  import Save from './mixin/Save.coffee'
   import StaticNav from './StaticNav.vue'
-  import Storage from './mixin/Storage.coffee'
   import TeamSummary from './mixin/TeamSummary.coffee'
 
   Roster =
@@ -114,17 +114,11 @@
 
     components: { Draggable, Fighter, Modal, StaticNav }
 
-    mixins: [ Analytics, Collections, Storage, TeamSummary ]
+    mixins: [ Analytics, Collections, Save, TeamSummary ]
 
     data: () ->
       teamName: ""
-      modalId: "unsavedRosterModal"
-      modalOptions: [
-        {name: 'discard', text: 'No thanks'}
-        {name: 'save', text: 'Yes please'}
-      ]
       chosenFaction: null
-      discardAction: () -> null
       notifications: []
 
     computed:
@@ -183,27 +177,6 @@
           @event 'exit_roster_warn', to.path
 
     methods:
-
-      processModalOption: (option) ->
-        success = if option.name == 'save' then @saveRoster() else true
-        jQuery('#' + @modalId).modal 'hide'
-        if success
-          @$store.commit 'discardRoster'
-          @discardAction()
-
-      saveRoster: () ->
-        if @teamName.length > 0
-          @event 'save_roster', @factionId
-          @$store.commit 'cleanState'
-          @saveRosterLocal
-            fighters: @chosenFighters
-            factionId: @factionId
-            teamName: @teamName
-          @cycleNotification { id: 'save', desc: 'Roster saved.', type: 'success' }
-          return true
-        else
-          @cycleNotification { id: 'name', desc: 'You must give your team a name before it can be saved.', type: 'warning' }
-          return false
 
       cycleNotification: (obj) ->
         @notifications.push obj
