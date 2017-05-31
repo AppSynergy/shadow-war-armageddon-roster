@@ -32,9 +32,10 @@
               placeholder="Name me!"
               v-on:change="nameFighter"
               v-model="fighter.realName">
-            <fighter-stats :statstring="fighter.stats"
+            <stats :editable="true"
+              :statstring="fighter.stats"
               :statmasks="statMasks(fighter)">
-            </fighter-stats>
+            </stats>
           </div>
 
           <div class="col col-12 col-md-7 col-lg-8">
@@ -67,13 +68,13 @@
 
   import Analytics from './mixin/Analytics.coffee'
   import AttachToWeapon from './mixin/AttachToWeapon.coffee'
-  import FighterStats from './Stats.vue'
+  import Stats from './Stats.vue'
   import FighterWargear from './Wargear.vue'
   import RoleData from '../data/roles.toml'
 
   Fighter =
 
-    components: { FighterStats, FighterWargear }
+    components: { Stats, FighterWargear }
 
     mixins: [ AttachToWeapon, Analytics ]
 
