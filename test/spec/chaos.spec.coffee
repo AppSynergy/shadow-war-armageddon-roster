@@ -22,11 +22,11 @@ describe 'the chaos roster', () ->
 
   it 'gets more attacky with a mark of khorne', (done) ->
     wargear = @get('select.add-wargear')
-    expect(@all('.stats-vue td')[7].textContent).toBe '2'
+    expect(@all('.stats-vue td')[7].textContent).toContain '2'
     @change wargear, @option(wargear, 'Mark of Khorne')
     Vue.nextTick () =>
-      expect(@all('.stats-vue td')[7].textContent).toBe '3'
-      expect(@all('.stats-vue td')[8].textContent).toBe '9'
+      expect(@all('.stats-vue td')[7].textContent).toContain '3'
+      expect(@all('.stats-vue td')[8].textContent).toContain '9'
       done()
 
   it 'can exit cleanly and return to home', (done) ->

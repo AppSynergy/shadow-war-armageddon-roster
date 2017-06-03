@@ -32,8 +32,9 @@
               placeholder="Name me!"
               v-on:change="nameFighter"
               v-model="fighter.realName">
-            <stats :editable="true"
+            <stats :editable="true" :index="index"
               :statstring="fighter.stats"
+              :campaignStatmask="fighter.campaign.statmask"
               :statmasks="statMasks(fighter)">
             </stats>
           </div>

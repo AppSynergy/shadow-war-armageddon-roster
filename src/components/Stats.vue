@@ -8,13 +8,13 @@
       </tr>
       <tr>
         <td class="p-1 text-center stat-td"
-          v-for="stat, index in get_stats()">
+          v-for="stat, index in displayStats">
           <i class="change-stat material-icons up"
-            v-on:click="up_stat(index)">keyboard_arrow_up</i>
+            v-on:click="clickIncrease(index)">keyboard_arrow_up</i>
           <span class="changed" v-if="statChanged(stat, index)">{{ stat }}</span>
           <span v-else>{{ stat }}</span>
           <i class="change-stat material-icons down"
-            v-on:click="down_stat(index)">keyboard_arrow_down</i>
+            v-on:click="clickDecrease(index)">keyboard_arrow_down</i>
         </td>
       </tr>
     </table>
@@ -28,12 +28,18 @@
   Stats =
 
     props:
+      index:
+        default: 0
+        type: Number
       statstring:
         default: ''
         type: String
       statmasks:
         default: []
         type: Array
+      campaignStatmask:
+        default: ''
+        type: String
       editable:
         default: false
         type: Boolean
@@ -41,27 +47,24 @@
     computed:
       statLabels: () -> StatData.labels
       originalStats: () -> @statstring.split ' '
-      intermediateStats: () ->
+      displayStats: () ->
+        stats = @mergeStats @originalStats, @campaignStatmask
         if @statmasks.length < 1
-          @originalStats
+          return stats
         else
-          _.reduce @statmasks, @mergeStats, @originalStats
-
-    data: () ->
-      campaignStats: [0,0,0,0,0,0,0,0,0]
+          _.reduce @statmasks, @mergeStats, stats
 
     methods:
 
-      get_stats: () ->
-        _.zip @campaignStats, @intermediateStats
-          .map (x) => @sumValues x
+      clickIncrease: (index) ->
+        @$store.commit 'increaseCampaignStat',
+          index: @index
+          statIndex: index
 
-      up_stat: (index) ->
-        console.warn "up", index, @campaignStats[index]
-        @campaignStats[index] = @sumValues [@campaignStats[index], 1]
-
-      down_stat: (index) ->
-        console.warn "down"
+      clickDecrease: (index) ->
+        @$store.commit 'decreaseCampaignStat',
+          index: @index
+          statIndex: index
 
       statChanged: (stat, index) ->
         stat != @originalStats[index]
@@ -74,7 +77,7 @@
 
       sumValues: (x) ->
         if (x[1] || 0) > 0
-          parseInt(x[0], 10) + parseInt(x[1], 10)
+          (parseInt(x[0], 10) + parseInt(x[1], 10)).toString()
         else x[0]
 
   export default Stats

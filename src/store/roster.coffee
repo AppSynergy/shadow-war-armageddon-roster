@@ -42,6 +42,8 @@ RosterStore =
         gear = obj.wargear[x]
         gear.key = x
         gear
+      fighter.campaign = {}
+      fighter.campaign.statmask = "0 0 0 0 0 0 0 0 0"
       state.fighters.push fighter
 
     duplicateFighter: (state, fighter) ->
@@ -51,6 +53,20 @@ RosterStore =
     updateFighters: (state, fighters) ->
       state.dirty = true
       state.fighters = fighters
+
+    increaseCampaignStat: (state, obj) ->
+      state.dirty = true
+      fighter = state.fighters[obj.index]
+      a = fighter.campaign.statmask.split ' '
+      a[obj.statIndex] = (parseInt(a[obj.statIndex], 10) + 1).toString()
+      fighter.campaign.statmask = a.join ' '
+
+    decreaseCampaignStat: (state, obj) ->
+      state.dirty = true
+      fighter = state.fighters[obj.index]
+      a = fighter.campaign.statmask.split ' '
+      a[obj.statIndex] = (parseInt(a[obj.statIndex], 10) - 1).toString()
+      fighter.campaign.statmask = a.join ' '
 
     removeFighter: (state, index) ->
       state.dirty = true

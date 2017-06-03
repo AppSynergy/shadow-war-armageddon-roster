@@ -16,10 +16,10 @@ describe 'the inquisition roster', () ->
       wargear = @get 'select.add-wargear'
       @change wargear, @option(wargear, 'Weapon Skill')
       Vue.nextTick () =>
-        expect(@all('.stats-vue td')[0].textContent).toBe '4'
-        expect(@all('.stats-vue td')[1].textContent).toBe '4'
-        expect(@all('.stats-vue td')[2].textContent).toBe '3'
-        expect(@all('.stats-vue td')[3].textContent).toBe '3'
+        expect(@all('.stats-vue td')[0].textContent).toContain '4'
+        expect(@all('.stats-vue td')[1].textContent).toContain '4'
+        expect(@all('.stats-vue td')[2].textContent).toContain '3'
+        expect(@all('.stats-vue td')[3].textContent).toContain '3'
         done()
 
   it 'can add a trooper with +1 BS', (done) ->
@@ -29,10 +29,10 @@ describe 'the inquisition roster', () ->
       @change wargear, @option(wargear, 'Ballistic Skill')
       Vue.nextTick () =>
         expect(@all('.chosen-fighter-card').length).toBe 2
-        expect(@all('.stats-vue td')[9].textContent).toBe '4'
-        expect(@all('.stats-vue td')[10].textContent).toBe '3'
-        expect(@all('.stats-vue td')[11].textContent).toBe '4'
-        expect(@all('.stats-vue td')[12].textContent).toBe '3'
+        expect(@all('.stats-vue td')[9].textContent).toContain '4'
+        expect(@all('.stats-vue td')[10].textContent).toContain '3'
+        expect(@all('.stats-vue td')[11].textContent).toContain '4'
+        expect(@all('.stats-vue td')[12].textContent).toContain '3'
         done()
 
   it 'can exit cleanly and return to home', (done) ->
