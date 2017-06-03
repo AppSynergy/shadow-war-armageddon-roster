@@ -32,7 +32,7 @@
               placeholder="Name me!"
               v-on:change="nameFighter"
               v-model="fighter.realName">
-            <stats :editable="true" :index="index"
+            <stats :editable="campaignMode" :index="index"
               :statstring="fighter.stats"
               :campaignStatmask="fighter.campaign.statmask"
               :statmasks="statMasks(fighter)">
@@ -79,7 +79,7 @@
 
     mixins: [ AttachToWeapon, Analytics ]
 
-    props: ['index', 'weaponsAvailable']
+    props: ['index', 'weaponsAvailable', 'campaignMode']
 
     data: () ->
       newWeapon: null

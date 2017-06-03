@@ -62,15 +62,24 @@
             v-on:change="nameTeam"
             placeholder="Name your kill-team">
         </div>
-        <div class="col col-12 col-lg-3 hidden-md-down">
+        <div class="col col-12 col-lg-2 hidden-md-down">
           <h4 class="roster-meta align-middle text-center">
             Total: <strong class="total-points-cost">{{ totalPointsCost }}</strong> points
           </h4>
         </div>
-        <div class="col col-12 col-lg-3 hidden-md-down">
+        <div class="col col-12 col-lg-2 hidden-md-down">
           <h4 class="roster-meta align-middle text-center">
             <strong>{{ totalNumberFighters }}</strong>
             / {{ faction.size.min}} - {{ faction.size.max }} models
+          </h4>
+        </div>
+        <div class="col col-12 col-lg-2 hidden-md-down">
+          <h4 class="roster-meta align-middle text-center">
+            Campaign: <button v-on:click="toggleCampaignMode()"
+              class="text-primary badge campaignMode">
+              <span v-if="campaignMode">On</span>
+              <span v-else>Off</span>
+            </button>
           </h4>
         </div>
       </div>
@@ -80,6 +89,7 @@
           :index="index"
           :key="'fighter' + index"
           :weaponsAvailable="weaponsAvailable(fighter)"
+          :campaignMode="campaignMode"
           v-on:duplicateFighter="duplicateFighter"
         ></fighter>
       </draggable>
@@ -126,6 +136,7 @@
       chosenFaction: null
       discardAction: () -> null
       notifications: []
+      campaignMode: false
 
     computed:
 
@@ -152,20 +163,30 @@
         errors
 
       chosenFighters:
-        get: () -> @$store.getters.getFighters
-        set: (value) -> @$store.commit 'updateFighters', value
+
+        get: () ->
+          fighters = @$store.getters.getFighters
+          # Fix old rosters without the baseCost
+          if !_.has _.first(fighters), 'baseCost'
+            fighters = _.map fighters, (x) =>
+              f = _.find @faction.fighters, (y) -> x.name == y.name
+              x.baseCost = f.cost
+              return x
+          # Fix old rosters without campaign attr
+          if !_.has _.first(fighters), 'campaign'
+            fighters = _.map fighters, (x) ->
+              x.campaign = {}
+              x.campaign.statmask = "0 0 0 0 0 0 0 0 0"
+              return x
+          return fighters
+
+        set: (value) ->
+          @$store.commit 'updateFighters', value
 
     mounted: () ->
       @event 'open_roster', @factionId
       @track 'build/' + @factionId
       @teamName = @$store.getters.getTeamName
-
-      # Fix old rosters without the baseCost
-      if !_.has _.first(@chosenFighters), 'baseCost'
-        @chosenFighters = _.map @chosenFighters, (x) =>
-          f = _.find @faction.fighters, (y) -> x.name == y.name
-          x.baseCost = f.cost
-          return x
 
     beforeRouteLeave: (to, from, next) ->
       nextEvent = () =>
@@ -183,6 +204,8 @@
           @event 'exit_roster_warn', to.path
 
     methods:
+
+      toggleCampaignMode: () -> @campaignMode = !@campaignMode
 
       processModalOption: (option) ->
         success = if option.name == 'save' then @saveRoster() else true

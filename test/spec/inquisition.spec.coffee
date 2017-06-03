@@ -35,6 +35,23 @@ describe 'the inquisition roster', () ->
         expect(@all('.stats-vue td')[12].textContent).toContain '3'
         done()
 
+  it 'can activate campaign mode and make further stat changes', (done) ->
+    expect(@all('i.change-stat').length).toBe 0
+    @get('.campaignMode').click()
+    Vue.nextTick () =>
+      expect(@all('i.change-stat').length).toBe 36
+      expect(@all('.stats-vue td')[0].textContent).toContain '4'
+      @all('i.change-stat')[0].click()
+      Vue.nextTick () =>
+        expect(@all('.stats-vue td')[0].textContent).toContain '5'
+        @all('i.change-stat')[1].click()
+        @all('i.change-stat')[1].click()
+        @all('i.change-stat')[1].click()
+        Vue.nextTick () =>
+          expect(@all('.stats-vue td')[0].textContent).toContain '2'
+          done()
+
+
   it 'can exit cleanly and return to home', (done) ->
     @get('.action-btn').click()
     Vue.nextTick () =>

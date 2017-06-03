@@ -10,10 +10,12 @@
         <td class="p-1 text-center stat-td"
           v-for="stat, index in displayStats">
           <i class="change-stat material-icons up"
+            v-if="editable"
             v-on:click="clickIncrease(index)">keyboard_arrow_up</i>
           <span class="changed" v-if="statChanged(stat, index)">{{ stat }}</span>
           <span v-else>{{ stat }}</span>
           <i class="change-stat material-icons down"
+            v-if="editable"
             v-on:click="clickDecrease(index)">keyboard_arrow_down</i>
         </td>
       </tr>
@@ -48,7 +50,10 @@
       statLabels: () -> StatData.labels
       originalStats: () -> @statstring.split ' '
       displayStats: () ->
-        stats = @mergeStats @originalStats, @campaignStatmask
+        if @editable
+          stats = @mergeStats @originalStats, @campaignStatmask
+        else
+          stats = @originalStats
         if @statmasks.length < 1
           return stats
         else
@@ -76,7 +81,7 @@
           .value()
 
       sumValues: (x) ->
-        if (x[1] || 0) > 0
+        if (x[1] || 0) != 0
           (parseInt(x[0], 10) + parseInt(x[1], 10)).toString()
         else x[0]
 
@@ -93,14 +98,16 @@
   .change-stat
     position: absolute
     left: 0
+    z-index: 2
     visibility: hidden
     opacity: 0
     cursor: pointer
     transition: visibility 0s, opacity 0.5s linear
+    background-color: rgba(191, 183, 182, 1)
+    border-radius: 4px
     &.up
       top: -0.9em
-      background-color: cyan !important
     &.down
       top: 1.2em
-      background-color: magenta !important
+
 </style>
