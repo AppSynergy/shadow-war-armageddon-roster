@@ -1,0 +1,113 @@
+key = "house_goliath"
+name = "House Goliath Gang"
+
+[size]
+min = 2
+max = 10
+leader_max = 1
+specialist_max = 3
+
+[fighters.leader]
+name = "Goliath Leader"
+cost = 145
+role = "Leader"
+stats = "4 3 3 4 4 2 3 3 5 4 8 7" # 4 additional characteristics included here for "Ld", "Cl", "Will", "Int" which are the last 4 in this list. 
+wargear = ["furnace_plates"] # Is there a master list of wargear, probably this needs adding to it. 
+equip = ["armour", "basic", "close-combat", "pistols", "special", "heavy", "grendades", "wargear"] # "close-combat" replaces "hand-to-hand" in Necromunda (Leaders gets access to all weapon types) 
+skills = ["brawn", "combat", "ferocity", "leadership", "shooting"] # Necromunda skill categories are "agility", "brawn", "combat", "cunning", "ferocity", "leadership", "shooting", "savant". 
+
+[fighters.champion]
+name = "Goliath Champion"
+cost = 110
+role = "Champion"
+stats = "4 3 4 4 4 2 4 2 6 5 8 8"
+wargear = ["furnace_plates"]
+equip = ["armour", "basic", "close-combat", "pistols", "special", "heavy", "grenades", "wargear"]
+skills = ["brawn", "combat", "ferocity", "leadership", "shooting"]
+
+[fighters.juve]
+name = "Goliath Juve"
+cost = 25
+role = "Juve"
+stats = "5 4 5 3 3 1 3 1 9 5 10 9"
+wargear = [""]
+equip = ["close-combat", "pistols"] # Also not allowed weapons worth > 20 credits
+skills = ["agility", "brawn", "ferocity"]
+
+[fighters.ganger]
+name = "Goliath Ganger"
+cost = 60
+role = "Ganger"
+stats = "4 4 4 4 4 1 4 1 8 5 9 8"
+wargear = ["furnace_plates"]
+equip = ["hand-to-hand", "pistols", "special", "heavy", "ammunition", "grenades", "misc"]
+skills = ["combat", "ferocity", "guerilla", "shooting"]
+
+
+[weapons.basic.stub_cannon]
+name = "Stub Cannon"
+cost = 20
+
+[weapons.basic.combat_shotgun]
+name = "Combat Shotgun"
+cost = 60
+
+[weapons.close-combat.fighting_knife]
+name = "Fighting knife"
+cost = 10
+
+[weapons.close-combat.axe]
+name = "Axe"
+cost = 15
+
+[weapons.close-combat.spud-jacker]
+name = "Spud-jacker"
+cost = 15
+
+[weapons.close-combat.brute-cleaver]
+name = "Brute Cleaver"
+cost = 20
+
+[weapons.close-combat.serrated-axe]
+name = "'Renderizer' serrated axe"
+cost = 40
+
+[weapons.close-combat.power-hammer]
+name = "Power hammer"
+cost = 45
+
+[weapons.pistols.stub-gun]
+name = "Stub gun"
+cost = 5
+
+[weapons.pistols.combi-pistol]
+name = "combi-pistol (stub gun/plasma pistol)"
+cost = 65
+
+[weapons.special.grenade-launcher]
+name = "Grenade launcher (with frag and krak grenades)"
+cost = 55
+
+[weapons.heavy.rivet-cannon]
+name = "'Krumper' rivet-cannon"
+cost = 70
+
+[weapons.grenades.frag]
+name = "Frag Grenades"
+cost = 30
+
+[weapons.grenades.krak]
+name = "Krak Grenades"
+cost = 45
+
+[wargrear.respirator]
+name = "Respirator"
+cost = 15
+
+[wargrear.stimm-slug]
+name = "Stimm-slug stash"
+cost = 30
+
+[wargrear.photo-goggles]
+name = "Photo-goggles"
+cost = 35
