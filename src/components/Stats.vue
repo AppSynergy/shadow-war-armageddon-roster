@@ -27,7 +27,7 @@
 
     computed:
       originalStats: () -> @statstring.split ' '
-      statLabels: () -> StatData.labels
+      statLabels: () -> StatData.labels.slice 0, @originalStats.length
 
       stats: () ->
         if @statmasks.length < 1

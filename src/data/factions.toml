@@ -1,3 +1,8 @@
+[house_goliath]
+name = 'House Goliath'
+color = '#B7410E'
+implemented = true
+
 [skitarii]
 name = "Skitarii"
 color = "#882222"

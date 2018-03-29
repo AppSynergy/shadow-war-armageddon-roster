@@ -5,16 +5,16 @@ name = "House Goliath Gang"
 min = 2
 max = 10
 leader_max = 1
-specialist_max = 3
+champion_max = 3
 
 [fighters.leader]
 name = "Goliath Leader"
 cost = 145
 role = "Leader"
-stats = "4 3 3 4 4 2 3 3 5 4 8 7" # 4 additional characteristics included here for "Ld", "Cl", "Will", "Int" which are the last 4 in this list. 
-wargear = ["furnace_plates"] # Is there a master list of wargear, probably this needs adding to it. 
-equip = ["armour", "basic", "close-combat", "pistols", "special", "heavy", "grendades", "wargear"] # "close-combat" replaces "hand-to-hand" in Necromunda (Leaders gets access to all weapon types) 
-skills = ["brawn", "combat", "ferocity", "leadership", "shooting"] # Necromunda skill categories are "agility", "brawn", "combat", "cunning", "ferocity", "leadership", "shooting", "savant". 
+stats = "4 3 3 4 4 2 3 3 5 4 8 7"
+wargear = ["furnace_plates"]
+equip = ["armour", "basic", "close-combat", "pistols", "special", "heavy", "grenades", "misc"]
+skills = ["brawn", "combat", "ferocity", "leadership", "shooting"] # Necromunda skill categories are "agility", "brawn", "combat", "cunning", "ferocity", "leadership", "shooting", "savant".
 
 [fighters.champion]
 name = "Goliath Champion"
@@ -22,7 +22,7 @@ cost = 110
 role = "Champion"
 stats = "4 3 4 4 4 2 4 2 6 5 8 8"
 wargear = ["furnace_plates"]
-equip = ["armour", "basic", "close-combat", "pistols", "special", "heavy", "grenades", "wargear"]
+equip = ["armour", "basic", "close-combat", "pistols", "special", "heavy", "grenades", "misc"]
 skills = ["brawn", "combat", "ferocity", "leadership", "shooting"]
 
 [fighters.juve]
@@ -30,7 +30,7 @@ name = "Goliath Juve"
 cost = 25
 role = "Juve"
 stats = "5 4 5 3 3 1 3 1 9 5 10 9"
-wargear = [""]
+wargear = []
 equip = ["close-combat", "pistols"] # Also not allowed weapons worth > 20 credits
 skills = ["agility", "brawn", "ferocity"]
 
@@ -40,16 +40,18 @@ cost = 60
 role = "Ganger"
 stats = "4 4 4 4 4 1 4 1 8 5 9 8"
 wargear = ["furnace_plates"]
-equip = ["hand-to-hand", "pistols", "special", "heavy", "ammunition", "grenades", "misc"]
+equip = ["close-combat", "pistols", "special", "heavy", "ammunition", "grenades", "misc"]
 skills = ["combat", "ferocity", "guerilla", "shooting"]
 
+[wargear.furnace_plates]
+name = "Furnace plates"
 
 [weapons.basic.stub_cannon]
-name = "Stub Cannon"
+name = "Stub cannon"
 cost = 20
 
 [weapons.basic.combat_shotgun]
-name = "Combat Shotgun"
+name = "Combat shotgun"
 cost = 60
 
 [weapons.close-combat.fighting_knife]
@@ -65,7 +67,7 @@ name = "Spud-jacker"
 cost = 15
 
 [weapons.close-combat.brute-cleaver]
-name = "Brute Cleaver"
+name = "Brute cleaver"
 cost = 20
 
 [weapons.close-combat.serrated-axe]
@@ -81,7 +83,7 @@ name = "Stub gun"
 cost = 5
 
 [weapons.pistols.combi-pistol]
-name = "combi-pistol (stub gun/plasma pistol)"
+name = "Combi-pistol (Stub gun/plasma pistol)"
 cost = 65
 
 [weapons.special.grenade-launcher]
@@ -93,21 +95,21 @@ name = "'Krumper' rivet-cannon"
 cost = 70
 
 [weapons.grenades.frag]
-name = "Frag Grenades"
+name = "Frag grenades"
 cost = 30
 
 [weapons.grenades.krak]
-name = "Krak Grenades"
+name = "Krak grenades"
 cost = 45
 
-[wargrear.respirator]
+[misc.respirator]
 name = "Respirator"
 cost = 15
 
-[wargrear.stimm-slug]
+[misc.stimm-slug]
 name = "Stimm-slug stash"
 cost = 30
 
-[wargrear.photo-goggles]
+[misc.photo-goggles]
 name = "Photo-goggles"
 cost = 35

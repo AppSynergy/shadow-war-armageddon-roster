@@ -51,3 +51,6 @@ name = "Bio-cannons"
 
 [acolyte_stat_upgrade]
 name = "Inquisitorial Acolyte Varied Origins"
+
+[close-combat]
+name = "Close Combat"

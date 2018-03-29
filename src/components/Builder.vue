@@ -145,7 +145,9 @@
           errors.push { desc: 'You can\'t have more than ' + @faction.size.max + ' fighters in this kill team.' }
         if @teamName == ''
           errors.push { desc: 'Your kill team needs a name.'}
-        if @$store.getters.getNumberFightersByRole('Kill Team Leader') != 1
+        leader_1 = @$store.getters.getNumberFightersByRole('Kill Team Leader')
+        leader_2 = @$store.getters.getNumberFightersByRole('Leader')
+        if (leader_1 + leader_2) != 1
           errors.push { desc: 'Your kill team needs a leader.'}
         if @$store.getters.getNumberFightersByRole('New Recruit') > @totalNumberFighters/2
           errors.push { desc: 'Your kill team has too many new recruits.' }
@@ -233,6 +235,8 @@
           when "Kill Team Leader" then roleCount >= @faction.size.leader_max
           when "Specialist" then roleCount >= @faction.size.specialist_max
           when "Drone" then roleCount >= @faction.size.drone_max
+          when "Leader" then roleCount >= @faction.size.leader_max
+          when "Champion" then roleCount >= @faction.size.champion_max
           else false
 
       weaponsAvailable: (fighter) ->
