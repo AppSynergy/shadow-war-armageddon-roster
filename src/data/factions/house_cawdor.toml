@@ -40,7 +40,7 @@ cost = 45
 role = "Ganger"
 stats = "5 4 4 3 3 1 4 1 7 7 7 7"
 wargear = ["flak_armour"]
-equip = ["hand-to-hand", "pistols", "special", "heavy", "ammunition", "grenades", "misc"]
+equip = ["basic", "hand-to-hand", "pistols", "grenades", "wargear"]
 skills = ["agility", "brawn", "combat", "ferocity"]
 
 [weapons.basic.autogun]
