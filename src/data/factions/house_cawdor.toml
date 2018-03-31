@@ -79,11 +79,7 @@ cost = 10
 name = "Flail"
 cost = 20
 
-[weapons.close-combat.spud-jacker]
-name = "Spud-jacker"
-cost = 15
-
-[weapons.close-combat.two-handed-weapon]
+[weapons.close-combat.two_handed_weapon]
 name = "Two-handed weapon"
 cost = 20
 
@@ -91,11 +87,11 @@ cost = 20
 name = "Sword"
 cost = 25
 
-[weapons.close-combat.power-weapon]
+[weapons.close-combat.power_weapon]
 name = "Power weapon"
 cost = 50
 
-[weapons.pistols.stub-gun]
+[weapons.pistols.stub_gun]
 name = "Stub gun"
 cost = 5
 
@@ -107,23 +103,23 @@ cost = 10
 name = "Laspistol"
 cost = 10
 
-[weapons.pistols.bolt-pistol]
+[weapons.pistols.bolt_pistol]
 name = "Bolt pistol"
 cost = 25
 
-[weapons.pistols.hand-flamer]
+[weapons.pistols.hand_flamer]
 name = "Hand flamer"
 cost = 50
 
-[weapons.pistols.plasma-pistol]
+[weapons.pistols.plasma_pistol]
 name = "Plasma pistol"
 cost = 50
 
-[weapons.special.grenade-launcher]
+[weapons.special.grenade_launcher]
 name = "Grenade launcher (with frag and krak grenades)"
 cost = 55
 
-[weapons.special.plasma-gun]
+[weapons.special.plasma_gun]
 name = "Plasma Gun"
 cost = 100
 
@@ -135,7 +131,7 @@ cost = 100
 name = "Meltagun"
 cost = 132
 
-[weapons.heavy.heavy-stubber]
+[weapons.heavy.heavy_stubber]
 name = "Heavy Stubber"
 cost = 130
 
@@ -151,7 +147,7 @@ cost = 45
 name = "Respirator"
 cost = 15
 
-[wargrear.medicae-kit]
+[wargrear.medicae_kit]
 name = "Medicae kit"
 cost = 30
 
