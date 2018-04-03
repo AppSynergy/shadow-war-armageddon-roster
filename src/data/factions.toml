@@ -1,7 +1,26 @@
+[house_escher]
+name = 'House Escher'
+color = '#B7410E'
+implemented = true
+necromunda = true
+
 [house_goliath]
 name = 'House Goliath'
 color = '#B7410E'
 implemented = true
+necromunda = true
+
+[house_cawdor]
+name = 'House Cawdor'
+color = '#B7410E'
+implemented = true
+necromunda = true
+
+[house_delaque]
+name = 'House Delaque'
+color = '#B7410E'
+implemented = true
+necromunda = true
 
 [skitarii]
 name = "Skitarii"

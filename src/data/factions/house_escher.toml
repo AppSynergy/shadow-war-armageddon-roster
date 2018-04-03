@@ -123,34 +123,34 @@ cost = 10
 name = "Mesh armour"
 cost = 15
 
-[wargrear.dumdum_rounds]
+[weapons.wargear.dumdum_rounds]
 name = "Dumdum rounds (for stub gun)"
 cost = 5
 
-[wargrear.drop_rig]
+[weapons.wargear.drop_rig]
 name = "Drop rig"
 cost = 10
 
-[wargrear.filter_plugs]
+[weapons.wargear.filter_plugs]
 name = "Filter plugs"
 cost = 10
 
-[wargrear.acid_rounds]
+[weapons.wargear.acid_rounds]
 name = "Acid rounds (for shotgun)"
 cost = 15
 
-[wargrear.chem-synth]
+[weapons.wargear.chem-synth]
 name = "Chem-synth"
 cost = 15
 
-[wargrear.respirator]
+[weapons.wargear.respirator]
 name = "Respirator"
 cost = 15
 
-[wargrear.las-projector]
+[weapons.wargear.las-projector]
 name = "Las-projector"
 cost = 35
 
-[wargrear.photo_goggles]
+[weapons.wargear.photo_goggles]
 name = "Photo-goggles"
 cost = 35

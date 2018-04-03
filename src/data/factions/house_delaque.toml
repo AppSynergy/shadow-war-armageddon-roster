@@ -43,6 +43,12 @@ wargear = ["mesh_armour"]
 equip = ["armour", "basic", "close-combat", "pistols", "grendades", "wargear"]
 skills = ["agility", "combat", "cunning", "shooting"]
 
+[wargear.flak_armour]
+name = "Flak armour"
+
+[wargear.mesh_armour]
+name = "Mesh armour"
+
 [weapons.basic.autogun]
 name = "Autogun"
 cost = 15
@@ -143,14 +149,14 @@ cost = 30
 name = "Krak Grenades"
 cost = 45
 
-[wargrear.respirator]
+[weapons.wargear.respirator]
 name = "Respirator"
 cost = 15
 
-[wargrear.medicae-kit]
+[weapons.wargear.medicae-kit]
 name = "Medicae Kit"
 cost = 30
 
-[wargrear.photo-goggles]
+[weapons.wargear.photo-goggles]
 name = "Photo-goggles"
 cost = 35
