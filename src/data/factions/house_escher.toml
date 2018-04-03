@@ -13,7 +13,7 @@ cost = 115
 role = "Leader"
 stats = "5 3 3 3 3 2 2 3 5 6 6 7"
 wargear = ["flak_armour"]
-equip = ["armour", "basic", "close-combat", "pistols", "special", "heavy", "grendades", "wargear"]
+equip = ["armour", "basic", "close-combat", "pistols", "special", "heavy", "grenades", "wargear"]
 skills = ["agility", "combat", "cunning", "ferocity", "leadership"]
 
 [fighters.champion]
@@ -30,7 +30,7 @@ name = "Escher Juve"
 cost = 20
 role = "Juve"
 stats = "6 4 5 2 3 1 2 1 8 9 8 8"
-wargear = [""]
+wargear = []
 equip = ["close-combat", "pistols"] # not allowed weapons worth > 20 credits
 skills = ["agility", "combat", "cunning"]
 
@@ -96,23 +96,23 @@ name = "Photon flash flares"
 cost = 15
 
 [weapons.grenades.smoke]
-name = "Smoke Grenades"
+name = "Smoke grenades"
 cost = 15
 
 [weapons.grenades.frag]
-name = "Frag Grenades"
+name = "Frag grenades"
 cost = 30
 
 [weapons.grenades.scare]
-name = "Scare gas Grenades"
+name = "Scare gas grenades"
 cost = 40
 
 [weapons.grenades.choke]
-name = "Choke Gas Grenades"
+name = "Choke gas grenades"
 cost = 45
 
 [weapons.grenades.krak]
-name = "Krak Grenades"
+name = "Krak grenades"
 cost = 45
 
 [wargear.flak_armour]

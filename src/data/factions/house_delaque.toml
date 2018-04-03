@@ -13,16 +13,16 @@ cost = 105
 role = "Leader"
 stats = "5 3 3 3 3 2 4 3 6 6 5 6"
 wargear = ["flak_armour"]
-equip = ["armour", "basic", "close-combat", "pistols", "special", "heavy", "grendades", "wargear"]
+equip = ["armour", "basic", "close-combat", "pistols", "special", "heavy", "grenades", "wargear"]
 skills = ["agility", "cunning", "leadership", "shooting", "savant"]
 
 [fighters.champion]
 name = "Delaque Champion"
 cost = 95
 role = "Champion"
-stats = "5 3 3 3 3 2 43 7 6 6 6"
+stats = "5 3 3 3 3 2 4 3 7 6 6 6"
 wargear = ["mesh_armour"]
-equip = ["armour", "basic", "close-combat", "pistols", "special", "heavy", "grendades", "wargear"]
+equip = ["armour", "basic", "close-combat", "pistols", "special", "heavy", "grenades", "wargear"]
 skills = ["agility", "cunning", "leadership", "shooting", "savant"]
 
 [fighters.juve]
@@ -40,7 +40,7 @@ cost = 55
 role = "Ganger"
 stats = "5 4 4 3 3 1 4 1 7 7 6 7"
 wargear = ["mesh_armour"]
-equip = ["armour", "basic", "close-combat", "pistols", "grendades", "wargear"]
+equip = ["armour", "basic", "close-combat", "pistols", "grenades", "wargear"]
 skills = ["agility", "combat", "cunning", "shooting"]
 
 [wargear.flak_armour]
@@ -142,11 +142,11 @@ name = "Heavy stubber"
 cost = 130
 
 [weapons.grenades.frag]
-name = "Frag Grenades"
+name = "Frag grenades"
 cost = 30
 
 [weapons.grenades.krak]
-name = "Krak Grenades"
+name = "Krak grenades"
 cost = 45
 
 [weapons.wargear.respirator]

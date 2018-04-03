@@ -241,11 +241,9 @@
 
       weaponsAvailable: (fighter) ->
         _.chain @faction.weapons
-          .tap console.warn
           .tap @mapRoles
           # include weapons from groups the fighter can use
           .filter  (weapons, group) -> _.includes fighter.equip, group
-          .tap console.warn
           # collect into one list
           .reduce ((xs, x) -> _.extend xs, x ), {}
           .tap @mapKeys
