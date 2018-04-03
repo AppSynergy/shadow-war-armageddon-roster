@@ -1,11 +1,11 @@
 <template>
-  <nav class="navigation-vue navbar navbar-toggleable-sm navbar-inverse fixed-top bg-inverse">
+  <nav class="navigation-vue navbar navbar-expand-sm navbar-inverse fixed-top bg-dark text-white">
 
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <a href="#" class="navbar-brand">killteams.com</a>
+    <a href="#" class="navbar-brand text-white">killteams.com</a>
 
     <span class="navbar-text pt-2">
       <span class="text-white mr-4"><strong class="total-points-cost">{{ pointsCost }}</strong>&nbsp;{{ pluralize('point', pointsCost) }}</span><span class="text-white"><strong>{{ numberFighters }}</strong>&nbsp;{{ pluralize('model', numberFighters) }}</span>

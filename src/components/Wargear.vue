@@ -18,7 +18,7 @@
           </option>
         </select>
       </template> -
-      <em class="badge badge-info">{{ weapon.cost }} points</em>
+      <em class="badge badge-secondary">{{ weapon.cost }} points</em>
       <button class="btn btn-danger px-1 py-0"
         aria-label="Remove"
         v-on:click="removeWeapon(weapon, index)">

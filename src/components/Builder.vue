@@ -10,17 +10,17 @@
     </static-nav>
 
     <div class="card mt-4 team-background">
-      <div class="card-block">
+      <div class="card-body">
 
         <h2 class="faction-name my-4 text-center">{{ faction.name }}</h2>
 
         <div class="fighter-row row mb-4">
           <div class="col col-12 col-lg-6"
             v-for="fighter in faction.fighters" v-if="faction">
-            <div class="card available-fighter-card mb-2 bg-inverse text-white">
+            <div class="card available-fighter-card mb-2 bg-dark text-white">
 
               <div class="my-0">
-                <button class="btn btn-success align-top ml-1 mt-1"
+                <button class="btn btn-secondary align-top ml-1 mt-1"
                 :disabled="cannotAddFighter(fighter)"
                   v-on:click="addFighter(fighter)">Add</button>
                 <span class="d-inline-block mt-1">

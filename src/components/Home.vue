@@ -1,13 +1,13 @@
 <template>
   <div class="home-vue container">
 
-    <nav class="navigation-vue navbar navbar-toggleable-sm navbar-inverse fixed-top bg-inverse">
-      <a href="#" class="navbar-brand">killteams.com</a>
+    <nav class="navigation-vue navbar navbar-expand-sm navbar-inverse fixed-top bg-dark">
+      <a href="#" class="navbar-brand text-white">killteams.com</a>
       <span class="navbar-text text-white ml-4 pt-2">
         Shadow War: Armageddon Kill Teams
       </span>
-      <span class="ml-auto text-white">
-        <a target="_blank" :href="ghUrl">killteams.com on GitHub</a>
+      <span class="ml-auto">
+        <a target="_blank" class="text-white" :href="ghUrl">killteams.com on GitHub</a>
       </span>
     </nav>
 
@@ -43,7 +43,7 @@
               <h4 v-if="roster.teamName != ''" class="m-0">{{ roster.teamName }}</h4>
               <h4 v-else class="m-0">Unnamed {{ factions[roster.factionId].name }} Team</h4>
             </div>
-            <div class="card-block">
+            <div class="card-body">
               <p>{{ factions[roster.factionId].name }},
                 {{ roster.fighters.length }} fighters,
                 {{ roster.totalPointsCost }} points</p>

@@ -2,13 +2,13 @@
   <div class="fighter-vue">
     <div class="chosen-fighter-card card mb-4 fighter-background">
 
-      <div class="card-header bg-inverse text-white">
+      <div class="card-header bg-dark text-white">
 
           <span class="pr-4 mt-2 d-inline-block align-middle fighter-name"><strong>{{ fighter.name }}</strong></span>
           <span class="pr-4 mt-2 d-inline-block align-middle hidden-sm-down">{{ fighter.role}}</span>
           <span class="float-right">
             <em class="fighter-cost mr-4">{{ fighterCost() }} points</em>
-            <button class="btn btn-info px-1 py-0 duplicate-button"
+            <button class="btn btn-secondary px-1 py-0 duplicate-button"
               aria-label="Duplicate"
               title="Duplicate"
               v-on:click="duplicateFighter()">
@@ -24,7 +24,7 @@
 
       </div>
 
-      <div class="card-block">
+      <div class="card-body">
         <div class="row">
 
           <div class="col col-12 col-md-5 col-lg-4">
