@@ -13,7 +13,7 @@ cost = 145
 role = "Leader"
 stats = "4 3 3 4 4 2 3 3 5 4 8 7"
 wargear = ["furnace_plates"]
-equip = ["armour", "basic", "close-combat", "pistols", "special", "heavy", "grenades", "misc"]
+equip = ["armour", "basic", "close-combat", "pistols", "special", "heavy", "grenades", "wargear"]
 skills = ["brawn", "combat", "ferocity", "leadership", "shooting"] # Necromunda skill categories are "agility", "brawn", "combat", "cunning", "ferocity", "leadership", "shooting", "savant".
 
 [fighters.champion]
@@ -22,7 +22,7 @@ cost = 110
 role = "Champion"
 stats = "4 3 4 4 4 2 4 2 6 5 8 8"
 wargear = ["furnace_plates"]
-equip = ["armour", "basic", "close-combat", "pistols", "special", "heavy", "grenades", "misc"]
+equip = ["armour", "basic", "close-combat", "pistols", "special", "heavy", "grenades", "wargear"]
 skills = ["brawn", "combat", "ferocity", "leadership", "shooting"]
 
 [fighters.juve]
@@ -40,7 +40,7 @@ cost = 60
 role = "Ganger"
 stats = "4 4 4 4 4 1 4 1 8 5 9 8"
 wargear = ["furnace_plates"]
-equip = ["close-combat", "pistols", "special", "heavy", "ammunition", "grenades", "misc"]
+equip = ["close-combat", "pistols", "special", "heavy", "ammunition", "grenades", "wargear"]
 skills = ["combat", "ferocity", "guerilla", "shooting"]
 
 [wargear.furnace_plates]
@@ -102,14 +102,14 @@ cost = 30
 name = "Krak grenades"
 cost = 45
 
-[misc.respirator]
+[weapons.wargear.respirator]
 name = "Respirator"
 cost = 15
 
-[misc.stimm-slug]
+[weapons.wargear.stimm-slug]
 name = "Stimm-slug stash"
 cost = 30
 
-[misc.photo-goggles]
+[weapons.wargear.photo-goggles]
 name = "Photo-goggles"
 cost = 35
