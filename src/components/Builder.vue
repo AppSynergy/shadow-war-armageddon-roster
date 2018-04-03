@@ -274,7 +274,13 @@
               not _.isEmpty _.intersection(weapon.not_weapon_global, allWeaponKeys)
             else false
 
-            _.any [only_fighter, only_weapon, only_attaches, not_weapon, not_weapon_global]
+            # reject anything too expensive for Juves
+            juve_items = if "Juve" == fighter.role
+                currentCosts = _.reduce(fighter.weapons, ((xs, x) -> xs + x.cost), 0)
+                weapon.cost > 20 || weapon.cost + currentCosts > 20
+            else false
+
+            _.any [only_fighter, only_weapon, only_attaches, not_weapon, not_weapon_global, juve_items]
           .value()
 
   export default Roster

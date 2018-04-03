@@ -31,7 +31,7 @@ cost = 20
 role = "Juve"
 stats = "6 4 5 2 3 1 2 1 8 9 8 8"
 wargear = []
-equip = ["close-combat", "pistols"] # not allowed weapons worth > 20 credits
+equip = ["close-combat", "pistols"]
 skills = ["agility", "combat", "cunning"]
 
 [fighters.ganger]
