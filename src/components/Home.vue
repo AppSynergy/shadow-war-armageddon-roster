@@ -14,10 +14,16 @@
     <h2 class="my-4 py-4 text-center">Create a New Roster</h2>
 
     <div class="roster-new">
-      <p class="text-center">Choose your faction!</p>
+      <div class="text-center mb-3">Choose your faction!
+        <div class="form-check d-inline-block pl-5" v-for="game, gameId in games">
+          <input class="form-check-input" type="checkbox" :value="gameId"
+            v-model="gamesSelected" :id="'showGame_'+gameId">
+          <label class="form-check-label" :for="'showGame_'+gameId">{{ game }}</label>
+        </div>
+      </div>
       <div class="row">
         <div class="col col-12 col-sm-6 col-md-4 col-lg-3"
-          v-for="faction, factionId in factions">
+          v-for="faction, factionId in visibleFactions">
           <router-link v-if="faction.implemented"
             :to="'/build/'+factionId" class="text-white">
             <div class="card faction-card mb-3 p-3 text-center"
@@ -84,6 +90,10 @@
     mixins: [ Analytics, Storage ]
 
     data: () ->
+      games:
+        necromunda: 'Necromunda',
+        shadowWar: 'Shadow War: Armageddon'
+      gamesSelected: ['necromunda', 'shadowWar']
       modalId: 'deleteRosterModal'
       modalOptions: [
         {name: 'no', text: 'No thanks'}
@@ -95,6 +105,7 @@
 
     computed:
       factions: () -> Factions
+      visibleFactions: () -> _.pick @factions, (x) => _.contains @gamesSelected, x.game
       hasSavedRosters: () -> @savedRosters.length > 0
 
     created: () ->

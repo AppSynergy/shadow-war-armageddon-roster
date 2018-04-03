@@ -2,102 +2,118 @@
 name = 'House Escher'
 color = '#B7410E'
 implemented = true
-necromunda = true
+game = "necromunda"
 
 [house_goliath]
 name = 'House Goliath'
 color = '#B7410E'
 implemented = true
-necromunda = true
+game = "necromunda"
 
 [house_cawdor]
 name = 'House Cawdor'
 color = '#B7410E'
 implemented = true
-necromunda = true
+game = "necromunda"
 
 [house_delaque]
 name = 'House Delaque'
 color = '#B7410E'
 implemented = true
-necromunda = true
+game = "necromunda"
 
 [skitarii]
 name = "Skitarii"
 color = "#882222"
 implemented = true
+game = "shadowWar"
 
 [chaos]
 name = "Chaos"
 color = "#442244"
 implemented = true
+game = "shadowWar"
 
 [dark_eldar]
 name = "Dark Eldar"
 color = "#882288"
 implemented = true
+game = "shadowWar"
 
 [craftworlds]
 name = "Craftworlds"
 color = "#226688"
 implemented = true
+game = "shadowWar"
 
 [harlequins]
 name = "Harlequins"
 color = "#886644"
 implemented = true
+game = "shadowWar"
 
 [grey_knights]
 name = "Grey Knights"
 color = "#666666"
 implemented = true
+game = "shadowWar"
 
 [necrons]
 name = "Necrons"
 color = "#664444"
 implemented = true
+game = "shadowWar"
 
 [tau_empire]
 name = "Tau Empire"
 color = "#666644"
 implemented = true
+game = "shadowWar"
 
 [tyranids]
 name = "Tyranids"
 color = "#882244"
 implemented = true
+game = "shadowWar"
 
 [genestealer_cults]
 name = "Genestealer Cults"
 color = "#664488"
 implemented = true
+game = "shadowWar"
 
 [inquisition]
 name = "Inquisition"
 color = "#664466"
 implemented = true
+game = "shadowWar"
 
 [adepta_sororitas]
 name = "Adepta Sororitas"
 color = "#444444"
 implemented = true
+game = "shadowWar"
 
 [adeptus_astartes]
 name = "Adeptus Astartes"
 color = "#444488"
 implemented = true
+game = "shadowWar"
 
 [astra_militarum]
 name = "Astra Militarum"
 color = "#446644"
 implemented = true
+game = "shadowWar"
 
 [orks]
 name = "Orks"
 color = "#448844"
 implemented = true
+game = "shadowWar"
 
 [space_wolves]
 name = "Space Wolves"
 color = "#666688"
 implemented = true
+game = "shadowWar"
