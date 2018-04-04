@@ -5,7 +5,7 @@
       <div class="card-header bg-dark text-white">
 
           <span class="pr-4 mt-2 d-inline-block align-middle fighter-name"><strong>{{ fighter.name }}</strong></span>
-          <span class="pr-4 mt-2 d-inline-block align-middle hidden-sm-down">{{ fighter.role}}</span>
+          <span class="pr-4 mt-2 align-middle d-none d-md-inline-block">{{ fighter.role }} ( {{ fighter.cost }} points )</span>
           <span class="float-right">
             <em class="fighter-cost mr-4">{{ fighterCost() }} points</em>
             <button class="btn btn-secondary px-1 py-0 duplicate-button"

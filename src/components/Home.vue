@@ -3,10 +3,10 @@
 
     <nav class="navigation-vue navbar navbar-expand-sm navbar-inverse fixed-top bg-dark">
       <a href="#" class="navbar-brand text-white">killteams.com</a>
-      <span class="navbar-text text-white ml-4 pt-2">
+      <span class="navbar-text text-white ml-4 pt-2 d-none d-md-inline">
         Shadow War: Armageddon Kill Teams
       </span>
-      <span class="ml-auto">
+      <span class="ml-auto d-none d-md-inline">
         <a target="_blank" class="text-white" :href="ghUrl">killteams.com on GitHub</a>
       </span>
     </nav>
@@ -27,7 +27,7 @@
           <router-link v-if="faction.implemented"
             :to="'/build/'+factionId" class="text-white">
             <div class="card faction-card mb-3 p-3 text-center"
-              :style="{backgroundColor: faction.color}">
+              :style="{backgroundColor: faction.color}" >
               <h5 class="text-faction-color m-0 text-white">{{ faction.name }}</h5>
             </div>
           </router-link>
@@ -45,7 +45,7 @@
         <div class="col col-12 col-md-6 col-lg-4"
           v-for="roster in savedRosters">
           <div class="card mb-3 saved-roster-card">
-            <div class="card-header">
+            <div class="card-header text-white" :style="{backgroundColor: getColor(roster)}">
               <h4 v-if="roster.teamName != ''" class="m-0">{{ roster.teamName }}</h4>
               <h4 v-else class="m-0">Unnamed {{ factions[roster.factionId].name }} Team</h4>
             </div>
@@ -54,9 +54,9 @@
                 {{ roster.fighters.length }} fighters,
                 {{ roster.totalPointsCost }} points</p>
               <div class="btn-group">
-                <button class="btn btn-primary"
+                <button class="btn btn-secondary"
                   v-on:click="loadRoster(roster)">Load</button>
-                <button class="btn btn-danger"
+                <button class="btn btn-dark"
                   v-on:click="deleteRoster(roster)">Delete</button>
               </div>
             </div>
@@ -116,6 +116,9 @@
         vm.track '/'
 
     methods:
+
+      getColor: (roster) ->
+        @factions[roster.factionId].color
 
       loadRoster: (roster) ->
         @event 'load_roster', roster.factionId

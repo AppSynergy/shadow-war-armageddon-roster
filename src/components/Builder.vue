@@ -27,10 +27,10 @@
                   <div class="pl-2">{{ fighter.name }}</div>
                   <div class="pl-2 up-a-bit"><small>
                     <span>{{ fighter.role }}</span>
-                    <span class="hidden-md-up">( {{ fighter.cost }} points )</span>
+                    <span class="d-md-none">( {{ fighter.cost }} points )</span>
                   </small></div>
                 </span>
-                <span class="hidden-sm-down float-right mt-1 mr-4">{{ fighter.cost }} points</span>
+                <span class="d-none d-md-inline float-right mt-1 mr-4">{{ fighter.cost }} points</span>
               </div>
 
             </div>

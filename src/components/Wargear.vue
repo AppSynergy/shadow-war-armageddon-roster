@@ -19,10 +19,10 @@
         </select>
       </template> -
       <em class="badge badge-secondary">{{ weapon.cost }} points</em>
-      <button class="btn btn-danger px-1 py-0"
+      <button class="btn btn-danger badge text-center"
         aria-label="Remove"
         v-on:click="removeWeapon(weapon, index)">
-        <i class="fa fa-times">&times;</i>
+        <i class="fa fa-times" style="left: -1px; position: relative">&times;</i>
       </button>
     </div>
 
