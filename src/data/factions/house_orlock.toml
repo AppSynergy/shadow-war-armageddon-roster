@@ -43,6 +43,12 @@ wargear = ["flak_armour"]
 equip = ["basic", "close-combat", "pistols", "wargear", "grenades"] # only 1 special weapon at gang creation
 skills = ["brawn", "ferocity", "shooting", "savant"] # specialist
 
+[wargear.mesh_armour]
+name = "Mesh armour"
+
+[wargear.flak_armour]
+name = "Flak armour"
+
 [weapons.basic.sawn-off_shotgun]
 name = "Sawn-off shotgun"
 cost = 10

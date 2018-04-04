@@ -22,6 +22,12 @@ color = '#B7410E'
 implemented = true
 game = "necromunda"
 
+[house_orlock]
+name = 'House Orlock'
+color = '#B7410E'
+implemented = true
+game = "necromunda"
+
 [skitarii]
 name = "Skitarii"
 color = "#882222"
