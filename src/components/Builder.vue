@@ -275,12 +275,20 @@
             else false
 
             # reject anything too expensive for Juves
-            juve_items = if "Juve" == fighter.role
-                currentCosts = _.reduce(fighter.weapons, ((xs, x) -> xs + x.cost), 0)
-                weapon.cost > 20 || weapon.cost + currentCosts > 20
+            juve_items = if 'Juve' == fighter.role
+              currentCosts = _.reduce(fighter.weapons, ((xs, x) -> xs + x.cost), 0)
+              weapon.cost > 20 || weapon.cost + currentCosts > 20
             else false
 
-            _.any [only_fighter, only_weapon, only_attaches, not_weapon, not_weapon_global, juve_items]
+            # reject weapons past encumbrance limit for Necromunda
+            nec_three_limit = if 'necromunda' == @gameId
+              weight = (x) -> if _.has x, 'unwieldy' then 2 else 1
+              encumbrance = _.reduce fighter.weapons, ((xs, x) -> xs + weight(x)), 0
+              weight(weapon) + encumbrance > 3
+            else false
+
+            # might need optimizing at some point...
+            _.any [only_fighter, only_weapon, only_attaches, not_weapon, not_weapon_global, juve_items, nec_three_limit]
           .value()
 
   export default Roster

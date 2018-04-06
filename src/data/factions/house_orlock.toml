@@ -73,7 +73,6 @@ cost = 10
 name = "Servo claw"
 cost = 30
 
-
 [weapons.pistols.stub_gun]
 name = "Stub gun"
 cost = 5
@@ -89,6 +88,7 @@ cost = 110
 [weapons.heavy.heavy_stubber]
 name = "Heavy stubber"
 cost = 110
+unwieldy = true
 
 [weapons.grenades.frag]
 name = "Frag grenades"

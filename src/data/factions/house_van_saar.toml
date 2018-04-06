@@ -85,6 +85,7 @@ cost = 20
 [weapons.close-combat.two-handed_weapon]
 name = "Two-handed weapon"
 cost = 20
+unwieldy = true
 
 [weapons.close-combat.sword]
 name = "Sword"
@@ -137,6 +138,7 @@ cost = 135
 [weapons.heavy.heavy_stubber]
 name = "Heavy stubber"
 cost = 110
+unwieldy = true
 
 [weapons.grenades.frag]
 name = "Frag grenades"
