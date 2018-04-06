@@ -1,30 +1,36 @@
 [house_escher]
 name = 'House Escher'
-color = '#B7410E'
+color = '#882244'
 implemented = true
 game = "necromunda"
 
 [house_goliath]
 name = 'House Goliath'
-color = '#B7410E'
+color = '#882222'
 implemented = true
 game = "necromunda"
 
 [house_cawdor]
 name = 'House Cawdor'
-color = '#B7410E'
+color = '#664466'
 implemented = true
 game = "necromunda"
 
 [house_delaque]
 name = 'House Delaque'
-color = '#B7410E'
+color = '#666644'
 implemented = true
 game = "necromunda"
 
 [house_orlock]
 name = 'House Orlock'
-color = '#B7410E'
+color = '#444488'
+implemented = true
+game = "necromunda"
+
+[house_van_saar]
+name = 'House Van Saar'
+color = '#226666'
 implemented = true
 game = "necromunda"
 

@@ -123,7 +123,6 @@
         {name: 'discard', text: 'No thanks'}
         {name: 'save', text: 'Yes please'}
       ]
-      chosenFaction: null
       discardAction: () -> null
       notifications: []
 

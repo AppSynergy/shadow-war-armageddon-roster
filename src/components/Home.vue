@@ -21,22 +21,25 @@
           <label class="form-check-label" :for="'showGame_'+gameId">{{ game }}</label>
         </div>
       </div>
-      <div class="row">
-        <div class="col col-12 col-sm-6 col-md-4 col-lg-3"
-          v-for="faction, factionId in visibleFactions">
-          <router-link v-if="faction.implemented"
-            :to="'/build/'+factionId" class="text-white">
-            <div class="card faction-card mb-3 p-3 text-center"
-              :style="{backgroundColor: faction.color}" >
-              <h5 class="text-faction-color m-0 text-white">{{ faction.name }}</h5>
+      <template v-for="gameFactions, gameId in visibleFactions">
+        <h2 class="text-center my-4 py-2">{{ games[gameId] }}</h2>
+        <div class="row">
+          <div class="col col-12 col-sm-6 col-md-4 col-lg-3"
+            v-for="faction, factionId in gameFactions">
+            <router-link v-if="faction.implemented"
+              :to="'/build/'+factionId" class="text-white">
+              <div class="card faction-card mb-3 p-3 text-center"
+                :style="{backgroundColor: faction.color}" >
+                <h5 class="text-faction-color m-0 text-white">{{ faction.name }}</h5>
+              </div>
+            </router-link>
+            <div v-else class="card mb-3 p-3 text-center">
+              <h5 class="text-faction-color m-0">{{ faction.name }}</h5>
+              <span>coming soon</span>
             </div>
-          </router-link>
-          <div v-else class="card mb-3 p-3 text-center">
-            <h5 class="text-faction-color m-0">{{ faction.name }}</h5>
-            <span>coming soon</span>
           </div>
         </div>
-      </div>
+      </template>
     </div>
 
     <div class="roster-load" v-if="hasSavedRosters">
@@ -105,8 +108,12 @@
 
     computed:
       factions: () -> Factions
-      visibleFactions: () -> _.pick @factions, (x) => _.contains @gamesSelected, x.game
       hasSavedRosters: () -> @savedRosters.length > 0
+
+      visibleFactions: () ->
+        groups = _.object(@gamesSelected, @gamesSelected)
+        _.mapObject groups, (game) =>
+          _.pick @factions, (x) => game == x.game
 
     created: () ->
       @savedRosters = @$localStorage.get 'rosters'
