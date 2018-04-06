@@ -3,7 +3,7 @@ import Vue from 'vue'
 describe 'the tau roster', () ->
 
   it 'links to a faction roster', (done) ->
-    @vm.$router.push 'build/tau_empire'
+    @vm.$router.push 'build/shadowWar/tau_empire'
     Vue.nextTick () =>
       expect(@words('h2')).toBe 'Tau Pathfinder Kill Team'
       done()

@@ -3,7 +3,7 @@ import Vue from 'vue'
 describe 'the chaos roster', () ->
 
   it 'links to a faction roster', (done) ->
-    @vm.$router.push 'build/chaos'
+    @vm.$router.push 'build/shadowWar/chaos'
     Vue.nextTick () =>
       expect(@words('h2')).toBe 'Chaos Space Marine Kill Team'
       done()

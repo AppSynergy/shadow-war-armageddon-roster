@@ -3,7 +3,7 @@ import Vue from 'vue'
 describe 'the inquisition roster', () ->
 
   it 'links to a faction roster', (done) ->
-    @vm.$router.push 'build/inquisition'
+    @vm.$router.push 'build/shadowWar/inquisition'
     Vue.nextTick () =>
       expect(@words('h2')).toBe 'Inquisition Kill Team'
       done()

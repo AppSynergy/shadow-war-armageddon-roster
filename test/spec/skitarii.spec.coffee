@@ -10,12 +10,13 @@ describe 'basic roster operations', () ->
 
   it 'loads factions', () ->
     factions = @all '.roster-new .card'
-    expect(factions.length).toBe 16
-    expect(factions[0].textContent).toBe 'Skitarii'
-    expect(factions[9].textContent).toBe 'Genestealer Cults'
+    expect(factions.length).toBe 22
+    expect(factions[0].textContent).toBe 'House Escher'
+    expect(factions[6].textContent).toBe 'Skitarii'
+    expect(factions[15].textContent).toBe 'Genestealer Cults'
 
   it 'links to a faction roster', (done) ->
-    @vm.$router.push 'build/skitarii'
+    @vm.$router.push 'build/shadowWar/skitarii'
     Vue.nextTick () =>
       expect(@words('h2')).toBe 'Skitarii Ranger Kill Team'
       expect(@all('.available-fighter-card').length).toBe 4

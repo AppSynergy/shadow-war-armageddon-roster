@@ -3,7 +3,7 @@ import Vue from 'vue'
 describe 'the craftworlds roster', () ->
 
   it 'links to a faction roster', (done) ->
-    @vm.$router.push 'build/craftworlds'
+    @vm.$router.push 'build/shadowWar/craftworlds'
     Vue.nextTick () =>
       expect(@words('h2')).toBe 'Craftworld Eldar Kill Team'
       done()

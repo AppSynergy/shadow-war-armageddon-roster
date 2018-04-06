@@ -3,7 +3,7 @@ import Vue from 'vue'
 describe 'the imperial guard roster', () ->
 
   it 'links to a faction roster', (done) ->
-    @vm.$router.push 'build/astra_militarum'
+    @vm.$router.push 'build/shadowWar/astra_militarum'
     Vue.nextTick () =>
       expect(@words('h2')).toBe 'Astra Militarum Kill Team'
       done()

@@ -3,7 +3,7 @@ import Vue from 'vue'
 describe 'the sisters of battle roster', () ->
 
   it 'links to a faction roster', (done) ->
-    @vm.$router.push 'build/adepta_sororitas'
+    @vm.$router.push 'build/shadowWar/adepta_sororitas'
     Vue.nextTick () =>
       expect(@words('h2')).toBe 'Adepta Sororitas Kill Team'
       done()

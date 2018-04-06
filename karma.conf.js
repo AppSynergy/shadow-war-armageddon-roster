@@ -9,7 +9,7 @@ module.exports = function (config) {
     browsers: ['PhantomJS'],
     frameworks: ['jasmine'],
     files: ['test/index.js'],
-    //reporters: ['spec'],
+    reporters: ['progress'],
     preprocessors: {
       'test/index.js': ['webpack']
     },
