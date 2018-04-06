@@ -1,0 +1,180 @@
+key = "house_genestealer"
+name = "Genestealer Cult Gang"
+
+[size]
+min = 2 # min 1 leader, 1 neophyte_hybrid, neophyte_hybrid's must make up 50%+ of gang.
+max = 10
+leader_max = 1
+specialist_max = 4 # max two hybrid_acolyte (plus one for every full 10 rep), max two aberrant.
+
+[fighters.cult_adept]
+name = "Cult Adept"
+role = "Adept"
+cost = 120
+stats = "4 3 3 3 3 2 3 2 3 5 5 4"
+wargear = []
+equip = ["adept_weapons", "hand-to-hand", "pistols", "grenades", "wargear"]
+skills = ["agility", "combat", "cunning", "ferocity", "leadership"] # adepts start with one "Adept Ability"
+
+[fighters.hybrid_acolyte]
+name = "Hybrid Acolyte"
+role = "Specialist"
+cost = 85 # max of two, plus an additional one for every full 10 rep.
+stats = "4 3 3 4 3 1 3 1 4 5 7 6"
+wargear = ["hazard_suit"]
+equip = ["acolyte_weapons", "hand-to-hand", "pistols", "grenades", "wargear"]
+skills = ["agility", "combat", "cunning", "ferocity"]
+
+[fighters.aberrant]
+name = "Aaberrant"
+role = "Specialist"
+cost = 90 # max of two 
+stats = "4 3 6 5 4 2 5 2 9 4 6 10"
+wargear = []
+equip = ["aberrant_weapons", "wargear"]
+skills = [] # fighter starts with "unstoppable" skill, but cannot gain additional skills
+
+[fighters.neophyte_hybrid]
+name = "Neophyte Hybrid"
+role = "Acolyte"
+cost = 45
+stats = "4 4 4 3 3 1 4 1 7 5 6 8"
+wargear = ["hazard_suit"]
+equip =  ["basic", "hand-to-hand", "pistols", "grenades", "wargear"]
+skills = ["agility", "combat", "cunning", "ferocity", "leadership"]
+
+[weapons.basic.autogun]
+name = "Autogun"
+cost = 15
+
+[weapons.basic.lasgun]
+name = "Lasgun"
+cost = 15
+
+[weapons.basic.shotgun]
+name = "Shotgun (with solid and scatter ammo)"
+cost = 30
+
+[weapons.close-combat.fighting_knife]
+name = "Fighting knife"
+cost = 15
+
+[weapons.close-combat.chainsword]
+name = "Chainsword"
+cost = 25
+
+[weapons.close-combat.power_maul]
+name = "Power maul"
+cost = 30
+
+[weapons.pistols.autopistol]
+name = "Autopistol"
+cost = 10
+
+[weapons.pistols.laspistol]
+name = "Laspistol"
+cost = 10
+
+[weapons.pistols.hand_flamer]
+name = "Hand flamer"
+cost = 50
+
+[weapons.special.grenade_launcher]
+name = "Grenade launcher (with frag and krag grenades)"
+cost = 55
+
+[weapons.special.flamer]
+name = "Flamer"
+cost = 100
+
+[weapons.special.webber]
+name = "Webber"
+cost = 125
+
+[weapons.heavy.mining_laser]
+name = "Mining Laser"
+cost = 125
+
+[weapons.heavy.seismic_cannon]
+name = "Seismic cannon"
+cost = 140
+
+[weapons.heavy.heavy_stubber]
+name = "Heavy stubber"
+cost = 145
+
+[weapons.acolyte.heavy_rock_drill]
+name = "Heavy rock drill"
+cost = 90
+
+[weapons.acolyte.heavy_rock_saw]
+name = "Heavy rock saw"
+cost = 120
+
+[weapons.acolyte.heavy_rock_cutter]
+name = "Heavy rock cutter"
+cost = 135
+
+[weapons.adept.toxin_injector_claw]
+name = "Toxin injector claw"
+cost = 20
+
+[weapons.adept.lash_whip]
+name = "Lash whip"
+cost = 20
+
+[weapons.adept.staff_of_office]
+name = "Staff of office"
+cost = 25
+
+[weapons.adept.bonesword]
+name = "Bonesword"
+cost = 30
+
+[weapons.adept.needle_pistol]
+name = "Needle pistol"
+cost = 40
+
+[weapons.aberrant.power_pick]
+name = "Power pick"
+cost = 40
+
+[weapons.grenades.power_hammer]
+name = "Power hammer"
+cost = 45
+
+[weapons.grenades.blasting_charge]
+name = "Blasting charge"
+cost = 35
+
+[weapons.grenades.frag]
+name = "Frag grenades"
+cost = 30
+
+[weapons.grenades.demolition_charge]
+name = "Demolition charge"
+cost = 50
+
+
+[weapons.wargear.hazard_suit]
+name = "Hazard suit"
+cost = 10
+
+[weapons.wargear.respirator]
+name = "Respirator"
+cost = 15
+
+[weapons.wargear.photo_goggles]
+name = "Photo-goggles"
+cost = 35
+
+[weapons.wargear.cult_icon]
+name = "Cult icon" #  max one per gang
+cost = 40
+
+[weapons.wargear.extra_arm]
+name = "Extra arm"
+cost = 50
+
+
+
