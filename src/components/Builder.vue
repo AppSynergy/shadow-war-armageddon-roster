@@ -110,7 +110,7 @@
 
   Roster =
 
-    props: ['factionId']
+    props: ['factionId', 'gameId']
 
     components: { Draggable, Fighter, Modal, StaticNav }
 
@@ -199,6 +199,7 @@
           @saveRosterLocal
             fighters: @chosenFighters
             factionId: @factionId
+            gameId: @gameId
             teamName: @teamName
           @cycleNotification { id: 'save', desc: 'Roster saved.', type: 'success' }
           return true

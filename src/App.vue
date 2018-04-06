@@ -29,7 +29,7 @@
     created: () ->
       @$router.addRoutes [
         { path: '/', component: Home, name: 'home' }
-        { path: '/build/:factionId', component: Builder, props: true, name: 'build' }
+        { path: '/build/:gameId/:factionId', component: Builder, props: true, name: 'build' }
         { path: '/roster-view/:factionId', component: RosterView, props: true }
         { path: '/simple-view/:factionId', component: SimpleView, props: true }
       ]

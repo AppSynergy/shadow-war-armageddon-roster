@@ -27,7 +27,7 @@
           <div class="col col-12 col-sm-6 col-md-4 col-lg-3"
             v-for="faction, factionId in gameFactions">
             <router-link v-if="faction.implemented"
-              :to="'/build/'+factionId" class="text-white">
+              :to="'/build/'+gameId+'/'+factionId" class="text-white">
               <div class="card faction-card mb-3 p-3 text-center"
                 :style="{backgroundColor: faction.color}" >
                 <h5 class="text-faction-color m-0 text-white">{{ faction.name }}</h5>
@@ -129,7 +129,8 @@
 
       loadRoster: (roster) ->
         @event 'load_roster', roster.factionId
-        @$router.push('/build/' + roster.factionId)
+        gameId = if roster.gameId then roster.gameId else 'shadowWar'
+        @$router.push('/build/' + gameId + '/' + roster.factionId)
         @$store.commit 'loadRoster', roster
 
       deleteRoster: (roster) ->
