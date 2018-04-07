@@ -1,0 +1,129 @@
+key = "house_chaos"
+name = "Chaos Cult Gang"
+
+[size]
+min = 2
+max = 10
+leader_max = 1
+specialist_max = 3
+
+[fighters.leader]
+name = "Cult Demagogue"
+cost = 100
+role = "Leader"
+stats = "5 3 3 3 3 2 3 2 6 5 6 7"
+wargear = [""]
+equip = ["basic", "close-combat", "pistols", "grenades", "wargear"]
+skills = ["combat", "cunning", "ferocity", "leadership", "savant"] # starts with the "Cult Leader" skill.
+
+[fighters.champion]
+name = "Cult Disciples"
+cost = 60
+role = "Champion"
+stats = "5 4 3 3 3 2 4 1 7 6 8 8"
+wargear = []
+equip = ["armour", "basic", "close-combat", "pistols", "special", "heavy", "grenades", "wargear"]
+skills = ["combat", "cunning", "ferocity", "leadership", "savant"] # select a primary skill at creation (these skills are split between primary/secondary in 'munda, but no such seperation exists in this app yet?).
+
+[fighters.champion]
+name = "Cult Witch"
+cost = 70
+role = "Champion" # maximum of one (witch) per gang.
+stats = "5 5 5 3 3 2 4 1 8 7 6 6"
+wargear = []
+equip = ["close-combat", "pistols", "grenades", "wargear"]
+skills = ["combat", "cunning", "ferocity", "savant"]
+
+[fighters.juve]
+name = "Helot Cultist"
+cost = 35
+role = "Juve"
+stats = "5 4 4 3 3 1 3 1 9 7 7 8"
+wargear = []
+equip = ["basic", "close-combat", "pistols", "grenades", "wargear"]
+skills = ["combat", "cunning", "ferocity", "savant"]
+
+[fighters.ganger]
+name = "Orlock Ganger"
+cost = 55
+role = "Ganger"
+stats = "5 4 4 3 3 1 4 1 6 7 7 7"
+wargear = ["flak_armour"]
+
+equip = ["basic", "close-combat", "pistols", "wargear", "grenades"] # only 1 special weapon at gang creation
+skills = ["brawn", "ferocity", "shooting", "savant"] # specialist
+
+[wargear.mesh_armour]
+name = "Mesh armour"
+
+[wargear.flak_armour]
+name = "Flak armour"
+
+[weapons.basic.sawn-off_shotgun]
+name = "Sawn-off shotgun"
+cost = 10
+
+[weapons.basic.autogun]
+name = "Autogun"
+cost = 15
+
+[weapons.basic.shotgun]
+name = "Shotgun (with solid and scatter ammo)"
+cost = 30
+
+[weapons.basic.combat_shotgun]
+name = "Combat shotgun (with salvo and shredder ammo)"
+cost = 60
+
+[weapons.close-combat.fighting_knife]
+name = "Fighting knife"
+cost = 10
+
+[weapons.close-combat.stiletto_knife]
+name = "Servo claw"
+cost = 30
+
+[weapons.pistols.stub_gun]
+name = "Stub gun"
+cost = 5
+
+[weapons.pistols.autopistol]
+name = "Autopistol"
+cost = 10
+
+[weapons.heavy.harpoon_launcher]
+name = "Harpoon launcher"
+cost = 110
+
+[weapons.heavy.heavy_stubber]
+name = "Heavy stubber"
+cost = 110
+unwieldy = true
+
+[weapons.grenades.frag]
+name = "Frag grenades"
+cost = 30
+
+[weapons.grenades.krak]
+name = "Krak grenades"
+cost = 45
+
+[weapons.grenades.blasting_charge]
+name = "Blasting charge"
+cost = 45
+
+[weapons.wargear.filter_plugs]
+name = "Filter plugs"
+cost = 10
+
+[weapons.wargear.strip_kit]
+name = "Strip kit"
+cost = 10
+
+[weapons.wargear.respirator]
+name = "Respirator"
+cost = 15
+
+[weapons.wargear.photo_goggles]
+name = "Photo-goggles"
+cost = 30
