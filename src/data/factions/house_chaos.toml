@@ -5,7 +5,7 @@ name = "Chaos Cult Gang"
 min = 2
 max = 10
 leader_max = 1
-specialist_max = 3
+specialist_max = 2
 
 [fighters.leader]
 name = "Cult Demagogue"
@@ -43,24 +43,8 @@ wargear = []
 equip = ["basic", "close-combat", "pistols", "grenades", "wargear"]
 skills = ["combat", "cunning", "ferocity", "savant"]
 
-[fighters.ganger]
-name = "Orlock Ganger"
-cost = 55
-role = "Ganger"
-stats = "5 4 4 3 3 1 4 1 6 7 7 7"
-wargear = ["flak_armour"]
-
-equip = ["basic", "close-combat", "pistols", "wargear", "grenades"] # only 1 special weapon at gang creation
-skills = ["brawn", "ferocity", "shooting", "savant"] # specialist
-
-[wargear.mesh_armour]
-name = "Mesh armour"
-
-[wargear.flak_armour]
-name = "Flak armour"
-
-[weapons.basic.sawn-off_shotgun]
-name = "Sawn-off shotgun"
+[weapons.pistols.autopistol]
+name = "Autopistol"
 cost = 10
 
 [weapons.basic.autogun]
@@ -71,34 +55,46 @@ cost = 15
 name = "Shotgun (with solid and scatter ammo)"
 cost = 30
 
-[weapons.basic.combat_shotgun]
-name = "Combat shotgun (with salvo and shredder ammo)"
-cost = 60
+[weapons.close-combat.axe]
+name = "Axe"
+cost = 15
 
 [weapons.close-combat.fighting_knife]
 name = "Fighting knife"
-cost = 10
+cost = 15
 
-[weapons.close-combat.stiletto_knife]
-name = "Servo claw"
-cost = 30
+[weapons.close-combat.flail]
+name = "Flail"
+cost = 20
 
-[weapons.pistols.stub_gun]
-name = "Stub gun"
-cost = 5
+[weapons.close-combat.sword]
+name = "Sword"
+cost = 20
 
-[weapons.pistols.autopistol]
-name = "Autopistol"
-cost = 10
+[weapons.close-combat.club]
+name = "Club"
+cost = 25
 
-[weapons.heavy.harpoon_launcher]
-name = "Harpoon launcher"
-cost = 110
+[weapons.close-combat.maul]
+name = "Maul"
+cost = 25
+
+[weapons.close-combat.hammer]
+name = "Hammer"
+cost = 25
+
+[weapons.close-combat.flensing_claw]
+name = "Flensing claw"
+cost = 35
 
 [weapons.heavy.heavy_stubber]
 name = "Heavy stubber"
-cost = 110
+cost = 130
 unwieldy = true
+
+[weapons.heavy.heavy_flamer]
+name = "Heavy flamer"
+cost = 195
 
 [weapons.grenades.frag]
 name = "Frag grenades"
@@ -108,16 +104,12 @@ cost = 30
 name = "Krak grenades"
 cost = 45
 
-[weapons.grenades.blasting_charge]
-name = "Blasting charge"
-cost = 45
-
-[weapons.wargear.filter_plugs]
-name = "Filter plugs"
-cost = 10
-
 [weapons.wargear.strip_kit]
 name = "Strip kit"
+cost = 10
+
+[weapons.wargear.flak_armour]
+name = "Flak armour"
 cost = 10
 
 [weapons.wargear.respirator]
@@ -126,4 +118,4 @@ cost = 15
 
 [weapons.wargear.photo_goggles]
 name = "Photo-goggles"
-cost = 30
+cost = 35
