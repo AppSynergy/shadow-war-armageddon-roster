@@ -9,7 +9,7 @@ specialist_max = 4 # max two hybrid_acolyte (plus one for every full 10 rep), ma
 
 [fighters.cult_adept]
 name = "Cult Adept"
-role = "Adept"
+role = "Leader"
 cost = 120
 stats = "4 3 3 3 3 2 3 2 3 5 5 4"
 wargear = []
@@ -26,9 +26,9 @@ equip = ["acolyte_weapons", "hand-to-hand", "pistols", "grenades", "wargear"]
 skills = ["agility", "combat", "cunning", "ferocity"]
 
 [fighters.aberrant]
-name = "Aaberrant"
+name = "Aberrant"
 role = "Specialist"
-cost = 90 # max of two 
+cost = 90 # max of two
 stats = "4 3 6 5 4 2 5 2 9 4 6 10"
 wargear = []
 equip = ["aberrant_weapons", "wargear"]
@@ -42,6 +42,9 @@ stats = "4 4 4 3 3 1 4 1 7 5 6 8"
 wargear = ["hazard_suit"]
 equip =  ["basic", "hand-to-hand", "pistols", "grenades", "wargear"]
 skills = ["agility", "combat", "cunning", "ferocity", "leadership"]
+
+[wargear.hazard_suit]
+name = "Hazard Suit"
 
 [weapons.basic.autogun]
 name = "Autogun"
@@ -155,7 +158,6 @@ cost = 30
 name = "Demolition charge"
 cost = 50
 
-
 [weapons.wargear.hazard_suit]
 name = "Hazard suit"
 cost = 10
@@ -175,6 +177,3 @@ cost = 40
 [weapons.wargear.extra_arm]
 name = "Extra arm"
 cost = 50
-
-
-

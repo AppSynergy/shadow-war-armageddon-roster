@@ -34,6 +34,18 @@ color = '#226666'
 implemented = true
 game = "necromunda"
 
+[house_chaos]
+name = "Chaos Cult Gang"
+color = "#442244"
+implemented = false
+game = "necromunda"
+
+[house_genestealer]
+name = "Genestealer Gang"
+color = "#664488"
+implemented = true
+game = "necromunda"
+
 [skitarii]
 name = "Skitarii"
 color = "#882222"
