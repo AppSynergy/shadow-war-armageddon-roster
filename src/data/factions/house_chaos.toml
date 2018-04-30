@@ -1,0 +1,121 @@
+key = "house_chaos"
+name = "Chaos Cult Gang"
+
+[size]
+min = 2
+max = 10
+leader_max = 1
+specialist_max = 2
+
+[fighters.leader]
+name = "Cult Demagogue"
+cost = 100
+role = "Leader"
+stats = "5 3 3 3 3 2 3 2 6 5 6 7"
+wargear = [""]
+equip = ["basic", "close-combat", "pistols", "grenades", "wargear"]
+skills = ["combat", "cunning", "ferocity", "leadership", "savant"] # starts with the "Cult Leader" skill.
+
+[fighters.champion]
+name = "Cult Disciples"
+cost = 60
+role = "Champion"
+stats = "5 4 3 3 3 2 4 1 7 6 8 8"
+wargear = []
+equip = ["armour", "basic", "close-combat", "pistols", "special", "heavy", "grenades", "wargear"]
+skills = ["combat", "cunning", "ferocity", "leadership", "savant"] # select a primary skill at creation (these skills are split between primary/secondary in 'munda, but no such seperation exists in this app yet?).
+
+[fighters.champion]
+name = "Cult Witch"
+cost = 70
+role = "Champion" # maximum of one (witch) per gang.
+stats = "5 5 5 3 3 2 4 1 8 7 6 6"
+wargear = []
+equip = ["close-combat", "pistols", "grenades", "wargear"]
+skills = ["combat", "cunning", "ferocity", "savant"]
+
+[fighters.juve]
+name = "Helot Cultist"
+cost = 35
+role = "Juve"
+stats = "5 4 4 3 3 1 3 1 9 7 7 8"
+wargear = []
+equip = ["basic", "close-combat", "pistols", "grenades", "wargear"]
+skills = ["combat", "cunning", "ferocity", "savant"]
+
+[weapons.pistols.autopistol]
+name = "Autopistol"
+cost = 10
+
+[weapons.basic.autogun]
+name = "Autogun"
+cost = 15
+
+[weapons.basic.shotgun]
+name = "Shotgun (with solid and scatter ammo)"
+cost = 30
+
+[weapons.close-combat.axe]
+name = "Axe"
+cost = 15
+
+[weapons.close-combat.fighting_knife]
+name = "Fighting knife"
+cost = 15
+
+[weapons.close-combat.flail]
+name = "Flail"
+cost = 20
+
+[weapons.close-combat.sword]
+name = "Sword"
+cost = 20
+
+[weapons.close-combat.club]
+name = "Club"
+cost = 25
+
+[weapons.close-combat.maul]
+name = "Maul"
+cost = 25
+
+[weapons.close-combat.hammer]
+name = "Hammer"
+cost = 25
+
+[weapons.close-combat.flensing_claw]
+name = "Flensing claw"
+cost = 35
+
+[weapons.heavy.heavy_stubber]
+name = "Heavy stubber"
+cost = 130
+unwieldy = true
+
+[weapons.heavy.heavy_flamer]
+name = "Heavy flamer"
+cost = 195
+
+[weapons.grenades.frag]
+name = "Frag grenades"
+cost = 30
+
+[weapons.grenades.krak]
+name = "Krak grenades"
+cost = 45
+
+[weapons.wargear.strip_kit]
+name = "Strip kit"
+cost = 10
+
+[weapons.wargear.flak_armour]
+name = "Flak armour"
+cost = 10
+
+[weapons.wargear.respirator]
+name = "Respirator"
+cost = 15
+
+[weapons.wargear.photo_goggles]
+name = "Photo-goggles"
+cost = 35
