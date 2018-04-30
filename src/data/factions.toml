@@ -37,7 +37,7 @@ game = "necromunda"
 [house_chaos]
 name = "Chaos Cult Gang"
 color = "#442244"
-implemented = false
+implemented = true
 game = "necromunda"
 
 [house_genestealer]

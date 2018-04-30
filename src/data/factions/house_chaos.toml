@@ -12,7 +12,7 @@ name = "Cult Demagogue"
 cost = 100
 role = "Leader"
 stats = "5 3 3 3 3 2 3 2 6 5 6 7"
-wargear = [""]
+wargear = []
 equip = ["basic", "close-combat", "pistols", "grenades", "wargear"]
 skills = ["combat", "cunning", "ferocity", "leadership", "savant"] # starts with the "Cult Leader" skill.
 
@@ -25,7 +25,7 @@ wargear = []
 equip = ["armour", "basic", "close-combat", "pistols", "special", "heavy", "grenades", "wargear"]
 skills = ["combat", "cunning", "ferocity", "leadership", "savant"] # select a primary skill at creation (these skills are split between primary/secondary in 'munda, but no such seperation exists in this app yet?).
 
-[fighters.champion]
+[fighters.champion2]
 name = "Cult Witch"
 cost = 70
 role = "Champion" # maximum of one (witch) per gang.
