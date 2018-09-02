@@ -10,10 +10,10 @@ describe 'basic roster operations', () ->
 
   it 'loads factions', () ->
     factions = @all '.roster-new .card'
-    expect(factions.length).toBe 22
+    expect(factions.length).toBe 24
     expect(factions[0].textContent).toBe 'House Escher'
-    expect(factions[6].textContent).toBe 'Skitarii'
-    expect(factions[15].textContent).toBe 'Genestealer Cults'
+    expect(factions[6].textContent).toBe 'Chaos Cult Gang'
+    expect(factions[17].textContent).toBe 'Genestealer Cults'
 
   it 'links to a faction roster', (done) ->
     @vm.$router.push 'build/shadowWar/skitarii'
