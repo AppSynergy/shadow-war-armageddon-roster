@@ -11,6 +11,21 @@
       </span>
     </nav>
 
+    <div class="container my-4">
+        <div class="card p-4">
+            <span class="h4 mb-3">
+                <i class="material-icons align-middle pb-1">build</i>
+                Good news, everyone!</span>
+            <p>Development is underway on a new version of killteams.com, with an focus on the new Kill Team game.</p>
+            <p>Killteams.com 2.0 will have new features and options for Open, Matched or Narrative play.</p>
+            <p>Don't worry, this tool will continue to be available in it's current form!</p>
+            <p>If you'd like to help us make something cool, or just want to have a peek behind the scenes, <a class="lead" target="_blank" :href="slackJoinUrl">come and say hi on slack</a> or
+            <a class="lead text-success" target="_blank" :href="newGithubUrl">check out our progress on github</a>.
+            </p>
+            <p class="lead">Thanks!</p>
+        </div>
+    </div>
+
     <h2 class="my-4 py-4 text-center">Create a New Roster</h2>
 
     <div class="roster-new">
@@ -105,6 +120,8 @@
       rosterToDelete: null
       savedRosters: []
       ghUrl: 'https://github.com/AppSynergy/shadow-war-armageddon-roster'
+      newGithubUrl: 'https://github.com/AppSynergy/killteams.com'
+      slackJoinUrl: 'https://join.slack.com/t/killteams/shared_invite/enQtNDI4ODA3NDIxODk1LTM1MGRhNjZjYmMyZWIxNDRjZTI0NDVkN2FkODc1MjE0MWQ2NWZlZWM4MjMwZDQ0YzUwM2ZhYmJmNzFhMjk2Y2E'
 
     computed:
       factions: () -> Factions
